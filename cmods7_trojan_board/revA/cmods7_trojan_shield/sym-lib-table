@@ -1,0 +1,6 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "74LVC2T45DC_125")(type "KiCad")(uri "${EXT_KICAD_LIB}/symbols/74LVC2T45DC_125.kicad_sym")(options "")(descr ""))
+  (lib (name "MAX4674EEE_")(type "KiCad")(uri "${EXT_KICAD_LIB}/symbols/MAX4674EEE_.kicad_sym")(options "")(descr ""))
+  (lib (name "PTMUX4053PWR")(type "Legacy")(uri "${EXT_KICAD_LIB}/symbols/PTMUX4053PWR.lib")(options "")(descr ""))
+)
