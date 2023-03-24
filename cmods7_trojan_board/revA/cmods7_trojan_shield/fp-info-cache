@@ -1,4 +1,4 @@
-21715862263670338
+21717541715384528
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -90292,6 +90292,13 @@ PTMUX4053PWR
 0
 16
 16
+external_footprints
+SOIC127P599X175-8N
+
+
+0
+8
+8
 external_footprints
 SOP50P310X100-8N
 <b>SOT765-1</b><br>
