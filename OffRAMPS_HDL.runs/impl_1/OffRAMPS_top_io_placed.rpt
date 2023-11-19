@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-| Date                      : Sun Nov 19 13:05:33 2023
+| Date                      : Sun Nov 19 14:08:09 2023
 | Host                      : M910q running 64-bit Ubuntu 22.04.3 LTS
 | Command                   : report_io -file OffRAMPS_top_io_placed.rpt
 | Design                    : OffRAMPS_top
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            58 |
+|            59 |
 +---------------+
 
 
@@ -51,7 +51,7 @@ Table of Contents
 | A14        | o_Y_STEP     | High Range | IO_L6P_T0_16                 | TRISTATE      | LVCMOS33    |      16 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | A15        | i_Y_MIN      | High Range | IO_L6N_T0_VREF_16            | INPUT         | LVCMOS33    |      16 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | A16        | i_Z_MAX      | High Range | IO_L12P_T1_MRCC_16           | INPUT         | LVCMOS33    |      16 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
-| A17        |              | High Range | IO_L12N_T1_MRCC_16           | User IO       |             |      16 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| A17        | led_0        | High Range | IO_L12N_T1_MRCC_16           | OUTPUT        | LVCMOS33    |      16 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | A18        | btn0         | High Range | IO_L19N_T3_VREF_16           | INPUT         | LVCMOS33    |      16 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | A19        |              |            | GND                          | GND           |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | B1         |              |            | MGTAVTT                      | Gigabit Power |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
@@ -120,7 +120,7 @@ Table of Contents
 | G11        |              |            | GND                          | GND           |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | G12        |              | Dedicated  | VCCO_0                       | VCCO          |             |       0 |            |      |                     |                      |   any** |            |           |          |      |                  |              |                   |              |
 | G13        |              | High Range | VCCO_16                      | VCCO          |             |      16 |            |      |                     |                      |    3.30 |            |           |          |      |                  |              |                   |              |
-| G17        | o_Z_STEP     | High Range | IO_L5N_T0_D07_14             | TRISTATE      | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| G17        | o_Z_STEP     | High Range | IO_L5N_T0_D07_14             | OUTPUT        | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | G18        |              | High Range | IO_L2P_T0_D02_14             | User IO       |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | G19        | o_E0_DIR     | High Range | IO_L4N_T0_D05_14             | TRISTATE      | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | H1         | i_Y_MAX      | High Range | IO_L3P_T0_DQS_AD5P_35        | INPUT         | LVCMOS33    |      35 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |

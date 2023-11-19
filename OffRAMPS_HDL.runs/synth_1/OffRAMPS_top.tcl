@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 2
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -86,7 +87,12 @@ set_property ip_output_repo /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMP
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_vhdl -library xil_defaultlib /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/OFFRAMPS_TOP.vhd
+read_vhdl -library xil_defaultlib {
+  /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/DETECT_HOME.vhd
+  /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/EDGE_DETECTOR.vhd
+  /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/Z_STEP_MODIFIER.vhd
+  /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/OFFRAMPS_TOP.vhd
+}
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

