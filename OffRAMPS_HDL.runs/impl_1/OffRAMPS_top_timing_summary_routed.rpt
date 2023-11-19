@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-| Date         : Tue Nov  7 14:46:29 2023
+| Date         : Sun Nov 19 13:05:51 2023
 | Host         : M910q running 64-bit Ubuntu 22.04.3 LTS
 | Command      : report_timing_summary -max_paths 10 -report_unconstrained -file OffRAMPS_top_timing_summary_routed.rpt -pb OffRAMPS_top_timing_summary_routed.pb -rpx OffRAMPS_top_timing_summary_routed.rpx -warn_on_violation
 | Design       : OffRAMPS_top
@@ -42,7 +42,7 @@ Timing Summary Report
 
 Rule       Severity  Description                    Violations  
 ---------  --------  -----------------------------  ----------  
-TIMING-18  Warning   Missing input or output delay  26          
+TIMING-18  Warning   Missing input or output delay  24          
 
 Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
 
@@ -57,7 +57,7 @@ Table of Contents
 3. checking pulse_width_clock (0)
 4. checking unconstrained_internal_endpoints (0)
 5. checking no_input_delay (1)
-6. checking no_output_delay (25)
+6. checking no_output_delay (23)
 7. checking multiple_clock (0)
 8. checking generated_clocks (0)
 9. checking loops (0)
@@ -94,9 +94,9 @@ Table of Contents
  There are 0 input ports with no input delay but user has a false path constraint.
 
 
-6. checking no_output_delay (25)
+6. checking no_output_delay (23)
 --------------------------------
- There are 25 ports with no output delay specified. (HIGH)
+ There are 23 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 
@@ -257,8 +257,8 @@ Slack (MET) :             82.088ns  (required time - arrival time)
     SLICE_X29Y71         FDRE                                         r  button_debounce_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.456     5.540 r  button_debounce_reg[1]/Q
-                         net (fo=1, routed)           0.656     6.196    button_debounce_reg_n_0_[1]
-    SLICE_X29Y71         LUT3 (Prop_lut3_I0_O)        0.124     6.320 r  bypass_mode_en_i_1/O
+                         net (fo=1, routed)           0.656     6.196    button_debounce[1]
+    SLICE_X29Y71         LUT3 (Prop_lut3_I1_O)        0.124     6.320 r  bypass_mode_en_i_1/O
                          net (fo=1, routed)           0.000     6.320    bypass_mode_en_i_1_n_0
     SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/D
   -------------------------------------------------------------------    -------------------
@@ -314,7 +314,7 @@ Slack (MET) :             82.223ns  (required time - arrival time)
     SLICE_X29Y71         FDRE                                         r  button_debounce_reg[0]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.419     5.503 r  button_debounce_reg[0]/Q
-                         net (fo=2, routed)           0.397     5.899    p_0_in[1]
+                         net (fo=2, routed)           0.397     5.899    button_debounce[0]
     SLICE_X29Y71         FDRE                                         r  button_debounce_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
@@ -370,8 +370,8 @@ Slack (MET) :             0.205ns  (arrival time - required time)
     SLICE_X29Y71         FDRE                                         r  button_debounce_reg[0]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.128     1.583 r  button_debounce_reg[0]/Q
-                         net (fo=2, routed)           0.069     1.651    p_0_in[1]
-    SLICE_X29Y71         LUT3 (Prop_lut3_I1_O)        0.099     1.750 r  bypass_mode_en_i_1/O
+                         net (fo=2, routed)           0.069     1.651    button_debounce[0]
+    SLICE_X29Y71         LUT3 (Prop_lut3_I2_O)        0.099     1.750 r  bypass_mode_en_i_1/O
                          net (fo=1, routed)           0.000     1.750    bypass_mode_en_i_1_n_0
     SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/D
   -------------------------------------------------------------------    -------------------
@@ -421,7 +421,7 @@ Slack (MET) :             0.250ns  (arrival time - required time)
     SLICE_X29Y71         FDRE                                         r  button_debounce_reg[0]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.128     1.583 r  button_debounce_reg[0]/Q
-                         net (fo=2, routed)           0.134     1.717    p_0_in[1]
+                         net (fo=2, routed)           0.134     1.717    button_debounce[0]
     SLICE_X29Y71         FDRE                                         r  button_debounce_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
@@ -922,8 +922,8 @@ Path Group:  (none)
 From Clock:  sys_clk_pin
   To Clock:  
 
-Max Delay            25 Endpoints
-Min Delay            25 Endpoints
+Max Delay            23 Endpoints
+Min Delay            23 Endpoints
 --------------------------------------------------------------------------------------
 
 
@@ -957,7 +957,7 @@ Slack:                    inf
     SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.456     5.540 f  bypass_mode_en_reg/Q
-                         net (fo=26, routed)          5.575    11.115    o_Z_STEP_TRI
+                         net (fo=24, routed)          5.575    11.115    o_Z_STEP_TRI
     U7                   OBUFT (TriStatE_obuft_T_O)
                                                       3.547    14.662 r  o_Z_MIN_OBUFT_inst/O
                          net (fo=0)                   0.000    14.662    o_Z_MIN
@@ -992,7 +992,7 @@ Slack:                    inf
     SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.456     5.540 f  bypass_mode_en_reg/Q
-                         net (fo=26, routed)          5.153    10.693    o_Z_STEP_TRI
+                         net (fo=24, routed)          5.153    10.693    o_Z_STEP_TRI
     V5                   OBUFT (TriStatE_obuft_T_O)
                                                       3.520    14.212 r  o_UART_RX_OBUFT_inst/O
                          net (fo=0)                   0.000    14.212    o_UART_RX
@@ -1027,7 +1027,7 @@ Slack:                    inf
     SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.456     5.540 f  bypass_mode_en_reg/Q
-                         net (fo=26, routed)          4.941    10.480    o_Z_STEP_TRI
+                         net (fo=24, routed)          4.941    10.480    o_Z_STEP_TRI
     W6                   OBUFT (TriStatE_obuft_T_O)
                                                       3.544    14.025 r  o_Y_MAX_OBUFT_inst/O
                          net (fo=0)                   0.000    14.025    o_Y_MAX
@@ -1062,7 +1062,7 @@ Slack:                    inf
     SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.456     5.540 f  bypass_mode_en_reg/Q
-                         net (fo=26, routed)          4.801    10.340    o_Z_STEP_TRI
+                         net (fo=24, routed)          4.801    10.340    o_Z_STEP_TRI
     W7                   OBUFT (TriStatE_obuft_T_O)
                                                       3.526    13.866 r  o_Z_MAX_OBUFT_inst/O
                          net (fo=0)                   0.000    13.866    o_Z_MAX
@@ -1097,7 +1097,7 @@ Slack:                    inf
     SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.456     5.540 f  bypass_mode_en_reg/Q
-                         net (fo=26, routed)          4.787    10.326    o_Z_STEP_TRI
+                         net (fo=24, routed)          4.787    10.326    o_Z_STEP_TRI
     J1                   OBUFT (TriStatE_obuft_T_O)
                                                       3.520    13.847 r  o_UART_TX_OBUFT_inst/O
                          net (fo=0)                   0.000    13.847    o_UART_TX
@@ -1111,7 +1111,7 @@ Slack:                    inf
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        8.530ns  (logic 3.991ns (46.792%)  route 4.539ns (53.208%))
+  Data Path Delay:        8.526ns  (logic 3.991ns (46.810%)  route 4.535ns (53.190%))
   Logic Levels:           1  (OBUFT=1)
   Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.050ns
@@ -1132,10 +1132,10 @@ Slack:                    inf
     SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.456     5.540 f  bypass_mode_en_reg/Q
-                         net (fo=26, routed)          4.539    10.078    o_Z_STEP_TRI
+                         net (fo=24, routed)          4.535    10.075    o_Z_STEP_TRI
     A14                  OBUFT (TriStatE_obuft_T_O)
-                                                      3.535    13.613 r  o_Y_STEP_OBUFT_inst/O
-                         net (fo=0)                   0.000    13.613    o_Y_STEP
+                                                      3.535    13.610 r  o_Y_STEP_OBUFT_inst/O
+                         net (fo=0)                   0.000    13.610    o_Y_STEP
     A14                                                               r  o_Y_STEP (OUT)
   -------------------------------------------------------------------    -------------------
 
@@ -1167,7 +1167,7 @@ Slack:                    inf
     SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.456     5.540 f  bypass_mode_en_reg/Q
-                         net (fo=26, routed)          4.501    10.041    o_Z_STEP_TRI
+                         net (fo=24, routed)          4.501    10.041    o_Z_STEP_TRI
     L2                   OBUFT (TriStatE_obuft_T_O)
                                                       3.531    13.572 r  o_THERM_EN_OBUFT_inst/O
                          net (fo=0)                   0.000    13.572    o_THERM_EN
@@ -1202,47 +1202,11 @@ Slack:                    inf
     SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.456     5.540 f  bypass_mode_en_reg/Q
-                         net (fo=26, routed)          4.436     9.976    o_Z_STEP_TRI
+                         net (fo=24, routed)          4.436     9.976    o_Z_STEP_TRI
     V4                   OBUFT (TriStatE_obuft_T_O)
                                                       3.538    13.514 r  o_X_MAX_OBUFT_inst/O
                          net (fo=0)                   0.000    13.514    o_X_MAX
     V4                                                                r  o_X_MAX (OUT)
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 bypass_mode_en_reg/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.660ns period=83.330ns})
-  Destination:            led0_g
-                            (output port)
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        8.269ns  (logic 4.083ns (49.380%)  route 4.186ns (50.620%))
-  Logic Levels:           2  (LUT1=1 OBUF=1)
-  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.050ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    L17                                               0.000     0.000 r  sysclk (IN)
-                         net (fo=0)                   0.000     0.000    sysclk
-    L17                  IBUF (Prop_ibuf_I_O)         1.476     1.476 r  sysclk_IBUF_inst/O
-                         net (fo=1, routed)           1.972     3.448    sysclk_IBUF
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.544 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=3, routed)           1.540     5.084    sysclk_IBUF_BUFG
-    SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.456     5.540 f  bypass_mode_en_reg/Q
-                         net (fo=26, routed)          2.657     8.197    o_Z_STEP_TRI
-    SLICE_X0Y123         LUT1 (Prop_lut1_I0_O)        0.124     8.321 r  led0_g_OBUF_inst_i_1/O
-                         net (fo=1, routed)           1.529     9.849    led0_g_OBUF
-    B16                  OBUF (Prop_obuf_I_O)         3.503    13.352 r  led0_g_OBUF_inst/O
-                         net (fo=0)                   0.000    13.352    led0_g
-    B16                                                               r  led0_g (OUT)
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
@@ -1273,11 +1237,46 @@ Slack:                    inf
     SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.456     5.540 f  bypass_mode_en_reg/Q
-                         net (fo=26, routed)          4.145     9.684    o_Z_STEP_TRI
+                         net (fo=24, routed)          4.145     9.684    o_Z_STEP_TRI
     U2                   OBUFT (TriStatE_obuft_T_O)
                                                       3.518    13.202 r  o_Y_MIN_OBUFT_inst/O
                          net (fo=0)                   0.000    13.202    o_Y_MIN
     U2                                                                r  o_Y_MIN (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 bypass_mode_en_reg/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@41.660ns period=83.330ns})
+  Destination:            o_E0_EN
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        8.040ns  (logic 3.975ns (49.436%)  route 4.065ns (50.564%))
+  Logic Levels:           1  (OBUFT=1)
+  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L17                                               0.000     0.000 r  sysclk (IN)
+                         net (fo=0)                   0.000     0.000    sysclk
+    L17                  IBUF (Prop_ibuf_I_O)         1.476     1.476 r  sysclk_IBUF_inst/O
+                         net (fo=1, routed)           1.972     3.448    sysclk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.544 r  sysclk_IBUF_BUFG_inst/O
+                         net (fo=3, routed)           1.540     5.084    sysclk_IBUF_BUFG
+    SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.456     5.540 f  bypass_mode_en_reg/Q
+                         net (fo=24, routed)          4.065     9.605    o_Z_STEP_TRI
+    L3                   OBUFT (TriStatE_obuft_T_O)
+                                                      3.519    13.123 r  o_E0_EN_OBUFT_inst/O
+                         net (fo=0)                   0.000    13.123    o_E0_EN
+    L3                                                                r  o_E0_EN (OUT)
   -------------------------------------------------------------------    -------------------
 
 
@@ -1314,7 +1313,7 @@ Slack:                    inf
     SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.141     1.596 r  bypass_mode_en_reg/Q
-                         net (fo=26, routed)          1.267     2.863    o_Z_STEP_TRI
+                         net (fo=24, routed)          1.267     2.863    o_Z_STEP_TRI
     H19                  OBUFT (TriStatD_obuft_T_O)
                                                       0.824     3.687 r  o_X_EN_OBUFT_inst/O
                          net (fo=0)                   0.000     3.687    o_X_EN
@@ -1349,7 +1348,7 @@ Slack:                    inf
     SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.141     1.596 r  bypass_mode_en_reg/Q
-                         net (fo=26, routed)          1.320     2.915    o_Z_STEP_TRI
+                         net (fo=24, routed)          1.320     2.915    o_Z_STEP_TRI
     P1                   OBUFT (TriStatD_obuft_T_O)
                                                       0.824     3.739 r  o_D10_OBUFT_inst/O
                          net (fo=0)                   0.000     3.739    o_D10
@@ -1384,7 +1383,7 @@ Slack:                    inf
     SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.141     1.596 r  bypass_mode_en_reg/Q
-                         net (fo=26, routed)          1.321     2.917    o_Z_STEP_TRI
+                         net (fo=24, routed)          1.321     2.917    o_Z_STEP_TRI
     P3                   OBUFT (TriStatD_obuft_T_O)
                                                       0.824     3.741 r  o_X_DIR_OBUFT_inst/O
                          net (fo=0)                   0.000     3.741    o_X_DIR
@@ -1419,7 +1418,7 @@ Slack:                    inf
     SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.141     1.596 r  bypass_mode_en_reg/Q
-                         net (fo=26, routed)          1.326     2.921    o_Z_STEP_TRI
+                         net (fo=24, routed)          1.326     2.921    o_Z_STEP_TRI
     G19                  OBUFT (TriStatD_obuft_T_O)
                                                       0.824     3.745 r  o_E0_DIR_OBUFT_inst/O
                          net (fo=0)                   0.000     3.745    o_E0_DIR
@@ -1454,7 +1453,7 @@ Slack:                    inf
     SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.141     1.596 r  bypass_mode_en_reg/Q
-                         net (fo=26, routed)          1.386     2.982    o_Z_STEP_TRI
+                         net (fo=24, routed)          1.386     2.982    o_Z_STEP_TRI
     N3                   OBUFT (TriStatD_obuft_T_O)
                                                       0.824     3.806 r  o_X_MIN_OBUFT_inst/O
                          net (fo=0)                   0.000     3.806    o_X_MIN
@@ -1489,7 +1488,7 @@ Slack:                    inf
     SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.141     1.596 r  bypass_mode_en_reg/Q
-                         net (fo=26, routed)          1.389     2.984    o_Z_STEP_TRI
+                         net (fo=24, routed)          1.389     2.984    o_Z_STEP_TRI
     H17                  OBUFT (TriStatD_obuft_T_O)
                                                       0.824     3.808 r  o_Z_DIR_OBUFT_inst/O
                          net (fo=0)                   0.000     3.808    o_Z_DIR
@@ -1524,7 +1523,7 @@ Slack:                    inf
     SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.141     1.596 r  bypass_mode_en_reg/Q
-                         net (fo=26, routed)          1.442     3.037    o_Z_STEP_TRI
+                         net (fo=24, routed)          1.442     3.037    o_Z_STEP_TRI
     G17                  OBUFT (TriStatD_obuft_T_O)
                                                       0.824     3.861 r  o_Z_STEP_OBUFT_inst/O
                          net (fo=0)                   0.000     3.861    o_Z_STEP
@@ -1559,7 +1558,7 @@ Slack:                    inf
     SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.141     1.596 r  bypass_mode_en_reg/Q
-                         net (fo=26, routed)          1.516     3.111    o_Z_STEP_TRI
+                         net (fo=24, routed)          1.516     3.111    o_Z_STEP_TRI
     N2                   OBUFT (TriStatD_obuft_T_O)
                                                       0.824     3.935 r  o_D9_OBUFT_inst/O
                          net (fo=0)                   0.000     3.935    o_D9
@@ -1594,7 +1593,7 @@ Slack:                    inf
     SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.141     1.596 r  bypass_mode_en_reg/Q
-                         net (fo=26, routed)          1.581     3.176    o_Z_STEP_TRI
+                         net (fo=24, routed)          1.581     3.176    o_Z_STEP_TRI
     M1                   OBUFT (TriStatD_obuft_T_O)
                                                       0.824     4.000 r  o_Y_EN_OBUFT_inst/O
                          net (fo=0)                   0.000     4.000    o_Y_EN
@@ -1608,7 +1607,7 @@ Slack:                    inf
                             (output port)
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        2.576ns  (logic 0.965ns (37.463%)  route 1.611ns (62.537%))
+  Data Path Delay:        2.573ns  (logic 0.965ns (37.511%)  route 1.608ns (62.489%))
   Logic Levels:           1  (OBUFT=1)
   Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.050ns
@@ -1629,10 +1628,10 @@ Slack:                    inf
     SLICE_X29Y71         FDRE                                         r  bypass_mode_en_reg/C
   -------------------------------------------------------------------    -------------------
     SLICE_X29Y71         FDRE (Prop_fdre_C_Q)         0.141     1.596 r  bypass_mode_en_reg/Q
-                         net (fo=26, routed)          1.611     3.207    o_Z_STEP_TRI
+                         net (fo=24, routed)          1.608     3.203    o_Z_STEP_TRI
     B15                  OBUFT (TriStatD_obuft_T_O)
-                                                      0.824     4.031 r  o_Y_DIR_OBUFT_inst/O
-                         net (fo=0)                   0.000     4.031    o_Y_DIR
+                                                      0.824     4.027 r  o_Y_DIR_OBUFT_inst/O
+                         net (fo=0)                   0.000     4.027    o_Y_DIR
     B15                                                               r  o_Y_DIR (OUT)
   -------------------------------------------------------------------    -------------------
 
