@@ -88,14 +88,56 @@ architecture Behavioral of OffRAMPS_top is
         o_homing_complete : out std_logic
 		);
 	END COMPONENT;
-
-    COMPONENT Z_Step_Mod
-    PORT (
+	
+	   
+    COMPONENT TROJAN_TOP
+    Port (
         clk                 : in  std_logic;
-        enable              : in  std_logic;
+        enable_x_troj       : in  std_logic;
+        enable_y_troj       : in  std_logic;
+        enable_z_troj       : in  std_logic;
         homing_complete     : in  std_logic;
-        z_step              : in  std_logic;
-        z_step_modified     : out std_logic
+        
+        -- Data Signals In
+        i_E0_DIR    : in std_logic;
+        i_E0_EN     : in std_logic;
+        i_E0_STEP   : in std_logic;
+        
+        i_X_DIR     : in std_logic;  -- X Direction input
+        i_X_EN      : in std_logic;  -- X Enable input
+        i_X_MIN     : in std_logic;  -- X Min input
+        i_X_STEP    : in std_logic;  -- X Step input  
+        
+        i_Y_DIR     : in std_logic;  -- Y Direction input
+        i_Y_EN      : in std_logic;  -- Y Enable input
+        i_Y_MIN     : in std_logic;  -- Y Min input
+        i_Y_STEP    : in std_logic;  -- Y Step input
+        
+        i_Z_DIR     : in std_logic;  -- Z Direction input
+        i_Z_EN      : in std_logic;  -- Z Enable input
+        i_Z_MIN     : in std_logic;  -- Z Min input
+        i_Z_STEP    : in std_logic;  -- Z Step input
+        
+        
+        -- Data Signals Out
+        o_E0_DIR    : out std_logic;
+        o_E0_EN     : out std_logic;
+        o_E0_STEP   : out std_logic;
+        
+        o_X_DIR     : out std_logic; --X_DIR  output
+        o_X_EN      : out std_logic; --X_EN   output
+        o_X_MIN     : out std_logic; --X_MIN  output
+        o_X_STEP    : out std_logic; --X_STEP output
+        
+        o_Y_DIR     : out std_logic; --Y_DIR  output
+        o_Y_EN      : out std_logic; --Y_EN   output
+        o_Y_MIN     : out std_logic; --Y_MIN  output
+        o_Y_STEP    : out std_logic; --Y_STEP output
+        
+        o_Z_DIR     : out std_logic; --Z_DIR  output
+        o_Z_EN      : out std_logic; --Z_EN   output
+        o_Z_MIN     : out std_logic; --Z_MIN  output
+        o_Z_STEP    : out std_logic  --Z_STEP output
     );
     END COMPONENT;
     
@@ -105,26 +147,27 @@ architecture Behavioral of OffRAMPS_top is
     signal button_press : std_logic;
     signal home_complete_buf :std_logic;
     
-    -- Trojan Related Signals
-    signal z_step_modified : std_logic;
+    -- Trojan Modified Output Signals
+    signal s_mod_E0_DIR  : std_logic :='0';
+    signal s_mod_E0_EN   : std_logic :='0';
+    signal s_mod_E0_STEP : std_logic :='0';
+    signal s_mod_X_DIR   : std_logic :='0';
+    signal s_mod_X_EN    : std_logic :='0';
+    signal s_mod_X_MIN   : std_logic :='0';
+    signal s_mod_X_STEP  : std_logic :='0';
+    signal s_mod_Y_DIR   : std_logic :='0';
+    signal s_mod_Y_EN    : std_logic :='0';
+    signal s_mod_Y_MIN   : std_logic :='0';
+    signal s_mod_Y_STEP  : std_logic :='0';
+    signal s_mod_Z_DIR   : std_logic :='0';
+    signal s_mod_Z_EN    : std_logic :='0';
+    signal s_mod_Z_MIN   : std_logic :='0';
+    signal s_mod_Z_STEP  : std_logic :='0';
 
 begin
 
-    -- Button Press Detection
-    button_press <= not button_debounce(1) and button_debounce(0);
-
-    process (sysclk)
-    begin
-        if rising_edge(sysclk) then
-            button_debounce <= button_debounce(0) & btn0;
-            if button_press = '1' then
-                bypass_mode_en <= not bypass_mode_en;
-            end if;
-        end if;
-    end process;
-
-    led_0 <= home_complete_buf;
-    
+    ----------------------- Component Instantiantions -----------------
+        
     -- Homing Sequence detection Component
     HomingDetector : DETECT_HOME PORT MAP(
         i_CLK       => sysclk,
@@ -137,40 +180,110 @@ begin
         o_homing_complete => home_complete_buf
     );
     
-    
-    Z_mod : Z_Step_Mod PORT MAP (
+    Trojans : TROJAN_TOP PORT MAP (
         clk                 => sysclk,
-        enable              => '1',
+        enable_x_troj       => '1',
+        enable_y_troj       => '1',
+        enable_z_troj       => '1',
         homing_complete     => home_complete_buf,
-        z_step              => i_Z_STEP,
-        z_step_modified     => z_step_modified
+        
+        -- Data Signals In             
+        i_E0_DIR    => i_E0_DIR ,
+        i_E0_EN     => i_E0_EN  ,
+        i_E0_STEP   => i_E0_STEP,
+        i_X_DIR     => i_X_DIR  ,
+        i_X_EN      => i_X_EN   ,
+        i_X_MIN     => i_X_MIN  ,
+        i_X_STEP    => i_X_STEP ,
+        i_Y_DIR     => i_Y_DIR  ,
+        i_Y_EN      => i_Y_EN   ,
+        i_Y_MIN     => i_Y_MIN  ,
+        i_Y_STEP    => i_Y_STEP ,
+        i_Z_DIR     => i_Z_DIR  ,
+        i_Z_EN      => i_Z_EN   ,
+        i_Z_MIN     => i_Z_MIN  ,
+        i_Z_STEP    => i_Z_STEP ,
+        -- Data Signals Out
+        o_E0_DIR    => s_mod_E0_DIR ,
+        o_E0_EN     => s_mod_E0_EN  ,
+        o_E0_STEP   => s_mod_E0_STEP,
+        o_X_DIR     => s_mod_X_DIR   ,
+        o_X_EN      => s_mod_X_EN    ,
+        o_X_MIN     => s_mod_X_MIN   ,
+        o_X_STEP    => s_mod_X_STEP  ,
+        o_Y_DIR     => s_mod_Y_DIR   ,
+        o_Y_EN      => s_mod_Y_EN    ,
+        o_Y_MIN     => s_mod_Y_MIN   ,
+        o_Y_STEP    => s_mod_Y_STEP  ,
+        o_Z_DIR     => s_mod_Z_DIR   ,
+        o_Z_EN      => s_mod_Z_EN    ,
+        o_Z_MIN     => s_mod_Z_MIN   ,
+        o_Z_STEP    => s_mod_Z_STEP  
     );
+    
+    
+    
+    --------------------------- LOGIC --------------------------
+    
+        -- Button Press Detection
+    button_press <= not button_debounce(1) and button_debounce(0);
 
-    -- BYPASS MUXs
-    o_D10       <= 'Z' when bypass_mode_en = '0' else i_D10;
-    o_D9        <= 'Z' when bypass_mode_en = '0' else i_D9;
-    o_E0_DIR    <= 'Z' when bypass_mode_en = '0' else i_E0_DIR;
-    o_E0_EN     <= 'Z' when bypass_mode_en = '0' else i_E0_EN;
-    o_E0_STEP   <= 'Z' when bypass_mode_en = '0' else i_E0_STEP;
+    process (sysclk)
+    begin
+        if rising_edge(sysclk) then
+            button_debounce <= button_debounce(0) & btn0;
+            if button_press = '1' then
+                bypass_mode_en <= not bypass_mode_en;
+            end if;
+        end if;
+    end process;
+
+    -- Set LEDs
+    led_0  <= home_complete_buf; -- Home Complete Indicator
+    led0_g <= '0'  when bypass_mode_en = '0' else '1'; -- Trojans are off = Green
+    led0_r <= '1'  when bypass_mode_en = '0' else '0'; -- Trojans are on = Red
+    
+    -- BYPASS MUX
+    -- Muxes Used in the trojan implementation
+    o_E0_DIR    <= s_mod_E0_DIR  when bypass_mode_en = '0' else i_E0_DIR;
+    o_E0_EN     <= s_mod_E0_EN   when bypass_mode_en = '0' else i_E0_EN;
+    o_E0_STEP   <= s_mod_E0_STEP when bypass_mode_en = '0' else i_E0_STEP;
+    
+    o_X_DIR     <= s_mod_X_DIR   when bypass_mode_en = '0' else i_X_DIR;
+    o_X_EN      <= s_mod_X_EN    when bypass_mode_en = '0' else i_X_EN;    
+    o_X_MIN     <= s_mod_X_MIN   when bypass_mode_en = '0' else i_X_MIN;
+    o_X_STEP    <= s_mod_X_STEP  when bypass_mode_en = '0' else i_X_STEP;  
+    
+    o_Y_DIR     <= s_mod_Y_DIR  when bypass_mode_en = '0' else i_Y_DIR;
+    o_Y_EN      <= s_mod_Y_EN   when bypass_mode_en = '0' else i_Y_EN; 
+    o_Y_MIN     <= s_mod_Y_MIN  when bypass_mode_en = '0' else i_Y_MIN;
+    o_Y_STEP    <= s_mod_Y_STEP when bypass_mode_en = '0' else i_Y_STEP;
+    
+    o_Z_DIR     <= s_mod_Z_DIR  when bypass_mode_en = '0' else i_Z_DIR;
+    o_Z_EN      <= s_mod_Z_EN   when bypass_mode_en = '0' else i_Z_EN;
+    o_Z_MIN     <= s_mod_Z_MIN  when bypass_mode_en = '0' else i_Z_MIN;             
+    o_Z_STEP    <= s_mod_Z_STEP when bypass_mode_en = '0' else i_Z_STEP;
+    
+    -- MUXes used in the DATA Extraction Tool (Not Yet Implementeted)
     o_UART_RX   <= 'Z' when bypass_mode_en = '0' else i_UART_RX;
     o_UART_TX   <= 'Z' when bypass_mode_en = '0' else i_UART_TX;
-    o_X_DIR     <= 'Z' when bypass_mode_en = '0' else i_X_DIR;
-    o_X_EN      <= 'Z' when bypass_mode_en = '0' else i_X_EN;
-    o_X_MAX     <= 'Z' when bypass_mode_en = '0' else i_X_MAX;
-    o_X_MIN     <= 'Z' when bypass_mode_en = '0' else i_X_MIN;
-    o_X_STEP    <= 'Z' when bypass_mode_en = '0' else i_X_STEP;
-    o_Y_DIR     <= 'Z' when bypass_mode_en = '0' else i_Y_DIR;
-    o_Y_EN      <= 'Z' when bypass_mode_en = '0' else i_Y_EN;
-    o_Y_MAX     <= 'Z' when bypass_mode_en = '0' else i_Y_MAX;
-    o_Y_MIN     <= 'Z' when bypass_mode_en = '0' else i_Y_MIN;
-    o_Y_STEP    <= 'Z' when bypass_mode_en = '0' else i_Y_STEP;
-    o_Z_DIR     <= 'Z' when bypass_mode_en = '0' else i_Z_DIR;
-    o_Z_EN      <= 'Z' when bypass_mode_en = '0' else i_Z_EN;
-    o_Z_MAX     <= 'Z' when bypass_mode_en = '0' else i_Z_MAX;
-    o_Z_MIN     <= 'Z' when bypass_mode_en = '0' else i_Z_MIN;
-    o_Z_STEP    <= z_step_modified when bypass_mode_en = '0' else i_Z_STEP;
+   
+    -- MUXes used in the diginal twin
+    
+    -- Other MUXes
+    o_D10       <= 'Z' when bypass_mode_en = '0' else i_D10;
+    o_D9        <= 'Z' when bypass_mode_en = '0' else i_D9;
 
+    o_UART_RX   <= 'Z' when bypass_mode_en = '0' else i_UART_RX;
+    o_UART_TX   <= 'Z' when bypass_mode_en = '0' else i_UART_TX;
+
+    o_X_MAX     <= 'Z' when bypass_mode_en = '0' else i_X_MAX;
+    o_Y_MAX     <= 'Z' when bypass_mode_en = '0' else i_Y_MAX;
+    o_Z_MAX     <= 'Z' when bypass_mode_en = '0' else i_Z_MAX;
+    
     -- Currently, We are jumping the termocouple from ramps --> arduino
     -- Thermometer Enable output might combine two inputs or have a default state                               
     o_THERM_EN  <= 'Z' when bypass_mode_en = '0' else (i_THERM0_SCL and i_THERM0_SDA);
+    
+    
 end Behavioral;
