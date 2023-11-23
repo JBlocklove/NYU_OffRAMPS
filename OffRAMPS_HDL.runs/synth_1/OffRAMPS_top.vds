@@ -3,16 +3,16 @@
 # SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Sun Nov 19 14:06:59 2023
-# Process ID: 2518111
+# Start of session at: Thu Nov 23 11:51:30 2023
+# Process ID: 3033017
 # Current directory: /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1
 # Command line: vivado -log OffRAMPS_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source OffRAMPS_top.tcl
 # Log file: /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/OffRAMPS_top.vds
 # Journal file: /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/vivado.jou
-# Running On: M910q, OS: Linux, CPU Frequency: 3400.034 MHz, CPU Physical cores: 4, Host memory: 33529 MB
+# Running On: M910q, OS: Linux, CPU Frequency: 3499.976 MHz, CPU Physical cores: 4, Host memory: 33529 MB
 #-----------------------------------------------------------
 source OffRAMPS_top.tcl -notrace
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1338.652 ; gain = 0.023 ; free physical = 5223 ; free virtual = 26833
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1338.652 ; gain = 0.023 ; free physical = 3855 ; free virtual = 25585
 Command: read_checkpoint -auto_incremental -incremental /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/utils_1/imports/synth_1/OffRAMPS_top.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/utils_1/imports/synth_1/OffRAMPS_top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -25,32 +25,71 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 2518132
+INFO: [Synth 8-7075] Helper process launched with PID 3033086
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1981.742 ; gain = 378.801 ; free physical = 4336 ; free virtual = 25946
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1983.680 ; gain = 380.770 ; free physical = 2963 ; free virtual = 24697
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'OffRAMPS_top' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/OFFRAMPS_TOP.vhd:77]
-INFO: [Synth 8-3491] module 'DETECT_HOME' declared at '/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/DETECT_HOME.vhd:6' bound to instance 'HomingDetector' of component 'DETECT_HOME' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/OFFRAMPS_TOP.vhd:129]
+INFO: [Synth 8-3491] module 'DETECT_HOME' declared at '/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/DETECT_HOME.vhd:6' bound to instance 'HomingDetector' of component 'DETECT_HOME' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/OFFRAMPS_TOP.vhd:172]
 INFO: [Synth 8-638] synthesizing module 'DETECT_HOME' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/DETECT_HOME.vhd:28]
 INFO: [Synth 8-256] done synthesizing module 'DETECT_HOME' (0#1) [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/DETECT_HOME.vhd:28]
-INFO: [Synth 8-3491] module 'Z_Step_Mod' declared at '/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/Z_STEP_MODIFIER.vhd:4' bound to instance 'Z_mod' of component 'Z_Step_Mod' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/OFFRAMPS_TOP.vhd:141]
-INFO: [Synth 8-638] synthesizing module 'Z_Step_Mod' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/Z_STEP_MODIFIER.vhd:14]
-INFO: [Synth 8-3491] module 'Edge_Detector' declared at '/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/EDGE_DETECTOR.vhd:4' bound to instance 'edge_detect_z' of component 'EDGE_DETECTOR' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/Z_STEP_MODIFIER.vhd:29]
-INFO: [Synth 8-638] synthesizing module 'Edge_Detector' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/EDGE_DETECTOR.vhd:13]
-WARNING: [Synth 8-614] signal 'edge_control' is read in the process but is not in the sensitivity list [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/EDGE_DETECTOR.vhd:16]
-WARNING: [Synth 8-614] signal 'input_signal' is read in the process but is not in the sensitivity list [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/EDGE_DETECTOR.vhd:16]
-WARNING: [Synth 8-614] signal 'prev_input_signal' is read in the process but is not in the sensitivity list [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/EDGE_DETECTOR.vhd:16]
-INFO: [Synth 8-256] done synthesizing module 'Edge_Detector' (0#1) [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/EDGE_DETECTOR.vhd:13]
-WARNING: [Synth 8-614] signal 'enable' is read in the process but is not in the sensitivity list [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/Z_STEP_MODIFIER.vhd:36]
-WARNING: [Synth 8-614] signal 'homing_complete' is read in the process but is not in the sensitivity list [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/Z_STEP_MODIFIER.vhd:36]
-WARNING: [Synth 8-614] signal 'zedge' is read in the process but is not in the sensitivity list [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/Z_STEP_MODIFIER.vhd:36]
-WARNING: [Synth 8-614] signal 'step_count' is read in the process but is not in the sensitivity list [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/Z_STEP_MODIFIER.vhd:36]
-INFO: [Synth 8-256] done synthesizing module 'Z_Step_Mod' (0#1) [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/Z_STEP_MODIFIER.vhd:14]
+INFO: [Synth 8-3491] module 'TROJAN_TOP' declared at '/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:4' bound to instance 'Trojans' of component 'TROJAN_TOP' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/OFFRAMPS_TOP.vhd:183]
+INFO: [Synth 8-638] synthesizing module 'TROJAN_TOP' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:54]
+INFO: [Synth 8-3491] module 'RISING_EDGE_DETECTOR' declared at '/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/RISING_EDGE_DETECTOR.vhd:4' bound to instance 'E_STEP_EDGE' of component 'RISING_EDGE_DETECTOR' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:74]
+INFO: [Synth 8-638] synthesizing module 'RISING_EDGE_DETECTOR' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/RISING_EDGE_DETECTOR.vhd:12]
+WARNING: [Synth 8-614] signal 'input' is read in the process but is not in the sensitivity list [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/RISING_EDGE_DETECTOR.vhd:15]
+WARNING: [Synth 8-614] signal 'prev_input' is read in the process but is not in the sensitivity list [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/RISING_EDGE_DETECTOR.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'RISING_EDGE_DETECTOR' (0#1) [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/RISING_EDGE_DETECTOR.vhd:12]
+INFO: [Synth 8-3491] module 'RISING_EDGE_DETECTOR' declared at '/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/RISING_EDGE_DETECTOR.vhd:4' bound to instance 'X_STEP_EDGE' of component 'RISING_EDGE_DETECTOR' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:79]
+INFO: [Synth 8-3491] module 'RISING_EDGE_DETECTOR' declared at '/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/RISING_EDGE_DETECTOR.vhd:4' bound to instance 'Y_STEP_EDGE' of component 'RISING_EDGE_DETECTOR' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:84]
+INFO: [Synth 8-3491] module 'RISING_EDGE_DETECTOR' declared at '/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/RISING_EDGE_DETECTOR.vhd:4' bound to instance 'Z_STEP_EDGE' of component 'RISING_EDGE_DETECTOR' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:89]
+INFO: [Synth 8-256] done synthesizing module 'TROJAN_TOP' (0#1) [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:54]
 INFO: [Synth 8-256] done synthesizing module 'OffRAMPS_top' (0#1) [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/OFFRAMPS_TOP.vhd:77]
-WARNING: [Synth 8-3848] Net led0_g in module/entity OffRAMPS_top does not have driver. [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/OFFRAMPS_TOP.vhd:10]
-WARNING: [Synth 8-3848] Net led0_r in module/entity OffRAMPS_top does not have driver. [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/OFFRAMPS_TOP.vhd:11]
-WARNING: [Synth 8-7129] Port led0_g in module OffRAMPS_top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led0_r in module OffRAMPS_top is either unconnected or has no load
+WARNING: [Synth 8-3848] Net o_E0_DIR in module/entity TROJAN_TOP does not have driver. [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:33]
+WARNING: [Synth 8-3848] Net o_E0_EN in module/entity TROJAN_TOP does not have driver. [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:34]
+WARNING: [Synth 8-3848] Net o_E0_STEP in module/entity TROJAN_TOP does not have driver. [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:35]
+WARNING: [Synth 8-3848] Net o_X_DIR in module/entity TROJAN_TOP does not have driver. [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:37]
+WARNING: [Synth 8-3848] Net o_X_EN in module/entity TROJAN_TOP does not have driver. [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:38]
+WARNING: [Synth 8-3848] Net o_X_MIN in module/entity TROJAN_TOP does not have driver. [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:39]
+WARNING: [Synth 8-3848] Net o_X_STEP in module/entity TROJAN_TOP does not have driver. [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:40]
+WARNING: [Synth 8-3848] Net o_Y_DIR in module/entity TROJAN_TOP does not have driver. [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:42]
+WARNING: [Synth 8-3848] Net o_Y_EN in module/entity TROJAN_TOP does not have driver. [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:43]
+WARNING: [Synth 8-3848] Net o_Y_MIN in module/entity TROJAN_TOP does not have driver. [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:44]
+WARNING: [Synth 8-3848] Net o_Y_STEP in module/entity TROJAN_TOP does not have driver. [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:45]
+WARNING: [Synth 8-3848] Net o_Z_DIR in module/entity TROJAN_TOP does not have driver. [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:47]
+WARNING: [Synth 8-3848] Net o_Z_EN in module/entity TROJAN_TOP does not have driver. [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:48]
+WARNING: [Synth 8-3848] Net o_Z_MIN in module/entity TROJAN_TOP does not have driver. [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:49]
+WARNING: [Synth 8-3848] Net o_Z_STEP in module/entity TROJAN_TOP does not have driver. [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:50]
+WARNING: [Synth 8-7129] Port o_E0_DIR in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_E0_EN in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_E0_STEP in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_X_DIR in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_X_EN in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_X_MIN in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_X_STEP in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_Y_DIR in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_Y_EN in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_Y_MIN in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_Y_STEP in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_Z_DIR in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_Z_EN in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_Z_MIN in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_Z_STEP in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port enable_x_troj in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port enable_y_troj in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port enable_z_troj in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port homing_complete in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_E0_DIR in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_E0_EN in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_X_DIR in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_X_EN in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_X_MIN in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Y_DIR in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Y_EN in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Y_MIN in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Z_DIR in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Z_EN in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Z_MIN in module TROJAN_TOP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_THERM0_n_0 in module OffRAMPS_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_THERM0_p_0 in module OffRAMPS_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_THERM1_n_1 in module OffRAMPS_top is either unconnected or has no load
@@ -59,18 +98,18 @@ WARNING: [Synth 8-7129] Port i_D8 in module OffRAMPS_top is either unconnected o
 WARNING: [Synth 8-7129] Port i_THERM1_SCL in module OffRAMPS_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_THERM1_SDA in module OffRAMPS_top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2047.680 ; gain = 444.738 ; free physical = 4247 ; free virtual = 25858
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2047.648 ; gain = 444.738 ; free physical = 2864 ; free virtual = 24599
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2065.492 ; gain = 462.551 ; free physical = 4245 ; free virtual = 25856
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2065.461 ; gain = 462.551 ; free physical = 2862 ; free virtual = 24596
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2065.492 ; gain = 462.551 ; free physical = 4245 ; free virtual = 25856
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2065.461 ; gain = 462.551 ; free physical = 2862 ; free virtual = 24596
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2065.492 ; gain = 0.000 ; free physical = 4245 ; free virtual = 25856
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2065.461 ; gain = 0.000 ; free physical = 2862 ; free virtual = 24596
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -81,45 +120,41 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/OffRAMPS_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2174.242 ; gain = 0.000 ; free physical = 4235 ; free virtual = 25846
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2208.211 ; gain = 0.000 ; free physical = 2846 ; free virtual = 24577
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2174.242 ; gain = 0.000 ; free physical = 4235 ; free virtual = 25846
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2208.211 ; gain = 0.000 ; free physical = 2846 ; free virtual = 24577
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2174.242 ; gain = 571.301 ; free physical = 4231 ; free virtual = 25841
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2839 ; free virtual = 24570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2174.242 ; gain = 571.301 ; free physical = 4231 ; free virtual = 25841
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2839 ; free virtual = 24570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2174.242 ; gain = 571.301 ; free physical = 4231 ; free virtual = 25841
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2839 ; free virtual = 24570
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'step_count_reg' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/Z_STEP_MODIFIER.vhd:40]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2174.242 ; gain = 571.301 ; free physical = 4230 ; free virtual = 25841
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2836 ; free virtual = 24569
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input   32 Bit       Adders := 1     
 +---Registers : 
 	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 6     
+	                1 Bit    Registers := 9     
 +---Muxes : 
-	   2 Input   32 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 15    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -136,8 +171,6 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-7129] Port led0_g in module OffRAMPS_top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led0_r in module OffRAMPS_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_THERM0_n_0 in module OffRAMPS_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_THERM0_p_0 in module OffRAMPS_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_THERM1_n_1 in module OffRAMPS_top is either unconnected or has no load
@@ -146,25 +179,25 @@ WARNING: [Synth 8-7129] Port i_D8 in module OffRAMPS_top is either unconnected o
 WARNING: [Synth 8-7129] Port i_THERM1_SCL in module OffRAMPS_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_THERM1_SDA in module OffRAMPS_top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2174.242 ; gain = 571.301 ; free physical = 4223 ; free virtual = 25838
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2828 ; free virtual = 24564
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2174.242 ; gain = 571.301 ; free physical = 4220 ; free virtual = 25835
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2821 ; free virtual = 24575
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2174.242 ; gain = 571.301 ; free physical = 4220 ; free virtual = 25835
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2821 ; free virtual = 24575
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2174.242 ; gain = 571.301 ; free physical = 4213 ; free virtual = 25828
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2806 ; free virtual = 24559
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -182,37 +215,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2174.242 ; gain = 571.301 ; free physical = 4213 ; free virtual = 25828
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2803 ; free virtual = 24555
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2174.242 ; gain = 571.301 ; free physical = 4213 ; free virtual = 25828
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2803 ; free virtual = 24555
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2174.242 ; gain = 571.301 ; free physical = 4213 ; free virtual = 25828
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2803 ; free virtual = 24555
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2174.242 ; gain = 571.301 ; free physical = 4213 ; free virtual = 25828
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2803 ; free virtual = 24555
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2174.242 ; gain = 571.301 ; free physical = 4213 ; free virtual = 25828
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2803 ; free virtual = 24555
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2174.242 ; gain = 571.301 ; free physical = 4213 ; free virtual = 25828
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2803 ; free virtual = 24555
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -225,47 +258,40 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |     2|
-|2     |CARRY4 |     8|
-|3     |LUT1   |     1|
-|4     |LUT2   |     3|
-|5     |LUT3   |     5|
-|6     |LUT4   |     4|
-|7     |LUT5   |     1|
-|8     |LUT6   |    36|
-|9     |FDRE   |     8|
-|10    |LDC    |    32|
-|11    |IBUF   |    26|
-|12    |OBUF   |     2|
-|13    |OBUFT  |    24|
-+------+-------+------+
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |BUFG  |     1|
+|2     |LUT1  |     4|
+|3     |LUT2  |    16|
+|4     |LUT3  |     5|
+|5     |LUT4  |     2|
+|6     |FDRE  |     7|
+|7     |IBUF  |    26|
+|8     |OBUF  |    18|
+|9     |OBUFT |     8|
++------+------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2174.242 ; gain = 571.301 ; free physical = 4213 ; free virtual = 25828
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2803 ; free virtual = 24555
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 11 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2174.242 ; gain = 462.551 ; free physical = 4213 ; free virtual = 25828
-Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2174.242 ; gain = 571.301 ; free physical = 4213 ; free virtual = 25828
+Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2208.211 ; gain = 462.551 ; free physical = 2802 ; free virtual = 24554
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2802 ; free virtual = 24554
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2174.242 ; gain = 0.000 ; free physical = 4463 ; free virtual = 26079
-INFO: [Netlist 29-17] Analyzing 40 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 3 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2208.211 ; gain = 0.000 ; free physical = 2799 ; free virtual = 24550
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2174.242 ; gain = 0.000 ; free physical = 4496 ; free virtual = 26111
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2208.211 ; gain = 0.000 ; free physical = 3080 ; free virtual = 24831
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 32 instances were transformed.
-  LDC => LDCE: 32 instances
+No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 141fcb9b
+Synth Design complete | Checksum: c871ecde
 INFO: [Common 17-83] Releasing license: Synthesis
-32 Infos, 29 Warnings, 0 Critical Warnings and 0 Errors encountered.
+33 Infos, 62 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:24 . Memory (MB): peak = 2174.242 ; gain = 835.590 ; free physical = 4496 ; free virtual = 26111
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1740.595; main = 1415.900; forked = 375.244
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3120.309; main = 2174.246; forked = 978.078
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:24 . Memory (MB): peak = 2208.211 ; gain = 869.559 ; free physical = 3080 ; free virtual = 24831
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1757.508; main = 1430.830; forked = 375.279
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3154.273; main = 2208.215; forked = 978.074
 INFO: [Common 17-1381] The checkpoint '/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/OffRAMPS_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file OffRAMPS_top_utilization_synth.rpt -pb OffRAMPS_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Nov 19 14:07:32 2023...
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 23 11:52:05 2023...
