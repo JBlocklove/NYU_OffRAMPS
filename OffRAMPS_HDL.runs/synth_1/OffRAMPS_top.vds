@@ -3,16 +3,16 @@
 # SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Thu Nov 23 11:51:30 2023
-# Process ID: 3033017
+# Start of session at: Mon Nov 27 11:11:24 2023
+# Process ID: 245292
 # Current directory: /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1
 # Command line: vivado -log OffRAMPS_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source OffRAMPS_top.tcl
 # Log file: /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/OffRAMPS_top.vds
 # Journal file: /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/vivado.jou
-# Running On: M910q, OS: Linux, CPU Frequency: 3499.976 MHz, CPU Physical cores: 4, Host memory: 33529 MB
+# Running On: M910q, OS: Linux, CPU Frequency: 3455.780 MHz, CPU Physical cores: 4, Host memory: 33529 MB
 #-----------------------------------------------------------
 source OffRAMPS_top.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1338.652 ; gain = 0.023 ; free physical = 3855 ; free virtual = 25585
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1335.684 ; gain = 0.023 ; free physical = 2792 ; free virtual = 25051
 Command: read_checkpoint -auto_incremental -incremental /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/utils_1/imports/synth_1/OffRAMPS_top.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/utils_1/imports/synth_1/OffRAMPS_top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -25,14 +25,14 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 3033086
+INFO: [Synth 8-7075] Helper process launched with PID 245357
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1983.680 ; gain = 380.770 ; free physical = 2963 ; free virtual = 24697
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1981.711 ; gain = 378.801 ; free physical = 1949 ; free virtual = 24167
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'OffRAMPS_top' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/OFFRAMPS_TOP.vhd:77]
 INFO: [Synth 8-3491] module 'DETECT_HOME' declared at '/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/DETECT_HOME.vhd:6' bound to instance 'HomingDetector' of component 'DETECT_HOME' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/OFFRAMPS_TOP.vhd:172]
-INFO: [Synth 8-638] synthesizing module 'DETECT_HOME' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/DETECT_HOME.vhd:28]
-INFO: [Synth 8-256] done synthesizing module 'DETECT_HOME' (0#1) [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/DETECT_HOME.vhd:28]
+INFO: [Synth 8-638] synthesizing module 'DETECT_HOME' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/DETECT_HOME.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'DETECT_HOME' (0#1) [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/DETECT_HOME.vhd:19]
 INFO: [Synth 8-3491] module 'TROJAN_TOP' declared at '/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:4' bound to instance 'Trojans' of component 'TROJAN_TOP' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/OFFRAMPS_TOP.vhd:183]
 INFO: [Synth 8-638] synthesizing module 'TROJAN_TOP' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:54]
 INFO: [Synth 8-3491] module 'RISING_EDGE_DETECTOR' declared at '/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/RISING_EDGE_DETECTOR.vhd:4' bound to instance 'E_STEP_EDGE' of component 'RISING_EDGE_DETECTOR' [/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:74]
@@ -90,6 +90,9 @@ WARNING: [Synth 8-7129] Port i_Y_MIN in module TROJAN_TOP is either unconnected 
 WARNING: [Synth 8-7129] Port i_Z_DIR in module TROJAN_TOP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_Z_EN in module TROJAN_TOP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_Z_MIN in module TROJAN_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_X_STEP in module DETECT_HOME is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Y_STEP in module DETECT_HOME is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Z_STEP in module DETECT_HOME is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_THERM0_n_0 in module OffRAMPS_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_THERM0_p_0 in module OffRAMPS_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_THERM1_n_1 in module OffRAMPS_top is either unconnected or has no load
@@ -98,18 +101,18 @@ WARNING: [Synth 8-7129] Port i_D8 in module OffRAMPS_top is either unconnected o
 WARNING: [Synth 8-7129] Port i_THERM1_SCL in module OffRAMPS_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_THERM1_SDA in module OffRAMPS_top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2047.648 ; gain = 444.738 ; free physical = 2864 ; free virtual = 24599
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2048.648 ; gain = 445.738 ; free physical = 1860 ; free virtual = 24079
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2065.461 ; gain = 462.551 ; free physical = 2862 ; free virtual = 24596
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2066.461 ; gain = 463.551 ; free physical = 1858 ; free virtual = 24077
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2065.461 ; gain = 462.551 ; free physical = 2862 ; free virtual = 24596
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2066.461 ; gain = 463.551 ; free physical = 1858 ; free virtual = 24077
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2065.461 ; gain = 0.000 ; free physical = 2862 ; free virtual = 24596
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2066.461 ; gain = 0.000 ; free physical = 1858 ; free virtual = 24077
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -120,41 +123,59 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/OffRAMPS_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2208.211 ; gain = 0.000 ; free physical = 2846 ; free virtual = 24577
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2192.211 ; gain = 0.000 ; free physical = 1849 ; free virtual = 24077
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2208.211 ; gain = 0.000 ; free physical = 2846 ; free virtual = 24577
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2192.211 ; gain = 0.000 ; free physical = 1849 ; free virtual = 24077
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2839 ; free virtual = 24570
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2192.211 ; gain = 589.301 ; free physical = 1822 ; free virtual = 24069
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2839 ; free virtual = 24570
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2192.211 ; gain = 589.301 ; free physical = 1822 ; free virtual = 24069
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2839 ; free virtual = 24570
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2192.211 ; gain = 589.301 ; free physical = 1822 ; free virtual = 24069
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'DETECT_HOME'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  wait_x |                               00 |                             0000
+                  wait_y |                               01 |                             0011
+                  wait_z |                               10 |                             0110
+                complete |                               11 |                             1001
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'DETECT_HOME'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2836 ; free virtual = 24569
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2192.211 ; gain = 589.301 ; free physical = 1822 ; free virtual = 24070
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 3     
 +---Registers : 
+	               32 Bit    Registers := 3     
 	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 9     
+	                1 Bit    Registers := 12    
 +---Muxes : 
-	   2 Input    1 Bit        Muxes := 15    
+	   2 Input   32 Bit        Muxes := 3     
+	   4 Input    4 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 3     
+	   4 Input    1 Bit        Muxes := 5     
+	   2 Input    1 Bit        Muxes := 22    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -178,26 +199,30 @@ WARNING: [Synth 8-7129] Port i_THERM1_p_1 in module OffRAMPS_top is either uncon
 WARNING: [Synth 8-7129] Port i_D8 in module OffRAMPS_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_THERM1_SCL in module OffRAMPS_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_THERM1_SDA in module OffRAMPS_top is either unconnected or has no load
+WARNING: [Synth 8-3332] Sequential element (HomingDetector/FSM_sequential_state_reg[1]) is unused and will be removed from module OffRAMPS_top.
+WARNING: [Synth 8-3332] Sequential element (HomingDetector/FSM_sequential_state_reg[0]) is unused and will be removed from module OffRAMPS_top.
+WARNING: [Synth 8-3332] Sequential element (HomingDetector/FSM_sequential_next_state_reg[1]) is unused and will be removed from module OffRAMPS_top.
+WARNING: [Synth 8-3332] Sequential element (HomingDetector/FSM_sequential_next_state_reg[0]) is unused and will be removed from module OffRAMPS_top.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2828 ; free virtual = 24564
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2192.211 ; gain = 589.301 ; free physical = 1815 ; free virtual = 24066
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2821 ; free virtual = 24575
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2192.211 ; gain = 589.301 ; free physical = 1828 ; free virtual = 24074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2821 ; free virtual = 24575
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2192.211 ; gain = 589.301 ; free physical = 1828 ; free virtual = 24074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2806 ; free virtual = 24559
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2192.211 ; gain = 589.301 ; free physical = 1828 ; free virtual = 24074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -215,37 +240,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2803 ; free virtual = 24555
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2192.211 ; gain = 589.301 ; free physical = 1825 ; free virtual = 24071
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2803 ; free virtual = 24555
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2192.211 ; gain = 589.301 ; free physical = 1825 ; free virtual = 24071
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2803 ; free virtual = 24555
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2192.211 ; gain = 589.301 ; free physical = 1850 ; free virtual = 24096
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2803 ; free virtual = 24555
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2192.211 ; gain = 589.301 ; free physical = 1871 ; free virtual = 24117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2803 ; free virtual = 24555
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2192.211 ; gain = 589.301 ; free physical = 1915 ; free virtual = 24161
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2803 ; free virtual = 24555
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2192.211 ; gain = 589.301 ; free physical = 1915 ; free virtual = 24161
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -264,34 +289,34 @@ Report Cell Usage:
 |1     |BUFG  |     1|
 |2     |LUT1  |     4|
 |3     |LUT2  |    16|
-|4     |LUT3  |     5|
+|4     |LUT3  |     1|
 |5     |LUT4  |     2|
-|6     |FDRE  |     7|
+|6     |FDRE  |     3|
 |7     |IBUF  |    26|
 |8     |OBUF  |    18|
 |9     |OBUFT |     8|
 +------+------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2803 ; free virtual = 24555
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2192.211 ; gain = 589.301 ; free physical = 1926 ; free virtual = 24172
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2208.211 ; gain = 462.551 ; free physical = 2802 ; free virtual = 24554
-Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2208.211 ; gain = 605.301 ; free physical = 2802 ; free virtual = 24554
+Synthesis finished with 0 errors, 0 critical warnings and 12 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2192.211 ; gain = 463.551 ; free physical = 1950 ; free virtual = 24181
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2192.211 ; gain = 589.301 ; free physical = 1950 ; free virtual = 24181
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2208.211 ; gain = 0.000 ; free physical = 2799 ; free virtual = 24550
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2192.211 ; gain = 0.000 ; free physical = 1950 ; free virtual = 24180
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2208.211 ; gain = 0.000 ; free physical = 3080 ; free virtual = 24831
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2192.211 ; gain = 0.000 ; free physical = 2233 ; free virtual = 24463
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: c871ecde
+Synth Design complete | Checksum: 3867bd86
 INFO: [Common 17-83] Releasing license: Synthesis
-33 Infos, 62 Warnings, 0 Critical Warnings and 0 Errors encountered.
+35 Infos, 69 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:24 . Memory (MB): peak = 2208.211 ; gain = 869.559 ; free physical = 3080 ; free virtual = 24831
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1757.508; main = 1430.830; forked = 375.279
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3154.273; main = 2208.215; forked = 978.074
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:25 . Memory (MB): peak = 2192.211 ; gain = 856.527 ; free physical = 2229 ; free virtual = 24459
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1742.816; main = 1415.782; forked = 375.235
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3138.273; main = 2192.215; forked = 978.074
 INFO: [Common 17-1381] The checkpoint '/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/OffRAMPS_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file OffRAMPS_top_utilization_synth.rpt -pb OffRAMPS_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Nov 23 11:52:05 2023...
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 27 11:11:59 2023...
