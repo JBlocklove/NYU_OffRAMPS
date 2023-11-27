@@ -51,34 +51,34 @@ begin
             case state is
                 when WAIT_X =>
                     if x_min_edge = '1' then
-                        x_press_count := x_press_count + 1;
+                        x_press_count <= x_press_count + 1;
                         if x_press_count = 2 then
-                            next_state := WAIT_Y;
-                            x_press_count := 0;  -- Reset the press count for next use
+                            next_state <= WAIT_Y;
+                            x_press_count <= 0;  -- Reset the press count for next use
                         else
-                            next_state := WAIT_X;
+                            next_state <= WAIT_X;
                         end if;
                     end if;
 
                 when WAIT_Y =>
                     if y_min_edge = '1' then
-                        y_press_count := y_press_count + 1;
+                        y_press_count <= y_press_count + 1;
                         if y_press_count = 2 then
-                            next_state := WAIT_Z;
-                            y_press_count := 0;  -- Reset the press count for next use
+                            next_state <= WAIT_Z;
+                            y_press_count <= 0;  -- Reset the press count for next use
                         else
-                            next_state := WAIT_Y;
+                            next_state <= WAIT_Y;
                         end if;
                     end if;
 
                 when WAIT_Z =>
                     if z_min_edge = '1' then
-                        z_press_count := z_press_count + 1;
+                        z_press_count <= z_press_count + 1;
                         if z_press_count = 2 then
-                            next_state := COMPLETE;
-                            z_press_count := 0;  -- Reset the press count for next use
+                            next_state <= COMPLETE;
+                            z_press_count <= 0;  -- Reset the press count for next use
                         else
-                            next_state := WAIT_Z;
+                            next_state <= WAIT_Z;
                         end if;
                     end if;
 
@@ -86,7 +86,7 @@ begin
                     o_homing_complete <= '1';
 
                 when others =>
-                    next_state := WAIT_X;
+                    next_state <= WAIT_X;
             end case;
             state <= next_state;
         end if;
