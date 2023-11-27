@@ -71,27 +71,10 @@ architecture Behavioral of Trojan_TOP is
 begin
 
     ------- Components--------- 
-    E_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(
-    clk    => clk,
-    input  => i_E0_STEP,
-    output => s_edge_e_step    );
-    
-    X_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(
-    clk    => clk,
-    input  => i_X_STEP,
-    output => s_edge_x_step    );
-    
-    Y_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(
-    clk    => clk,
-    input  => i_Y_STEP,
-    output => s_edge_y_step    );
-    
-    Z_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(
-    clk    => clk,
-    input  => i_Z_STEP,
-    output => s_edge_z_step    );
-
-
+    E_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(clk => clk, input => i_E0_STEP, output => s_edge_e_step);
+    X_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(clk => clk, input => i_X_STEP, output => s_edge_x_step);
+    Y_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(clk => clk, input => i_Y_STEP, output => s_edge_y_step);
+    Z_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(clk => clk, input => i_Z_STEP, output => s_edge_z_step);
 
     ------- Logic -------------
     x_trojan_proc : process (clk)

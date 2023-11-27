@@ -17,32 +17,31 @@ entity DETECT_HOME is
 end DETECT_HOME;
 
 architecture Behavioral of DETECT_HOME is
-    type State_Type is (WAIT_X, X1, X2, WAIT_Y, Y1, Y2, WAIT_Z, Z1, Z2, COMPLETE);
+    type State_Type is (WAIT_X, WAIT_Y, WAIT_Z, COMPLETE);
     signal state, next_state : State_Type := WAIT_X;
 
     signal x_press_count : integer := 0;
     signal y_press_count : integer := 0;
     signal z_press_count : integer := 0;
 
+    
+    COMPONENT FALLING_EDGE_DETECTOR
+	PORT(
+        clk       : in  std_logic;
+        input     : in  std_logic;
+        output    : out std_logic
+		);
+	END COMPONENT;
+
     -- Edge detection signals
-    signal x_min_edge, y_min_edge, z_min_edge : std_logic := '0';
-    signal x_min_last, y_min_last, z_min_last : std_logic := '0';
+    signal s_x_min_edge, s_y_min_edge, s_z_min_edge : std_logic := '0';
 
 begin
 
-    -- Edge detection logic for X, Y, Z limit switches
-    process(i_CLK)
-    begin
-        if rising_edge(i_CLK) then
-            x_min_edge <= i_X_MIN and not x_min_last;
-            y_min_edge <= i_Y_MIN and not y_min_last;
-            z_min_edge <= i_Z_MIN and not z_min_last;
+    X_MIN_EDGE : FALLING_EDGE_DETECTOR PORT MAP(clk => i_CLK, input => i_X_MIN, output => s_x_min_edge);
+    Y_MIN_EDGE : FALLING_EDGE_DETECTOR PORT MAP(clk => i_CLK, input => i_Y_MIN, output => s_y_min_edge);
+    Z_MIN_EDGE : FALLING_EDGE_DETECTOR PORT MAP(clk => i_CLK, input => i_Z_MIN, output => s_z_min_edge);
 
-            x_min_last <= i_X_MIN;
-            y_min_last <= i_Y_MIN;
-            z_min_last <= i_Z_MIN;
-        end if;
-    end process;
 
     -- State machine for handling the homing sequence
     process(i_CLK)
@@ -50,7 +49,7 @@ begin
         if rising_edge(i_CLK) then
             case state is
                 when WAIT_X =>
-                    if x_min_edge = '1' then
+                    if s_x_min_edge = '1' then
                         x_press_count <= x_press_count + 1;
                         if x_press_count = 2 then
                             next_state <= WAIT_Y;
@@ -61,7 +60,7 @@ begin
                     end if;
 
                 when WAIT_Y =>
-                    if y_min_edge = '1' then
+                    if s_y_min_edge = '1' then
                         y_press_count <= y_press_count + 1;
                         if y_press_count = 2 then
                             next_state <= WAIT_Z;
@@ -72,7 +71,7 @@ begin
                     end if;
 
                 when WAIT_Z =>
-                    if z_min_edge = '1' then
+                    if s_z_min_edge = '1' then
                         z_press_count <= z_press_count + 1;
                         if z_press_count = 2 then
                             next_state <= COMPLETE;
@@ -84,7 +83,7 @@ begin
 
                 when COMPLETE =>
                     o_homing_complete <= '1';
-
+                    next_state <= COMPLETE;
                 when others =>
                     next_state <= WAIT_X;
             end case;
