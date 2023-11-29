@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/OffRAMPS_top.tcl"
+  variable script "/home/jason/Desktop/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/OffRAMPS_top.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,29 +70,29 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 2
+set_param chipscope.maxJobs 1
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.cache/wt [current_project]
-set_property parent.project_path /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.xpr [current_project]
+set_property webtalk.parent_dir /home/jason/Desktop/OffRAMPS_HDL/OffRAMPS_HDL.cache/wt [current_project]
+set_property parent.project_path /home/jason/Desktop/OffRAMPS_HDL/OffRAMPS_HDL.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property board_part_repo_paths {/root/.Xilinx/Vivado/2023.1/xhub/board_store/xilinx_board_store} [current_project]
+set_property board_part_repo_paths {/home/jason/Documents/vivado-boards/new/board_files} [current_project]
 set_property board_part digilentinc.com:cmod_a7-35t:part0:1.2 [current_project]
-set_property ip_output_repo /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.cache/ip [current_project]
+set_property ip_output_repo /home/jason/Desktop/OffRAMPS_HDL/OffRAMPS_HDL.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/DETECT_HOME.vhd
-  /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/FALLING_EDGE_DETECTOR.vhd
-  /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/RISING_EDGE_DETECTOR.vhd
-  /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd
-  /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/OFFRAMPS_TOP.vhd
+  /home/jason/Desktop/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/DETECT_HOME.vhd
+  /home/jason/Desktop/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/RISING_EDGE_DETECTOR.vhd
+  /home/jason/Desktop/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd
+  /home/jason/Desktop/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/OFFRAMPS_TOP.vhd
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -103,12 +103,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/constrs_1/new/constraints.xdc
-set_property used_in_implementation false [get_files /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/constrs_1/new/constraints.xdc]
+read_xdc /home/jason/Desktop/OffRAMPS_HDL/OffRAMPS_HDL.srcs/constrs_1/new/constraints.xdc
+set_property used_in_implementation false [get_files /home/jason/Desktop/OffRAMPS_HDL/OffRAMPS_HDL.srcs/constrs_1/new/constraints.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental /home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.srcs/utils_1/imports/synth_1/OffRAMPS_top.dcp
+read_checkpoint -auto_incremental -incremental /home/jason/Desktop/OffRAMPS_HDL/OffRAMPS_HDL.srcs/utils_1/imports/synth_1/OffRAMPS_top.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

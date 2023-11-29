@@ -10,8 +10,10 @@ entity OffRAMPS_top is
         led0_g   : out std_logic;  -- RGB LED 0 Green
         led0_r   : out std_logic;  -- RGB LED 0 Red
         btn0     : in std_logic;   -- Button[0]
+        
         led_0    : out std_logic;  -- LED 0
-
+        led_1    : out std_logic;  -- LED 1
+        
         -- Thermocouple inputs
         i_THERM0_n_0 : in std_logic;  -- Thermocouple 0 Negative Single-ended input [0]
         i_THERM0_p_0 : in std_logic;  -- Thermocouple 0 Positive Single-ended input [0]
@@ -118,7 +120,6 @@ architecture Behavioral of OffRAMPS_top is
         i_Z_MIN     : in std_logic;  -- Z Min input
         i_Z_STEP    : in std_logic;  -- Z Step input
         
-        
         -- Data Signals Out
         o_E0_DIR    : out std_logic;
         o_E0_EN     : out std_logic;
@@ -142,10 +143,10 @@ architecture Behavioral of OffRAMPS_top is
     END COMPONENT;
     
     -- Bypass mode control signals
-    signal bypass_mode_en : std_logic := '0';
+    signal bypass_mode_en : std_logic := '1';
     signal button_debounce : std_logic_vector(1 downto 0) := "00";
     signal button_press : std_logic;
-    signal home_complete_buf :std_logic;
+    signal home_complete_buf :std_logic := '0';
     
     -- Trojan Modified Output Signals
     signal s_mod_E0_DIR  : std_logic :='0';
@@ -240,9 +241,9 @@ begin
 
     -- Set LEDs
     led_0  <= home_complete_buf; -- Home Complete Indicator
-    led0_g <= '0'  when bypass_mode_en = '0' else '1'; -- Trojans are off = Green
-    led0_r <= '1'  when bypass_mode_en = '0' else '0'; -- Trojans are on = Red
-    
+    led0_g <= not bypass_mode_en; -- Trojans are off = Green 
+    led0_r <= bypass_mode_en;     -- Trojans are on = Red    
+  
     -- BYPASS MUX
     -- Muxes Used in the trojan implementation
     o_E0_DIR    <= s_mod_E0_DIR  when bypass_mode_en = '0' else i_E0_DIR;
@@ -271,19 +272,16 @@ begin
     -- MUXes used in the diginal twin
     
     -- Other MUXes
-    o_D10       <= 'Z' when bypass_mode_en = '0' else i_D10;
-    o_D9        <= 'Z' when bypass_mode_en = '0' else i_D9;
+--    o_D10       <= 'Z' when bypass_mode_en = '0' else i_D10;
+--    o_D9        <= 'Z' when bypass_mode_en = '0' else i_D9;
 
-    o_UART_RX   <= 'Z' when bypass_mode_en = '0' else i_UART_RX;
-    o_UART_TX   <= 'Z' when bypass_mode_en = '0' else i_UART_TX;
-
-    o_X_MAX     <= 'Z' when bypass_mode_en = '0' else i_X_MAX;
-    o_Y_MAX     <= 'Z' when bypass_mode_en = '0' else i_Y_MAX;
-    o_Z_MAX     <= 'Z' when bypass_mode_en = '0' else i_Z_MAX;
+--    o_X_MAX     <= 'Z' when bypass_mode_en = '0' else i_X_MAX;
+--    o_Y_MAX     <= 'Z' when bypass_mode_en = '0' else i_Y_MAX;
+--    o_Z_MAX     <= 'Z' when bypass_mode_en = '0' else i_Z_MAX;
     
     -- Currently, We are jumping the termocouple from ramps --> arduino
     -- Thermometer Enable output might combine two inputs or have a default state                               
-    o_THERM_EN  <= 'Z' when bypass_mode_en = '0' else (i_THERM0_SCL and i_THERM0_SDA);
+    o_THERM_EN  <= '0';
     
     
 end Behavioral;

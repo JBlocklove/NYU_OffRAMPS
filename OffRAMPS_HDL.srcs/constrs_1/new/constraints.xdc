@@ -7,10 +7,10 @@ create_clock -period 83.330 -name sys_clk_pin -waveform {0.000 41.660} -add [get
 
 # LEDs
 set_property -dict { PACKAGE_PIN A17   IOSTANDARD LVCMOS33 } [get_ports { led_0 }]; #IO_L12N_T1_MRCC_16 Sch=led[1]
-#set_property -dict { PACKAGE_PIN C16   IOSTANDARD LVCMOS33 } [get_ports { led[1] }]; #IO_L13P_T2_MRCC_16 Sch=led[2]
+set_property -dict { PACKAGE_PIN C16   IOSTANDARD LVCMOS33 } [get_ports { led_1 }]; #IO_L13P_T2_MRCC_16 Sch=led[2]
 
 # RGB LED
-#set_property -dict { PACKAGE_PIN B17   IOSTANDARD LVCMOS33 } [get_ports { led0_b }]; #IO_L14N_T2_SRCC_16 Sch=led0_b
+set_property -dict { PACKAGE_PIN B17   IOSTANDARD LVCMOS33 } [get_ports { led0_b }]; #IO_L14N_T2_SRCC_16 Sch=led0_b
 set_property -dict {PACKAGE_PIN B16 IOSTANDARD LVCMOS33} [get_ports led0_g]
 set_property -dict {PACKAGE_PIN C17 IOSTANDARD LVCMOS33} [get_ports led0_r]
 
@@ -51,7 +51,7 @@ set_property -dict {PACKAGE_PIN K2 IOSTANDARD LVCMOS33} [get_ports i_X_MAX]
 #set_property -dict { PACKAGE_PIN L1    IOSTANDARD LVCMOS33 } [get_ports { pio13 }]; #IO_L6N_T0_VREF_35 Sch=pio[13]
 set_property -dict {PACKAGE_PIN L2 IOSTANDARD LVCMOS33} [get_ports o_THERM_EN]
 set_property -dict {PACKAGE_PIN M1 IOSTANDARD LVCMOS33} [get_ports o_Y_EN]
-set_property -dict {PACKAGE_PIN N3 IOSTANDARD LVCMOS33} [get_ports o_X_MIN]
+set_property -dict {PACKAGE_PIN U1 IOSTANDARD LVCMOS33} [get_ports o_X_MIN]
 set_property -dict {PACKAGE_PIN P3 IOSTANDARD LVCMOS33} [get_ports o_X_DIR]
 set_property -dict {PACKAGE_PIN M2 IOSTANDARD LVCMOS33} [get_ports o_X_STEP]
 set_property -dict {PACKAGE_PIN N2 IOSTANDARD LVCMOS33} [get_ports o_D9]
@@ -63,7 +63,7 @@ set_property -dict {PACKAGE_PIN T3 IOSTANDARD LVCMOS33} [get_ports i_D9]
 set_property -dict {PACKAGE_PIN R2 IOSTANDARD LVCMOS33} [get_ports i_D8]
 set_property -dict {PACKAGE_PIN T1 IOSTANDARD LVCMOS33} [get_ports i_X_STEP]
 set_property -dict {PACKAGE_PIN T2 IOSTANDARD LVCMOS33} [get_ports i_X_DIR]
-set_property -dict {PACKAGE_PIN U1 IOSTANDARD LVCMOS33} [get_ports i_X_MIN]
+set_property -dict {PACKAGE_PIN N3 IOSTANDARD LVCMOS33} [get_ports i_X_MIN]
 set_property -dict {PACKAGE_PIN W2 IOSTANDARD LVCMOS33} [get_ports i_Y_EN]
 set_property -dict {PACKAGE_PIN V2 IOSTANDARD LVCMOS33} [get_ports i_THERM0_SCL]
 set_property -dict {PACKAGE_PIN W3 IOSTANDARD LVCMOS33} [get_ports i_THERM0_SDA]

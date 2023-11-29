@@ -8,9 +8,9 @@
 # 
 
 if [ -z "$PATH" ]; then
-  PATH=/usr/local/Xilinx/Vivado/2023.1/ids_lite/ISE/bin/lin64:/usr/local/Xilinx/Vivado/2023.1/bin
+  PATH=/tools/Xilinx/Vivado/2023.2/ids_lite/ISE/bin/lin64:/tools/Xilinx/Vivado/2023.2/bin
 else
-  PATH=/usr/local/Xilinx/Vivado/2023.1/ids_lite/ISE/bin/lin64:/usr/local/Xilinx/Vivado/2023.1/bin:$PATH
+  PATH=/tools/Xilinx/Vivado/2023.2/ids_lite/ISE/bin/lin64:/tools/Xilinx/Vivado/2023.2/bin:$PATH
 fi
 export PATH
 
@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/md/Desktop/Workspace/FPGA/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1'
+HD_PWD='/home/jason/Desktop/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

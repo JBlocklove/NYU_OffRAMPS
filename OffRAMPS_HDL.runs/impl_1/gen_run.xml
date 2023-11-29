@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1701105213">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1701281159">
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="OffRAMPS_top_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS" Name="OffRAMPS_top_routed.rqs"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="RDI-RDI" Name="OffRAMPS_top.vdi"/>
+  <File Type="BG-DRC" Name="OffRAMPS_top.drc"/>
   <File Type="BG-BGN" Name="OffRAMPS_top.bgn"/>
   <File Type="BITSTR-SYSDEF" Name="OffRAMPS_top.sysdef"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
@@ -14,8 +17,7 @@
   <File Type="CFI_FILE" Name="OffRAMPS_top.cfi"/>
   <File Type="RCFI_FILE" Name="OffRAMPS_top.rcfi"/>
   <File Type="PL-PDI-FILE" Name="OffRAMPS_top_pld.pdi"/>
-  <File Type="BOOT-PDI-FILE" Name="OffRAMPS_top_soc.pdi"/>
-  <File Type="RDI-RDI" Name="OffRAMPS_top.vdi"/>
+  <File Type="BOOT-PDI-FILE" Name="OffRAMPS_top_boot.pdi"/>
   <File Type="PDI-FILE" Name="OffRAMPS_top.pdi"/>
   <File Type="BITSTR-MMI" Name="OffRAMPS_top.mmi"/>
   <File Type="BITSTR-BMM" Name="OffRAMPS_top_bd.bmm"/>
@@ -23,7 +25,6 @@
   <File Type="BITSTR-RBT" Name="OffRAMPS_top.rbt"/>
   <File Type="BITSTR-MSK" Name="OffRAMPS_top.msk"/>
   <File Type="BG-BIN" Name="OffRAMPS_top.bin"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <File Type="BG-BIT" Name="OffRAMPS_top.bit"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="OffRAMPS_top_bus_skew_postroute_physopted.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="OffRAMPS_top_bus_skew_postroute_physopted.pb"/>
@@ -33,7 +34,6 @@
   <File Type="POSTROUTE-PHYSOPT-TIMING" Name="OffRAMPS_top_timing_summary_postroute_physopted.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="OffRAMPS_top_postroute_physopt_bb.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="OffRAMPS_top_postroute_physopt.dcp"/>
-  <File Type="BG-DRC" Name="OffRAMPS_top.drc"/>
   <File Type="ROUTE-RQS-PB" Name="OffRAMPS_top_rqs_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="OffRAMPS_top_bus_skew_routed.rpx"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="OffRAMPS_top_bus_skew_routed.pb"/>
@@ -76,23 +76,17 @@
   <File Type="PWROPT-DRC" Name="OffRAMPS_top_drc_pwropted.rpt"/>
   <File Type="PWROPT-DCP" Name="OffRAMPS_top_pwropt.dcp"/>
   <File Type="OPT-RQA-PB" Name="OffRAMPS_top_rqa_opted.pb"/>
+  <File Type="OPT-TIMING" Name="OffRAMPS_top_timing_summary_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="OffRAMPS_top.hwdef"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="OffRAMPS_top_methodology_drc_opted.rpt"/>
   <File Type="OPT-DRC" Name="OffRAMPS_top_drc_opted.rpt"/>
   <File Type="OPT-DCP" Name="OffRAMPS_top_opt.dcp"/>
-  <File Type="OPT-TIMING" Name="OffRAMPS_top_timing_summary_opted.rpt"/>
-  <File Type="REPORTS-TCL" Name="OffRAMPS_top_reports.tcl"/>
   <File Type="INIT-TIMING" Name="OffRAMPS_top_timing_summary_init.rpt"/>
+  <File Type="REPORTS-TCL" Name="OffRAMPS_top_reports.tcl"/>
   <File Type="PA-TCL" Name="OffRAMPS_top.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/DETECT_HOME.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/FALLING_EDGE_DETECTOR.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -116,7 +110,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/UART_TX.v">
+    <File Path="$PSRCDIR/sources_1/new/FALLING_EDGE_DETECTOR.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/UART_RX.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -124,7 +125,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/UART_RX.v">
+    <File Path="$PSRCDIR/sources_1/new/UART_TX.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
