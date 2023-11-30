@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Wed Nov 29 18:39:19 2023
+# Process ID: 52440
+# Current directory: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/clk_wiz_0_synth_1
+# Command line: vivado -log clk_wiz_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_wiz_0.tcl
+# Log file: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/clk_wiz_0_synth_1/clk_wiz_0.vds
+# Journal file: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/clk_wiz_0_synth_1/vivado.jou
+# Running On: jason-XPS-13-9343, OS: Linux, CPU Frequency: 2901.007 MHz, CPU Physical cores: 2, Host memory: 8217 MB
+#-----------------------------------------------------------
+source clk_wiz_0.tcl -notrace
