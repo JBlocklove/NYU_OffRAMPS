@@ -14,6 +14,8 @@ entity OffRAMPS_top is
         led_0    : out std_logic;  -- LED 0
         led_1    : out std_logic;  -- LED 1
         
+        UART_TXD  : out std_logic; -- UART TX OUT
+        
         -- Thermocouple inputs
         i_THERM0_n_0 : in std_logic;  -- Thermocouple 0 Negative Single-ended input [0]
         i_THERM0_p_0 : in std_logic;  -- Thermocouple 0 Positive Single-ended input [0]
@@ -91,7 +93,13 @@ architecture Behavioral of OffRAMPS_top is
 		);
 	END COMPONENT;
 	
-	   
+	COMPONENT UART_HANDLER
+	PORT(
+       i_CLK 		: in  STD_LOGIC;
+       o_UART_TXD 	: out  STD_LOGIC
+       );
+    END COMPONENT;   
+
     COMPONENT TROJAN_TOP
     Port (
         clk                 : in  std_logic;
@@ -179,6 +187,12 @@ begin
         i_Y_MIN     => i_Y_MIN,
         i_Z_MIN     => i_Z_MIN,
         o_homing_complete => home_complete_buf
+    );
+    
+    
+    Uart_TX :  UART_HANDLER PORT MAP(
+       i_CLK 		=> sysclk,
+       o_UART_TXD 	=> UART_TXD
     );
     
     Trojans : TROJAN_TOP PORT MAP (
