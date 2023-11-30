@@ -2,8 +2,8 @@
 # output FPGA --> Level Shifter
 
 # 12 MHz Clock Signal
-set_property -dict {PACKAGE_PIN L17 IOSTANDARD LVCMOS33} [get_ports sysclk]
-create_clock -period 83.330 -name sys_clk_pin -waveform {0.000 41.660} -add [get_ports sysclk]
+set_property -dict {PACKAGE_PIN L17 IOSTANDARD LVCMOS33} [get_ports clk_in]
+create_clock -period 83.330 -name clk_in_pin -waveform {0.000 41.660} -add [get_ports clk_in]
 
 # LEDs
 set_property -dict { PACKAGE_PIN A17   IOSTANDARD LVCMOS33 } [get_ports { led_0 }]; #IO_L12N_T1_MRCC_16 Sch=led[1]

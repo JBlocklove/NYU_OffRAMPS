@@ -3,7 +3,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity TROJAN_TOP is
     Port (
-        clk                 : in  std_logic;
+        i_CLK                 : in  std_logic;
+        i_RESET                : in std_logic;
         enable_x_troj       : in  std_logic;
         enable_y_troj       : in  std_logic;
         enable_z_troj       : in  std_logic;
@@ -52,17 +53,39 @@ entity TROJAN_TOP is
 end TROJAN_TOP;
 
 architecture Behavioral of Trojan_TOP is
-    signal step_count : integer := 0;
     
     -- Edge Detected signals
-    signal s_edge_e_step : std_logic := '0';
     signal s_edge_x_step : std_logic := '0';
     signal s_edge_y_step : std_logic := '0';
     signal s_edge_z_step : std_logic := '0';
-    
+    signal s_edge_e_step : std_logic := '0';
+
+
+    -- Pulse Related Signals per Axis
+    constant X_PULSES_PER_STEP : std_logic_vector(5 downto 0) := X"10";  -- 16 pulses per step --> 1.8 degrees (?)
+    signal X_PULSE_COUNT : std_logic_vector (5 downto 0) := (others=>'0');
+    signal X_PULSE_COUNT_EN : std_logic := '0';
+
+    constant Y_PULSES_PER_STEP : std_logic_vector(5 downto 0) := X"10";  -- 16 pulses per step --> 1.8 degrees (?)
+    signal Y_PULSE_COUNT : std_logic_vector (5 downto 0) := (others=>'0');
+    signal Y_PULSE_COUNT_EN : std_logic := '0';
+
+    constant Z_PULSES_PER_STEP : std_logic_vector(5 downto 0) := X"10";  -- 16 pulses per step --> 1.8 degrees (?)
+    signal Z_PULSE_COUNT : std_logic_vector (5 downto 0) := (others=>'0');
+    signal Z_PULSE_COUNT_EN : std_logic := '0';
+
+    constant E_PULSES_PER_STEP : std_logic_vector(5 downto 0) := X"10";  -- 16 pulses per step --> 1.8 degrees (?)
+    signal E_PULSE_COUNT : std_logic_vector (5 downto 0) := (others=>'0');
+    signal E_PULSE_COUNT_EN : std_logic := '0';
+
+
+    -- We will determine the time between pulses here, no acceleration config (yet)
+-- We will send the pulses @ 6.5kHz. That is (at 100 Mhz):
+
+
     COMPONENT RISING_EDGE_DETECTOR
 	PORT(
-        clk       : in  std_logic;
+        i_CLK     : in  std_logic;
         input     : in  std_logic;
         output    : out std_logic
 		);
@@ -71,15 +94,15 @@ architecture Behavioral of Trojan_TOP is
 begin
 
     ------- Components--------- 
-    E_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(clk => clk, input => i_E0_STEP, output => s_edge_e_step);
-    X_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(clk => clk, input => i_X_STEP, output => s_edge_x_step);
-    Y_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(clk => clk, input => i_Y_STEP, output => s_edge_y_step);
-    Z_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(clk => clk, input => i_Z_STEP, output => s_edge_z_step);
-
+    
+    X_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(i_CLK => i_CLK, input => i_X_STEP, output => s_edge_x_step);
+    Y_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(i_CLK => i_CLK, input => i_Y_STEP, output => s_edge_y_step);
+    Z_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(i_CLK => i_CLK, input => i_Z_STEP, output => s_edge_z_step);
+    E_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(i_CLK => i_CLK, input => i_E0_STEP, output => s_edge_e_step);
     ------- Logic -------------
-    x_trojan_proc : process (clk)
+    x_trojan_proc : process (i_CLK)
     begin
-        if rising_edge(clk) then
+        if rising_edge(i_CLK) then
         
 
         end if;

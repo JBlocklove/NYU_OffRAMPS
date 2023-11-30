@@ -22,13 +22,6 @@ Port(
 	);
 end component;
 
-component clk_wiz_0
-port(
-    clk_in1         : in std_logic;
-    clk_out1        : out std_logic
-);
-end component;
-
 -- State Machine Related:
 type UART_STATE_TYPE is (RESET, INIT, SEND_CHAR, RDY_LOW, WAIT_RDY, WAIT_EVENT, EVENT_EXEC);
 signal STATE : UART_STATE_TYPE := RESET;
@@ -107,7 +100,7 @@ signal DATA_LEN : natural;
 signal DATA_IDX : natural;
 
 signal RESET_COUNTER : std_logic_vector (17 downto 0) := (others=>'0');
-signal CLK_100 : std_logic;
+signal i_CLK : std_logic;
 
 
 -- UART TX Control Signals
@@ -127,25 +120,19 @@ begin
 
 o_UART_TXD <= uartTX;
 
--- Generate the Clock used in this module + UART_TX
-inst_clk: clk_wiz_0 port map(
-        clk_in1 => i_CLK,
-        clk_out1 => CLK_100
-        );
-
 --Component used to send a byte of data over a UART line.
 Inst_UART_TX_CTRL: UART_TX port map(
 		SEND => uartSend,
 		DATA => uartData,
-		CLK => CLK_100,
+		CLK => i_CLK,
 		READY => uartRdy,
 		UART_TX => uartTX 
 	);
 
 
-example_counter_proc : process (CLK_100)
+example_counter_proc : process (i_CLK)
 begin
-	if (RISING_EDGE(CLK_100)) then
+	if (RISING_EDGE(i_CLK)) then
 		if(EXAMPLE_COUNT_EN = '1') then
 			if(EXAMPLE_COUNTER = ONE_SECOND) then
 				EXAMPLE_COUNTER <= (others=>'0');
@@ -160,9 +147,9 @@ begin
 	end if;
 end process;
 
-next_UART_STATE_process : process (CLK_100)
+next_UART_STATE_process : process (i_CLK)
 begin
-	if (RISING_EDGE(CLK_100)) then
+	if (RISING_EDGE(i_CLK)) then
 			
 		case STATE is 
 			when RESET =>
@@ -206,9 +193,9 @@ begin
 	end if;
 end process;
 
-hold_reset_proc : process(CLK_100)
+hold_reset_proc : process(i_CLK)
 begin
-	if (RISING_EDGE(CLK_100)) then
+	if (RISING_EDGE(i_CLK)) then
 		if ((RESET_COUNTER = RESET_COUNTER_MAX) or (STATE /= RESET)) then
 			RESET_COUNTER <= (others=>'0');
 		else
@@ -217,9 +204,9 @@ begin
 	end if;
 end process;
 
-uart_data_load_proc : process (CLK_100)
+uart_data_load_proc : process (i_CLK)
 begin
-	if (RISING_EDGE(CLK_100)) then
+	if (RISING_EDGE(i_CLK)) then
 		if (STATE = INIT) then
 			DATA_VALUE <= WELCOME_STR;
 			DATA_LEN <= WELCOME_STR_LEN;
@@ -230,9 +217,9 @@ begin
 	end if;
 end process;
 
-increment_index_proc : process (CLK_100)
+increment_index_proc : process (i_CLK)
 begin
-	if (RISING_EDGE(CLK_100)) then
+	if (RISING_EDGE(i_CLK)) then
 		if (STATE = INIT or STATE = EVENT_EXEC) then
 			DATA_IDX <= 0;
 		elsif (STATE = SEND_CHAR) then
@@ -241,9 +228,9 @@ begin
 	end if;
 end process;
 
-load_string_to_uart : process (CLK_100)
+load_string_to_uart : process (i_CLK)
 begin
-	if (RISING_EDGE(CLK_100)) then
+	if (RISING_EDGE(i_CLK)) then
 		if (STATE = SEND_CHAR) then
 			uartSend <= '1';
 			uartData <= DATA_VALUE(DATA_IDX);

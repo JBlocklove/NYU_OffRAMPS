@@ -6,7 +6,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity OffRAMPS_top is
     Port (
         -- Board Specific IO
-        sysclk   : in std_logic;   -- System clock
+        clk_in   : in std_logic;   -- System clock
         led0_g   : out std_logic;  -- RGB LED 0 Green
         led0_r   : out std_logic;  -- RGB LED 0 Red
         btn0     : in std_logic;   -- Button[0]
@@ -80,6 +80,13 @@ end OffRAMPS_top;
 
 architecture Behavioral of OffRAMPS_top is
 
+    COMPONENT clk_wiz_0
+    PORT(
+        clk_in1         : in std_logic;
+        clk_out1        : out std_logic
+        );
+    END COMPONENT;
+
 	COMPONENT DETECT_HOME
 	PORT(
 	    i_CLK    : in std_logic;
@@ -149,6 +156,8 @@ architecture Behavioral of OffRAMPS_top is
         o_Z_STEP    : out std_logic  --Z_STEP output
     );
     END COMPONENT;
+
+    signal sysclk :std_logic;
     
     -- Bypass mode control signals
     signal bypass_mode_en : std_logic := '1';
@@ -177,6 +186,12 @@ begin
 
     ----------------------- Component Instantiantions -----------------
         
+    -- Generate the 100 Mhz clock for logic + Uart ops
+    inst_clk: clk_wiz_0 port map(
+        clk_in1 => i_CLK,
+        clk_out1 => sysclk
+        );
+
     -- Homing Sequence detection Component
     HomingDetector : DETECT_HOME PORT MAP(
         i_CLK       => sysclk,
@@ -240,7 +255,8 @@ begin
     
     --------------------------- LOGIC --------------------------
     
-        -- Button Press Detection
+    -- Button Press Detection --> We may need to use the 12 Mhz cloxk for this
+    -- or use a bigger debounce register for 100 Mhz
     button_press <= not button_debounce(1) and button_debounce(0);
 
     process (sysclk)
