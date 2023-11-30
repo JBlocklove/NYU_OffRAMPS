@@ -65,18 +65,22 @@ architecture Behavioral of Trojan_TOP is
     constant X_PULSES_PER_STEP : std_logic_vector(5 downto 0) := X"10";  -- 16 pulses per step --> 1.8 degrees (?)
     signal X_PULSE_COUNT : std_logic_vector (5 downto 0) := (others=>'0');
     signal X_PULSE_COUNT_EN : std_logic := '0';
+    signal X_STEP_MOD : std_logic := '0';
 
     constant Y_PULSES_PER_STEP : std_logic_vector(5 downto 0) := X"10";  -- 16 pulses per step --> 1.8 degrees (?)
     signal Y_PULSE_COUNT : std_logic_vector (5 downto 0) := (others=>'0');
     signal Y_PULSE_COUNT_EN : std_logic := '0';
+    signal Y_STEP_MOD : std_logic := '0';
 
     constant Z_PULSES_PER_STEP : std_logic_vector(5 downto 0) := X"10";  -- 16 pulses per step --> 1.8 degrees (?)
     signal Z_PULSE_COUNT : std_logic_vector (5 downto 0) := (others=>'0');
     signal Z_PULSE_COUNT_EN : std_logic := '0';
+    signal Z_STEP_MOD : std_logic := '0';
 
     constant E_PULSES_PER_STEP : std_logic_vector(5 downto 0) := X"10";  -- 16 pulses per step --> 1.8 degrees (?)
     signal E_PULSE_COUNT : std_logic_vector (5 downto 0) := (others=>'0');
     signal E_PULSE_COUNT_EN : std_logic := '0';
+    signal E_STEP_MOD : std_logic := '0';
 
 
     -- We will determine the time between pulses here, no acceleration config (yet)
