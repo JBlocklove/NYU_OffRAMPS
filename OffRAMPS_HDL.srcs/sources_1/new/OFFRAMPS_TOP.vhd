@@ -110,9 +110,6 @@ architecture Behavioral of OffRAMPS_top is
     COMPONENT TROJAN_TOP
     Port (
         clk                 : in  std_logic;
-        enable_x_troj       : in  std_logic;
-        enable_y_troj       : in  std_logic;
-        enable_z_troj       : in  std_logic;
         homing_complete     : in  std_logic;
         
         -- Data Signals In
@@ -212,9 +209,6 @@ begin
     
     Trojans : TROJAN_TOP PORT MAP (
         clk                 => sysclk,
-        enable_x_troj       => '1',
-        enable_y_troj       => '1',
-        enable_z_troj       => '1',
         homing_complete     => home_complete_buf,
         
         -- Data Signals In             
