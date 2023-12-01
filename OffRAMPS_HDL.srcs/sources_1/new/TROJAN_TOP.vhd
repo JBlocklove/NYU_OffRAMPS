@@ -118,15 +118,33 @@ begin
     Z_PULSE_GEN : PULSE_GEN PORT MAP (i_CLK => i_CLK, i_PULSE_EN => Z_PULSE_EN, i_PULSES_TO_SEND => PULSES_PER_STEP, o_PULSE_SIG => Z_STEP_MOD, o_COMPLETE => Z_STEP_COMPLETE);
     E_PULSE_GEN : PULSE_GEN PORT MAP (i_CLK => i_CLK, i_PULSE_EN => E_PULSE_EN, i_PULSES_TO_SEND => PULSES_PER_STEP, o_PULSE_SIG => E_STEP_MOD, o_COMPLETE => E_STEP_COMPLETE);
     
-    ------- Logic -------------
-    TROJAN_T1_proc : process (i_CLK)
+
+
+    --------------------------- Pulse Gen Test Start ---------------------------
+    -- For testing the output of the pulse gen in trojan mode
+    -- This part of the code should countinously move the X axis when bypass mode is turned off 
+    o_X_DIR  <= i_X_DIR;  
+    o_X_EN   <= i_X_EN;   
+    o_X_MIN  <= i_X_MIN;  
+    o_X_STEP <= X_STEP_MOD;
+
+    Pulse_Test_proc : process (i_CLK)
     begin
         if rising_edge(i_CLK) then
-            if (TROJ_T1_ENABLE = '1') then
-            
-            end if;
+            X_PULSE_EN <= '1'
         end if;
     end process;
+    --------------------------- Pulse Gen Test End ---------------------------
+ 
+    -- ------- Logic -------------
+    -- TROJAN_T1_proc : process (i_CLK)
+    -- begin
+    --     if rising_edge(i_CLK) then
+    --         if (TROJ_T1_ENABLE = '1') then
+            
+    --         end if;
+    --     end if;
+    -- end process;
 
 
 end Behavioral;
