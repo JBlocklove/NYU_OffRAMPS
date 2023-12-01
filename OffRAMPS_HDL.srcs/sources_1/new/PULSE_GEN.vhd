@@ -1,83 +1,105 @@
+--    constant PULSE_WIDTH : std_logic_vector(6 downto 0) := "1100100"; -- 1 us --> 1000 ns --> 100 cycles @ 100 Mhz
+--    constant PULSE_DIST : std_logic_vector(13 downto 0) := "11110010001100"; -- 155 us --> 155000 ns --> 15500 cycles @ 100 Mhz
+--    constant PULSE_PERIOD : std_logic_vector(13 downto 0) := "11110011110000"; --156 us
+--    constant PULSES_PER_STEP : std_logic_vector(4 downto 0) := "10000"; 
+    
+    
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity PULSE_GEN is
     Port ( 
-            i_CLK       : in STD_LOGIC;
-            i_PULSE_EN  : in STD_LOGIC;
-            o_PULSE_SIG : out STD_LOGIC;
-            o_COMPLETE  : out STD_LOGIC
+            i_CLK           : in  STD_LOGIC;
+            i_PULSE_EN      : in  STD_LOGIC;
+            i_PULSES_TO_SEND: in  std_logic_vector(4 downto 0); 
+            o_PULSE_SIG     : out STD_LOGIC;
+            o_COMPLETE      : out STD_LOGIC
             );
 end PULSE_GEN;
 
 architecture Behavioral of PULSE_GEN is
 
-constant PULSE_WIDTH : std_logic_vector(6 downto 0) := "1100100"; -- 1 us --> 1000 ns --> 100 cycles @ 100 Mhz
-constant PULSE_DIST : std_logic_vector(13 downto 0) := "11110010001100"; -- 155 us --> 155000 ns --> 15500 cycles @ 100 Mhz
-constant PULSE_PERIOD : std_logic_vector(13 downto 0) := "11110011110000"; --156 us
+    constant PULSE_WIDTH : std_logic_vector(6 downto 0) := "1100100";
+    constant PULSE_PERIOD : std_logic_vector(13 downto 0) := "11110011110000";
 
--- Here, Pulse width is the High pulse width and Pulse dist is the distance between
--- Consecutive Pulses as shown:
---     _______________
--- -->|  Pulse width  |______________________|<--- 1 Period
---    |               |<-----Pulse Dist----->|
-
-signal TIMER_COUNTER : std_logic_vector(13 downto 0) := (others=>'0');
-signal TIMER_ENABLE : std_logic;
-
-signal COMPLETE_BUFFER : std_logic := '0';
-signal PULSE_BUFFER : std_logic:= '0';
+    signal TIMER_COUNTER : std_logic_vector(13 downto 0) := (others=>'0');
+    signal PULSE_COUNT : std_logic_vector (4 downto 0) := (others=>'0');
+    
+    type STATE_TYPE is (IDLE, PULSE_HIGH, PULSE_LOW, COMPLETE);
+    signal current_state, next_state : STATE_TYPE := IDLE;
 
 begin
 
-    o_PULSE_SIG <= PULSE_BUFFER;
-    o_COMPLETE <= COMPLETE_BUFFER;
-
-    enable_proc : process (i_CLK)
+    -- State Machine Logic
+    state_machine: process(i_CLK)
     begin
         if rising_edge(i_CLK) then
-            if (i_PULSE_EN = '1') then
-                TIMER_ENABLE <= '1';
-            else
-                TIMER_ENABLE <= '0';
-            end if;
+            case current_state is
+                when IDLE =>
+                    if i_PULSE_EN = '1' then
+                        next_state <= PULSE_HIGH;
+                        TIMER_COUNTER <= (others=>'0');
+                    end if;
+
+                when PULSE_HIGH =>
+                    if TIMER_COUNTER = PULSE_WIDTH then
+                        next_state <= PULSE_LOW;
+                        TIMER_COUNTER <= (others=>'0');
+                    else
+                        TIMER_COUNTER <= TIMER_COUNTER + 1;
+                    end if;
+
+                when PULSE_LOW =>
+                    if TIMER_COUNTER = PULSE_PERIOD then
+                        if PULSE_COUNT = i_PULSES_TO_SEND then
+                            next_state <= COMPLETE;
+                        else
+                            next_state <= PULSE_HIGH;
+                        end if;
+                        PULSE_COUNT <= PULSE_COUNT + 1;
+                        TIMER_COUNTER <= (others=>'0');
+                    else
+                        TIMER_COUNTER <= TIMER_COUNTER + 1;
+                    end if;
+
+                when COMPLETE =>
+                    next_state <= IDLE;
+                    PULSE_COUNT <= (others=>'0');
+
+            end case;
         end if;
     end process;
 
-
-    counter_proc : process (i_CLK)
+    -- State Transitions
+    transition_logic: process(i_CLK)
     begin
         if rising_edge(i_CLK) then
-            if (TIMER_ENABLE = '1' and COMPLETE_BUFFER = '0') then
-                TIMER_COUNTER <= TIMER_COUNTER + 1;
-            elsif (TIMER_ENABLE = '1' and COMPLETE_BUFFER = '1') then
-                TIMER_COUNTER <= "00000000000001";
-            else              
-                TIMER_COUNTER <= (others=>'0'); 
-            end if;
+            current_state <= next_state;
         end if;
     end process;
 
-
-    pulse_proc : process (i_CLK)
+    -- Output Logic
+    output_logic: process(current_state)
     begin
-        if rising_edge(i_CLK) then
-            if (TIMER_COUNTER = "00000000000001") then
-                COMPLETE_BUFFER <= '0';
-                PULSE_BUFFER <= '1';
-            elsif (TIMER_COUNTER = PULSE_WIDTH) then 
-                COMPLETE_BUFFER <= '0';
-                PULSE_BUFFER <= '0';
-            elsif (TIMER_COUNTER = PULSE_PERIOD) then
-                COMPLETE_BUFFER <= '1';
-                PULSE_BUFFER <= '0';
-            else 
-                COMPLETE_BUFFER <= COMPLETE_BUFFER;
-                PULSE_BUFFER <= PULSE_BUFFER;
-            end if;
-        end if;
-    end process;
+        case current_state is
+            when IDLE =>
+                o_PULSE_SIG <= '0';
+                o_COMPLETE <= '0';
+                
+            when PULSE_HIGH =>
+                o_PULSE_SIG <= '1';
+                o_COMPLETE <= '0';
 
+            when PULSE_LOW =>
+                o_PULSE_SIG <= '0';
+                o_COMPLETE <= '0';
+
+            when COMPLETE =>
+                o_PULSE_SIG <= '0';
+                o_COMPLETE <= '1';
+
+        end case;
+    end process;
 
 end Behavioral;
