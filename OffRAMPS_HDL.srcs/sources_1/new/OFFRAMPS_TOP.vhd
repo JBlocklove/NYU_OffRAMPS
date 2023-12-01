@@ -109,7 +109,7 @@ architecture Behavioral of OffRAMPS_top is
 
     COMPONENT TROJAN_TOP
     Port (
-        clk                 : in  std_logic;
+        i_CLK                 : in  std_logic;
         homing_complete     : in  std_logic;
         
         -- Data Signals In
@@ -185,7 +185,7 @@ begin
         
     -- Generate the 100 Mhz clock for logic + Uart ops
     inst_clk: clk_wiz_0 port map(
-        clk_in1 => i_CLK,
+        clk_in1 => clk_in,
         clk_out1 => sysclk
         );
 
@@ -208,7 +208,7 @@ begin
     );
     
     Trojans : TROJAN_TOP PORT MAP (
-        clk                 => sysclk,
+        i_CLK               => sysclk,
         homing_complete     => home_complete_buf,
         
         -- Data Signals In             
