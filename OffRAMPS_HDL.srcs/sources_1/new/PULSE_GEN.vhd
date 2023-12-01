@@ -1,6 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity PULSE_GEN is
     Port ( 
@@ -52,7 +52,7 @@ begin
             if (TIMER_ENABLE = '1' and COMPLETE_BUFFER = '0') then
                 TIMER_COUNTER <= TIMER_COUNTER + 1;
             elsif (TIMER_ENABLE = '1' and COMPLETE_BUFFER = '1') then
-                TIMER_COUNTER <= '1';
+                TIMER_COUNTER <= "00000000000001";
             else              
                 TIMER_COUNTER <= (others=>'0'); 
             end if;
@@ -63,15 +63,15 @@ begin
     pulse_proc : process (i_CLK)
     begin
         if rising_edge(i_CLK) then
-            if (TIMER_COUNTER = '1') then
+            if (TIMER_COUNTER = "00000000000001") then
                 COMPLETE_BUFFER <= '0';
                 PULSE_BUFFER <= '1';
             elsif (TIMER_COUNTER = PULSE_WIDTH) then 
                 COMPLETE_BUFFER <= '0';
-                PULSE_BUFFER <= '0'
+                PULSE_BUFFER <= '0';
             elsif (TIMER_COUNTER = PULSE_PERIOD) then
                 COMPLETE_BUFFER <= '1';
-                PULSE_BUFFER <= '0'
+                PULSE_BUFFER <= '0';
             else 
                 COMPLETE_BUFFER <= COMPLETE_BUFFER;
                 PULSE_BUFFER <= PULSE_BUFFER;
