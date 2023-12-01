@@ -93,7 +93,7 @@ architecture Behavioral of Trojan_TOP is
     signal E_STEP_COMPLETE : std_logic := '0';
 
     -- Temporarily we will set the enabled trojans here, hardcoded. Vivado will optimize out the unused ones.
-    signal TROJ_T1_ENABLE : std_logic := '0'; -- Randomly adds or removes steps from X, Y, or Z axis
+    signal TROJ_T1_ENABLE : std_logic := '0'; -- Randomly adds or removes steps from X or Y axis
         
     signal TROJ_T2_ENABLE : std_logic := '0'; -- Constant over / under extrusion per print
     signal TROJ_T3_ENABLE : std_logic := '0'; -- Increases or decreases filament retraction between layers
@@ -123,6 +123,7 @@ begin
     --------------------------- Pulse Gen Test Start ---------------------------
     -- For testing the output of the pulse gen in trojan mode
     -- This part of the code should countinously move the X axis when bypass mode is turned off 
+    -- TODO: Remove this part of the module after test
     o_X_DIR  <= i_X_DIR;  
     o_X_EN   <= i_X_EN;   
     o_X_MIN  <= i_X_MIN;  
@@ -136,15 +137,19 @@ begin
     end process;
     --------------------------- Pulse Gen Test End ---------------------------
  
-    -- ------- Logic -------------
-    -- TROJAN_T1_proc : process (i_CLK)
-    -- begin
-    --     if rising_edge(i_CLK) then
-    --         if (TROJ_T1_ENABLE = '1') then
+
+    --------------------------- Trojan 1 Logic Start ---------------------------
+    -- This trojan adds or removes steps form the X and Y 
+    trojan_t1_proc : process (i_CLK)
+    begin
+        if rising_edge(i_CLK) then
+            if (TROJ_T1_ENABLE = '1') then
             
-    --         end if;
-    --     end if;
-    -- end process;
+            end if;
+        end if;
+    end process;
+    --------------------------- Trojan 1 Logic End ---------------------------
+
 
 
 end Behavioral;
