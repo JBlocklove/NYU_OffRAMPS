@@ -12,7 +12,7 @@
 
 Sourcing tcl script '/home/jason/.Xilinx/Vivado/Vivado_init.tcl'
 source OffRAMPS_top.tcl -notrace
-create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1332.699 ; gain = 14.898 ; free physical = 2706 ; free virtual = 5642
+create_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1332.730 ; gain = 15.898 ; free physical = 2602 ; free virtual = 5737
 Command: read_checkpoint -auto_incremental -incremental /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_Vivado_Project/OffRAMPS_HDL.srcs/utils_1/imports/synth_1/OffRAMPS_top.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_Vivado_Project/OffRAMPS_HDL.srcs/utils_1/imports/synth_1/OffRAMPS_top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -25,14 +25,14 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 275041
+INFO: [Synth 8-7075] Helper process launched with PID 280490
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2081.266 ; gain = 405.715 ; free physical = 1674 ; free virtual = 4640
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2081.359 ; gain = 405.715 ; free physical = 1581 ; free virtual = 4717
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'OffRAMPS_top' [/home/jason/Documents/OffRAMPS_HDL/src/OFFRAMPS_TOP.vhd:81]
-INFO: [Synth 8-3491] module 'clk_wiz_0' declared at '/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_Vivado_Project/OffRAMPS_HDL.runs/synth_1/.Xil/Vivado-274999-jason-XPS-13-9343/realtime/clk_wiz_0_stub.v:6' bound to instance 'inst_clk' of component 'clk_wiz_0' [/home/jason/Documents/OffRAMPS_HDL/src/OFFRAMPS_TOP.vhd:190]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_Vivado_Project/OffRAMPS_HDL.runs/synth_1/.Xil/Vivado-274999-jason-XPS-13-9343/realtime/clk_wiz_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_Vivado_Project/OffRAMPS_HDL.runs/synth_1/.Xil/Vivado-274999-jason-XPS-13-9343/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-3491] module 'clk_wiz_0' declared at '/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_Vivado_Project/OffRAMPS_HDL.runs/synth_1/.Xil/Vivado-280450-jason-XPS-13-9343/realtime/clk_wiz_0_stub.v:6' bound to instance 'inst_clk' of component 'clk_wiz_0' [/home/jason/Documents/OffRAMPS_HDL/src/OFFRAMPS_TOP.vhd:190]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_Vivado_Project/OffRAMPS_HDL.runs/synth_1/.Xil/Vivado-280450-jason-XPS-13-9343/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_Vivado_Project/OffRAMPS_HDL.runs/synth_1/.Xil/Vivado-280450-jason-XPS-13-9343/realtime/clk_wiz_0_stub.v:6]
 INFO: [Synth 8-3491] module 'DETECT_HOME' declared at '/home/jason/Documents/OffRAMPS_HDL/src/DETECT_HOME.vhd:6' bound to instance 'HomingDetector' of component 'DETECT_HOME' [/home/jason/Documents/OffRAMPS_HDL/src/OFFRAMPS_TOP.vhd:196]
 INFO: [Synth 8-638] synthesizing module 'DETECT_HOME' [/home/jason/Documents/OffRAMPS_HDL/src/DETECT_HOME.vhd:19]
 INFO: [Synth 8-226] default block is never used [/home/jason/Documents/OffRAMPS_HDL/src/DETECT_HOME.vhd:51]
@@ -45,29 +45,29 @@ INFO: [Synth 8-256] done synthesizing module 'UART_TX' (0#1) [/home/jason/Docume
 INFO: [Synth 8-256] done synthesizing module 'UART_HANDLER' (0#1) [/home/jason/Documents/OffRAMPS_HDL/src/UART_HANDLER.vhd:13]
 INFO: [Synth 8-3491] module 'TROJAN_TOP' declared at '/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:5' bound to instance 'Trojans' of component 'TROJAN_TOP' [/home/jason/Documents/OffRAMPS_HDL/src/OFFRAMPS_TOP.vhd:213]
 INFO: [Synth 8-638] synthesizing module 'TROJAN_TOP' [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:47]
-INFO: [Synth 8-3491] module 'RISING_EDGE_DETECTOR' declared at '/home/jason/Documents/OffRAMPS_HDL/src/RISING_EDGE_DETECTOR.vhd:4' bound to instance 'X_STEP_EDGE_DETECT' of component 'RISING_EDGE_DETECTOR' [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:144]
+INFO: [Synth 8-3491] module 'RISING_EDGE_DETECTOR' declared at '/home/jason/Documents/OffRAMPS_HDL/src/RISING_EDGE_DETECTOR.vhd:4' bound to instance 'X_STEP_EDGE_DETECT' of component 'RISING_EDGE_DETECTOR' [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:142]
 INFO: [Synth 8-638] synthesizing module 'RISING_EDGE_DETECTOR' [/home/jason/Documents/OffRAMPS_HDL/src/RISING_EDGE_DETECTOR.vhd:12]
 WARNING: [Synth 8-614] signal 'input' is read in the process but is not in the sensitivity list [/home/jason/Documents/OffRAMPS_HDL/src/RISING_EDGE_DETECTOR.vhd:15]
 WARNING: [Synth 8-614] signal 'prev_input' is read in the process but is not in the sensitivity list [/home/jason/Documents/OffRAMPS_HDL/src/RISING_EDGE_DETECTOR.vhd:15]
 INFO: [Synth 8-256] done synthesizing module 'RISING_EDGE_DETECTOR' (0#1) [/home/jason/Documents/OffRAMPS_HDL/src/RISING_EDGE_DETECTOR.vhd:12]
-INFO: [Synth 8-3491] module 'RISING_EDGE_DETECTOR' declared at '/home/jason/Documents/OffRAMPS_HDL/src/RISING_EDGE_DETECTOR.vhd:4' bound to instance 'Y_STEP_EDGE_DETECT' of component 'RISING_EDGE_DETECTOR' [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:145]
-INFO: [Synth 8-3491] module 'FALLING_EDGE_DETECTOR' declared at '/home/jason/Documents/OffRAMPS_HDL/src/FALLING_EDGE_DETECTOR.vhd:4' bound to instance 'Z_STEP_EDGE_DETECT' of component 'FALLING_EDGE_DETECTOR' [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:146]
+INFO: [Synth 8-3491] module 'RISING_EDGE_DETECTOR' declared at '/home/jason/Documents/OffRAMPS_HDL/src/RISING_EDGE_DETECTOR.vhd:4' bound to instance 'Y_STEP_EDGE_DETECT' of component 'RISING_EDGE_DETECTOR' [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:143]
+INFO: [Synth 8-3491] module 'FALLING_EDGE_DETECTOR' declared at '/home/jason/Documents/OffRAMPS_HDL/src/FALLING_EDGE_DETECTOR.vhd:4' bound to instance 'Z_STEP_EDGE_DETECT' of component 'FALLING_EDGE_DETECTOR' [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:144]
 INFO: [Synth 8-638] synthesizing module 'FALLING_EDGE_DETECTOR' [/home/jason/Documents/OffRAMPS_HDL/src/FALLING_EDGE_DETECTOR.vhd:12]
 WARNING: [Synth 8-614] signal 'input' is read in the process but is not in the sensitivity list [/home/jason/Documents/OffRAMPS_HDL/src/FALLING_EDGE_DETECTOR.vhd:15]
 WARNING: [Synth 8-614] signal 'prev_input' is read in the process but is not in the sensitivity list [/home/jason/Documents/OffRAMPS_HDL/src/FALLING_EDGE_DETECTOR.vhd:15]
 INFO: [Synth 8-256] done synthesizing module 'FALLING_EDGE_DETECTOR' (0#1) [/home/jason/Documents/OffRAMPS_HDL/src/FALLING_EDGE_DETECTOR.vhd:12]
-INFO: [Synth 8-3491] module 'FALLING_EDGE_DETECTOR' declared at '/home/jason/Documents/OffRAMPS_HDL/src/FALLING_EDGE_DETECTOR.vhd:4' bound to instance 'E_STEP_EDGE_DETECT' of component 'FALLING_EDGE_DETECTOR' [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:147]
-INFO: [Synth 8-3491] module 'PULSE_GEN' declared at '/home/jason/Documents/OffRAMPS_HDL/src/PULSE_GEN.vhd:11' bound to instance 'X_PULSE_GEN' of component 'PULSE_GEN' [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:150]
+INFO: [Synth 8-3491] module 'FALLING_EDGE_DETECTOR' declared at '/home/jason/Documents/OffRAMPS_HDL/src/FALLING_EDGE_DETECTOR.vhd:4' bound to instance 'E_STEP_EDGE_DETECT' of component 'FALLING_EDGE_DETECTOR' [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:145]
+INFO: [Synth 8-3491] module 'PULSE_GEN' declared at '/home/jason/Documents/OffRAMPS_HDL/src/PULSE_GEN.vhd:11' bound to instance 'X_PULSE_GEN' of component 'PULSE_GEN' [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:148]
 INFO: [Synth 8-638] synthesizing module 'PULSE_GEN' [/home/jason/Documents/OffRAMPS_HDL/src/PULSE_GEN.vhd:21]
 INFO: [Synth 8-256] done synthesizing module 'PULSE_GEN' (0#1) [/home/jason/Documents/OffRAMPS_HDL/src/PULSE_GEN.vhd:21]
-INFO: [Synth 8-3491] module 'PULSE_GEN' declared at '/home/jason/Documents/OffRAMPS_HDL/src/PULSE_GEN.vhd:11' bound to instance 'Y_PULSE_GEN' of component 'PULSE_GEN' [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:151]
-INFO: [Synth 8-3491] module 'PULSE_GEN' declared at '/home/jason/Documents/OffRAMPS_HDL/src/PULSE_GEN.vhd:11' bound to instance 'Z_PULSE_GEN' of component 'PULSE_GEN' [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:152]
-INFO: [Synth 8-3491] module 'PULSE_GEN' declared at '/home/jason/Documents/OffRAMPS_HDL/src/PULSE_GEN.vhd:11' bound to instance 'E_PULSE_GEN' of component 'PULSE_GEN' [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:153]
+INFO: [Synth 8-3491] module 'PULSE_GEN' declared at '/home/jason/Documents/OffRAMPS_HDL/src/PULSE_GEN.vhd:11' bound to instance 'Y_PULSE_GEN' of component 'PULSE_GEN' [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:149]
+INFO: [Synth 8-3491] module 'PULSE_GEN' declared at '/home/jason/Documents/OffRAMPS_HDL/src/PULSE_GEN.vhd:11' bound to instance 'Z_PULSE_GEN' of component 'PULSE_GEN' [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:150]
+INFO: [Synth 8-3491] module 'PULSE_GEN' declared at '/home/jason/Documents/OffRAMPS_HDL/src/PULSE_GEN.vhd:11' bound to instance 'E_PULSE_GEN' of component 'PULSE_GEN' [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:151]
 INFO: [Synth 8-256] done synthesizing module 'TROJAN_TOP' (0#1) [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:47]
 INFO: [Synth 8-256] done synthesizing module 'OffRAMPS_top' (0#1) [/home/jason/Documents/OffRAMPS_HDL/src/OFFRAMPS_TOP.vhd:81]
-WARNING: [Synth 8-6014] Unused sequential element T2_STATE_reg was removed.  [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:250]
-WARNING: [Synth 8-6014] Unused sequential element T2_NEXT_STATE_reg was removed.  [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:250]
-WARNING: [Synth 8-6014] Unused sequential element TROJ_T2_MATCH_INPUT_reg was removed.  [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:245]
+WARNING: [Synth 8-6014] Unused sequential element T2_STATE_reg was removed.  [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:246]
+WARNING: [Synth 8-6014] Unused sequential element T2_NEXT_STATE_reg was removed.  [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:246]
+WARNING: [Synth 8-6014] Unused sequential element TROJ_T2_MATCH_INPUT_reg was removed.  [/home/jason/Documents/OffRAMPS_HDL/src/TROJAN_TOP.vhd:241]
 WARNING: [Synth 8-3848] Net o_D10 in module/entity OffRAMPS_top does not have driver. [/home/jason/Documents/OffRAMPS_HDL/src/OFFRAMPS_TOP.vhd:55]
 WARNING: [Synth 8-3848] Net o_D9 in module/entity OffRAMPS_top does not have driver. [/home/jason/Documents/OffRAMPS_HDL/src/OFFRAMPS_TOP.vhd:56]
 WARNING: [Synth 8-3848] Net o_X_MAX in module/entity OffRAMPS_top does not have driver. [/home/jason/Documents/OffRAMPS_HDL/src/OFFRAMPS_TOP.vhd:65]
@@ -98,18 +98,18 @@ WARNING: [Synth 8-7129] Port i_X_MAX in module OffRAMPS_top is either unconnecte
 WARNING: [Synth 8-7129] Port i_Y_MAX in module OffRAMPS_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_Z_MAX in module OffRAMPS_top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2161.234 ; gain = 485.684 ; free physical = 1573 ; free virtual = 4531
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2161.297 ; gain = 485.652 ; free physical = 1478 ; free virtual = 4615
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2176.078 ; gain = 500.527 ; free physical = 1571 ; free virtual = 4530
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2176.141 ; gain = 500.496 ; free physical = 1475 ; free virtual = 4612
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2176.078 ; gain = 500.527 ; free physical = 1571 ; free virtual = 4530
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2176.141 ; gain = 500.496 ; free physical = 1475 ; free virtual = 4612
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2176.078 ; gain = 0.000 ; free physical = 1571 ; free virtual = 4530
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2176.141 ; gain = 0.000 ; free physical = 1475 ; free virtual = 4612
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -124,22 +124,22 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/OffRAMPS_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2289.812 ; gain = 0.000 ; free physical = 1563 ; free virtual = 4518
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2288.875 ; gain = 0.000 ; free physical = 1464 ; free virtual = 4600
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2289.848 ; gain = 0.000 ; free physical = 1561 ; free virtual = 4516
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2288.910 ; gain = 0.000 ; free physical = 1463 ; free virtual = 4600
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2289.848 ; gain = 614.297 ; free physical = 1554 ; free virtual = 4513
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2288.910 ; gain = 613.266 ; free physical = 1461 ; free virtual = 4598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2289.848 ; gain = 614.297 ; free physical = 1554 ; free virtual = 4513
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2288.910 ; gain = 613.266 ; free physical = 1461 ; free virtual = 4598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -148,13 +148,12 @@ Applied set_property IO_BUFFER_TYPE = NONE for clk_in. (constraint file  /home/j
 Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_in. (constraint file  /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_Vivado_Project/OffRAMPS_HDL.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
 Applied set_property KEEP_HIERARCHY = SOFT for inst_clk. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2289.848 ; gain = 614.297 ; free physical = 1554 ; free virtual = 4513
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2288.910 ; gain = 613.266 ; free physical = 1461 ; free virtual = 4598
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'DETECT_HOME'
 INFO: [Synth 8-802] inferred FSM for state register 'txState_reg' in module 'UART_TX'
 INFO: [Synth 8-802] inferred FSM for state register 'STATE_reg' in module 'UART_HANDLER'
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'PULSE_GEN'
-INFO: [Synth 8-802] inferred FSM for state register 'T3_STATE_reg' in module 'TROJAN_TOP'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -193,17 +192,8 @@ INFO: [Synth 8-3354] encoded FSM with state register 'STATE_reg' using encoding 
                   iSTATE |                             1000 |                               11
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'PULSE_GEN'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                    idle |                             0001 |                              000
-                 state_1 |                             0010 |                              001
-                 state_2 |                             0100 |                              010
-                 state_3 |                             1000 |                              011
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'T3_STATE_reg' using encoding 'one-hot' in module 'TROJAN_TOP'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2289.848 ; gain = 614.297 ; free physical = 1552 ; free virtual = 4512
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2288.910 ; gain = 613.266 ; free physical = 1459 ; free virtual = 4597
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -212,15 +202,16 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input   30 Bit       Adders := 1     
 	   2 Input   14 Bit       Adders := 4     
+	   2 Input    8 Bit       Adders := 1     
 	   2 Input    5 Bit       Adders := 4     
 +---Registers : 
 	               31 Bit    Registers := 1     
 	               30 Bit    Registers := 1     
 	               14 Bit    Registers := 4     
 	               10 Bit    Registers := 1     
-	                8 Bit    Registers := 28    
+	                8 Bit    Registers := 29    
 	                5 Bit    Registers := 4     
-	                3 Bit    Registers := 2     
+	                3 Bit    Registers := 4     
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 13    
 +---Muxes : 
@@ -230,23 +221,22 @@ Detailed RTL Component Info :
 	   2 Input   14 Bit        Muxes := 8     
 	   4 Input   14 Bit        Muxes := 4     
 	   3 Input    8 Bit        Muxes := 18    
+	   8 Input    8 Bit        Muxes := 1     
 	   2 Input    7 Bit        Muxes := 8     
 	   2 Input    6 Bit        Muxes := 10    
 	   3 Input    4 Bit        Muxes := 4     
-	   2 Input    4 Bit        Muxes := 5     
-	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 4     
 	   2 Input    3 Bit        Muxes := 2     
 	   7 Input    3 Bit        Muxes := 1     
-	   4 Input    3 Bit        Muxes := 1     
-	   8 Input    3 Bit        Muxes := 1     
+	   8 Input    3 Bit        Muxes := 2     
 	   3 Input    2 Bit        Muxes := 2     
 	   2 Input    2 Bit        Muxes := 4     
 	   4 Input    2 Bit        Muxes := 4     
-	   2 Input    1 Bit        Muxes := 53    
+	   2 Input    1 Bit        Muxes := 54    
 	   3 Input    1 Bit        Muxes := 14    
 	   7 Input    1 Bit        Muxes := 3     
-	   4 Input    1 Bit        Muxes := 5     
-	   8 Input    1 Bit        Muxes := 6     
+	   4 Input    1 Bit        Muxes := 4     
+	   8 Input    1 Bit        Muxes := 10    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -309,25 +299,25 @@ WARNING: [Synth 8-3332] Sequential element (Trojans/Z_PULSE_GEN/FSM_onehot_next_
 WARNING: [Synth 8-3332] Sequential element (Trojans/Z_PULSE_GEN/FSM_onehot_next_state_reg[1]) is unused and will be removed from module OffRAMPS_top.
 WARNING: [Synth 8-3332] Sequential element (Trojans/Z_PULSE_GEN/FSM_onehot_next_state_reg[0]) is unused and will be removed from module OffRAMPS_top.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 2289.848 ; gain = 614.297 ; free physical = 1531 ; free virtual = 4496
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2288.910 ; gain = 613.266 ; free physical = 1431 ; free virtual = 4574
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2289.848 ; gain = 614.297 ; free physical = 1527 ; free virtual = 4491
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2288.910 ; gain = 613.266 ; free physical = 1419 ; free virtual = 4576
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2289.848 ; gain = 614.297 ; free physical = 1527 ; free virtual = 4491
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2288.910 ; gain = 613.266 ; free physical = 1410 ; free virtual = 4564
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2289.848 ; gain = 614.297 ; free physical = 1527 ; free virtual = 4491
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2288.910 ; gain = 613.266 ; free physical = 1410 ; free virtual = 4564
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -345,37 +335,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 2289.848 ; gain = 614.297 ; free physical = 1523 ; free virtual = 4488
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2288.910 ; gain = 613.266 ; free physical = 1410 ; free virtual = 4560
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 2289.848 ; gain = 614.297 ; free physical = 1523 ; free virtual = 4488
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2288.910 ; gain = 613.266 ; free physical = 1410 ; free virtual = 4560
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 2289.848 ; gain = 614.297 ; free physical = 1523 ; free virtual = 4488
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2288.910 ; gain = 613.266 ; free physical = 1410 ; free virtual = 4560
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 2289.848 ; gain = 614.297 ; free physical = 1523 ; free virtual = 4488
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2288.910 ; gain = 613.266 ; free physical = 1410 ; free virtual = 4560
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 2289.848 ; gain = 614.297 ; free physical = 1523 ; free virtual = 4488
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 2288.910 ; gain = 613.266 ; free physical = 1410 ; free virtual = 4560
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 2289.848 ; gain = 614.297 ; free physical = 1523 ; free virtual = 4488
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 2288.910 ; gain = 613.266 ; free physical = 1410 ; free virtual = 4560
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -394,43 +384,43 @@ Report Cell Usage:
 +------+--------+------+
 |1     |clk_wiz |     1|
 |2     |CARRY4  |    39|
-|3     |LUT1    |     9|
-|4     |LUT2    |     6|
+|3     |LUT1    |    10|
+|4     |LUT2    |     9|
 |5     |LUT3    |    27|
-|6     |LUT4    |    37|
-|7     |LUT5    |    31|
-|8     |LUT6    |    27|
+|6     |LUT4    |    40|
+|7     |LUT5    |    36|
+|8     |LUT6    |    31|
 |9     |MUXF7   |     4|
-|10    |FDRE    |   194|
+|10    |FDRE    |   200|
 |11    |FDSE    |     4|
 |12    |IBUF    |    18|
 |13    |OBUF    |    21|
 |14    |OBUFT   |     7|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 2289.848 ; gain = 614.297 ; free physical = 1523 ; free virtual = 4488
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 2288.910 ; gain = 613.266 ; free physical = 1410 ; free virtual = 4560
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 46 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2289.848 ; gain = 500.527 ; free physical = 1523 ; free virtual = 4487
-Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 2289.848 ; gain = 614.297 ; free physical = 1523 ; free virtual = 4487
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2288.910 ; gain = 500.496 ; free physical = 1410 ; free virtual = 4560
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 2288.910 ; gain = 613.266 ; free physical = 1410 ; free virtual = 4560
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2289.848 ; gain = 0.000 ; free physical = 1523 ; free virtual = 4487
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2288.910 ; gain = 0.000 ; free physical = 1410 ; free virtual = 4560
 INFO: [Netlist 29-17] Analyzing 43 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2289.848 ; gain = 0.000 ; free physical = 1812 ; free virtual = 4776
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2288.910 ; gain = 0.000 ; free physical = 1690 ; free virtual = 4837
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: ff5e4f49
+Synth Design complete | Checksum: b6fd76f8
 INFO: [Common 17-83] Releasing license: Synthesis
-63 Infos, 84 Warnings, 0 Critical Warnings and 0 Errors encountered.
+61 Infos, 84 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:33 . Memory (MB): peak = 2289.848 ; gain = 941.305 ; free physical = 1812 ; free virtual = 4776
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1939.554; main = 1628.352; forked = 395.231
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3279.004; main = 2289.816; forked = 989.188
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2313.824 ; gain = 0.000 ; free physical = 1812 ; free virtual = 4776
+synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:33 . Memory (MB): peak = 2288.910 ; gain = 940.336 ; free physical = 1690 ; free virtual = 4836
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1947.565; main = 1635.627; forked = 395.248
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3278.062; main = 2288.879; forked = 989.184
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2312.887 ; gain = 0.000 ; free physical = 1690 ; free virtual = 4836
 INFO: [Common 17-1381] The checkpoint '/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_Vivado_Project/OffRAMPS_HDL.runs/synth_1/OffRAMPS_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file OffRAMPS_top_utilization_synth.rpt -pb OffRAMPS_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Dec  2 16:55:49 2023...
+INFO: [Common 17-206] Exiting Vivado at Sat Dec  2 17:54:42 2023...

@@ -128,7 +128,7 @@ architecture Behavioral of Trojan_TOP is
     
     -- Trojan 4 Related Signals 
     signal T4_STATE, T4_NEXT_STATE: State_Type := IDLE;
-    signal TROJ_T4_Z_STEP_COUNT : std_logic_vector (7 downto 0) := (others=>'0');  
+    signal TROJ_T4_Z_PULSE_COUNT : std_logic_vector (7 downto 0) := (others=>'0');  
     
     
     -- Trojan 5 Related Signals 
@@ -298,7 +298,7 @@ begin
                     end if;
 
                 when STATE_1 => -- Wait for a certain number of z steps
-                    if (TROJ_T3_Z_STEP_COUNT = X"32") then -- 0x32 == 50 steps
+                    if (TROJ_T3_Z_PULSE_COUNT = X"32") then -- 0x32 == 50 steps
                         T3_NEXT_STATE <= STATE_2;
                     else 
                         if(Z_STEP_EDGE = '1') then
@@ -317,7 +317,7 @@ begin
                 when STATE_5 => T3_NEXT_STATE <= DISABLE; -- Unused
         
                 when DISABLE => -- Turn off signals here
-                    TROJ_T3_Z_STEP_COUNT <= (others=>'0'); 
+                    TROJ_T3_Z_PULSE_COUNT <= (others=>'0'); 
                     E_PULSE_EN <= '0';
                     T3_NEXT_STATE <= IDLE;
             end case;
@@ -331,7 +331,7 @@ begin
     trojan_t4_proc : process (i_CLK)
     begin
         if rising_edge(i_CLK) then
-            T4_STATE <= T3_NEXT_STATE;
+            T4_STATE <= T4_NEXT_STATE;
             case T4_STATE is
                 when IDLE =>
                     if (TROJ_T4_ENABLE = '1' and homing_complete = '1') then
@@ -341,7 +341,7 @@ begin
                     end if;
 
                 when STATE_1 => -- Wait for a certain number of z steps
-                    if (TROJ_T4_Z_STEP_COUNT = X"32") then -- 0x32 == 50 steps
+                    if (TROJ_T4_Z_PULSE_COUNT = X"32") then -- 0x32 == 50 steps
                         T4_NEXT_STATE <= STATE_2;
                     else 
                         if(Z_STEP_EDGE = '1') then
@@ -361,7 +361,7 @@ begin
                 when STATE_5 => T3_NEXT_STATE <= DISABLE; -- Unused
 
                 when DISABLE => -- Turn off signals here
-                    TROJ_T4_Z_STEP_COUNT <= (others=>'0'); 
+                    TROJ_T4_Z_PULSE_COUNT <= (others=>'0'); 
                     E_PULSE_EN <= '0';
                     T4_NEXT_STATE <= IDLE;
             end case;

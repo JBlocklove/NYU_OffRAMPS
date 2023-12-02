@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
-| Date             : Sat Dec  2 16:57:02 2023
+| Date             : Sat Dec  2 17:55:55 2023
 | Host             : jason-XPS-13-9343 running 64-bit Ubuntu 22.04.3 LTS
 | Command          : report_power -file OffRAMPS_top_power_routed.rpt -pb OffRAMPS_top_power_summary_routed.pb -rpx OffRAMPS_top_power_routed.rpx
 | Design           : OffRAMPS_top
@@ -53,13 +53,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |      393 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      121 |     20800 |            0.58 |
+| Slice Logic    |    <0.001 |      415 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      133 |     20800 |            0.64 |
 |   CARRY4       |    <0.001 |       39 |      8150 |            0.48 |
-|   Register     |    <0.001 |      198 |     41600 |            0.48 |
+|   Register     |    <0.001 |      204 |     41600 |            0.49 |
 |   F7/F8 Muxes  |    <0.001 |        4 |     32600 |            0.01 |
 |   Others       |     0.000 |       16 |       --- |             --- |
-| Signals        |     0.001 |      329 |       --- |             --- |
+| Signals        |     0.001 |      341 |       --- |             --- |
 | MMCM           |     0.104 |        1 |         5 |           20.00 |
 | I/O            |     0.016 |       47 |       106 |           44.34 |
 | Static Power   |     0.072 |          |           |                 |
