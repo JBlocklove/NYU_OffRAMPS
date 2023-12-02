@@ -111,6 +111,7 @@ architecture Behavioral of OffRAMPS_top is
     Port (
         i_CLK                 : in  std_logic;
         homing_complete     : in  std_logic;
+        o_LED                 : out std_logic;
         
         -- Data Signals In
         i_E0_DIR    : in std_logic;
@@ -163,6 +164,8 @@ architecture Behavioral of OffRAMPS_top is
     signal home_complete_buf :std_logic := '0';
     
     -- Trojan Modified Output Signals
+    signal s_troj_led    : std_logic :='0';
+    
     signal s_mod_E0_DIR  : std_logic :='0';
     signal s_mod_E0_EN   : std_logic :='0';
     signal s_mod_E0_STEP : std_logic :='0';
@@ -210,7 +213,7 @@ begin
     Trojans : TROJAN_TOP PORT MAP (
         i_CLK               => sysclk,
         homing_complete     => home_complete_buf,
-        
+        o_LED               => s_troj_led,
         -- Data Signals In             
         i_E0_DIR    => i_E0_DIR ,
         i_E0_EN     => i_E0_EN  ,
@@ -244,9 +247,7 @@ begin
         o_Z_MIN     => s_mod_Z_MIN   ,
         o_Z_STEP    => s_mod_Z_STEP  
     );
-    
-    
-    
+        
     --------------------------- LOGIC --------------------------
     
     -- Button Press Detection --> We may need to use the 12 Mhz cloxk for this
@@ -265,6 +266,7 @@ begin
 
     -- Set LEDs
     led_0  <= home_complete_buf; -- Home Complete Indicator
+    led_1  <= s_troj_led;
     led0_g <= not bypass_mode_en; -- Trojans are off = Green 
     led0_r <= bypass_mode_en;     -- Trojans are on = Red    
   

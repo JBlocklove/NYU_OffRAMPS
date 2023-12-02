@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
-| Date             : Sat Dec  2 13:53:03 2023
+| Date             : Sat Dec  2 16:09:42 2023
 | Host             : jason-XPS-13-9343 running 64-bit Ubuntu 22.04.3 LTS
 | Command          : report_power -file OffRAMPS_top_power_routed.rpt -pb OffRAMPS_top_power_summary_routed.pb -rpx OffRAMPS_top_power_routed.rpx
 | Design           : OffRAMPS_top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.194        |
+| Total On-Chip Power (W)  | 0.195        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.122        |
+| Dynamic (W)              | 0.123        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.0         |
@@ -61,9 +61,9 @@ Table of Contents
 |   Others       |     0.000 |       10 |       --- |             --- |
 | Signals        |    <0.001 |      262 |       --- |             --- |
 | MMCM           |     0.104 |        1 |         5 |           20.00 |
-| I/O            |     0.015 |       47 |       106 |           44.34 |
+| I/O            |     0.016 |       47 |       106 |           44.34 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.194 |          |           |                 |
+| Total          |     0.195 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -147,7 +147,7 @@ Table of Contents
 +--------------+-----------+
 | Name         | Power (W) |
 +--------------+-----------+
-| OffRAMPS_top |     0.122 |
+| OffRAMPS_top |     0.123 |
 |   Uart_TX    |     0.002 |
 |   inst_clk   |     0.104 |
 |     inst     |     0.104 |

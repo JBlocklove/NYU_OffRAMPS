@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
-| Date         : Sat Dec  2 13:51:50 2023
+| Date         : Sat Dec  2 16:08:31 2023
 | Host         : jason-XPS-13-9343 running 64-bit Ubuntu 22.04.3 LTS
 | Command      : report_utilization -file OffRAMPS_top_utilization_synth.rpt -pb OffRAMPS_top_utilization_synth.pb
 | Design       : OffRAMPS_top
@@ -155,12 +155,12 @@ Warning! LUT value is adjusted to account for LUT combining.
 | CARRY4   |   35 |          CarryLogic |
 | LUT4     |   31 |                 LUT |
 | LUT6     |   23 |                 LUT |
-| OBUF     |   20 |                  IO |
+| OBUF     |   21 |                  IO |
 | LUT3     |   20 |                 LUT |
 | IBUF     |   18 |                  IO |
 | LUT5     |   14 |                 LUT |
-| OBUFT    |    8 |                  IO |
 | LUT1     |    8 |                 LUT |
+| OBUFT    |    7 |                  IO |
 | MUXF7    |    4 |               MuxFx |
 | LUT2     |    4 |                 LUT |
 | FDSE     |    3 |        Flop & Latch |

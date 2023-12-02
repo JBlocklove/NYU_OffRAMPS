@@ -2,10 +2,10 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
--- Date        : Wed Nov 29 18:40:25 2023
+-- Date        : Sat Dec  2 15:56:32 2023
 -- Host        : jason-XPS-13-9343 running 64-bit Ubuntu 22.04.3 LTS
 -- Command     : write_vhdl -force -mode synth_stub
---               /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.vhdl
+--               /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_Vivado_Project/OffRAMPS_HDL.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.vhdl
 -- Design      : clk_wiz_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35tcpg236-1

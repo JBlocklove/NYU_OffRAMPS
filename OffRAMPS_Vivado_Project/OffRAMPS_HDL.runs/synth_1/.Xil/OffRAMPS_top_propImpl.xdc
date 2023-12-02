@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/constrs_1/new/constraints.xdc rfile:../../../OffRAMPS_HDL.srcs/constrs_1/new/constraints.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_Vivado_Project/OffRAMPS_HDL.srcs/constrs_1/new/constraints.xdc rfile:../../../OffRAMPS_HDL.srcs/constrs_1/new/constraints.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:5 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {PACKAGE_PIN L17 IOSTANDARD LVCMOS33} [get_ports clk_in]
 set_property src_info {type:XDC file:1 line:9 export:INPUT save:INPUT read:READ} [current_design]

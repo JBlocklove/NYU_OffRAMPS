@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/clk_wiz_0_synth_1'
+HD_PWD='/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_Vivado_Project/OffRAMPS_HDL.runs/clk_wiz_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

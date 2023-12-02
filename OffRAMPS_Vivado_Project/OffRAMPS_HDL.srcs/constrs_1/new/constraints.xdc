@@ -26,14 +26,14 @@ set_property -dict {PACKAGE_PIN A18 IOSTANDARD LVCMOS33} [get_ports btn0]
 
 
 ## Pmod Header JA
-set_property -dict {PACKAGE_PIN G17 IOSTANDARD LVCMOS33} [get_ports o_Z_STEP]
+set_property -dict {PACKAGE_PIN H17 IOSTANDARD LVCMOS33} [get_ports o_Z_STEP]
 set_property -dict {PACKAGE_PIN G19 IOSTANDARD LVCMOS33} [get_ports o_E0_DIR]
 set_property -dict {PACKAGE_PIN N18 IOSTANDARD LVCMOS33} [get_ports i_E0_DIR]
-set_property -dict {PACKAGE_PIN L18 IOSTANDARD LVCMOS33} [get_ports i_Z_STEP]
-set_property -dict {PACKAGE_PIN H17 IOSTANDARD LVCMOS33} [get_ports o_Z_DIR]
+set_property -dict {PACKAGE_PIN K18 IOSTANDARD LVCMOS33} [get_ports i_Z_STEP]
+set_property -dict {PACKAGE_PIN G17 IOSTANDARD LVCMOS33} [get_ports o_Z_DIR]
 set_property -dict {PACKAGE_PIN H19 IOSTANDARD LVCMOS33} [get_ports o_X_EN]
 set_property -dict {PACKAGE_PIN J19 IOSTANDARD LVCMOS33} [get_ports i_X_EN]
-set_property -dict {PACKAGE_PIN K18 IOSTANDARD LVCMOS33} [get_ports i_Z_DIR]
+set_property -dict {PACKAGE_PIN L18 IOSTANDARD LVCMOS33} [get_ports i_Z_DIR]
 
 ## GPIO Pins
 # Pins 15 and 16 should remain commented if using them as analog inputs

@@ -1,80 +1,15 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="jason" Host="jason-XPS-13-9343" Pid="223053" HostCore="4" HostMemory="8024796">
+    <Process Command="vivado" Owner="jason" Host="jason-XPS-13-9343" Pid="263220" HostCore="4" HostMemory="8024796">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="jason" Host="jason-XPS-13-9343" Pid="223768" HostCore="4" HostMemory="8024796">
+    <Process Command="vivado" Owner="jason" Host="jason-XPS-13-9343" Pid="264616" HostCore="4" HostMemory="8024796">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="jason" Host="jason-XPS-13-9343" Pid="225454" HostCore="4" HostMemory="8024796">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="jason" Host="jason-XPS-13-9343" Pid="226973" HostCore="4" HostMemory="8024796">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="jason" Host="jason-XPS-13-9343" Pid="228466" HostCore="4" HostMemory="8024796">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="jason" Host="jason-XPS-13-9343" Pid="229328" HostCore="4" HostMemory="8024796">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="jason" Host="jason-XPS-13-9343" Pid="233549" HostCore="4" HostMemory="8024796">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="jason" Host="jason-XPS-13-9343" Pid="234073" HostCore="4" HostMemory="8024796">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="jason" Host="jason-XPS-13-9343" Pid="235231" HostCore="4" HostMemory="8024796">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="jason" Host="jason-XPS-13-9343" Pid="236705" HostCore="4" HostMemory="8024796">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="jason" Host="jason-XPS-13-9343" Pid="239207" HostCore="4" HostMemory="8024796">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="jason" Host="jason-XPS-13-9343" Pid="240673" HostCore="4" HostMemory="8024796">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="jason" Host="jason-XPS-13-9343" Pid="241827" HostCore="4" HostMemory="8024796">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="jason" Host="jason-XPS-13-9343" Pid="243678" HostCore="4" HostMemory="8024796">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="jason" Host="jason-XPS-13-9343" Pid="246397" HostCore="4" HostMemory="8024796">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="jason" Host="jason-XPS-13-9343" Pid="246785" HostCore="4" HostMemory="8024796">
+    <Process Command="vivado" Owner="jason" Host="jason-XPS-13-9343" Pid="265337" HostCore="4" HostMemory="8024796">
     </Process>
 </ProcessHandle>
