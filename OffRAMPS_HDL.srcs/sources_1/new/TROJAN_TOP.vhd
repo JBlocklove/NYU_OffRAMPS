@@ -1,5 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity TROJAN_TOP is
     Port (
@@ -70,6 +71,7 @@ architecture Behavioral of Trojan_TOP is
 
     -- Pulse Related Signals per Axis
     constant PULSES_PER_STEP : std_logic_vector(5 downto 0) := "10000";  -- 16 pulses per step --> 1.8 degrees (?)
+    constant TEN_SECONDS     : std_logic_vector(29 downto 0) := "111011100110101100101000000000"; -- 10 seconds at 100 Mhz
     
     -- Modified Output Signals 
     signal X_STEP_MOD : std_logic := '0';
@@ -103,8 +105,7 @@ architecture Behavioral of Trojan_TOP is
 
     -- Trojan 1 Related Signals 
     signal T1_STATE, T1_NEXT_STATE: State_Type;
-    signal TROJ_T1_COUNT_EN : std_logic := '0';
-    signal TROJ_T1_COUNTER : std_logic_vector (15 downto 0) := (others=>'0');
+    signal TROJ_T1_COUNTER : std_logic_vector (29 downto 0) := (others=>'0');
 
     -- Trojan 2 Related Signals 
     -- Trojan 3 Related Signals 
@@ -117,10 +118,10 @@ begin
 
     ------- Components--------- 
     -- Edge Detectors 
-    X_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(i_CLK => i_CLK, input => i_X_STEP,  output => X_STEP_EDGE);
-    Y_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(i_CLK => i_CLK, input => i_Y_STEP,  output => Y_STEP_EDGE);
-    Z_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(i_CLK => i_CLK, input => i_Z_STEP,  output => Z_STEP_EDGE);
-    E_STEP_EDGE : RISING_EDGE_DETECTOR PORT MAP(i_CLK => i_CLK, input => i_E0_STEP, output => E_STEP_EDGE);
+    X_STEP_EDGE_DETECT : RISING_EDGE_DETECTOR PORT MAP(i_CLK => i_CLK, input => i_X_STEP,  output => X_STEP_EDGE);
+    Y_STEP_EDGE_DETECT : RISING_EDGE_DETECTOR PORT MAP(i_CLK => i_CLK, input => i_Y_STEP,  output => Y_STEP_EDGE);
+    Z_STEP_EDGE_DETECT : RISING_EDGE_DETECTOR PORT MAP(i_CLK => i_CLK, input => i_Z_STEP,  output => Z_STEP_EDGE);
+    E_STEP_EDGE_DETECT : RISING_EDGE_DETECTOR PORT MAP(i_CLK => i_CLK, input => i_E0_STEP, output => E_STEP_EDGE);
     
     -- Pulse Generators
     X_PULSE_GEN : PULSE_GEN PORT MAP (i_CLK => i_CLK, i_PULSE_EN => X_PULSE_EN, i_PULSES_TO_SEND => PULSES_PER_STEP, o_PULSE_SIG => X_STEP_MOD, o_COMPLETE => X_STEP_COMPLETE);
@@ -140,7 +141,7 @@ begin
     Pulse_Test_proc : process (i_CLK)
     begin
         if rising_edge(i_CLK) then
-            X_PULSE_EN <= '1'
+            X_PULSE_EN <= '1';
         end if;
     end process;
     --------------------------- Pulse Gen Test End ---------------------------
@@ -148,6 +149,9 @@ begin
     --------------------------- Trojan 1 Logic Start ---------------------------
     -- This trojan adds or removes steps from the X and Y Axis 
     
+    o_X_STEP <= i_X_STEP or X_STEP_MOD;
+    o_Y_STEP <= i_Y_STEP or Y_STEP_MOD;
+
     trojan_t1_proc : process (i_CLK)
     begin
         if rising_edge(i_CLK) then
@@ -155,119 +159,71 @@ begin
             case T1_STATE is
                 when IDLE =>
                     if TROJ_T1_ENABLE = '1' then
-
                         T1_NEXT_STATE <= STATE_1;
                     else
                         T1_NEXT_STATE <= DISABLE;
                     end if;
 
-                when STATE_1 =>
+                when STATE_1 => -- Counter Enable
+                    if(TROJ_T1_COUNTER = TEN_SECONDS) then
+                        TROJ_T1_COUNTER <= (others=>'0');
+                        T1_NEXT_STATE <= STATE_2;
+                    else 
+                        TROJ_T1_COUNTER <= TROJ_T1_COUNTER + 1;
+                    end if;
 
+                when STATE_2 => -- Send Steps to motor X
+                    if(X_STEP_COMPLETE = '1') then
+                        X_PULSE_EN <= '0';
+                        T1_NEXT_STATE <= STATE_3;
+                    else 
+                        X_PULSE_EN <= '1';
+                    end if;
+                        
+                when STATE_3 => -- Send Steps to motor Y
+                    if(Y_STEP_COMPLETE = '1') then
+                        Y_PULSE_EN <= '0';
+                        T1_NEXT_STATE <= IDLE;
+                    else 
+                        Y_PULSE_EN <= '1';
+                    end if;
 
-                when DISABLE =>
-                    -- Turn off signals here
-
+                when DISABLE => -- Turn off signals here
+                    TROJ_T1_COUNTER <= (others=>'0');
+                    X_PULSE_EN <= '0';
+                    Y_PULSE_EN <= '0';
                     T1_NEXT_STATE <= IDLE;
             end case;
         end if;
     end process;
     --------------------------- Trojan 1 Logic End ---------------------------
 
-    --------------------------- Trojan 1 Logic Start ---------------------------
-    -- This trojan adds or removes steps from the X and Y Axis 
-    
-    trojan_t1_proc : process (i_CLK)
-    begin
-        if rising_edge(i_CLK) then
-            if (TROJ_T1_ENABLE = '1') then
-                if(X_STEP_COMPLETE = '1') then
-                    -- Turn off X_PULSE_EN
-                    -- Turn off Y_PULSE_EN
-                elsif (TROJ_T1_COUNT_EN = '0') then 
-                    TROJ_T1_COUNT_EN
-                elsif (TROJ_T1_COUNTER = T1_TRIG_VAL1) then 
-                    DIR = '0';
-                    X_PULSE_EN = '1';
-                    Y_PULSE_EN = '1';
-                elsif (TROJ_T1_COUNTER = T1_TRIG_VAL2) then 
-                    DIR = '1';
-                    X_PULSE_EN = '1';
-                    Y_PULSE_EN = '1';
-                else    
-                    TROJ_T1_COUNTER <= TROJ_T1_COUNTER + 1;
-                end if;
-            else
-                X_PULSE_EN <= '0';
-                Y_PULSE_EN <= '0';
-            end if;
-        end if;
-    end process;
-    --------------------------- Trojan 1 Logic End ---------------------------
-
-
-    -- process(i_CLK)
-    -- begin
-    --     if rising_edge(i_CLK) then
-    --         CurrentState <= NextState;
-    --         case CurrentState is
-    --             when Idle =>
-    --                 if TROJ_T1_ENABLE = '1' then
-    --                     if X_STEP_COMPLETE = '1' then
-    --                         NextState <= DisablePulse;
-    --                     elsif TROJ_T1_COUNT_EN = '0' then
-    --                         NextState <= CountEnable;
-    --                     end if;
-    --                 else
-    --                     NextState <= DisableOutput;
-    --                 end if;
-
-    --             when DisablePulse =>
-    --                 X_PULSE_EN <= '0';
-    --                 Y_PULSE_EN <= '0';
-    --                 NextState <= Idle;
-
-    --             when CountEnable =>
-    --                 if TROJ_T1_COUNTER = T1_TRIG_VAL1 then
-    --                     NextState <= Direction0;
-    --                 elsif TROJ_T1_COUNTER = T1_TRIG_VAL2 then
-    --                     NextState <= Direction1;
-    --                 end if;
-
-    --             when Direction0 =>
-    --                 DIR <= '0';
-    --                 X_PULSE_EN <= '1';
-    --                 Y_PULSE_EN <= '1';
-    --                 NextState <= IncrementCounter;
-
-    --             when Direction1 =>
-    --                 DIR <= '1';
-    --                 X_PULSE_EN <= '1';
-    --                 Y_PULSE_EN <= '1';
-    --                 NextState <= IncrementCounter;
-
-    --             when IncrementCounter =>
-    --                 TROJ_T1_COUNTER <= TROJ_T1_COUNTER + 1;
-    --                 NextState <= Idle;
-
-    --             when DisableOutput =>
-    --                 X_PULSE_EN <= '0';
-    --                 Y_PULSE_EN <= '0';
-    --                 NextState <= Idle;
-    --         end case;
-    --     end if;
-    -- end process;
-
 
     --------------------------- Trojan 2 Logic Start ---------------------------
     -- This trojan adds or removes steps from the X and Y Axis 
-    trojan_t2_proc : process (i_CLK)
-    begin
-        if rising_edge(i_CLK) then
-            if (TROJ_T2_ENABLE = '1') then
-            
-            end if;
-        end if;
-    end process;
+    -- trojan_t2_proc : process (i_CLK)
+    -- begin
+    --     if rising_edge(i_CLK) then
+    --         T2_STATE <= T2_NEXT_STATE;
+    --         case T2_STATE is
+    --             when IDLE =>
+    --                 if TROJ_T2_ENABLE = '1' then
+    --                     T2_NEXT_STATE <= STATE_1;
+    --                 else
+    --                     T2_NEXT_STATE <= DISABLE;
+    --                 end if;
+
+    --             when STATE_1 =>
+
+    --             when STATE_2 => 
+
+    --             when DISABLE => -- Turn off signals here
+                    
+
+    --                 T2_NEXT_STATE <= IDLE;
+    --         end case;
+    --     end if;
+    -- end process;
     --------------------------- Trojan 2 Logic End ---------------------------
 
 
