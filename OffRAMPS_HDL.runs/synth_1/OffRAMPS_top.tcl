@@ -90,6 +90,7 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
   /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/DETECT_HOME.vhd
+  /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/PULSE_GEN.vhd
   /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/RISING_EDGE_DETECTOR.vhd
   /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd
   /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/UART_HANDLER.vhd

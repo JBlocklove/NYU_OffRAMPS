@@ -1,0 +1,401 @@
+/*
+
+AMD Vivado v2023.2 (64-bit) [Major: 2023, Minor: 2]
+SW Build: 4029153 on Fri Oct 13 20:13:54 MDT 2023
+IP Build: 4028589 on Sat Oct 14 00:45:43 MDT 2023
+IP Build: 4028589 on Sat Oct 14 00:45:43 MDT 2023
+
+Process ID (PID): 221467
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Sat Dec 02 11:14:09 EST 2023
+Time zone: 	Eastern Standard Time (America/New_York)
+
+OS: Ubuntu
+OS Version: 6.2.0-37-generic
+OS Architecture: amd64
+Available processors (cores): 4
+LSB Release Description: DISTRIB_ID=Ubuntu
+
+Display: 0
+Screen size: 1920x1080
+Local screen bounds: x = 0, y = 1080, width = 1920, height = 1080
+Screen resolution (DPI): 100
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+OS font scaling: 100%
+Anti-Alias Enabled: false
+
+Java version: 	17.0.7 64-bit
+JavaFX version: 17.0.1
+Java home: 	/tools/Xilinx/Vivado/2023.2/tps/lnx64/jre17.0.7_7
+Java executable: 	/tools/Xilinx/Vivado/2023.2/tps/lnx64/jre17.0.7_7/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Djdk.gtk.version=2, -Dsun.java2d.uiScale.enabled=false, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, -XX:+UseStringDeduplication, -XX:MaxGCPauseMillis=200, -XX:+ParallelRefProcEnabled, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=80m, -XX:MaxNewSize=80m, -Xms512m, -Xmx4072m, -Xss10m, -Xrs]
+Java initial memory (-Xms): 	512 MB
+Java maximum memory (-Xmx):	 3 GB
+
+User name: 	jason
+User home directory: /home/jason
+User working directory: /home/jason/Documents/OffRAMPS_HDL
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /tools/Xilinx/Vivado
+HDI_APPROOT: /tools/Xilinx/Vivado/2023.2
+RDI_DATADIR: /tools/Xilinx/Vivado/2023.2/data
+RDI_BINDIR: /tools/Xilinx/Vivado/2023.2/bin
+
+Vivado preferences file: /home/jason/.Xilinx/Vivado/2023.2/vivado.xml
+Vivado preferences directory: /home/jason/.Xilinx/Vivado/2023.2/
+Vivado layouts directory: /home/jason/.Xilinx/Vivado/2023.2/data/layouts
+PlanAhead jar file: 	/tools/Xilinx/Vivado/2023.2/lib/classes/planAhead.jar
+Vivado log file: 	
+Vivado journal file: 	
+Engine tmp dir: 	./.Xil/Vivado-221467-jason-XPS-13-9343
+Non-Default Parameters:	[]
+
+Xilinx & AMD Environment Variables
+--------------------------------------------------------------------------------------------
+GNOME_SHELL_SESSION_MODE: ubuntu
+RDI_APPROOT: /tools/Xilinx/Vivado/2023.2
+RDI_BASEROOT: /tools/Xilinx/Vivado
+RDI_BINROOT: /tools/Xilinx/Vivado/2023.2/bin
+RDI_BUILD: yes
+RDI_DATADIR: /tools/Xilinx/Vivado/2023.2/data
+RDI_INSTALLROOT: /tools/Xilinx
+RDI_INSTALLVER: 2023.2
+RDI_JAVA_PLATFORM: 
+RDI_JAVA_VERSION: 17.0.7_7
+RDI_LIBDIR: /tools/Xilinx/Vivado/2023.2/lib/lnx64.o/Ubuntu/22:/tools/Xilinx/Vivado/2023.2/lib/lnx64.o/Ubuntu:/tools/Xilinx/Vivado/2023.2/lib/lnx64.o
+RDI_OPT_EXT: .o
+RDI_PATCHROOT: 
+RDI_PLATFORM: lnx64
+RDI_PREPEND_PATH: /tools/Xilinx/Vivado/2023.2/ids_lite/ISE/bin/lin64
+RDI_PROG: /tools/Xilinx/Vivado/2023.2/bin/unwrapped/lnx64.o/vivado
+RDI_SESSION_INFO: /home/jason/Documents/OffRAMPS_HDL:jason-XPS-13-9343_1701533630_221426
+RDI_SHARED_DATA: /tools/Xilinx/SharedData/2023.2/data
+RDI_TPS_ROOT: /tools/Xilinx/Vivado/2023.2/tps/lnx64
+RDI_USE_JDK17: True
+SHELL: /bin/bash
+XILINX: /tools/Xilinx/Vivado/2023.2/ids_lite/ISE
+XILINX_DSP: /tools/Xilinx/Vivado/2023.2/ids_lite/ISE
+XILINX_HLS: /tools/Xilinx/Vitis_HLS/2023.2
+XILINX_PLANAHEAD: /tools/Xilinx/Vivado/2023.2
+XILINX_VIVADO: /tools/Xilinx/Vivado/2023.2
+XILINX_VIVADO_HLS: /tools/Xilinx/Vivado/2023.2
+
+
+GUI allocated memory:	512 MB
+GUI max memory:		4,072 MB
+Engine allocated memory: 1,403 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// Tcl Message: Sourcing tcl script '/home/jason/.Xilinx/Vivado/Vivado_init.tcl' 
+selectList(PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS, "/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.xpr", 1); // b.c (PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS)
+// Opening Vivado Project: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.xpr. Version: Vivado v2023.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// Tcl Message: open_project /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,461 MB. GUI used memory: 68 MB. Current time: 12/2/23, 11:14:10 AM EST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 112 MB (+115399kb) [00:00:23]
+// [Engine Memory]: 1,684 MB (+1614834kb) [00:00:23]
+// [Engine Memory]: 1,835 MB (+69436kb) [00:00:24]
+// WARNING: HEventQueue.dispatchEvent() is taking  3690 ms.
+// Tcl Message: open_project /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2023.2/data/ip'. 
+// [GUI Memory]: 129 MB (+11631kb) [00:00:27]
+// Tcl Message: open_project: Time (s): cpu = 00:00:35 ; elapsed = 00:00:15 . Memory (MB): peak = 7857.184 ; gain = 464.359 ; free physical = 2184 ; free virtual = 6458 
+// Project name: OffRAMPS_HDL; location: /home/jason/Documents/OffRAMPS_HDL; part: xc7a35tcpg236-1
+// Elapsed time: 17 seconds
+dismissDialog("Open Project"); // bq (Open Project Progress)
+// [GUI Memory]: 144 MB (+8851kb) [00:00:29]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,863 MB. GUI used memory: 144 MB. Current time: 12/2/23, 11:14:30 AM EST
+// PAPropertyPanels.initPanels (OFFRAMPS_TOP.vhd) elapsed time: 0.2s
+// Elapsed time: 105 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OffRAMPS_top(Behavioral) (OFFRAMPS_TOP.vhd)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OffRAMPS_top(Behavioral) (OFFRAMPS_TOP.vhd)]", 1, true, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 1,935 MB. GUI used memory: 76 MB. Current time: 12/2/23, 11:16:10 AM EST
+// [Engine Memory]: 1,936 MB (+9229kb) [00:02:14]
+// Elapsed time: 12 seconds
+selectCodeEditor("OFFRAMPS_TOP.vhd", 249, 185); // ad (OFFRAMPS_TOP.vhd)
+selectCodeEditor("OFFRAMPS_TOP.vhd", 250, 156); // ad (OFFRAMPS_TOP.vhd)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OffRAMPS_top(Behavioral) (OFFRAMPS_TOP.vhd), HomingDetector : DETECT_HOME(Behavioral) (DETECT_HOME.vhd)]", 3, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OffRAMPS_top(Behavioral) (OFFRAMPS_TOP.vhd), Trojans : TROJAN_TOP(Behavioral) (TROJAN_TOP.vhd)]", 5, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OffRAMPS_top(Behavioral) (OFFRAMPS_TOP.vhd), Trojans : TROJAN_TOP(Behavioral) (TROJAN_TOP.vhd), Z_STEP_EDGE_DETECT : RISING_EDGE_DETECTOR(Behavioral) (RISING_EDGE_DETECTOR.vhd)]", 8, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+// [GUI Memory]: 152 MB (+1101kb) [00:02:37]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,992 MB. GUI used memory: 77 MB. Current time: 12/2/23, 11:16:35 AM EST
+selectCodeEditor("TROJAN_TOP.vhd", 136, 313); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 428, 159); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 177, 449); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,029 MB. GUI used memory: 127 MB. Current time: 12/2/23, 11:16:50 AM EST
+// Elapsed Time for: 'L.f': 02m:30s
+selectCodeEditor("TROJAN_TOP.vhd", 138, 357); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 138, 357, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+selectCodeEditor("TROJAN_TOP.vhd", 405, 351); // ad (TROJAN_TOP.vhd)
+// Elapsed Time for: 'L.f': 02m:34s
+// Elapsed time: 56 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// TclEventType: RUN_MODIFY
+dismissDialog("Run Synthesis"); // u (dialog0)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/utils_1/imports/synth_1/OffRAMPS_top.dcp with file /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/OffRAMPS_top.dcp 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 4 
+// Tcl Message: [Sat Dec  2 11:17:54 2023] Launched synth_1... Run output will be captured here: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/runme.log 
+// 'i' command handler elapsed time: 3 seconds
+dismissDialog("Starting Design Runs"); // bq (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// [Engine Memory]: 2,033 MB (+322kb) [00:04:27]
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 46 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // Q.a (dialog1)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-8892] 'i_clk' is already declared in this region [/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/UART_HANDLER.vhd:103]. ]", 2, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-8892] 'i_clk' is already declared in this region [/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/UART_HANDLER.vhd:103]. ]", 2, false, false, false, false, false, true); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-8892] 'i_clk' is already declared in this region [/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/UART_HANDLER.vhd:103]. ]", 2, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/UART_HANDLER.vhd;-;;-;16;-;line;-;103;-;;-;16;-;"); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,050 MB. GUI used memory: 78 MB. Current time: 12/2/23, 11:18:50 AM EST
+selectCodeEditor("UART_HANDLER.vhd", 74, 208); // ad (UART_HANDLER.vhd)
+selectCodeEditor("UART_HANDLER.vhd", 74, 208, false, false, false, false, true); // ad (UART_HANDLER.vhd) - Double Click
+selectCodeEditor("UART_HANDLER.vhd", 188, 206); // ad (UART_HANDLER.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 04m:38s
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-439] module 'OffRAMPS_top' not found. ]", 3, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-439] module 'OffRAMPS_top' not found. ]", 3, false, false, false, false, false, true); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// Elapsed Time for: 'L.f': 04m:42s
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 4 
+// Tcl Message: [Sat Dec  2 11:19:05 2023] Launched synth_1... Run output will be captured here: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq (Starting Design Runs Progress)
+// Elapsed Time for: 'L.f': 04m:46s
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 18 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aa
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 37 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // Q.a (dialog2)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-421] mismatched array sizes in rhs and lhs of assignment [/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:73]. ]", 2, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd;-;;-;16;-;line;-;73;-;;-;16;-;"); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+selectCodeEditor("TROJAN_TOP.vhd", 348, 149); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 341, 162); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 05m:50s
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-285] failed synthesizing module 'TROJAN_TOP' [/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:46]. ]", 3, true); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd;-;;-;16;-;line;-;46;-;;-;16;-;"); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+// Elapsed Time for: 'L.f': 05m:54s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,131 MB. GUI used memory: 79 MB. Current time: 12/2/23, 11:20:15 AM EST
+selectCodeEditor("TROJAN_TOP.vhd", 61, 10); // ad (TROJAN_TOP.vhd)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 4 
+// Tcl Message: [Sat Dec  2 11:20:18 2023] Launched synth_1... Run output will be captured here: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 46 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // Q.a (dialog3)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-3493] module 'rising_edge_detector' declared at '/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/RISING_EDGE_DETECTOR.vhd:4' does not have matching formal port for component port 'i_clk' [/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:121]. ]", 2, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd;-;;-;16;-;line;-;121;-;;-;16;-;"); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+selectCodeEditor("TROJAN_TOP.vhd", 288, 157); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 288, 157, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+// Elapsed time: 12 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OffRAMPS_top(Behavioral) (OFFRAMPS_TOP.vhd), Uart_TX : UART_HANDLER(Behavioral) (UART_HANDLER.vhd)]", 4); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OffRAMPS_top(Behavioral) (OFFRAMPS_TOP.vhd), Uart_TX : UART_HANDLER(Behavioral) (UART_HANDLER.vhd)]", 4); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OffRAMPS_top(Behavioral) (OFFRAMPS_TOP.vhd), Trojans : TROJAN_TOP(Behavioral) (TROJAN_TOP.vhd), X_STEP_EDGE_DETECT : RISING_EDGE_DETECTOR(Behavioral) (RISING_EDGE_DETECTOR.vhd)]", 6, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OffRAMPS_top(Behavioral) (OFFRAMPS_TOP.vhd), Trojans : TROJAN_TOP(Behavioral) (TROJAN_TOP.vhd), X_STEP_EDGE_DETECT : RISING_EDGE_DETECTOR(Behavioral) (RISING_EDGE_DETECTOR.vhd)]", 6, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+// [Engine Memory]: 2,142 MB (+8392kb) [00:07:33]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,162 MB. GUI used memory: 78 MB. Current time: 12/2/23, 11:21:30 AM EST
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "UART_HANDLER.vhd", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TROJAN_TOP.vhd", 2); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("TROJAN_TOP.vhd", 333, 286); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 405, 338); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 405, 338, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+selectCodeEditor("TROJAN_TOP.vhd", 397, 342); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 397, 342, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 400, 352); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 400, 352, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 399, 368); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 399, 368, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 405, 383); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 404, 383, false, true, false, false, true); // ad (TROJAN_TOP.vhd) - Control Key - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 07m:28s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,198 MB. GUI used memory: 79 MB. Current time: 12/2/23, 11:21:50 AM EST
+selectCodeEditor("TROJAN_TOP.vhd", 80, 171); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 80, 171, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+// Elapsed Time for: 'L.f': 07m:32s
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 07m:34s
+// Elapsed Time for: 'L.f': 07m:38s
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 4 
+// Tcl Message: [Sat Dec  2 11:22:00 2023] Launched synth_1... Run output will be captured here: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 104 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs impl_1 -jobs 4 
+// Tcl Message: [Sat Dec  2 11:23:45 2023] Launched impl_1... Run output will be captured here: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 15); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, constraints.xdc]", 17, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, constraints.xdc]", 17, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 2,240 MB. GUI used memory: 81 MB. Current time: 12/2/23, 11:23:50 AM EST
+selectCodeEditor("constraints.xdc", 484, 67); // ad (constraints.xdc)
+selectCodeEditor("constraints.xdc", 484, 67, false, false, false, false, true); // ad (constraints.xdc) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "OFFRAMPS_TOP.vhd", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("OFFRAMPS_TOP.vhd", 66, 126); // ad (OFFRAMPS_TOP.vhd)
+selectCodeEditor("OFFRAMPS_TOP.vhd", 66, 126, false, false, false, false, true); // ad (OFFRAMPS_TOP.vhd) - Double Click
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "clk_in"); // d.c (RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX)
+selectCodeEditor("OFFRAMPS_TOP.vhd", 403, 221); // ad (OFFRAMPS_TOP.vhd)
+// TclEventType: RUN_STEP_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 2,348 MB. GUI used memory: 80 MB. Current time: 12/2/23, 11:24:20 AM EST
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 49 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "Generate Bitstream"); // a (PAResourceCommand.PACommandNames_RUN_BITGEN)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+dismissDialog("Implementation Completed"); // Q.a (dialog5)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Sat Dec  2 11:24:53 2023] Launched impl_1... Run output will be captured here: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 58 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER, "Open Hardware Manager"); // a (PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl (Dont Echo) Command: 'rdi::info_commands get_hw_probes'
+// Tcl (Dont Echo) Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// TclEventType: HW_SESSION_OPEN
+// WARNING: HEventQueue.dispatchEvent() is taking  1039 ms.
+// Tcl Message: open_hw_manager 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // t (PAResourceOtoP.PAViews_PROJECT_SUMMARY, PlanAheadTabProject Summary)
+dismissDialog("Open Hardware Manager"); // bq (Open Hardware Manager Progress)
+// [Engine Memory]: 2,285 MB (+37745kb) [00:11:59]

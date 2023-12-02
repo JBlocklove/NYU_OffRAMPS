@@ -100,7 +100,6 @@ signal DATA_LEN : natural;
 signal DATA_IDX : natural;
 
 signal RESET_COUNTER : std_logic_vector (17 downto 0) := (others=>'0');
-signal i_CLK : std_logic;
 
 
 -- UART TX Control Signals
