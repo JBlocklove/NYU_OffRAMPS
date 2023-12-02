@@ -101,14 +101,12 @@ architecture Behavioral of Trojan_TOP is
     signal E_STEP_COMPLETE : std_logic := '0';
 
     -- Temporarily we will set the enabled trojans here, hardcoded. Vivado will optimize out the unused ones.
-    signal TROJ_T1_ENABLE : std_logic := '0'; -- Adds or removes steps from X or Y axis during move
+    signal TROJ_T1_ENABLE : std_logic := '0'; -- Adds steps from X or Y axis during move
     signal TROJ_T2_ENABLE : std_logic := '0'; -- Constant over / under extrusion per print
     signal TROJ_T3_ENABLE : std_logic := '1'; -- Increases or decreases filament retraction between layers
     signal TROJ_T4_ENABLE : std_logic := '0'; -- Small Shift along X and Y axis on random Z layer increment
     signal TROJ_T5_ENABLE : std_logic := '0'; -- Denial of service via disabling D8/D10 heating element power
-    signal TROJ_T6_ENABLE : std_logic := '0'; -- Spoofing of measured hot-end thermocouple temperatures via ADC
-    signal TROJ_T7_ENABLE : std_logic := '0'; -- 
-    signal TROJ_T8_ENABLE : std_logic := '0'; -- 
+    signal TROJ_T6_ENABLE : std_logic := '0'; -- Add Z steps after Home to change bed leveling
 
     type State_Type is (IDLE, STATE_1, STATE_2, STATE_3, STATE_4, STATE_5, DISABLE);
 
@@ -171,7 +169,7 @@ begin
     o_LED       <= OUTPUT_LED;
     o_E0_DIR    <= i_E0_DIR ;
     o_E0_EN     <= i_E0_EN  ;
-    o_E0_STEP   <= i_E0_STEP when (TROJ_T2_ENABLE = '0' or TROJ_T3_ENABLE = '0') else TROJ_EXTRUDER_OUT;             
+    o_E0_STEP   <= i_E0_STEP when (TROJ_T2_ENABLE = '0' and TROJ_T3_ENABLE = '0') else TROJ_EXTRUDER_OUT;             
     o_X_DIR     <= i_X_DIR  ;
     o_X_EN      <= i_X_EN   ;   
     o_X_MIN     <= i_X_MIN  ;
@@ -185,7 +183,7 @@ begin
     o_Z_MIN     <= i_Z_MIN  ;            
     o_Z_STEP    <= i_Z_STEP ;
 
-    TROJ_EXTRUDER_OUT <= TROJ_T2_EXTRUDER_OUT or TROJ_T3_EXTRUDER_OUT;
+    TROJ_EXTRUDER_OUT <= TROJ_T3_EXTRUDER_OUT; --TROJ_T2_EXTRUDER_OUT;
  
     --------------------------- Trojan 1 Logic Start ---------------------------
     -- This trojan adds or removes steps from the X and Y Axis 
@@ -236,7 +234,6 @@ begin
             end case;
         end if;
     end process;
-
     --------------------------- Trojan 1 Logic End ---------------------------
 
 
@@ -288,7 +285,6 @@ begin
     --------------------------- Trojan 3 Logic Start ---------------------------
     --decreases filament retraction between layers
     TROJ_T3_EXTRUDER_OUT <= (i_E0_STEP or E_STEP_MOD);
-    OUTPUT_LED <= i_Z_STEP; --Z_STEP_EDGE;
     
     trojan_t3_proc : process (i_CLK)
     begin
@@ -303,26 +299,17 @@ begin
                     end if;
 
                 when STATE_1 => -- Wait for a Z Step
-                    if(Z_STEP_EDGE = '1') then 
-                        T3_NEXT_STATE <= STATE_2;
-                    else
-                        T3_NEXT_STATE <= STATE_1;
-                    end if;
 
                 when STATE_2 => -- Wait for completion of extra extrusin
-                    if(E_STEP_COMPLETE = '1') then
-                        E_PULSE_EN <= '0';
-                        T3_NEXT_STATE <= STATE_1;
-                    else 
-                        E_PULSE_EN <= '1';
-                    end if;
-                    
-                when STATE_3 => T3_NEXT_STATE <= DISABLE; -- Unused
+
+                when STATE_3 => 
+
+                
                 when STATE_4 => T3_NEXT_STATE <= DISABLE; -- Unused
                 when STATE_5 => T3_NEXT_STATE <= DISABLE; -- Unused
         
                 when DISABLE => -- Turn off signals here
-                    E_PULSE_EN <= '0';
+
                     T3_NEXT_STATE <= IDLE;
             end case;
         end if;

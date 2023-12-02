@@ -6,11 +6,11 @@ set_property -dict {PACKAGE_PIN L17 IOSTANDARD LVCMOS33} [get_ports clk_in]
 create_clock -period 83.330 -name clk_in_pin -waveform {0.000 41.660} -add [get_ports clk_in]
 
 # LEDs
-set_property -dict { PACKAGE_PIN A17   IOSTANDARD LVCMOS33 } [get_ports { led_0 }]; #IO_L12N_T1_MRCC_16 Sch=led[1]
-set_property -dict { PACKAGE_PIN C16   IOSTANDARD LVCMOS33 } [get_ports { led_1 }]; #IO_L13P_T2_MRCC_16 Sch=led[2]
+set_property -dict {PACKAGE_PIN A17 IOSTANDARD LVCMOS33 } [get_ports led_0 ]; #IO_L12N_T1_MRCC_16 Sch=led[1]
+set_property -dict {PACKAGE_PIN C16 IOSTANDARD LVCMOS33 } [get_ports led_1 ]; #IO_L13P_T2_MRCC_16 Sch=led[2]
 
 # RGB LED
-set_property -dict { PACKAGE_PIN B17   IOSTANDARD LVCMOS33 } [get_ports { led0_b }]; #IO_L14N_T2_SRCC_16 Sch=led0_b
+set_property -dict {PACKAGE_PIN B17 IOSTANDARD LVCMOS33 } [get_ports led0_b ]; #IO_L14N_T2_SRCC_16 Sch=led0_b
 set_property -dict {PACKAGE_PIN B16 IOSTANDARD LVCMOS33} [get_ports led0_g]
 set_property -dict {PACKAGE_PIN C17 IOSTANDARD LVCMOS33} [get_ports led0_r]
 
