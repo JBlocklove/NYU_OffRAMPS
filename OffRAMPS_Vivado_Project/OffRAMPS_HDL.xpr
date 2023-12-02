@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="65" Path="/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.xpr">
+<Project Product="Vivado" Version="7" Minor="65" Path="/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_Vivado_Project/OffRAMPS_HDL.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="1999985cfa9d4250835d32fd8531e716"/>
@@ -91,49 +91,49 @@
   <FileSets Version="1" Minor="32">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/new/DETECT_HOME.vhd">
+      <File Path="$PPRDIR/../src/DETECT_HOME.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/FALLING_EDGE_DETECTOR.vhd">
+      <File Path="$PPRDIR/../src/FALLING_EDGE_DETECTOR.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/PULSE_GEN.vhd">
+      <File Path="$PPRDIR/../src/PULSE_GEN.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/RISING_EDGE_DETECTOR.vhd">
+      <File Path="$PPRDIR/../src/RISING_EDGE_DETECTOR.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/TROJAN_TOP.vhd">
+      <File Path="$PPRDIR/../src/TROJAN_TOP.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/UART_HANDLER.vhd">
+      <File Path="$PPRDIR/../src/UART_HANDLER.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/UART_TX.vhd">
+      <File Path="$PPRDIR/../src/UART_TX.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/OFFRAMPS_TOP.vhd">
+      <File Path="$PPRDIR/../src/OFFRAMPS_TOP.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
