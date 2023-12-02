@@ -160,7 +160,7 @@ begin
  
     o_E0_DIR    <= i_E0_DIR  when TROJ_T1_ENABLE = '0' else i_E0_DIR;
     o_E0_EN     <= i_E0_EN   when TROJ_T1_ENABLE = '0' else i_E0_EN;
-    o_E0_STEP   <= i_E0_STEP when TROJ_T2_ENABLE = '0' else TROJ_T2_EXTRUDER_OUT;             
+    o_E0_STEP   <= i_E0_STEP when (TROJ_T2_ENABLE = '0' or TROJ_T3_ENABLE = '0') else TROJ_T2_EXTRUDER_OUT;             
     o_X_DIR     <= i_X_DIR   when TROJ_T1_ENABLE = '0' else i_X_DIR;
     o_X_EN      <= i_X_EN    when TROJ_T1_ENABLE = '0' else i_X_EN;    
     o_X_MIN     <= i_X_MIN   when TROJ_T1_ENABLE = '0' else i_X_MIN;
@@ -240,7 +240,7 @@ begin
             T2_STATE <= T2_NEXT_STATE;
             case T2_STATE is
                 when IDLE =>
-                    if (TROJ_T2_ENABLE = '1' and homing_complete = '1') then
+                    if (TROJ_T2_ENABLE = '1' ) then
                         T2_NEXT_STATE <= STATE_1;
                     else
                         T2_NEXT_STATE <= DISABLE;
