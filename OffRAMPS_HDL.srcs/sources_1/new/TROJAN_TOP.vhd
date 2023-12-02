@@ -101,8 +101,8 @@ architecture Behavioral of Trojan_TOP is
 
     -- Temporarily we will set the enabled trojans here, hardcoded. Vivado will optimize out the unused ones.
     signal TROJ_T1_ENABLE : std_logic := '0'; -- Adds or removes steps from X or Y axis during move
-    signal TROJ_T2_ENABLE : std_logic := '1'; -- Constant over / under extrusion per print
-    signal TROJ_T3_ENABLE : std_logic := '0'; -- Increases or decreases filament retraction between layers
+    signal TROJ_T2_ENABLE : std_logic := '0'; -- Constant over / under extrusion per print
+    signal TROJ_T3_ENABLE : std_logic := '1'; -- Increases or decreases filament retraction between layers
     signal TROJ_T4_ENABLE : std_logic := '0'; -- Small Shift along X and Y axis on random Z layer increment
     signal TROJ_T5_ENABLE : std_logic := '0'; -- Denial of service via disabling D8/D10 heating element power
     signal TROJ_T6_ENABLE : std_logic := '0'; -- Spoofing of measured hot-end thermocouple temperatures via ADC
@@ -117,10 +117,12 @@ architecture Behavioral of Trojan_TOP is
 
     -- Trojan 2 Related Signals 
     signal T2_STATE, T2_NEXT_STATE: State_Type;
-    signal TROJ_T2_COUNTER : std_logic_vector (29 downto 0) := (others=>'0');
     signal TROJ_T2_EXTRUDER_OUT : std_logic;
     signal TROJ_T2_MATCH_INPUT : std_logic := '1';
+    
     -- Trojan 3 Related Signals 
+    signal T3_STATE, T3_NEXT_STATE: State_Type;
+    signal TROJ_T3_EXTRUDER_OUT : std_logic;
     -- Trojan 4 Related Signals 
     -- Trojan 5 Related Signals 
     -- Trojan 6 Related Signals 
@@ -160,7 +162,7 @@ begin
  
     o_E0_DIR    <= i_E0_DIR  when TROJ_T1_ENABLE = '0' else i_E0_DIR;
     o_E0_EN     <= i_E0_EN   when TROJ_T1_ENABLE = '0' else i_E0_EN;
-    o_E0_STEP   <= i_E0_STEP when (TROJ_T2_ENABLE = '0' or TROJ_T3_ENABLE = '0') else TROJ_T2_EXTRUDER_OUT;             
+    o_E0_STEP   <= i_E0_STEP when (TROJ_T2_ENABLE = '0' or TROJ_T3_ENABLE = '0') else (TROJ_T2_EXTRUDER_OUT or TROJ_T3_EXTRUDER_OUT);             
     o_X_DIR     <= i_X_DIR   when TROJ_T1_ENABLE = '0' else i_X_DIR;
     o_X_EN      <= i_X_EN    when TROJ_T1_ENABLE = '0' else i_X_EN;    
     o_X_MIN     <= i_X_MIN   when TROJ_T1_ENABLE = '0' else i_X_MIN;
@@ -178,7 +180,6 @@ begin
  
     --------------------------- Trojan 1 Logic Start ---------------------------
     -- This trojan adds or removes steps from the X and Y Axis 
-
     trojan_t1_proc : process (i_CLK)
     begin
         if rising_edge(i_CLK) then
@@ -204,7 +205,7 @@ begin
                         X_PULSE_EN <= '0';
                         T1_NEXT_STATE <= STATE_3;
                     else 
-                        X_PULSE_EN <= '1';
+                        X_PULSE_EN <= '1'; -- We may need an extra state to turn this off nect state .. Turning it off after completion may cause two steps
                     end if;
                         
                 when STATE_3 => -- Send Steps to motor Y
@@ -240,7 +241,7 @@ begin
             T2_STATE <= T2_NEXT_STATE;
             case T2_STATE is
                 when IDLE =>
-                    if (TROJ_T2_ENABLE = '1' ) then
+                    if (TROJ_T2_ENABLE = '1') then
                         T2_NEXT_STATE <= STATE_1;
                     else
                         T2_NEXT_STATE <= DISABLE;
@@ -269,11 +270,54 @@ begin
         
                 when DISABLE => -- Turn off signals here
                     TROJ_T2_MATCH_INPUT <= '1';
+                    T2_NEXT_STATE <= IDLE;
             end case;
         end if;
     end process;
-
     --------------------------- Trojan 2 Logic End ---------------------------
+
+    --------------------------- Trojan 3 Logic Start ---------------------------
+    --decreases filament retraction between layers
+    TROJ_T3_EXTRUDER_OUT <= E_STEP_MOD;
+    
+    trojan_t3_proc : process (i_CLK)
+    begin
+        if rising_edge(i_CLK) then
+            T3_STATE <= T3_NEXT_STATE;
+            case T3_STATE is
+                when IDLE =>
+                    if (TROJ_T3_ENABLE = '1' and homing_complete = '1') then
+                        T3_NEXT_STATE <= STATE_1;
+                    else
+                        T3_NEXT_STATE <= DISABLE;
+                    end if;
+
+                when STATE_1 => -- Wait for a Z Step
+                    if(Z_STEP_EDGE = '1') then 
+                        T3_NEXT_STATE <= STATE_2;
+                    else
+                        T3_NEXT_STATE <= STATE_1;
+                    end if;
+
+                when STATE_2 => -- Wait for completion of extra extrusin
+                    if(E_STEP_COMPLETE = '1') then
+                        E_PULSE_EN <= '0';
+                        T3_NEXT_STATE <= STATE_1;
+                    else 
+                        E_PULSE_EN <= '1';
+                    end if;
+                    
+                when STATE_3 => T3_NEXT_STATE <= DISABLE; -- Unused
+                when STATE_4 => T3_NEXT_STATE <= DISABLE; -- Unused
+                when STATE_5 => T3_NEXT_STATE <= DISABLE; -- Unused
+        
+                when DISABLE => -- Turn off signals here
+                    E_PULSE_EN <= '0';
+                    T3_NEXT_STATE <= IDLE;
+            end case;
+        end if;
+    end process;
+    --------------------------- Trojan 3 Logic End ---------------------------
 
 
 end Behavioral;

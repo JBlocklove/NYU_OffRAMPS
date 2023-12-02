@@ -2290,3 +2290,347 @@ dismissDialog("Program Device"); // aP (dialog56)
 dismissDialog("Program Device"); // bq (Program Device Progress)
 selectCodeEditor("TROJAN_TOP.vhd", 600, 259); // ad (TROJAN_TOP.vhd)
 // Elapsed Time for: 'L.f': 02h:17m:06s
+// Elapsed time: 93 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 191, 509); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 567, 518); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 98, 549); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 282, 174); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 745, 112); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+// Elapsed time: 37 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 354, 231); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 145, 231); // ad (TROJAN_TOP.vhd)
+typeControlKey(null, null, 'z');
+selectCodeEditor("TROJAN_TOP.vhd", 140, 236); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 476, 248); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 77, 245); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 443, 244); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 745, 262); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 604, 262); // ad (TROJAN_TOP.vhd)
+// Elapsed time: 12 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 613, 174); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 610, 173); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 777, 177); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 826, 178); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("TROJAN_TOP.vhd", 827, 178); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 827, 178, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+// Elapsed Time for: 'L.f': 02h:20m:20s
+selectCodeEditor("TROJAN_TOP.vhd", 371, 277); // ad (TROJAN_TOP.vhd)
+// Elapsed Time for: 'L.f': 02h:20m:24s
+selectCodeEditor("TROJAN_TOP.vhd", 343, 259); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 231, 315); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 243, 312); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 86, 320); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 565, 335); // ad (TROJAN_TOP.vhd)
+typeControlKey(null, null, 'z');
+selectCodeEditor("TROJAN_TOP.vhd", 592, 246); // ad (TROJAN_TOP.vhd)
+// Elapsed time: 78 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 125, 229); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 562, 279); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 131, 277); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 156, 275); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 156, 275, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 206, 155); // ad (TROJAN_TOP.vhd)
+// Elapsed time: 10 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 96, 544); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 369, 357); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 253, 224); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 768, 378); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 768, 436); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 91, 202); // ad (TROJAN_TOP.vhd)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "T2"); // d.c (RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX)
+selectCodeEditor("TROJAN_TOP.vhd", 99, 254); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 189, 247); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 186, 314); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 204, 308); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 204, 308, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 209, 341); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 209, 341, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 256, 458); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 256, 458, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 263, 472); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 263, 472, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 265, 491); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 265, 491, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 188, 537); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 336, 536); // ad (TROJAN_TOP.vhd)
+// Elapsed time: 75 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 834, 401); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 834, 401, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 303, 127); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 303, 114); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+// Elapsed time: 11 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 499, 189); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 499, 189, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+// Elapsed time: 23 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 728, 190); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 728, 190, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+selectCodeEditor("TROJAN_TOP.vhd", 603, 189); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 728, 189); // ad (TROJAN_TOP.vhd)
+// Elapsed time: 31 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 202, 196); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 911, 373); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 735, 280); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 735, 280, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+// Elapsed time: 44 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 220, 114); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+typeControlKey(null, null, 'z');
+selectCodeEditor("TROJAN_TOP.vhd", 979, 190); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 978, 190, false, true, false, false, true); // ad (TROJAN_TOP.vhd) - Control Key - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 244, 340); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 02h:26m:55s
+// [Engine Memory]: 3,735 MB (+6398kb) [02:27:20]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Elapsed Time for: 'L.f': 02h:26m:58s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,781 MB. GUI used memory: 72 MB. Current time: 12/2/23, 1:41:20 PM EST
+// Elapsed Time for: 'L.f': 02h:27m:02s
+selectCodeEditor("TROJAN_TOP.vhd", 252, 315); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 255, 306); // ad (TROJAN_TOP.vhd)
+// Elapsed time: 14 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 203, 320); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 177, 324); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 281, 324); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 175, 412); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 254, 431); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 358, 426); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 318, 530); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 305, 522); // ad (TROJAN_TOP.vhd)
+// Elapsed time: 11 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 265, 434); // ad (TROJAN_TOP.vhd)
+// Elapsed time: 11 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 519, 175); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 519, 175, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+selectCodeEditor("TROJAN_TOP.vhd", 518, 154); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 519, 154, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+// Elapsed time: 10 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 372, 292); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 02h:28m:42s
+// Elapsed Time for: 'L.f': 02h:28m:46s
+// Elapsed time: 36 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 240, 360); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 253, 353); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+typeControlKey(null, null, 'z');
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 175, 352); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 277, 358); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 02h:29m:03s
+// Elapsed Time for: 'L.f': 02h:29m:06s
+// Elapsed time: 14 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 206, 219); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 208, 340); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 209, 431); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 171, 354); // ad (TROJAN_TOP.vhd)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("TROJAN_TOP.vhd", 486, 277); // ad (TROJAN_TOP.vhd)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("TROJAN_TOP.vhd", 330, 397); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 247, 486); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 497, 474); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 497, 474, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+selectCodeEditor("TROJAN_TOP.vhd", 307, 351); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 322, 425); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 02h:30m:03s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,816 MB. GUI used memory: 72 MB. Current time: 12/2/23, 1:44:25 PM EST
+// Elapsed Time for: 'L.f': 02h:30m:06s
+selectCodeEditor("TROJAN_TOP.vhd", 183, 355); // ad (TROJAN_TOP.vhd)
+// Elapsed time: 14 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 176, 413); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 143, 363); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 186, 384); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 168, 232); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 170, 234, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 300, 381); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 300, 382, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 02h:30m:36s
+// Elapsed Time for: 'L.f': 02h:30m:40s
+// Elapsed time: 15 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 211, 298); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 211, 298, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 198, 456); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+// Elapsed time: 56 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 242, 61); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 242, 61, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+// Elapsed time: 29 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 166, 357); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 594, 278); // ad (TROJAN_TOP.vhd)
+// Elapsed time: 16 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 314, 186); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 344, 237); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 317, 235); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 314, 232); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 02h:32m:58s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,842 MB. GUI used memory: 72 MB. Current time: 12/2/23, 1:47:20 PM EST
+// Elapsed Time for: 'L.f': 02h:33m:02s
+selectCodeEditor("TROJAN_TOP.vhd", 578, 275); // ad (TROJAN_TOP.vhd)
+// Elapsed time: 46 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 193, 548); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 301, 158); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 354, 445); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 158, 460); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 523, 332); // ad (TROJAN_TOP.vhd)
+// Elapsed time: 12 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 313, 113); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 02h:34m:23s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,860 MB. GUI used memory: 72 MB. Current time: 12/2/23, 1:48:45 PM EST
+selectCodeEditor("TROJAN_TOP.vhd", 274, 546); // ad (TROJAN_TOP.vhd)
+// Elapsed Time for: 'L.f': 02h:34m:26s
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 160, 547); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 02h:34m:30s
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Elapsed Time for: 'L.f': 02h:34m:35s
+selectCodeEditor("TROJAN_TOP.vhd", 278, 522); // ad (TROJAN_TOP.vhd)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 21, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// Elapsed Time for: 'L.f': 02h:34m:39s
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (RDIResource.BaseDialog_YES)
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // u (dialog57)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/utils_1/imports/synth_1/OffRAMPS_top.dcp with file /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/OffRAMPS_top.dcp 
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Resetting Runs"); // bq (Resetting Runs Progress)
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Dec  2 13:49:03 2023] Launched synth_1... Run output will be captured here: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/runme.log [Sat Dec  2 13:49:03 2023] Launched impl_1... Run output will be captured here: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bq (Generate Bitstream Progress)
+// Elapsed Time for: 'L.f': 02h:34m:42s
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 89 seconds
+selectButton(PAResourceQtoS.SyntheticaStateMonitor_CANCEL, "Cancel"); // g (PAResourceQtoS.SyntheticaStateMonitor_CANCEL, Cancel)
+selectButton(PAResourceQtoS.StateMonitor_RESET_RUN, "Reset Run"); // a (PAResourceQtoS.StateMonitor_RESET_RUN, RDIResource.BaseDialog_YES)
+// TclEventType: RUN_MODIFY
+dismissDialog("Cancel Implementation"); // aO (dialog58)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run impl_1 
+dismissDialog("Resetting Runs"); // bq (Resetting Runs Progress)
+selectCodeEditor("TROJAN_TOP.vhd", 179, 157); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 179, 157, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+selectCodeEditor("TROJAN_TOP.vhd", 297, 379); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 3,922 MB (+269kb) [02:36:54]
+// Elapsed Time for: 'L.f': 02h:36m:29s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,942 MB. GUI used memory: 71 MB. Current time: 12/2/23, 1:50:50 PM EST
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 21, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// Elapsed Time for: 'L.f': 02h:36m:32s
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (RDIResource.BaseDialog_YES)
+dismissDialog("Synthesis is Out-of-date"); // u (dialog59)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/utils_1/imports/synth_1/OffRAMPS_top.dcp with file /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/OffRAMPS_top.dcp 
+dismissDialog("Resetting Runs"); // bq (Resetting Runs Progress)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Sat Dec  2 13:50:54 2023] Launched synth_1... Run output will be captured here: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/runme.log [Sat Dec  2 13:50:54 2023] Launched impl_1... Run output will be captured here: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 190 seconds
+dismissDialog("Bitstream Generation Completed"); // Q.a (dialog60)
