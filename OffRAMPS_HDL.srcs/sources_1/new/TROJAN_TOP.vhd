@@ -62,6 +62,14 @@ architecture Behavioral of Trojan_TOP is
         output    : out STD_LOGIC
 		);
 	END COMPONENT;
+	
+    COMPONENT FALLING_EDGE_DETECTOR
+	PORT(
+        clk     : in  STD_LOGIC;
+        input     : in  STD_LOGIC;
+        output    : out STD_LOGIC
+		);
+	END COMPONENT;
 	   
     -- Edge Detected signals
     signal X_STEP_EDGE : std_logic := '0';
@@ -92,8 +100,8 @@ architecture Behavioral of Trojan_TOP is
     signal E_STEP_COMPLETE : std_logic := '0';
 
     -- Temporarily we will set the enabled trojans here, hardcoded. Vivado will optimize out the unused ones.
-    signal TROJ_T1_ENABLE : std_logic := '1'; -- Adds or removes steps from X or Y axis during move
-    signal TROJ_T2_ENABLE : std_logic := '0'; -- Constant over / under extrusion per print
+    signal TROJ_T1_ENABLE : std_logic := '0'; -- Adds or removes steps from X or Y axis during move
+    signal TROJ_T2_ENABLE : std_logic := '1'; -- Constant over / under extrusion per print
     signal TROJ_T3_ENABLE : std_logic := '0'; -- Increases or decreases filament retraction between layers
     signal TROJ_T4_ENABLE : std_logic := '0'; -- Small Shift along X and Y axis on random Z layer increment
     signal TROJ_T5_ENABLE : std_logic := '0'; -- Denial of service via disabling D8/D10 heating element power
@@ -150,15 +158,9 @@ begin
 --    end process;
     --------------------------- Pulse Gen Test End ---------------------------
  
-
- 
- 
-    --------------------------- Trojan 1 Logic Start ---------------------------
-    -- This trojan adds or removes steps from the X and Y Axis 
-    -- Rather than using a mux array, we may want buffered outputs which are overwritten per clock
     o_E0_DIR    <= i_E0_DIR  when TROJ_T1_ENABLE = '0' else i_E0_DIR;
     o_E0_EN     <= i_E0_EN   when TROJ_T1_ENABLE = '0' else i_E0_EN;
-    o_E0_STEP   <= i_E0_STEP when TROJ_T1_ENABLE = '0' else i_E0_STEP;             
+    o_E0_STEP   <= i_E0_STEP when TROJ_T2_ENABLE = '0' else TROJ_T2_EXTRUDER_OUT;             
     o_X_DIR     <= i_X_DIR   when TROJ_T1_ENABLE = '0' else i_X_DIR;
     o_X_EN      <= i_X_EN    when TROJ_T1_ENABLE = '0' else i_X_EN;    
     o_X_MIN     <= i_X_MIN   when TROJ_T1_ENABLE = '0' else i_X_MIN;
@@ -171,6 +173,11 @@ begin
     o_Z_EN      <= i_Z_EN    when TROJ_T1_ENABLE = '0' else i_Z_EN;
     o_Z_MIN     <= i_Z_MIN   when TROJ_T1_ENABLE = '0' else i_Z_MIN;             
     o_Z_STEP    <= i_Z_STEP  when TROJ_T1_ENABLE = '0' else i_Z_STEP;
+
+ 
+ 
+    --------------------------- Trojan 1 Logic Start ---------------------------
+    -- This trojan adds or removes steps from the X and Y Axis 
 
     trojan_t1_proc : process (i_CLK)
     begin
@@ -225,29 +232,13 @@ begin
 
     --------------------------- Trojan 2 Logic Start ---------------------------
     -- Constant over / under extrusion per print
-    o_E0_DIR    <= i_E0_DIR  when TROJ_T2_ENABLE = '0' else i_E0_DIR;
-    o_E0_EN     <= i_E0_EN   when TROJ_T2_ENABLE = '0' else i_E0_EN;
-    o_E0_STEP   <= i_E0_STEP when TROJ_T2_ENABLE = '0' else TROJ_T2_EXTRUDER_OUT;             
-    o_X_DIR     <= i_X_DIR   when TROJ_T2_ENABLE = '0' else i_X_DIR;
-    o_X_EN      <= i_X_EN    when TROJ_T2_ENABLE = '0' else i_X_EN;    
-    o_X_MIN     <= i_X_MIN   when TROJ_T2_ENABLE = '0' else i_X_MIN;
-    o_X_STEP    <= i_X_STEP  when TROJ_T2_ENABLE = '0' else i_X_STEP;                 
-    o_Y_DIR     <= i_Y_DIR   when TROJ_T2_ENABLE = '0' else i_Y_DIR;
-    o_Y_EN      <= i_Y_EN    when TROJ_T2_ENABLE = '0' else i_Y_EN; 
-    o_Y_MIN     <= i_Y_MIN   when TROJ_T2_ENABLE = '0' else i_Y_MIN;
-    o_Y_STEP    <= i_Y_STEP  when TROJ_T2_ENABLE = '0' else i_Y_STEP;                 
-    o_Z_DIR     <= i_Z_DIR   when TROJ_T2_ENABLE = '0' else i_Z_DIR;
-    o_Z_EN      <= i_Z_EN    when TROJ_T2_ENABLE = '0' else i_Z_EN;
-    o_Z_MIN     <= i_Z_MIN   when TROJ_T2_ENABLE = '0' else i_Z_MIN;             
-    o_Z_STEP    <= i_Z_STEP  when TROJ_T2_ENABLE = '0' else i_Z_STEP;
-
-    TROJ_T2_EXTRUDER_OUT <= i_E0_STEP when TROJ_T2_MATCH_INPUT = '1' else '0';
+    TROJ_T2_EXTRUDER_OUT <= i_E0_STEP and TROJ_T2_MATCH_INPUT;
     
     trojan_t2_proc : process (i_CLK)
     begin
         if rising_edge(i_CLK) then
             T2_STATE <= T2_NEXT_STATE;
-            case T1_STATE is
+            case T2_STATE is
                 when IDLE =>
                     if (TROJ_T2_ENABLE = '1' and homing_complete = '1') then
                         T2_NEXT_STATE <= STATE_1;
@@ -255,7 +246,7 @@ begin
                         T2_NEXT_STATE <= DISABLE;
                     end if;
 
-                when STATE_1 => -- Check for rising edge of extruder step
+                when STATE_1 => -- Check for falling edge of extruder step, if found let next pulse through
                     if(E_STEP_EDGE = '1') then 
                         TROJ_T2_MATCH_INPUT <= '1';
                         T2_NEXT_STATE <= STATE_2;
@@ -264,7 +255,7 @@ begin
                     end if;
                     
 
-                when STATE_2 => -- Send Steps to motor X
+                when STATE_2 => -- Check for falling edge of extruder step, if found, block next pulse
                     if(E_STEP_EDGE = '1') then 
                         TROJ_T2_MATCH_INPUT <= '0';
                         T2_NEXT_STATE <= STATE_1;
@@ -277,7 +268,7 @@ begin
                 when STATE_5 => T2_NEXT_STATE <= DISABLE; -- Unused
         
                 when DISABLE => -- Turn off signals here
-                    TROJ_T2_MATCH_INPUT = '1';
+                    TROJ_T2_MATCH_INPUT <= '1';
             end case;
         end if;
     end process;

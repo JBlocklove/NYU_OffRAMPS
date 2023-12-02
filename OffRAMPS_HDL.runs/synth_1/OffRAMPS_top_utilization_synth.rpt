@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
-| Date         : Sat Dec  2 11:48:31 2023
+| Date         : Sat Dec  2 13:14:06 2023
 | Host         : jason-XPS-13-9343 running 64-bit Ubuntu 22.04.3 LTS
 | Command      : report_utilization -file OffRAMPS_top_utilization_synth.rpt -pb OffRAMPS_top_utilization_synth.pb
 | Design       : OffRAMPS_top
@@ -31,13 +31,13 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |  139 |     0 |          0 |     20800 |  0.67 |
-|   LUT as Logic          |  139 |     0 |          0 |     20800 |  0.67 |
+| Slice LUTs*             |   98 |     0 |          0 |     20800 |  0.47 |
+|   LUT as Logic          |   98 |     0 |          0 |     20800 |  0.47 |
 |   LUT as Memory         |    0 |     0 |          0 |      9600 |  0.00 |
-| Slice Registers         |  253 |     0 |          0 |     41600 |  0.61 |
-|   Register as Flip Flop |  253 |     0 |          0 |     41600 |  0.61 |
+| Slice Registers         |  169 |     0 |          0 |     41600 |  0.41 |
+|   Register as Flip Flop |  169 |     0 |          0 |     41600 |  0.41 |
 |   Register as Latch     |    0 |     0 |          0 |     41600 |  0.00 |
-| F7 Muxes                |    2 |     0 |          0 |     16300 |  0.01 |
+| F7 Muxes                |    4 |     0 |          0 |     16300 |  0.02 |
 | F8 Muxes                |    0 |     0 |          0 |      8150 |  0.00 |
 +-------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -58,8 +58,8 @@ Warning! LUT value is adjusted to account for LUT combining.
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 4     |          Yes |         Set |            - |
-| 249   |          Yes |       Reset |            - |
+| 3     |          Yes |         Set |            - |
+| 166   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -151,19 +151,19 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  249 |        Flop & Latch |
-| CARRY4   |   51 |          CarryLogic |
-| LUT6     |   48 |                 LUT |
-| LUT4     |   38 |                 LUT |
-| LUT3     |   27 |                 LUT |
-| LUT5     |   26 |                 LUT |
+| FDRE     |  166 |        Flop & Latch |
+| CARRY4   |   35 |          CarryLogic |
+| LUT4     |   32 |                 LUT |
+| LUT6     |   25 |                 LUT |
+| LUT3     |   21 |                 LUT |
 | OBUF     |   20 |                  IO |
 | IBUF     |   18 |                  IO |
-| LUT1     |   13 |                 LUT |
-| LUT2     |    9 |                 LUT |
+| LUT5     |   15 |                 LUT |
 | OBUFT    |    8 |                  IO |
-| FDSE     |    4 |        Flop & Latch |
-| MUXF7    |    2 |               MuxFx |
+| LUT1     |    8 |                 LUT |
+| MUXF7    |    4 |               MuxFx |
+| LUT2     |    4 |                 LUT |
+| FDSE     |    3 |        Flop & Latch |
 +----------+------+---------------------+
 
 

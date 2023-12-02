@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
-| Date             : Sat Dec  2 11:49:46 2023
+| Date             : Sat Dec  2 13:15:19 2023
 | Host             : jason-XPS-13-9343 running 64-bit Ubuntu 22.04.3 LTS
 | Command          : report_power -file OffRAMPS_top_power_routed.rpt -pb OffRAMPS_top_power_summary_routed.pb -rpx OffRAMPS_top_power_routed.rpx
 | Design           : OffRAMPS_top
@@ -53,13 +53,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |      482 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      132 |     20800 |            0.63 |
-|   CARRY4       |    <0.001 |       51 |      8150 |            0.63 |
-|   Register     |    <0.001 |      253 |     41600 |            0.61 |
-|   F7/F8 Muxes  |    <0.001 |        2 |     32600 |           <0.01 |
-|   Others       |     0.000 |       16 |       --- |             --- |
-| Signals        |     0.001 |      408 |       --- |             --- |
+| Slice Logic    |    <0.001 |      326 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       94 |     20800 |            0.45 |
+|   CARRY4       |    <0.001 |       35 |      8150 |            0.43 |
+|   Register     |    <0.001 |      169 |     41600 |            0.41 |
+|   F7/F8 Muxes  |    <0.001 |        4 |     32600 |            0.01 |
+|   Others       |     0.000 |       14 |       --- |             --- |
+| Signals        |     0.001 |      270 |       --- |             --- |
 | MMCM           |     0.104 |        1 |         5 |           20.00 |
 | I/O            |     0.015 |       47 |       106 |           44.34 |
 | Static Power   |     0.072 |          |           |                 |
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.014 |       0.005 |      0.010 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.013 |       0.003 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.071 |       0.058 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.005 |       0.004 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -148,8 +148,7 @@ Table of Contents
 | Name         | Power (W) |
 +--------------+-----------+
 | OffRAMPS_top |     0.123 |
-|   Trojans    |     0.001 |
-|   Uart_TX    |     0.003 |
+|   Uart_TX    |     0.002 |
 |   inst_clk   |     0.104 |
 |     inst     |     0.104 |
 +--------------+-----------+

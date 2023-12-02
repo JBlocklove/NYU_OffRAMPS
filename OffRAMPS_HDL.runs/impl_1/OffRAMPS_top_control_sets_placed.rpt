@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
-| Date         : Sat Dec  2 11:49:22 2023
+| Date         : Sat Dec  2 13:14:56 2023
 | Host         : jason-XPS-13-9343 running 64-bit Ubuntu 22.04.3 LTS
 | Command      : report_control_sets -verbose -file OffRAMPS_top_control_sets_placed.rpt
 | Design       : OffRAMPS_top
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    16 |
-|    Minimum number of control sets                        |    16 |
+| Total control sets                                       |    10 |
+|    Minimum number of control sets                        |    10 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    43 |
+| Unused register locations in slices containing registers |    31 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    16 |
-| >= 0 to < 4        |     0 |
-| >= 4 to < 6        |     4 |
+| Total control sets |    10 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     0 |
 | >= 6 to < 8        |     3 |
 | >= 8 to < 10       |     0 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
-| >= 14 to < 16      |     3 |
-| >= 16              |     6 |
+| >= 14 to < 16      |     1 |
+| >= 16              |     5 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,37 +58,31 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              35 |           11 |
+| No           | No                    | No                     |              26 |           10 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              65 |           18 |
+| No           | Yes                   | No                     |              66 |           19 |
 | Yes          | No                    | No                     |              14 |            8 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             139 |           40 |
+| Yes          | Yes                   | No                     |              63 |           17 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+-------------------------+-------------------------------------+----------------------------------------------------------+------------------+----------------+--------------+
-|       Clock Signal      |            Enable Signal            |                     Set/Reset Signal                     | Slice Load Count | Bel Load Count | Bels / Slice |
-+-------------------------+-------------------------------------+----------------------------------------------------------+------------------+----------------+--------------+
-|  inst_clk/inst/clk_out1 | Trojans/Y_PULSE_GEN/p_0_in          | Trojans/Y_PULSE_GEN/Y_STEP_COMPLETE                      |                1 |              4 |         4.00 |
-|  inst_clk/inst/clk_out1 | Trojans/X_PULSE_GEN/p_0_in          | Trojans/X_PULSE_GEN/FSM_onehot_current_state_reg[3]_0[0] |                1 |              4 |         4.00 |
-|  inst_clk/inst/clk_out1 | Trojans/X_PULSE_GEN/PULSE_COUNT     | Trojans/X_PULSE_GEN/FSM_onehot_current_state_reg[3]_0[0] |                1 |              5 |         5.00 |
-|  inst_clk/inst/clk_out1 | Trojans/Y_PULSE_GEN/PULSE_COUNT     | Trojans/Y_PULSE_GEN/Y_STEP_COMPLETE                      |                1 |              5 |         5.00 |
-|  inst_clk/inst/clk_out1 |                                     | Uart_TX/DATA_VALUE[17][0]_i_1_n_0                        |                2 |              6 |         3.00 |
-|  inst_clk/inst/clk_out1 | Uart_TX/uartSend                    |                                                          |                2 |              7 |         3.50 |
-|  inst_clk/inst/clk_out1 | Uart_TX/DATA_IDX                    |                                                          |                6 |              7 |         1.17 |
-|  inst_clk/inst/clk_out1 |                                     | Uart_TX/Inst_UART_TX_CTRL/bitTmr                         |                4 |             14 |         3.50 |
-|  inst_clk/inst/clk_out1 | Trojans/X_PULSE_GEN/TIMER_COUNTER_0 | Trojans/X_PULSE_GEN/TIMER_COUNTER[13]_i_1_n_0            |                5 |             14 |         2.80 |
-|  inst_clk/inst/clk_out1 | Trojans/Y_PULSE_GEN/TIMER_COUNTER   | Trojans/Y_PULSE_GEN/TIMER_COUNTER[13]_i_1__0_n_0         |                5 |             14 |         2.80 |
-|  inst_clk/inst/clk_out1 |                                     | Uart_TX/RESET_COUNTER0                                   |                5 |             18 |         3.60 |
-|  inst_clk/inst/clk_out1 |                                     | Uart_TX/EXAMPLE_COUNTER[0]_i_1_n_0                       |                7 |             27 |         3.86 |
-|  inst_clk/inst/clk_out1 | Trojans/TROJ_T1_COUNTER[29]_i_2_n_0 | Trojans/TROJ_T1_COUNTER[29]_i_1_n_0                      |                9 |             30 |         3.33 |
-|  inst_clk/inst/clk_out1 | Uart_TX/DATA_IDX                    | Uart_TX/DATA_IDX0                                        |                8 |             31 |         3.88 |
-|  inst_clk/inst/clk_out1 | Uart_TX/Inst_UART_TX_CTRL/bitIndex  | Uart_TX/Inst_UART_TX_CTRL/READY                          |                9 |             32 |         3.56 |
-|  inst_clk/inst/clk_out1 |                                     |                                                          |               11 |             35 |         3.18 |
-+-------------------------+-------------------------------------+----------------------------------------------------------+------------------+----------------+--------------+
++-------------------------+-----------------------------------------+------------------------------------+------------------+----------------+--------------+
+|       Clock Signal      |              Enable Signal              |          Set/Reset Signal          | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------------+-----------------------------------------+------------------------------------+------------------+----------------+--------------+
+|  inst_clk/inst/clk_out1 |                                         | HomingDetector/next_state0         |                1 |              1 |         1.00 |
+|  inst_clk/inst/clk_out1 |                                         | Uart_TX/DATA_VALUE[17][0]_i_1_n_0  |                2 |              6 |         3.00 |
+|  inst_clk/inst/clk_out1 | Uart_TX/uartSend                        |                                    |                3 |              7 |         2.33 |
+|  inst_clk/inst/clk_out1 | Uart_TX/DATA_IDX                        |                                    |                5 |              7 |         1.40 |
+|  inst_clk/inst/clk_out1 |                                         | Uart_TX/Inst_UART_TX_CTRL/bitTmr   |                4 |             14 |         3.50 |
+|  inst_clk/inst/clk_out1 |                                         | Uart_TX/RESET_COUNTER0             |                5 |             18 |         3.60 |
+|  inst_clk/inst/clk_out1 |                                         |                                    |               10 |             26 |         2.60 |
+|  inst_clk/inst/clk_out1 |                                         | Uart_TX/EXAMPLE_COUNTER[0]_i_1_n_0 |                7 |             27 |         3.86 |
+|  inst_clk/inst/clk_out1 | Uart_TX/DATA_IDX                        | Uart_TX/DATA_IDX0                  |                8 |             31 |         3.88 |
+|  inst_clk/inst/clk_out1 | Uart_TX/Inst_UART_TX_CTRL/txBit_i_2_n_0 | Uart_TX/Inst_UART_TX_CTRL/READY    |                9 |             32 |         3.56 |
++-------------------------+-----------------------------------------+------------------------------------+------------------+----------------+--------------+
 
 
