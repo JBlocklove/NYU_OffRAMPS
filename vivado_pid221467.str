@@ -399,3 +399,543 @@ selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
 closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // t (PAResourceOtoP.PAViews_PROJECT_SUMMARY, PlanAheadTabProject Summary)
 dismissDialog("Open Hardware Manager"); // bq (Open Hardware Manager Progress)
 // [Engine Memory]: 2,285 MB (+37745kb) [00:11:59]
+// Elapsed time: 89 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // g (PAResourceOtoP.ProgramDebugTab_OPEN_TARGET)
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ao (PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, auto_connect_target_menu)
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 INFO: [Labtools 27-2222] Launching hw_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2023.2   **** Build date : Oct 13 2023 at 20:26:23     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.   INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0 INFO: [Labtools 27-3417] Launching cs_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ******** Xilinx cs_server v2023.2.0   ****** Build date   : Oct 10 2023-00:01:56     **** Build number : 2023.2.1696910516       ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.       ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.    
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210328B856CDA 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/impl_1/OffRAMPS_top.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Auto Connect"); // bq (Auto Connect Progress)
+// Elapsed time: 17 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // g (PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (PAResourceOtoP.ProgramFpgaDialog_PROGRAM, RDIResource.BaseDialog_OK)
+dismissDialog("Program Device"); // aP (dialog7)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/impl_1/OffRAMPS_top.bit} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bq (Program Device Progress)
+// Elapsed time: 13 seconds
+selectCodeEditor("OFFRAMPS_TOP.vhd", 190, 293); // ad (OFFRAMPS_TOP.vhd)
+selectCodeEditor("OFFRAMPS_TOP.vhd", 190, 293, false, false, false, false, true); // ad (OFFRAMPS_TOP.vhd) - Double Click
+// [GUI Memory]: 167 MB (+7587kb) [00:14:16]
+// Elapsed time: 100 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TROJAN_TOP.vhd", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("TROJAN_TOP.vhd", 121, 431); // ad (TROJAN_TOP.vhd)
+typeControlKey(null, null, 'z');
+selectCodeEditor("TROJAN_TOP.vhd", 139, 436); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 246, 406); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 122, 436); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 219, 411); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 117, 428); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 55, 272); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 61, 264); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 61, 264, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+selectCodeEditor("TROJAN_TOP.vhd", 399, 260); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 15m:52s
+// Elapsed Time for: 'L.f': 15m:56s
+// Elapsed time: 30 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 175, 360); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("TROJAN_TOP.vhd", 187, 165); // ad (TROJAN_TOP.vhd)
+// Elapsed Time for: 'L.f': 16m:14s
+selectCodeEditor("TROJAN_TOP.vhd", 226, 204); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 212, 188); // ad (TROJAN_TOP.vhd)
+// Elapsed Time for: 'L.f': 16m:18s
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 279, 383); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 198, 423); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 16m:26s
+// TclEventType: FILE_SET_CHANGE
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 135, 433); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,377 MB. GUI used memory: 87 MB. Current time: 12/2/23, 11:30:50 AM EST
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+// Elapsed Time for: 'L.f': 16m:30s
+// Elapsed Time for: 'L.f': 16m:34s
+selectButton(RDIResource.HCodeView_TOGGLE_COLUMN_SELECTION_MODE, (String) null); // v (RDIResource.HCodeView_TOGGLE_COLUMN_SELECTION_MODE): TRUE
+selectCodeEditor("TROJAN_TOP.vhd", 45, 260); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 129, 266); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 135, 294); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 2,405 MB (+5001kb) [00:17:08]
+// Elapsed Time for: 'L.f': 16m:44s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,440 MB. GUI used memory: 87 MB. Current time: 12/2/23, 11:31:05 AM EST
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// Elapsed Time for: 'L.f': 16m:48s
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 21, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (RDIResource.BaseDialog_YES)
+dismissDialog("Synthesis is Out-of-date"); // u (dialog8)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/utils_1/imports/synth_1/OffRAMPS_top.dcp with file /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/OffRAMPS_top.dcp 
+dismissDialog("Resetting Runs"); // bq (Resetting Runs Progress)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Sat Dec  2 11:31:11 2023] Launched synth_1... Run output will be captured here: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/runme.log [Sat Dec  2 11:31:11 2023] Launched impl_1... Run output will be captured here: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 44 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // Q.a (dialog9)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Synth 8-426] missing choice(s) 5 downto 4 in case statement [/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd:166]. ]", 2, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/sources_1/new/TROJAN_TOP.vhd;-;;-;16;-;line;-;166;-;;-;16;-;"); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+// Elapsed time: 13 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 219, 356); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 18m:12s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,442 MB. GUI used memory: 86 MB. Current time: 12/2/23, 11:32:35 AM EST
+// Elapsed time: 25 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 326, 295); // ad (TROJAN_TOP.vhd)
+// Elapsed Time for: 'L.f': 18m:16s
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 343, 59); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 239, 388); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 269, 371); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 265, 392); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("TROJAN_TOP.vhd", 412, 365); // ad (TROJAN_TOP.vhd)
+// Elapsed Time for: 'L.f': 18m:26s
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 433, 392); // ad (TROJAN_TOP.vhd)
+// Elapsed Time for: 'L.f': 18m:30s
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("TROJAN_TOP.vhd", 447, 382); // ad (TROJAN_TOP.vhd)
+// Elapsed Time for: 'L.f': 18m:32s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 18m:36s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,485 MB. GUI used memory: 140 MB. Current time: 12/2/23, 11:33:00 AM EST
+// Elapsed Time for: 'L.f': 18m:40s
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 4 
+// Tcl Message: [Sat Dec  2 11:33:04 2023] Launched synth_1... Run output will be captured here: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 87 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs impl_1 -jobs 4 
+// Tcl Message: [Sat Dec  2 11:34:31 2023] Launched impl_1... Run output will be captured here: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 25 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 302, 170); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 294, 117); // ad (TROJAN_TOP.vhd)
+// TclEventType: RUN_STEP_COMPLETED
+selectCodeEditor("TROJAN_TOP.vhd", 322, 116); // ad (TROJAN_TOP.vhd)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 37 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (RDIResource.BaseDialog_CANCEL)
+dismissDialog("Implementation Completed"); // Q.a (dialog11)
+selectCodeEditor("TROJAN_TOP.vhd", 295, 114); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 21m:30s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,501 MB. GUI used memory: 88 MB. Current time: 12/2/23, 11:35:55 AM EST
+// Elapsed Time for: 'L.f': 21m:34s
+// Elapsed time: 11 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 209, 99); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 253, 116); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 251, 130); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 260, 148); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 231, 137); // ad (TROJAN_TOP.vhd)
+// Elapsed time: 27 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 257, 331); // ad (TROJAN_TOP.vhd)
+// Elapsed time: 13 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "OFFRAMPS_TOP.vhd", 0); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("OFFRAMPS_TOP.vhd", 518, 412); // ad (OFFRAMPS_TOP.vhd)
+typeControlKey((HResource) null, "OFFRAMPS_TOP.vhd", 'c'); // ad (OFFRAMPS_TOP.vhd)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TROJAN_TOP.vhd", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("TROJAN_TOP.vhd", 223, 200); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 38, 208); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 395, 198); // ad (TROJAN_TOP.vhd)
+// Elapsed time: 18 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 143, 421); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 143, 421, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 318, 19); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 318, 19, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 314, 42); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 314, 42, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 314, 51); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 314, 51, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 307, 88); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 307, 88, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 308, 97); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 308, 97, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 309, 110); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 309, 110, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 317, 127); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 317, 127, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 316, 155); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 316, 155, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 316, 181); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 316, 181, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 314, 171); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 314, 171, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 320, 197); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 320, 197, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 315, 235); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 315, 235, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 312, 246); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 312, 247, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 313, 264); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 313, 264, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 314, 280); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 314, 280, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 532, 185); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 205, 90); // ad (TROJAN_TOP.vhd)
+selectButton(RDIResourceCommand.RDICommands_LINE_COMMENT, (String) null); // B (RDIResourceCommand.RDICommands_LINE_COMMENT)
+selectButton(RDIResource.HCodeView_TOGGLE_COLUMN_SELECTION_MODE, (String) null); // v (RDIResource.HCodeView_TOGGLE_COLUMN_SELECTION_MODE): FALSE
+selectButton(RDIResource.HCodeView_TOGGLE_COLUMN_SELECTION_MODE, (String) null); // v (RDIResource.HCodeView_TOGGLE_COLUMN_SELECTION_MODE): TRUE
+selectCodeEditor("TROJAN_TOP.vhd", 137, 297); // ad (TROJAN_TOP.vhd)
+typeControlKey(null, null, 'z');
+selectCodeEditor("TROJAN_TOP.vhd", 378, 393); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 133, 293); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 147, 344); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 150, 414); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 160, 488); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 23m:44s
+selectCodeEditor("TROJAN_TOP.vhd", 397, 290); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 307, 246); // ad (TROJAN_TOP.vhd)
+// Elapsed Time for: 'L.f': 23m:48s
+// Elapsed time: 12 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 269, 517); // ad (TROJAN_TOP.vhd)
+// Elapsed time: 11 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 439, 177); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 439, 177, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 264, 536); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 267, 536); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 445, 247); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 445, 247, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 414, 242); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 575, 249); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 13, 268); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 27, 192); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 40, 112); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 487, 274); // ad (TROJAN_TOP.vhd)
+selectButton(RDIResource.HCodeView_TOGGLE_COLUMN_SELECTION_MODE, (String) null); // v (RDIResource.HCodeView_TOGGLE_COLUMN_SELECTION_MODE): FALSE
+selectCodeEditor("TROJAN_TOP.vhd", 143, 283); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 24m:42s
+// [Engine Memory]: 2,538 MB (+14331kb) [00:25:08]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,548 MB. GUI used memory: 87 MB. Current time: 12/2/23, 11:39:05 AM EST
+// Elapsed Time for: 'L.f': 24m:46s
+selectButton(RDIResource.HCodeView_TOGGLE_COLUMN_SELECTION_MODE, (String) null); // v (RDIResource.HCodeView_TOGGLE_COLUMN_SELECTION_MODE): TRUE
+selectCodeEditor("TROJAN_TOP.vhd", 195, 428); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("TROJAN_TOP.vhd", 522, 309); // ad (TROJAN_TOP.vhd)
+// Elapsed Time for: 'L.f': 24m:52s
+// Elapsed Time for: 'L.f': 24m:56s
+// Elapsed time: 18 seconds
+selectCodeEditor("TROJAN_TOP.vhd", 504, 252); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 25m:28s
+// Elapsed Time for: 'L.f': 25m:32s
+// Elapsed time: 28 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Run Synthesis"); // u (dialog12)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/utils_1/imports/synth_1/OffRAMPS_top.dcp with file /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/OffRAMPS_top.dcp 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 4 
+// Tcl Message: [Sat Dec  2 11:40:00 2023] Launched synth_1... Run output will be captured here: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 118 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 4 
+// Tcl Message: [Sat Dec  2 11:41:58 2023] Launched impl_1... Run output will be captured here: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 105 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "Generate Bitstream"); // a (PAResourceCommand.PACommandNames_RUN_BITGEN)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+dismissDialog("Implementation Completed"); // Q.a (dialog14)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Sat Dec  2 11:43:44 2023] Launched impl_1... Run output will be captured here: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 69 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (RDIResource.BaseDialog_CANCEL)
+dismissDialog("Bitstream Generation Completed"); // Q.a (dialog15)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // g (PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (PAResourceOtoP.ProgramFpgaDialog_PROGRAM, RDIResource.BaseDialog_OK)
+dismissDialog("Program Device"); // aP (dialog16)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/impl_1/OffRAMPS_top.bit} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bq (Program Device Progress)
+// Elapsed time: 53 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // g (PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (PAResourceOtoP.ProgramFpgaDialog_PROGRAM, RDIResource.BaseDialog_OK)
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // aP (dialog17)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/impl_1/OffRAMPS_top.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bq (Program Device Progress)
+// Elapsed time: 54 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // g (PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (PAResourceOtoP.ProgramFpgaDialog_PROGRAM, RDIResource.BaseDialog_OK)
+dismissDialog("Program Device"); // aP (dialog18)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/impl_1/OffRAMPS_top.bit} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'D' command handler elapsed time: 3 seconds
+dismissDialog("Program Device"); // bq (Program Device Progress)
+selectCodeEditor("TROJAN_TOP.vhd", 127, 116); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 127, 116, false, false, false, false, true); // ad (TROJAN_TOP.vhd) - Double Click
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'c'); // ad (TROJAN_TOP.vhd)
+selectCodeEditor("TROJAN_TOP.vhd", 160, 263); // ad (TROJAN_TOP.vhd)
+typeControlKey((HResource) null, "TROJAN_TOP.vhd", 'v'); // ad (TROJAN_TOP.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 33m:06s
+// Elapsed Time for: 'L.f': 33m:10s
+// Elapsed time: 16 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 21, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (RDIResource.BaseDialog_YES)
+dismissDialog("Synthesis is Out-of-date"); // u (dialog19)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.srcs/utils_1/imports/synth_1/OffRAMPS_top.dcp with file /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/OffRAMPS_top.dcp 
+dismissDialog("Resetting Runs"); // bq (Resetting Runs Progress)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Sat Dec  2 11:47:35 2023] Launched synth_1... Run output will be captured here: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/synth_1/runme.log [Sat Dec  2 11:47:35 2023] Launched impl_1... Run output will be captured here: /home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 164 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (RDIResource.BaseDialog_CANCEL)
+dismissDialog("Bitstream Generation Completed"); // Q.a (dialog20)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // g (PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (PAResourceOtoP.ProgramFpgaDialog_PROGRAM, RDIResource.BaseDialog_OK)
+dismissDialog("Program Device"); // aP (dialog21)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/home/jason/Documents/OffRAMPS_HDL/OffRAMPS_HDL.runs/impl_1/OffRAMPS_top.bit} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bq (Program Device Progress)
