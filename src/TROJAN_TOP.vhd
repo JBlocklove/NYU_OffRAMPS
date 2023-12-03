@@ -126,36 +126,36 @@ architecture Behavioral of Trojan_TOP is
     signal OUTPUT_LED        : std_logic := '0';
     
     -- Trojan 1 Related Signals 
-    -- signal T1_STATE, T1_NEXT_STATE: State_Type := IDLE;
-    -- signal TROJ_T1_COUNTER : std_logic_vector (29 downto 0) := (others=>'0');
-
-    -- -- Trojan 2 Related Signals 
-    -- signal T2_STATE, T2_NEXT_STATE: State_Type := IDLE;
-    -- signal TROJ_T2_MATCH_INPUT : std_logic := '1';
+    signal T1_STATE, T1_NEXT_STATE: State_Type := IDLE;
+    signal TROJ_T1_COUNTER : std_logic_vector (29 downto 0) := (others=>'0');
+    
+    -- Trojan 2 Related Signals 
+    signal T2_STATE, T2_NEXT_STATE: State_Type := IDLE;
+    signal TROJ_T2_MATCH_INPUT : std_logic := '1';
     
     -- Trojan 3 Related Signals 
---    signal T3_STATE, T3_NEXT_STATE: State_Type := IDLE;
---    signal TROJ_T3_Z_PULSE_COUNT : std_logic_vector (7 downto 0) := (others=>'0'); 
+    signal T3_STATE, T3_NEXT_STATE: State_Type := IDLE;
+    signal TROJ_T3_Z_PULSE_COUNT : std_logic_vector (7 downto 0) := (others=>'0'); 
     
-    -- -- Trojan 4 Related Signals 
-    --  signal T4_STATE, T4_NEXT_STATE: State_Type := IDLE;
-    --  signal TROJ_T4_Z_PULSE_COUNT : std_logic_vector (7 downto 0) := (others=>'0');  
+    -- Trojan 4 Related Signals 
+    signal T4_STATE, T4_NEXT_STATE: State_Type := IDLE;
+    signal TROJ_T4_Z_PULSE_COUNT : std_logic_vector (7 downto 0) := (others=>'0');  
     
-    -- -- Trojan 5 Related Signals 
-    -- signal T5_STATE, T5_NEXT_STATE: State_Type := IDLE;
-    -- signal TROJ_T5_COUNTER : std_logic_vector (33 downto 0) := (others=>'0');
-    -- signal TROJ_T5_D10_MOD : std_logic := '0'; 
-    -- signal TROJ_T5_D8_MOD  : std_logic := '0';
-
+    -- Trojan 5 Related Signals 
+    signal T5_STATE, T5_NEXT_STATE: State_Type := IDLE;
+    signal TROJ_T5_COUNTER : std_logic_vector (33 downto 0) := (others=>'0');
+    signal TROJ_T5_D10_MOD : std_logic := '0'; 
+    signal TROJ_T5_D8_MOD  : std_logic := '0';
+    
     -- Trojan 6 Related Signals 
-    -- signal T6_STATE, T6_NEXT_STATE: State_Type := IDLE;
-    -- signal TROJ_T6_COUNTER : std_logic_vector (33 downto 0) := (others=>'0');
-    -- signal TROJ_T6_D10_MOD : std_logic := '1'; 
-
+    signal T6_STATE, T6_NEXT_STATE: State_Type := IDLE;
+    signal TROJ_T6_COUNTER : std_logic_vector (33 downto 0) := (others=>'0');
+    signal TROJ_T6_D10_MOD : std_logic := '1'; 
+    
     -- Trojan 7 Related Signals 
-    -- signal T7_STATE, T7_NEXT_STATE: State_Type := IDLE;
-    -- signal TROJ_T7_Z_PULSE_COUNT : std_logic_vector (7 downto 0) := (others=>'0');
-    -- signal TROJ_T7_Z_STEP_COUNT  : std_logic_vector (7 downto 0) := (others=>'0');
+    signal T7_STATE, T7_NEXT_STATE: State_Type := IDLE;
+    signal TROJ_T7_Z_PULSE_COUNT : std_logic_vector (7 downto 0) := (others=>'0');
+    signal TROJ_T7_Z_STEP_COUNT  : std_logic_vector (7 downto 0) := (others=>'0');
 
     -- Trojan 8 Related Signals 
     signal T8_STATE, T8_NEXT_STATE: State_Type := IDLE;
@@ -314,7 +314,6 @@ begin
 
     ------------------------- Trojan 2 Logic Start ---------------------------
     -- Constant over / under extrusion per print
-    TROJ_T2_EXTRUDER_OUT <= ;
     
     trojan_t2_proc : process (i_CLK)
     begin
@@ -359,8 +358,6 @@ begin
 
     ------------------------- Trojan 3 Logic Start ---------------------------
     -- decreases filament retraction between layers
-    TROJ_T3_EXTRUDER_OUT <= ;
-
     trojan_t3_proc : process (i_CLK)
     begin
         if rising_edge(i_CLK) then -- and homing_complete = '1') then
