@@ -54,6 +54,7 @@ entity OffRAMPS_top is
         -- Outputs
         o_D10       : out std_logic;  -- D10 output
         o_D9        : out std_logic;  -- D9 output
+        o_D8        : out std_logic;  -- D8 output
         o_E0_DIR    : out std_logic;  -- Extruder 0 Direction output
         o_E0_EN     : out std_logic;  -- Extruder 0 Enable output
         o_E0_STEP   : out std_logic;  -- Extruder 0 Step output
@@ -109,49 +110,49 @@ architecture Behavioral of OffRAMPS_top is
 
     COMPONENT TROJAN_TOP
     Port (
-        i_CLK                 : in  std_logic;
+        i_CLK               : in  std_logic;
         homing_complete     : in  std_logic;
-        o_LED                 : out std_logic;
+        o_LED                : out std_logic;
         
         -- Data Signals In
-        i_E0_DIR    : in std_logic;
-        i_E0_EN     : in std_logic;
-        i_E0_STEP   : in std_logic;
-        
-        i_X_DIR     : in std_logic;  -- X Direction input
-        i_X_EN      : in std_logic;  -- X Enable input
-        i_X_MIN     : in std_logic;  -- X Min input
-        i_X_STEP    : in std_logic;  -- X Step input  
-        
-        i_Y_DIR     : in std_logic;  -- Y Direction input
-        i_Y_EN      : in std_logic;  -- Y Enable input
-        i_Y_MIN     : in std_logic;  -- Y Min input
-        i_Y_STEP    : in std_logic;  -- Y Step input
-        
-        i_Z_DIR     : in std_logic;  -- Z Direction input
-        i_Z_EN      : in std_logic;  -- Z Enable input
-        i_Z_MIN     : in std_logic;  -- Z Min input
-        i_Z_STEP    : in std_logic;  -- Z Step input
-        
+        i_D10       : in std_logic;  
+        i_D8        : in std_logic;  
+        i_D9        : in std_logic;  
+        i_E_DIR     : in std_logic;
+        i_E_EN      : in std_logic;
+        i_E_STEP    : in std_logic;
+        i_X_DIR     : in std_logic; 
+        i_X_EN      : in std_logic; 
+        i_X_MIN     : in std_logic; 
+        i_X_STEP    : in std_logic;   
+        i_Y_DIR     : in std_logic; 
+        i_Y_EN      : in std_logic; 
+        i_Y_MIN     : in std_logic; 
+        i_Y_STEP    : in std_logic; 
+        i_Z_DIR     : in std_logic; 
+        i_Z_EN      : in std_logic; 
+        i_Z_MIN     : in std_logic; 
+        i_Z_STEP    : in std_logic; 
+
         -- Data Signals Out
-        o_E0_DIR    : out std_logic;
-        o_E0_EN     : out std_logic;
-        o_E0_STEP   : out std_logic;
-        
-        o_X_DIR     : out std_logic; --X_DIR  output
-        o_X_EN      : out std_logic; --X_EN   output
-        o_X_MIN     : out std_logic; --X_MIN  output
-        o_X_STEP    : out std_logic; --X_STEP output
-        
-        o_Y_DIR     : out std_logic; --Y_DIR  output
-        o_Y_EN      : out std_logic; --Y_EN   output
-        o_Y_MIN     : out std_logic; --Y_MIN  output
-        o_Y_STEP    : out std_logic; --Y_STEP output
-        
-        o_Z_DIR     : out std_logic; --Z_DIR  output
-        o_Z_EN      : out std_logic; --Z_EN   output
-        o_Z_MIN     : out std_logic; --Z_MIN  output
-        o_Z_STEP    : out std_logic  --Z_STEP output
+        o_D10       : out std_logic;  
+        o_D9        : out std_logic;  
+        o_D8        : out std_logic;  
+        o_E_DIR     : out std_logic;
+        o_E_EN      : out std_logic;
+        o_E_STEP    : out std_logic;
+        o_X_DIR     : out std_logic; 
+        o_X_EN      : out std_logic; 
+        o_X_MIN     : out std_logic; 
+        o_X_STEP    : out std_logic; 
+        o_Y_DIR     : out std_logic; 
+        o_Y_EN      : out std_logic; 
+        o_Y_MIN     : out std_logic; 
+        o_Y_STEP    : out std_logic; 
+        o_Z_DIR     : out std_logic; 
+        o_Z_EN      : out std_logic; 
+        o_Z_MIN     : out std_logic; 
+        o_Z_STEP    : out std_logic  
     );
     END COMPONENT;
 
@@ -165,8 +166,11 @@ architecture Behavioral of OffRAMPS_top is
     
     -- Trojan Modified Output Signals
     signal s_troj_led    : std_logic :='0';
-    
-    signal s_mod_E0_DIR  : std_logic :='1';
+
+    signal s_mod_D10     : std_logic :='0';
+    signal s_mod_D8      : std_logic :='0';
+    signal s_mod_D9      : std_logic :='0';
+    signal s_mod_E0_DIR  : std_logic :='0';
     signal s_mod_E0_EN   : std_logic :='0';
     signal s_mod_E0_STEP : std_logic :='0';
     signal s_mod_X_DIR   : std_logic :='0';
@@ -203,8 +207,7 @@ begin
         i_Z_MIN     => i_Z_MIN,
         o_homing_complete => home_complete_buf
     );
-    
-    
+
     Uart_TX :  UART_HANDLER PORT MAP(
        i_CLK 		=> sysclk,
        o_UART_TXD 	=> UART_TXD
@@ -214,26 +217,32 @@ begin
         i_CLK               => sysclk,
         homing_complete     => home_complete_buf,
         o_LED               => s_troj_led,
-        -- Data Signals In             
-        i_E0_DIR    => i_E0_DIR ,
-        i_E0_EN     => i_E0_EN  ,
-        i_E0_STEP   => i_E0_STEP,
-        i_X_DIR     => i_X_DIR  ,
-        i_X_EN      => i_X_EN   ,
-        i_X_MIN     => i_X_MIN  ,
-        i_X_STEP    => i_X_STEP ,
-        i_Y_DIR     => i_Y_DIR  ,
-        i_Y_EN      => i_Y_EN   ,
-        i_Y_MIN     => i_Y_MIN  ,
-        i_Y_STEP    => i_Y_STEP ,
-        i_Z_DIR     => i_Z_DIR  ,
-        i_Z_EN      => i_Z_EN   ,
-        i_Z_MIN     => i_Z_MIN  ,
-        i_Z_STEP    => i_Z_STEP ,
+        -- Data Signals In       
+        i_D10       => i_D10         ,
+        i_D8        => i_D8          ,
+        i_D9        => i_D9          ,      
+        i_E_DIR     => i_E0_DIR      ,
+        i_E_EN      => i_E0_EN       ,
+        i_E_STEP    => i_E0_STEP     ,
+        i_X_DIR     => i_X_DIR       ,
+        i_X_EN      => i_X_EN        ,
+        i_X_MIN     => i_X_MIN       ,
+        i_X_STEP    => i_X_STEP      ,
+        i_Y_DIR     => i_Y_DIR       ,
+        i_Y_EN      => i_Y_EN        ,
+        i_Y_MIN     => i_Y_MIN       ,
+        i_Y_STEP    => i_Y_STEP      ,
+        i_Z_DIR     => i_Z_DIR       ,
+        i_Z_EN      => i_Z_EN        ,
+        i_Z_MIN     => i_Z_MIN       ,
+        i_Z_STEP    => i_Z_STEP      ,
         -- Data Signals Out
-        o_E0_DIR    => s_mod_E0_DIR ,
-        o_E0_EN     => s_mod_E0_EN  ,
-        o_E0_STEP   => s_mod_E0_STEP,
+        o_D10       => s_mod_D10     ,
+        o_D8        => s_mod_D8      ,
+        o_D9        => s_mod_D9      ,
+        o_E_DIR     => s_mod_E0_DIR  ,
+        o_E_EN      => s_mod_E0_EN   ,
+        o_E_STEP    => s_mod_E0_STEP ,
         o_X_DIR     => s_mod_X_DIR   ,
         o_X_EN      => s_mod_X_EN    ,
         o_X_MIN     => s_mod_X_MIN   ,
@@ -272,6 +281,10 @@ begin
   
     -- BYPASS MUX
     -- Muxes Used in the trojan implementation
+    o_D10       <= s_mod_D10 when bypass_mode_en = '0' else i_D10;
+    o_D9        <= s_mod_D9  when bypass_mode_en = '0' else i_D9;
+    o_D8        <= s_mod_D8  when bypass_mode_en = '0' else i_D8;
+
     o_E0_DIR    <= s_mod_E0_DIR  when bypass_mode_en = '0' else i_E0_DIR;
     o_E0_EN     <= s_mod_E0_EN   when bypass_mode_en = '0' else i_E0_EN;
     o_E0_STEP   <= s_mod_E0_STEP when bypass_mode_en = '0' else i_E0_STEP;
@@ -298,9 +311,6 @@ begin
     -- MUXes used in the diginal twin
     
     -- Other MUXes
---    o_D10       <= 'Z' when bypass_mode_en = '0' else i_D10;
---    o_D9        <= 'Z' when bypass_mode_en = '0' else i_D9;
-
 --    o_X_MAX     <= 'Z' when bypass_mode_en = '0' else i_X_MAX;
 --    o_Y_MAX     <= 'Z' when bypass_mode_en = '0' else i_Y_MAX;
 --    o_Z_MAX     <= 'Z' when bypass_mode_en = '0' else i_Z_MAX;
