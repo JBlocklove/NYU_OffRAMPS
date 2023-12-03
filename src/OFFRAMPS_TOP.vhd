@@ -166,7 +166,7 @@ architecture Behavioral of OffRAMPS_top is
     -- Trojan Modified Output Signals
     signal s_troj_led    : std_logic :='0';
     
-    signal s_mod_E0_DIR  : std_logic :='0';
+    signal s_mod_E0_DIR  : std_logic :='1';
     signal s_mod_E0_EN   : std_logic :='0';
     signal s_mod_E0_STEP : std_logic :='0';
     signal s_mod_X_DIR   : std_logic :='0';

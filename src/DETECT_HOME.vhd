@@ -17,23 +17,25 @@ entity DETECT_HOME is
 end DETECT_HOME;
 
 architecture Behavioral of DETECT_HOME is
-    type State_Type is (WAIT_X, WAIT_Y, WAIT_Z1, WAIT_Z2, COMPLETE);
+    type State_Type is (WAIT_X, WAIT_Y, WAIT_Z1, DEBOUNCE, WAIT_Z2, COMPLETE);
     signal state, next_state : State_Type := WAIT_X;
     signal s_homing_complete : std_logic :='0';
     
     signal Z_MIN_EDGE : std_logic := '0';
-
-    COMPONENT RISING_EDGE_DETECTOR
+    signal COUNTER_VAL: std_logic_vector (7 downto 0) := (others=>'0');
+    
+    COMPONENT EDGE_DETECTOR
 	PORT(
-        clk     : in  STD_LOGIC;
-        input     : in  STD_LOGIC;
-        output    : out STD_LOGIC
+        i_clk       : in  std_logic;
+        i_input     : in  std_logic;
+        o_rising    : out std_logic;
+        o_falling	: out std_logic
 		);
 	END COMPONENT;
 	
 begin
-
-    Z_STEP_EDGE_DETECT : RISING_EDGE_DETECTOR PORT MAP(clk => i_CLK, input => i_Z_MIN,  output => Z_MIN_EDGE);
+    
+    Z_STEP_EDGE_DETECT : EDGE_DETECTOR PORT MAP(i_clk => i_CLK, i_input => i_Z_MIN,  o_rising => Z_MIN_EDGE, o_falling => open);
     o_homing_complete <= s_homing_complete;
     
     -- State machine for handling the homing sequence
@@ -59,11 +61,20 @@ begin
                     
                 when WAIT_Z1 =>
                     if Z_MIN_EDGE = '1' then
-                        next_state <= WAIT_Z2;
+                        next_state <= DEBOUNCE;
                     else
                         next_state <= WAIT_Z1;
                     end if;
 
+                when DEBOUNCE => 
+                    if (COUNTER_VAL = "11111111") then 
+                        COUNTER_VAL <= (others=>'0');
+                        next_state <= WAIT_Z2;
+                    else
+                        COUNTER_VAL <= COUNTER_VAL + 1;
+                        next_state <= DEBOUNCE;
+                    end if; 
+                    
                 when WAIT_Z2 =>
                     if Z_MIN_EDGE = '1' then
                         next_state <= COMPLETE;

@@ -66,22 +66,15 @@ architecture Behavioral of Trojan_TOP is
     );
     END COMPONENT;
 
-    COMPONENT RISING_EDGE_DETECTOR
+    COMPONENT EDGE_DETECTOR
 	PORT(
-        clk     : in  STD_LOGIC;
-        input     : in  STD_LOGIC;
-        output    : out STD_LOGIC
+        i_clk       : in  std_logic;
+        i_input     : in  std_logic;
+        o_rising    : out std_logic;
+        o_falling	: out std_logic
 		);
 	END COMPONENT;
 	
-    COMPONENT FALLING_EDGE_DETECTOR
-	PORT(
-        clk     : in  STD_LOGIC;
-        input     : in  STD_LOGIC;
-        output    : out STD_LOGIC
-		);
-	END COMPONENT;
-	   
     -- Edge Detected signals
     signal X_STEP_EDGE : std_logic := '0';
     signal Y_STEP_EDGE : std_logic := '0';
@@ -132,14 +125,13 @@ architecture Behavioral of Trojan_TOP is
     -- signal TROJ_T2_MATCH_INPUT : std_logic := '1';
     
     -- Trojan 3 Related Signals 
-    signal T3_STATE, T3_NEXT_STATE: State_Type := IDLE;
-    signal TROJ_T3_EXTRUDER_OUT : std_logic := '0';
-    signal TROJ_T3_Z_PULSE_COUNT : std_logic_vector (7 downto 0) := (others=>'0'); 
+--    signal T3_STATE, T3_NEXT_STATE: State_Type := IDLE;
+--    signal TROJ_T3_EXTRUDER_OUT : std_logic := '0';
+--    signal TROJ_T3_Z_PULSE_COUNT : std_logic_vector (7 downto 0) := (others=>'0'); 
     
     -- -- Trojan 4 Related Signals 
-    -- signal T4_STATE, T4_NEXT_STATE: State_Type := IDLE;
-    -- signal TROJ_T4_Z_PULSE_COUNT : std_logic_vector (7 downto 0) := (others=>'0');  
-    
+     signal T4_STATE, T4_NEXT_STATE: State_Type := IDLE;
+     signal TROJ_T4_Z_PULSE_COUNT : std_logic_vector (7 downto 0) := (others=>'0');  
     
     -- -- Trojan 5 Related Signals 
     -- signal T5_STATE, T5_NEXT_STATE: State_Type := IDLE;
@@ -151,10 +143,10 @@ begin
 
     ------- Components--------- 
     -- Edge Detectors 
-    X_STEP_EDGE_DETECT : RISING_EDGE_DETECTOR PORT MAP(clk => i_CLK, input => i_X_STEP,  output => X_STEP_EDGE);
-    Y_STEP_EDGE_DETECT : RISING_EDGE_DETECTOR PORT MAP(clk => i_CLK, input => i_Y_STEP,  output => Y_STEP_EDGE);
-    Z_STEP_EDGE_DETECT : FALLING_EDGE_DETECTOR PORT MAP(clk => i_CLK, input => i_Z_STEP,  output => Z_STEP_EDGE);
-    E_STEP_EDGE_DETECT : FALLING_EDGE_DETECTOR PORT MAP(clk => i_CLK, input => i_E0_STEP, output => E_STEP_EDGE);
+    X_STEP_EDGE_DETECT : EDGE_DETECTOR PORT  MAP(i_clk => i_CLK, i_input => i_X_STEP,  o_rising => X_STEP_EDGE, o_falling => open);
+    Y_STEP_EDGE_DETECT : EDGE_DETECTOR PORT  MAP(i_clk => i_CLK, i_input => i_Y_STEP,  o_rising => Y_STEP_EDGE, o_falling => open);
+    Z_STEP_EDGE_DETECT : EDGE_DETECTOR PORT  MAP(i_clk => i_CLK, i_input => i_Z_STEP,  o_rising => open, o_falling => Z_STEP_EDGE);
+    E_STEP_EDGE_DETECT : EDGE_DETECTOR PORT  MAP(i_clk => i_CLK, i_input => i_E0_STEP, o_rising => open, o_falling => E_STEP_EDGE);
     
     -- Pulse Generators
     X_PULSE_GEN : PULSE_GEN PORT MAP (i_CLK => i_CLK, i_PULSE_EN => X_PULSE_EN, i_PULSES_TO_SEND => PULSES_PER_STEP, o_PULSE_SIG => X_STEP_MOD, o_COMPLETE => X_STEP_COMPLETE);
@@ -166,35 +158,38 @@ begin
     -- For testing the output of the pulse gen in trojan mode
     -- This part of the code should countinously move the X axis when bypass mode is turned off 
     -- DONE: I have tested this and confirm the pulse gen works in standalone
-    o_E0_DIR  <= '1';  
-    o_E0_EN   <= '0';   
---    o_X_MIN  <= i_X_MIN;  
-    o_E0_STEP <=   E_STEP_MOD;
+--    o_E0_DIR  <= '1';  
+--    o_E0_EN   <= '0';   
+----    o_X_MIN  <= i_X_MIN;  
+--    o_E0_STEP <=   E_STEP_MOD;
 
-    Pulse_Test_proc : process (i_CLK)
-    begin
-        if rising_edge(i_CLK) then
-            E_PULSE_EN <= '1';
-        end if;
-    end process;
+--    Pulse_Test_proc : process (i_CLK)
+--    begin
+--        if rising_edge(i_CLK) then
+--            E_PULSE_EN <= '1';
+--        end if;
+--    end process;
     --------------------------- Pulse Gen Test End ---------------------------
---    o_LED       <= OUTPUT_LED;
---    o_E0_DIR    <= i_E0_DIR ;
---    o_E0_EN     <= i_E0_EN  when TROJ_T3_ENABLE = '0' else '1';
---    --o_E0_STEP   <= i_E0_STEP when TROJ_T2_ENABLE = '0' else TROJ_T2_EXTRUDER_OUT; 
---    o_E0_STEP   <= i_E0_STEP when TROJ_T3_ENABLE = '0' else TROJ_T3_EXTRUDER_OUT;            
---    o_X_DIR     <= i_X_DIR  ;
---    o_X_EN      <= i_X_EN   ;   
---    o_X_MIN     <= i_X_MIN  ;
---    o_X_STEP    <= i_X_STEP ;-- when TROJ_T1_ENABLE = '0' else (i_X_STEP or X_STEP_MOD);                 
---    o_Y_DIR     <= i_Y_DIR  ;
---    o_Y_EN      <= i_Y_EN   ;
---    o_Y_MIN     <= i_Y_MIN  ;
---    o_Y_STEP    <= i_Y_STEP ;--when TROJ_T1_ENABLE = '0' else (i_Y_STEP or Y_STEP_MOD);                 
---    o_Z_DIR     <= i_Z_DIR  ;
---    o_Z_EN      <= i_Z_EN   ;
---    o_Z_MIN     <= i_Z_MIN  ;            
---    o_Z_STEP    <= i_Z_STEP ;
+    
+    -- Modify these signals as needed
+    o_LED       <= OUTPUT_LED;
+    o_E0_DIR    <= i_E0_DIR ;
+    o_E0_EN     <= i_E0_EN  ; --when TROJ_T3_ENABLE = '0' else '1';
+    --o_E0_STEP   <= i_E0_STEP when TROJ_T2_ENABLE = '0' else TROJ_T2_EXTRUDER_OUT; 
+    --o_E0_STEP   <= i_E0_STEP when TROJ_T3_ENABLE = '0' else TROJ_T3_EXTRUDER_OUT;     
+    o_E0_STEP   <= i_E0_STEP;       
+    o_X_DIR     <= i_X_DIR  ;
+    o_X_EN      <= i_X_EN   ;   
+    o_X_MIN     <= i_X_MIN  ;
+    o_X_STEP    <= i_X_STEP ;-- when TROJ_T1_ENABLE = '0' else (i_X_STEP or X_STEP_MOD);                 
+    o_Y_DIR     <= i_Y_DIR  ;
+    o_Y_EN      <= i_Y_EN   ;
+    o_Y_MIN     <= i_Y_MIN  ;
+    o_Y_STEP    <= i_Y_STEP ;--when TROJ_T1_ENABLE = '0' else (i_Y_STEP or Y_STEP_MOD);                 
+    o_Z_DIR     <= i_Z_DIR  ;
+    o_Z_EN      <= i_Z_EN   ;
+    o_Z_MIN     <= i_Z_MIN  ;            
+    o_Z_STEP    <= i_Z_STEP ;
  
     --------------------------- Trojan 1 Logic Start ---------------------------
     -- This trojan adds or removes steps from the X and Y Axis 
@@ -341,45 +336,45 @@ begin
 
     --------------------------- Trojan 4 Logic Start ---------------------------
     -- This trojan adds or removes steps from the X and Y Axis on layer increment
-    -- trojan_t4_proc : process (i_CLK)
-    -- begin
-    --     if rising_edge(i_CLK) then
-    --         T4_STATE <= T4_NEXT_STATE;
-    --         case T4_STATE is
-    --             when IDLE =>
-    --                 if (TROJ_T4_ENABLE = '1' and homing_complete = '1') then
-    --                     T4_NEXT_STATE <= STATE_1;
-    --                 else
-    --                     T4_NEXT_STATE <= DISABLE;
-    --                 end if;
+     trojan_t4_proc : process (i_CLK)
+     begin
+         if rising_edge(i_CLK) then
+             T4_STATE <= T4_NEXT_STATE;
+             case T4_STATE is
+                 when IDLE =>
+                     if (TROJ_T4_ENABLE = '1' and homing_complete = '1') then
+                         T4_NEXT_STATE <= STATE_1;
+                     else
+                         T4_NEXT_STATE <= DISABLE;
+                     end if;
 
-    --             when STATE_1 => -- Wait for a certain number of z steps
-    --                 if (TROJ_T4_Z_PULSE_COUNT = X"32") then -- 0x32 == 50 steps
-    --                     T4_NEXT_STATE <= STATE_2;
-    --                 else 
-    --                     if(Z_STEP_EDGE = '1') then
-    --                         TROJ_T4_Z_PULSE_COUNT <= TROJ_T4_Z_PULSE_COUNT + 1;
-    --                     end if;
-    --                 end if;
-    --             when STATE_2 => 
-    --                 if(Y_STEP_COMPLETE = '1') then
-    --                     Y_PULSE_EN <= '0';
-    --                     T4_NEXT_STATE <= IDLE;
-    --                 else 
-    --                     Y_PULSE_EN <= '1';
-    --                 end if;
+                 when STATE_1 => -- Wait for a certain number of z steps
+                     if (TROJ_T4_Z_PULSE_COUNT = X"32") then -- 0x32 == 50 steps
+                         T4_NEXT_STATE <= STATE_2;
+                     else 
+                         if(Z_STEP_EDGE = '1') then
+                             TROJ_T4_Z_PULSE_COUNT <= TROJ_T4_Z_PULSE_COUNT + 1;
+                         end if;
+                     end if;
+                 when STATE_2 => 
+                     if(Y_STEP_COMPLETE = '1') then
+                         Y_PULSE_EN <= '0';
+                         T4_NEXT_STATE <= IDLE;
+                     else 
+                         Y_PULSE_EN <= '1';
+                     end if;
 
-    --             when STATE_3 => T3_NEXT_STATE <= DISABLE; -- Unused
-    --             when STATE_4 => T3_NEXT_STATE <= DISABLE; -- Unused
-    --             when STATE_5 => T3_NEXT_STATE <= DISABLE; -- Unused
+                 when STATE_3 => T3_NEXT_STATE <= DISABLE; -- Unused
+                 when STATE_4 => T3_NEXT_STATE <= DISABLE; -- Unused
+                 when STATE_5 => T3_NEXT_STATE <= DISABLE; -- Unused
 
-    --             when DISABLE => -- Turn off signals here
-    --                 TROJ_T4_Z_PULSE_COUNT <= (others=>'0'); 
-    --                 E_PULSE_EN <= '0';
-    --                 T4_NEXT_STATE <= IDLE;
-    --         end case;
-    --     end if;
-    -- end process;    
+                 when DISABLE => -- Turn off signals here
+                     TROJ_T4_Z_PULSE_COUNT <= (others=>'0'); 
+                     E_PULSE_EN <= '0';
+                     T4_NEXT_STATE <= IDLE;
+             end case;
+         end if;
+     end process;    
     --------------------------- Trojan 4 Logic End ---------------------------
 
 
