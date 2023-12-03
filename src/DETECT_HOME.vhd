@@ -17,31 +17,23 @@ entity DETECT_HOME is
 end DETECT_HOME;
 
 architecture Behavioral of DETECT_HOME is
-    type State_Type is (WAIT_X, WAIT_Y, WAIT_Z, COMPLETE);
+    type State_Type is (WAIT_X, WAIT_Y, WAIT_Z1, WAIT_Z2, COMPLETE);
     signal state, next_state : State_Type := WAIT_X;
     signal s_homing_complete : std_logic :='0';
-
---    signal x_press_count : integer := 0;
---    signal y_press_count : integer := 0;
---    signal z_press_count : integer := 0;
-
     
---    COMPONENT FALLING_EDGE_DETECTOR
---	PORT(
---        clk       : in  std_logic;
---        input     : in  std_logic;
---        output    : out std_logic
---		);
---	END COMPONENT;
+    signal Z_MIN_EDGE : std_logic := '0';
 
-    -- Edge detection signals
---    signal s_x_min_edge, s_y_min_edge, s_z_min_edge : std_logic := '0';
-
+    COMPONENT RISING_EDGE_DETECTOR
+	PORT(
+        clk     : in  STD_LOGIC;
+        input     : in  STD_LOGIC;
+        output    : out STD_LOGIC
+		);
+	END COMPONENT;
+	
 begin
 
---    X_MIN_EDGE : FALLING_EDGE_DETECTOR PORT MAP(clk => i_CLK, input => i_X_MIN, output => s_x_min_edge);
---    Y_MIN_EDGE : FALLING_EDGE_DETECTOR PORT MAP(clk => i_CLK, input => i_Y_MIN, output => s_y_min_edge);
---    Z_MIN_EDGE : FALLING_EDGE_DETECTOR PORT MAP(clk => i_CLK, input => i_Z_MIN, output => s_z_min_edge);
+    Z_STEP_EDGE_DETECT : RISING_EDGE_DETECTOR PORT MAP(clk => i_CLK, input => i_Z_MIN,  output => Z_MIN_EDGE);
     o_homing_complete <= s_homing_complete;
     
     -- State machine for handling the homing sequence
@@ -59,18 +51,24 @@ begin
 
                 when WAIT_Y =>
                     if i_Y_MIN = '0' then
-                        next_state <= WAIT_Z;
+                        next_state <= WAIT_Z1;
 
                     else
                         next_state <= WAIT_Y;
                     end if;
                     
-                when WAIT_Z =>
-                    if i_Z_MIN = '1' then
-                        next_state <= COMPLETE;
-
+                when WAIT_Z1 =>
+                    if Z_MIN_EDGE = '1' then
+                        next_state <= WAIT_Z2;
                     else
-                        next_state <= WAIT_Z;
+                        next_state <= WAIT_Z1;
+                    end if;
+
+                when WAIT_Z2 =>
+                    if Z_MIN_EDGE = '1' then
+                        next_state <= COMPLETE;
+                    else
+                        next_state <= WAIT_Z2;
                     end if;
 
                 when COMPLETE =>

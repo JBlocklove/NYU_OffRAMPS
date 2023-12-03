@@ -1,9 +1,8 @@
-   
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
-entity PULSE_GEN is
+entity EXTRUDER_PULSE_GEN is
     Port ( 
             i_CLK           : in  STD_LOGIC;
             i_PULSE_EN      : in  STD_LOGIC;
@@ -11,14 +10,14 @@ entity PULSE_GEN is
             o_PULSE_SIG     : out STD_LOGIC;
             o_COMPLETE      : out STD_LOGIC
             );
-end PULSE_GEN;
+end EXTRUDER_PULSE_GEN;
 
-architecture Behavioral of PULSE_GEN is
+architecture Behavioral of EXTRUDER_PULSE_GEN is
 
-    constant PULSE_WIDTH : std_logic_vector(6 downto 0) := "1100100";
-    constant PULSE_PERIOD : std_logic_vector(13 downto 0) := "11110011110000";
+    constant PULSE_WIDTH : std_logic_vector(7 downto 0) := "10010110"; -- 1.5 us --> 150 cycles
+    constant PULSE_PERIOD : std_logic_vector(15 downto 0) := "1000100001010100";  -- 394 us --> 34900 cycles
 
-    signal TIMER_COUNTER : std_logic_vector(13 downto 0) := (others=>'0');
+    signal TIMER_COUNTER : std_logic_vector(15 downto 0) := (others=>'0');
     signal PULSE_COUNT : std_logic_vector (4 downto 0) := (others=>'0');
     
     type STATE_TYPE is (IDLE, PULSE_HIGH, PULSE_LOW, COMPLETE);

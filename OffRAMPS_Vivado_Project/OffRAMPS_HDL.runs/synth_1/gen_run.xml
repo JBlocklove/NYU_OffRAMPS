@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1701557629" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/OffRAMPS_top.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1701628802" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/OffRAMPS_top.dcp">
   <File Type="VDS-TIMING-PB" Name="OffRAMPS_top_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="OffRAMPS_top_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="OffRAMPS_top.dcp"/>
@@ -12,6 +12,12 @@
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../src/DETECT_HOME.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/EXTRUDER_PULSE_GEN.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
