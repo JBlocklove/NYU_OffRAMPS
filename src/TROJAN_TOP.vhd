@@ -353,48 +353,46 @@ begin
 
     --------------------------- Trojan 4 Logic Start ---------------------------
     -- This trojan adds or removes steps from the X and Y Axis on layer increment
-     trojan_t4_proc : process (i_CLK)
-     begin
-         if rising_edge(i_CLK) then
-             T4_STATE <= T4_NEXT_STATE;
-             case T4_STATE is
-                 when IDLE =>
-                     if (TROJ_T4_ENABLE = '1' and homing_complete = '1') then
-                         T4_NEXT_STATE <= STATE_1;
-                     else
-                         T4_NEXT_STATE <= DISABLE;
-                     end if;
+    trojan_t4_proc : process (i_CLK)
+    begin
+        if rising_edge(i_CLK) then
+            T4_STATE <= T4_NEXT_STATE;
+            case T4_STATE is
+                when IDLE =>
+                    if (TROJ_T4_ENABLE = '1' and homing_complete = '1') then
+                        T4_NEXT_STATE <= STATE_1;
+                    else
+                        T4_NEXT_STATE <= DISABLE;
+                    end if;
 
-                 when STATE_1 => -- Wait for a certain number of z steps
-                     if (TROJ_T4_Z_PULSE_COUNT = X"FF") then -- 255 pulses --> 
-                         T4_NEXT_STATE <= STATE_2;
-                     else 
-                         if(Z_STEP_EDGE = '1') then
-                             TROJ_T4_Z_PULSE_COUNT <= TROJ_T4_Z_PULSE_COUNT + 1;
-                         end if;
-                     end if;
-                 when STATE_2 => 
-                     Y_PULSE_EN <= '1';
-                     T4_NEXT_STATE <= STATE_3;
+                when STATE_1 => -- Wait for a certain number of z steps
+                    if (TROJ_T4_Z_PULSE_COUNT = X"FF") then -- 255 pulses --> 
+                    TROJ_T4_Z_PULSE_COUNT <= X"00";
+                        T4_NEXT_STATE <= STATE_2;
+                    else 
+                        if(Z_STEP_EDGE = '1') then
+                            TROJ_T4_Z_PULSE_COUNT <= TROJ_T4_Z_PULSE_COUNT + 1;
+                        end if;
+                    end if;
+                when STATE_2 => 
+                if(Y_STEP_COMPLETE = '1') then
+                Y_PULSE_EN <= '0';
+                T4_NEXT_STATE <= IDLE;
+            else
+                Y_PULSE_EN<= '1';
+                T4_NEXT_STATE <= STATE_2;
+            end if;
+                when STATE_3 => T4_NEXT_STATE <= DISABLE; -- Unused
+                when STATE_4 => T4_NEXT_STATE <= DISABLE; -- Unused
+                when STATE_5 => T4_NEXT_STATE <= DISABLE; -- Unused
 
-                 when STATE_3 => 
-                     if(Y_STEP_COMPLETE = '1') then
-                         Y_PULSE_EN <= '0';
-                         T4_NEXT_STATE <= IDLE;
-                     else
-                        T4_NEXT_STATE <= STATE_3;
-                     end if;
-                     
-                 when STATE_4 => T4_NEXT_STATE <= DISABLE; -- Unused
-                 when STATE_5 => T4_NEXT_STATE <= DISABLE; -- Unused
-
-                 when DISABLE => -- Turn off signals here
-                     TROJ_T4_Z_PULSE_COUNT <= (others=>'0'); 
-                     E_PULSE_EN <= '0';
-                     T4_NEXT_STATE <= IDLE;
-             end case;
-         end if;
-     end process;    
+                when DISABLE => -- Turn off signals here
+                    TROJ_T4_Z_PULSE_COUNT <= (others=>'0'); 
+                    E_PULSE_EN <= '0';
+                    T4_NEXT_STATE <= IDLE;
+            end case;
+        end if;
+    end process;    
     --------------------------- Trojan 4 Logic End ---------------------------
 
 
