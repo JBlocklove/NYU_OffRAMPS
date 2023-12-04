@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
+--use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity DETECT_HOME is
     Port (
@@ -22,7 +22,7 @@ architecture Behavioral of DETECT_HOME is
     signal s_homing_complete : std_logic :='0';
     
     signal Z_MIN_EDGE : std_logic := '0';
-    signal COUNTER_VAL: std_logic_vector (7 downto 0) := (others=>'0');
+    signal COUNTER_VAL: integer := 0;
     
     COMPONENT EDGE_DETECTOR
 	PORT(
@@ -67,8 +67,8 @@ begin
                     end if;
 
                 when DEBOUNCE => 
-                    if (COUNTER_VAL = "11111111") then 
-                        COUNTER_VAL <= (others=>'0');
+                    if (COUNTER_VAL >= 255) then 
+                        COUNTER_VAL <= 0;
                         next_state <= WAIT_Z2;
                     else
                         COUNTER_VAL <= COUNTER_VAL + 1;
