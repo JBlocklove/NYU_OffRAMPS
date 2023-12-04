@@ -22,7 +22,12 @@ begin
 		end if;
 	end process;
 
-	o_rising <= reg_inputs(0) and not reg_inputs(1);
-	o_falling <= not reg_inputs(0) and reg_inputs(1);
+	process (i_clk)
+	begin
+	   if rising_edge(i_clk) then
+        o_rising <= reg_inputs(0) and not reg_inputs(1);
+        o_falling <= not reg_inputs(0) and reg_inputs(1);
+       end if;
+    end process;
 
 end Behavioral;

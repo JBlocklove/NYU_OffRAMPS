@@ -12,7 +12,8 @@ entity DETECT_HOME is
         i_X_MIN         : in std_logic;
         i_Y_MIN         : in std_logic;
         i_Z_MIN         : in std_logic;
-        o_homing_complete : out std_logic
+        o_homing_complete : out std_logic;
+        o_debug           : out std_logic
     );
 end DETECT_HOME;
 
@@ -38,6 +39,7 @@ begin
     Z_STEP_EDGE_DETECT : EDGE_DETECTOR PORT MAP(i_clk => i_CLK, i_input => i_Z_MIN,  o_rising => Z_MIN_EDGE, o_falling => open);
     o_homing_complete <= s_homing_complete;
     
+    o_debug <= Z_MIN_EDGE;
     -- State machine for handling the homing sequence
     process(i_CLK)
     begin
@@ -60,7 +62,7 @@ begin
                     end if;
                     
                 when WAIT_Z1 =>
-                    if Z_MIN_EDGE = '1' then
+                    if i_Z_MIN = '1' then
                         next_state <= DEBOUNCE;
                     else
                         next_state <= WAIT_Z1;

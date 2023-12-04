@@ -97,7 +97,8 @@ architecture Behavioral of OffRAMPS_top is
         i_X_MIN  : in std_logic;
         i_Y_MIN  : in std_logic;
         i_Z_MIN  : in std_logic;
-        o_homing_complete : out std_logic
+        o_homing_complete : out std_logic;
+        o_debug : out std_logic
 		);
 	END COMPONENT;
 	
@@ -205,7 +206,8 @@ begin
         i_X_MIN     => i_X_MIN,
         i_Y_MIN     => i_Y_MIN,
         i_Z_MIN     => i_Z_MIN,
-        o_homing_complete => home_complete_buf
+        o_homing_complete => home_complete_buf,
+        o_debug => o_Z_MAX
     );
 
     Uart_TX :  UART_HANDLER PORT MAP(
