@@ -13,12 +13,12 @@
 --         *8 data bits, LSB first
 --         *1 stop bit
 --         *no parity
---         				
+--
 -- Port Descriptions:
 --
---    SEND - Used to trigger a send operation. The upper layer logic should 
---           set this signal high for a single clock cycle to trigger a 
---           send. When this signal is set high DATA must be valid . Should 
+--    SEND - Used to trigger a send operation. The upper layer logic should
+--           set this signal high for a single clock cycle to trigger a
+--           send. When this signal is set high DATA must be valid . Should
 --           not be asserted unless READY is high.
 --    DATA - The parallel data to be sent. Must be valid the clock cycle
 --           that SEND has gone high.
@@ -26,9 +26,9 @@
 --   READY - This signal goes low once a send operation has begun and
 --           remains low until it has completed and the module is ready to
 --           send another byte.
--- UART_TX - This signal should be routed to the appropriate TX pin of the 
+-- UART_TX - This signal should be routed to the appropriate TX pin of the
 --           external UART device.
---   
+--
 ----------------------------------------------------------------------------
 --
 ----------------------------------------------------------------------------
@@ -51,7 +51,8 @@ architecture Behavioral of UART_TX is
 
 type TX_STATE_TYPE is (RDY, LOAD_BIT, SEND_BIT);
 
-constant BIT_TMR_MAX : std_logic_vector(13 downto 0) := "10100010110000"; --10416 = (round(100MHz / 9600)) - 1
+--constant BIT_TMR_MAX : std_logic_vector(13 downto 0) := "10100010110000"; --10416 = (round(100MHz / 9600)) - 1
+constant BIT_TMR_MAX : std_logic_vector(9 downto 0) := "1101100011"; -- 867 = (round(100MHz / 115200)) - 1
 constant BIT_INDEX_MAX : natural := 10;
 
 --Counter that keeps track of the number of clock cycles the current bit has been held stable over the
@@ -62,13 +63,13 @@ signal bitTmr : std_logic_vector(13 downto 0) := (others => '0');
 --a 9600 baud rate
 signal bitDone : std_logic;
 
---Contains the index of the next bit in txData that needs to be transferred 
+--Contains the index of the next bit in txData that needs to be transferred
 signal bitIndex : natural;
 
 --a register that holds the current data being sent over the UART TX line
 signal txBit : std_logic := '1';
 
---A register that contains the whole data packet to be sent, including start and stop bits. 
+--A register that contains the whole data packet to be sent, including start and stop bits.
 signal txData : std_logic_vector(9 downto 0);
 
 signal txState : TX_STATE_TYPE := RDY;
@@ -79,7 +80,7 @@ begin
 next_txState_process : process (CLK)
 begin
 	if (rising_edge(CLK)) then
-		case txState is 
+		case txState is
 		when RDY =>
 			if (SEND = '1') then
 				txState <= LOAD_BIT;

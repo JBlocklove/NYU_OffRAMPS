@@ -21,10 +21,10 @@ architecture Behavioral of DETECT_HOME is
     type State_Type is (WAIT_X, WAIT_Y, WAIT_Z1, DEBOUNCE, WAIT_Z2, COMPLETE);
     signal state, next_state : State_Type := WAIT_X;
     signal s_homing_complete : std_logic :='0';
-    
+
     signal Z_MIN_EDGE : std_logic := '0';
     signal COUNTER_VAL: integer := 0;
-    
+
     COMPONENT EDGE_DETECTOR
 	PORT(
         i_clk       : in  std_logic;
@@ -33,13 +33,11 @@ architecture Behavioral of DETECT_HOME is
         o_falling	: out std_logic
 		);
 	END COMPONENT;
-	
+
 begin
-    
     Z_STEP_EDGE_DETECT : EDGE_DETECTOR PORT MAP(i_clk => i_CLK, i_input => i_Z_MIN,  o_rising => Z_MIN_EDGE, o_falling => open);
     o_homing_complete <= s_homing_complete;
-    
-    o_debug <= Z_MIN_EDGE;
+
     -- State machine for handling the homing sequence
     process(i_CLK)
     begin
@@ -60,7 +58,7 @@ begin
                     else
                         next_state <= WAIT_Y;
                     end if;
-                    
+
                 when WAIT_Z1 =>
                     if i_Z_MIN = '1' then
                         next_state <= DEBOUNCE;
@@ -68,15 +66,15 @@ begin
                         next_state <= WAIT_Z1;
                     end if;
 
-                when DEBOUNCE => 
-                    if (COUNTER_VAL >= 255) then 
+                when DEBOUNCE =>
+                    if (COUNTER_VAL >= 255) then
                         COUNTER_VAL <= 0;
                         next_state <= WAIT_Z2;
                     else
                         COUNTER_VAL <= COUNTER_VAL + 1;
                         next_state <= DEBOUNCE;
-                    end if; 
-                    
+                    end if;
+
                 when WAIT_Z2 =>
                     if Z_MIN_EDGE = '1' then
                         next_state <= COMPLETE;
@@ -87,10 +85,10 @@ begin
                 when COMPLETE =>
                     s_homing_complete <= '1';
                     next_state <= COMPLETE;
-                    
+
                 when others =>
                     next_state <= WAIT_X;
-                    
+
             end case;
             state <= next_state;
         end if;
