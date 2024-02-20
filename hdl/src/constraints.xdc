@@ -2,21 +2,21 @@
 # output FPGA --> Level Shifter
 
 # 12 MHz Clock Signal
-set_property -dict {PACKAGE_PIN L17 IOSTANDARD LVCMOS33} [get_ports clk_in]
-create_clock -period 83.330 -name clk_in_pin -waveform {0.000 41.660} -add [get_ports clk_in]
+set_property -dict {PACKAGE_PIN L17 IOSTANDARD LVCMOS33} [get_ports i_CLK]
+create_clock -period 83.330 -name i_CLK_pin -waveform {0.000 41.660} -add [get_ports i_CLK]
 
 # LEDs
-set_property -dict {PACKAGE_PIN A17 IOSTANDARD LVCMOS33 } [get_ports led_0 ]; #IO_L12N_T1_MRCC_16 Sch=led[1]
-set_property -dict {PACKAGE_PIN C16 IOSTANDARD LVCMOS33 } [get_ports led_1 ]; #IO_L13P_T2_MRCC_16 Sch=led[2]
+set_property -dict { PACKAGE_PIN A17   IOSTANDARD LVCMOS33 } [get_ports { led_0 }]; #IO_L12N_T1_MRCC_16 Sch=led[1]
+set_property -dict { PACKAGE_PIN C16   IOSTANDARD LVCMOS33 } [get_ports { led_1 }]; #IO_L13P_T2_MRCC_16 Sch=led[2]
 
 # RGB LED
-set_property -dict {PACKAGE_PIN B17 IOSTANDARD LVCMOS33 } [get_ports led0_b ]; #IO_L14N_T2_SRCC_16 Sch=led0_b
+#set_property -dict { PACKAGE_PIN B17   IOSTANDARD LVCMOS33 } [get_ports { led0_b }]; #IO_L14N_T2_SRCC_16 Sch=led0_b
 set_property -dict {PACKAGE_PIN B16 IOSTANDARD LVCMOS33} [get_ports led0_g]
 set_property -dict {PACKAGE_PIN C17 IOSTANDARD LVCMOS33} [get_ports led0_r]
 
 ## Buttons
-set_property -dict {PACKAGE_PIN A18 IOSTANDARD LVCMOS33} [get_ports btn0]
-#set_property -dict { PACKAGE_PIN B18   IOSTANDARD LVCMOS33 } [get_ports { btn[1] }]; #IO_L19P_T3_16 Sch=btn[1]
+set_property -dict {PACKAGE_PIN A18 IOSTANDARD LVCMOS33} [get_ports i_btn0]
+set_property -dict { PACKAGE_PIN B18   IOSTANDARD LVCMOS33 } [get_ports i_btn1]; #IO_L19P_T3_16 Sch=btn[1]
 
 
 
@@ -87,7 +87,7 @@ set_property -dict {PACKAGE_PIN V8 IOSTANDARD LVCMOS33} [get_ports i_E0_STEP]
 #set_property -dict { PACKAGE_PIN J18   IOSTANDARD LVCMOS33 } [get_ports { uart_rxd_out }]; #IO_L7N_T1_D10_14 Sch=uart_rxd_out
 #set_property -dict { PACKAGE_PIN J17   IOSTANDARD LVCMOS33 } [get_ports { uart_txd_in  }]; #IO_L7P_T1_D09_14 Sch=uart_txd_in
 
-set_property -dict { PACKAGE_PIN J18   IOSTANDARD LVCMOS33 } [get_ports { UART_TXD }]; #IO_L7N_T1_D10_14 Sch=uart_rxd_out
+set_property -dict { PACKAGE_PIN J18   IOSTANDARD LVCMOS33 } [get_ports { o_UART_TXD }]; #IO_L7N_T1_D10_14 Sch=uart_rxd_out
 #set_property -dict { PACKAGE_PIN J17   IOSTANDARD LVCMOS33 } [get_ports { uart_txd_in  }]; #IO_L7P_T1_D09_14 Sch=uart_txd_in
 
 ## Crypto 1 Wire Interface

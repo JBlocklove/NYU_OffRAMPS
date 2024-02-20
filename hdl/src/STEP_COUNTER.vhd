@@ -96,7 +96,7 @@ begin
 						s_X_STEP_COUNTER <= s_X_STEP_COUNTER - 1;
 					end if;
 				end if;
-	
+
 				if (s_Y_STEP_RE = '1') then
 					if (i_Y_DIR = '0') then
 						s_Y_STEP_COUNTER <= s_Y_STEP_COUNTER + 1;
@@ -104,7 +104,7 @@ begin
 						s_Y_STEP_COUNTER <= s_Y_STEP_COUNTER - 1;
 					end if;
 				end if;
-	
+
 				if (s_Z_STEP_RE = '1') then
 					if (i_Z_DIR = '1') then
 						s_Z_STEP_COUNTER <= s_Z_STEP_COUNTER + 1;
@@ -112,7 +112,7 @@ begin
 						s_Z_STEP_COUNTER <= s_Z_STEP_COUNTER - 1;
 					end if;
 				end if;
-	
+
 				if (s_E_STEP_RE = '1') then
 					if (i_E_DIR = '0') then
 						s_E_STEP_COUNTER <= s_E_STEP_COUNTER + 1;
@@ -129,7 +129,7 @@ begin
 	o_Y_STEPS <= std_logic_vector(s_Y_STEP_COUNTER);
 	o_Z_STEPS <= std_logic_vector(s_Z_STEP_COUNTER);
 	o_E_STEPS <= std_logic_vector(s_E_STEP_COUNTER);
-	
+
 	o_STEP <= s_X_STEP_RE or s_Y_STEP_RE;-- or s_Z_STEP_RE or s_E_STEP_RE;
 
 end Behavioral;

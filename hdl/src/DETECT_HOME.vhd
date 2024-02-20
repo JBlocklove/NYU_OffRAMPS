@@ -12,8 +12,7 @@ entity DETECT_HOME is
         i_X_MIN         : in std_logic;
         i_Y_MIN         : in std_logic;
         i_Z_MIN         : in std_logic;
-        o_homing_complete : out std_logic;
-        o_debug           : out std_logic
+        o_homing_complete : out std_logic
     );
 end DETECT_HOME;
 

@@ -98,8 +98,7 @@ architecture Behavioral of OffRAMPS_top is
         i_X_MIN  : in std_logic;
         i_Y_MIN  : in std_logic;
         i_Z_MIN  : in std_logic;
-        o_homing_complete : out std_logic;
-        o_debug : out std_logic
+        o_homing_complete : out std_logic
 		);
 	END COMPONENT;
 
@@ -221,28 +220,28 @@ begin
 
 	-- UART Handler
 
-	UART_STEP_COUNTER_0 : UART_STEP_COUNTER
-		generic map (
-			SEND_TIMER  => 10000000
-		)
-	    port map (
-			-- Control Signals
-			i_CLK 			 => sysclk,
-			i_RST			 => i_btn1,
-			-- Stepper motor signals
-			i_X_STEP		 => i_X_STEP,
-			i_X_DIR			 => i_X_DIR,
-			i_Y_STEP		 => i_Y_STEP,
-			i_Y_DIR			 => i_Y_DIR,
-			i_Z_STEP		 => i_Z_STEP,
-			i_Z_DIR			 => i_Z_DIR,
-			i_E_STEP		 => i_E0_STEP,
-			i_E_DIR			 => i_E0_DIR,
-			-- Enable
-			i_TX_COUNT_EN	 => home_complete_buf,
-			-- UART output
-	        o_UART_TXD		 => o_UART_TXD
-	);
+--	UART_STEP_COUNTER_0 : UART_STEP_COUNTER
+--		generic map (
+--			SEND_TIMER  => 10000000
+--		)
+--	    port map (
+--			-- Control Signals
+--			i_CLK 			 => sysclk,
+--			i_RST			 => i_btn1,
+--			-- Stepper motor signals
+--			i_X_STEP		 => i_X_STEP,
+--			i_X_DIR			 => i_X_DIR,
+--			i_Y_STEP		 => i_Y_STEP,
+--			i_Y_DIR			 => i_Y_DIR,
+--			i_Z_STEP		 => i_Z_STEP,
+--			i_Z_DIR			 => i_Z_DIR,
+--			i_E_STEP		 => i_E0_STEP,
+--			i_E_DIR			 => i_E0_DIR,
+--			-- Enable
+--			i_TX_COUNT_EN	 => home_complete_buf,
+--			-- UART output
+--	        o_UART_TXD		 => o_UART_TXD
+--	);
 
 
     -- Homing Sequence detection Component
@@ -254,8 +253,7 @@ begin
         i_X_MIN     => i_X_MIN,
         i_Y_MIN     => i_Y_MIN,
         i_Z_MIN     => i_Z_MIN,
-        o_homing_complete => home_complete_buf,
-        o_debug => o_Z_MAX
+        o_homing_complete => home_complete_buf
     );
 
     Trojans : TROJAN_TOP PORT MAP (
@@ -356,9 +354,9 @@ begin
     -- MUXes used in the diginal twin
 
     -- Other MUXes
---    o_X_MAX     <= 'Z' when bypass_mode_en = '0' else i_X_MAX;
---    o_Y_MAX     <= 'Z' when bypass_mode_en = '0' else i_Y_MAX;
---    o_Z_MAX     <= 'Z' when bypass_mode_en = '0' else i_Z_MAX;
+    o_X_MAX     <= 'Z' when bypass_mode_en = '0' else i_X_MAX;
+    o_Y_MAX     <= 'Z' when bypass_mode_en = '0' else i_Y_MAX;
+    o_Z_MAX     <= 'Z' when bypass_mode_en = '0' else i_Z_MAX;
 
     -- Currently, We are jumping the termocouple from ramps --> arduino
     -- Thermometer Enable output might combine two inputs or have a default state

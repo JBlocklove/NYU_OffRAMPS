@@ -273,7 +273,7 @@ begin
 	end if;
 end process;
 
-send_enable_proc : process(STATE, TX_ENABLE_LATCH)
+send_enable_proc : process(STATE, TX_ENABLE_LATCH, FIRST_EDGE)
 begin
 	
     case STATE is
