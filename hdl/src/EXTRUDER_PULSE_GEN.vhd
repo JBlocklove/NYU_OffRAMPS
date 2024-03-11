@@ -2,11 +2,13 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
+
+-- Module to generate new pulses for the extruder stepper motor
 entity EXTRUDER_PULSE_GEN is
-    Port ( 
+    Port (
             i_CLK           : in  STD_LOGIC;
             i_PULSE_EN      : in  STD_LOGIC;
-            i_PULSES_TO_SEND: in  std_logic_vector(4 downto 0); 
+            i_PULSES_TO_SEND: in  std_logic_vector(4 downto 0);
             o_PULSE_SIG     : out STD_LOGIC;
             o_COMPLETE      : out STD_LOGIC
             );
@@ -19,7 +21,7 @@ architecture Behavioral of EXTRUDER_PULSE_GEN is
 
     signal TIMER_COUNTER : std_logic_vector(15 downto 0) := (others=>'0');
     signal PULSE_COUNT : std_logic_vector (4 downto 0) := (others=>'0');
-    
+
     type STATE_TYPE is (IDLE, PULSE_HIGH, PULSE_LOW, COMPLETE);
     signal current_state, next_state : STATE_TYPE := IDLE;
 
@@ -80,7 +82,7 @@ begin
             when IDLE =>
                 o_PULSE_SIG <= '0';
                 o_COMPLETE <= '0';
-                
+
             when PULSE_HIGH =>
                 o_PULSE_SIG <= '1';
                 o_COMPLETE <= '0';

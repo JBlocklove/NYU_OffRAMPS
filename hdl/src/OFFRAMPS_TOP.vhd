@@ -3,6 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
+-- Top module to instantiate either trojans or detection hardware
 entity OffRAMPS_top is
     Port (
         -- Board Specific IO
@@ -16,12 +17,6 @@ entity OffRAMPS_top is
         led_1    : out std_logic;  -- LED 1
 
         o_UART_TXD  : out std_logic; -- UART TX OUT
-
---        -- Thermocouple inputs
---        i_THERM0_n_0 : in std_logic;  -- Thermocouple 0 Negative Single-ended input [0]
---        i_THERM0_p_0 : in std_logic;  -- Thermocouple 0 Positive Single-ended input [0]
---        i_THERM1_n_1 : in std_logic;  -- Thermocouple 1 Negative Single-ended input [1]
---        i_THERM1_p_1 : in std_logic;  -- Thermocouple 1 Positive Single-ended input [1]
 
         -- Printer Specific IO
         i_D10       : in std_logic;  -- D10 input
@@ -82,6 +77,7 @@ end OffRAMPS_top;
 
 architecture Behavioral of OffRAMPS_top is
 
+	-- Xilinx clock wizard. 12MHz sysclock to 100MHz
     COMPONENT clk_wiz_0
     PORT(
         clk_in1         : in std_logic;

@@ -1,6 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
+-- Dual rising/falling edge detector
 entity EDGE_DETECTOR is
     Port (
         i_clk       : in  std_logic;

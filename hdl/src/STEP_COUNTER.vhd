@@ -2,6 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
+-- Module to count steps on each motor. Increasing when the motors move in a positive direction, decreasing when moving in a negative direction.
 entity STEP_COUNTER is
     Port (
 			i_CLK 			: in  STD_LOGIC;

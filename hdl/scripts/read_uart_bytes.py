@@ -5,12 +5,13 @@ import time
 
 # Setup the serial port
 ser = serial.Serial('/dev/ttyUSB1', 115200)
-ser.timeout = 30  # Timeout for read
+ser.timeout = 30  # Timeout for read (mostly arbitrary)
 
+# Format a single byte to its hexadecimal representation.
 def format_byte(byte):
-    """Format a single byte to its hexadecimal representation."""
     return f"0x{byte:02x}"
 
+# Read 16 bytes from the UART and return them as 4 lists of 4 bytes each.
 def read_uart():
     # Read 16 bytes from UART
     data = ser.read(16)
@@ -25,6 +26,7 @@ def read_uart():
     else:
         return None
 
+# Main loop
 try:
     while True:
         byte_lists = read_uart()

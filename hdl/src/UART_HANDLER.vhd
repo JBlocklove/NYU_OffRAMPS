@@ -3,8 +3,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 use IEEE.std_logic_unsigned.all;
 
+-- Test module for UART, using Digilent UART_TX_CTRL example from https://github.com/Digilent/Cmod-A7-15T-GPIO
 entity UART_HANDLER is
-    Port ( 
+    Port (
            i_CLK 			: in  STD_LOGIC;
            o_UART_TXD 	: out  STD_LOGIC
 		  );
@@ -16,7 +17,7 @@ component UART_TX
 Port(
 	SEND : in std_logic;
 	DATA : in std_logic_vector(7 downto 0);
-	CLK : in std_logic;          
+	CLK : in std_logic;
 	READY : out std_logic;
 	UART_TX : out std_logic
 	);
@@ -42,12 +43,12 @@ constant WELCOME_STR : CHAR_ARRAY(0 to 30) := (X"0A",  --\n
 															  X"4D",  --M
 															  X"4F",  --O
 															  X"44",  --D
-															  X"20",  -- 
+															  X"20",  --
 															  X"41",  --A
 															  X"37",  --7
-                                                              X"20",  -- 
+                                                              X"20",  --
                                                               X"47",  --G
-                                                              X"50",  --P 
+                                                              X"50",  --P
 															  X"49",  --I
 															  X"4F",  --O
 															  X"2F",  --/
@@ -55,19 +56,19 @@ constant WELCOME_STR : CHAR_ARRAY(0 to 30) := (X"0A",  --\n
 															  X"41",  --A
 															  X"52",  --R
 															  X"54",  --T
-															  X"20",  -- 
+															  X"20",  --
 															  X"44",  --D
 															  X"45",  --E
 															  X"4D",  --M
 															  X"4F",  --O
 															  X"21",  --!
-															  X"20",  -- 
-															  X"20",  -- 
-															  X"20",  -- 
+															  X"20",  --
+															  X"20",  --
+															  X"20",  --
 															  X"0A",  --\n
 															  X"0A",  --\n
 															  X"0D"); --\r
-															  
+
 --Button press string definition.
 constant BTN_STR : CHAR_ARRAY(0 to 23) :=     (X"42",  --B
 															  X"75",  --u
@@ -75,7 +76,7 @@ constant BTN_STR : CHAR_ARRAY(0 to 23) :=     (X"42",  --B
 															  X"74",  --t
 															  X"6F",  --o
 															  X"6E",  --n
-															  X"20",  -- 
+															  X"20",  --
 															  X"70",  --p
 															  X"72",  --r
 															  X"65",  --e
@@ -125,7 +126,7 @@ Inst_UART_TX_CTRL: UART_TX port map(
 		DATA => uartData,
 		CLK => i_CLK,
 		READY => uartRdy,
-		UART_TX => uartTX 
+		UART_TX => uartTX
 	);
 
 
@@ -149,8 +150,8 @@ end process;
 next_UART_STATE_process : process (i_CLK)
 begin
 	if (RISING_EDGE(i_CLK)) then
-			
-		case STATE is 
+
+		case STATE is
 			when RESET =>
 				if (RESET_COUNTER = RESET_COUNTER_MAX) then
 					STATE <= INIT;
@@ -173,7 +174,7 @@ begin
 						STATE <= SEND_CHAR;
 					end if;
 				end if;
-				
+
 			when WAIT_EVENT =>
 				EXAMPLE_COUNT_EN <= '1';
 				if (EVENT_DET = '1') then
@@ -184,11 +185,11 @@ begin
 				EXAMPLE_COUNT_EN <= '0';
 				STATE <= SEND_CHAR;
 
-			when others=> 
+			when others=>
 				STATE <= RESET;
 
 		end case;
-		
+
 	end if;
 end process;
 

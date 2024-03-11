@@ -17,6 +17,7 @@ args = parser.parse_args()
 ser = serial.Serial(args.port, args.baud)
 ser.timeout = 15  # Timeout for read
 
+# Read 16 bytes from the UART and return them as a list of 4 32-bit integers
 def read_uart():
     # Read 16 bytes from UART
     data = ser.read(16)
@@ -29,6 +30,7 @@ def read_uart():
     else:
         return None
 
+# Write 4 integers to a CSV file
 def write_to_csv(index, integers):
     with open(args.csv, 'a', newline='') as file:
         writer = csv.writer(file)
@@ -36,6 +38,7 @@ def write_to_csv(index, integers):
             writer.writerow(["Index", "X", "Y", "Z", "E"])
         writer.writerow([index] + integers)
 
+# Main loop
 try:
     index = 0
     while True:

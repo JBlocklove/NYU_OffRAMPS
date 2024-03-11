@@ -3,6 +3,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 --use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
+-- Module to detect if the 3D printer has been homed. Outputs high if each of the _MIN triggers have occurred.
+
 entity DETECT_HOME is
     Port (
         i_CLK           : in std_logic;

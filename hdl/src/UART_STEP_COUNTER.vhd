@@ -2,6 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
+-- Extension of UART_HANDLER module which integrates a step counter for each of the 3D printer motors
 entity UART_STEP_COUNTER is
 	Generic (
 		SEND_TIMER : integer := 10000000 -- Frequency to send a transaction (in clock ticks)
@@ -92,7 +93,7 @@ signal STEP_COUNTS : BYTE_ARRAY(0 to 15) := (
     X"4E",
     X"0A",
     X"0D");
-    
+
 constant STEP_COUNTS_LENGTH : natural := 16;
 
 signal X_STEPS, Y_STEPS, Z_STEPS, E_STEPS : std_logic_vector(31 downto 0);
@@ -275,7 +276,7 @@ end process;
 
 send_enable_proc : process(STATE, TX_ENABLE_LATCH, FIRST_EDGE)
 begin
-	
+
     case STATE is
         when WAIT_EVENT =>
             if(TX_ENABLE_LATCH = '1' and FIRST_EDGE = '1') then

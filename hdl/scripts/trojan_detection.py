@@ -4,6 +4,7 @@ import pandas as pd
 import argparse
 import numpy as np
 
+# Compare two CSV files and print the differences
 def compare_csvs(file1, file2, diff, zero_diff, mode):
     # Load the CSV files into pandas DataFrames
     df1 = pd.read_csv(file1)
