@@ -31,3 +31,6 @@ fp-info-cache
 # Vivado garbage
 *.jou
 *.str
+
+# Track csv files under captures
+!captures/*.csv
