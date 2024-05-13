@@ -584,22 +584,6 @@
     [
       "e859ad58-cc0a-46d6-9578-387f2d0c634f",
       "Root"
-    ],
-    [
-      "2c90ea19-7193-4b95-a2e4-756c5d70d12d",
-      "f_r_UART_SHIFTER"
-    ],
-    [
-      "20b9d5f0-f1f3-4dff-9e31-c0e7967226ea",
-      "u_f_E1_SHIFTER"
-    ],
-    [
-      "3b82b8cf-f6c3-427f-b6f4-662827ac7e56",
-      "u_f_UART_SHIFTER"
-    ],
-    [
-      "9ea056cf-6c8f-4797-81ba-dbc6d64757ab",
-      "f_r_E1_SHIFTER"
     ]
   ],
   "text_variables": {}

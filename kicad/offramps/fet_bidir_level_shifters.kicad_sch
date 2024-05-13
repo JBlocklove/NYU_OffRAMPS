@@ -856,7 +856,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1177d5c2-bf36-4fb9-afbb-5bba8ffa1f59")
-		(property "Reference" "R15"
+		(property "Reference" "R3"
 			(at 40.64 34.2899 0)
 			(effects
 				(font
@@ -909,10 +909,6 @@
 		)
 		(instances
 			(project "offramps"
-				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f/20b9d5f0-f1f3-4dff-9e31-c0e7967226ea"
-					(reference "R15")
-					(unit 1)
-				)
 				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f/9ea056cf-6c8f-4797-81ba-dbc6d64757ab"
 					(reference "R3")
 					(unit 1)
@@ -938,7 +934,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7aa5f0b0-476a-4f1f-9ce1-267a226cdef7")
-		(property "Reference" "R17"
+		(property "Reference" "R32"
 			(at 58.42 34.2899 0)
 			(effects
 				(font
@@ -991,10 +987,6 @@
 		)
 		(instances
 			(project "offramps"
-				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f/20b9d5f0-f1f3-4dff-9e31-c0e7967226ea"
-					(reference "R17")
-					(unit 1)
-				)
 				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f/9ea056cf-6c8f-4797-81ba-dbc6d64757ab"
 					(reference "R32")
 					(unit 1)
@@ -1020,7 +1012,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7b48d8c7-6b26-44a6-a5c0-c911230923e0")
-		(property "Reference" "Q4"
+		(property "Reference" "Q14"
 			(at 46.99 80.01 90)
 			(effects
 				(font
@@ -1077,10 +1069,6 @@
 		)
 		(instances
 			(project "offramps"
-				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f/20b9d5f0-f1f3-4dff-9e31-c0e7967226ea"
-					(reference "Q4")
-					(unit 1)
-				)
 				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f/9ea056cf-6c8f-4797-81ba-dbc6d64757ab"
 					(reference "Q14")
 					(unit 1)
@@ -1106,7 +1094,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "927be406-8191-42ad-9b19-bac8bc99a89b")
-		(property "Reference" "#PWR034"
+		(property "Reference" "#PWR054"
 			(at 55.88 60.96 0)
 			(effects
 				(font
@@ -1115,7 +1103,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "5V_sel"
+		(property "Value" "+++5V_sel"
 			(at 55.88 52.07 0)
 			(effects
 				(font
@@ -1155,10 +1143,6 @@
 		)
 		(instances
 			(project "offramps"
-				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f/20b9d5f0-f1f3-4dff-9e31-c0e7967226ea"
-					(reference "#PWR034")
-					(unit 1)
-				)
 				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f/9ea056cf-6c8f-4797-81ba-dbc6d64757ab"
 					(reference "#PWR054")
 					(unit 1)
@@ -1184,7 +1168,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bbe40b27-9da8-4943-9d31-022355f5c171")
-		(property "Reference" "R18"
+		(property "Reference" "R33"
 			(at 58.42 66.0399 0)
 			(effects
 				(font
@@ -1237,10 +1221,6 @@
 		)
 		(instances
 			(project "offramps"
-				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f/20b9d5f0-f1f3-4dff-9e31-c0e7967226ea"
-					(reference "R18")
-					(unit 1)
-				)
 				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f/9ea056cf-6c8f-4797-81ba-dbc6d64757ab"
 					(reference "R33")
 					(unit 1)
@@ -1266,7 +1246,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c3eafe0c-1bb6-4ac1-8771-1ca2a5d305f0")
-		(property "Reference" "Q3"
+		(property "Reference" "Q13"
 			(at 46.99 48.26 90)
 			(effects
 				(font
@@ -1323,10 +1303,6 @@
 		)
 		(instances
 			(project "offramps"
-				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f/20b9d5f0-f1f3-4dff-9e31-c0e7967226ea"
-					(reference "Q3")
-					(unit 1)
-				)
 				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f/9ea056cf-6c8f-4797-81ba-dbc6d64757ab"
 					(reference "Q13")
 					(unit 1)
@@ -1352,7 +1328,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c6af35e3-2ab8-48a1-80e3-d08470358339")
-		(property "Reference" "R16"
+		(property "Reference" "R31"
 			(at 40.64 66.0399 0)
 			(effects
 				(font
@@ -1405,10 +1381,6 @@
 		)
 		(instances
 			(project "offramps"
-				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f/20b9d5f0-f1f3-4dff-9e31-c0e7967226ea"
-					(reference "R16")
-					(unit 1)
-				)
 				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f/9ea056cf-6c8f-4797-81ba-dbc6d64757ab"
 					(reference "R31")
 					(unit 1)
@@ -1434,7 +1406,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ca4304c2-b8c3-4ba2-bd24-42f05307c04d")
-		(property "Reference" "#PWR032"
+		(property "Reference" "#PWR07"
 			(at 38.1 60.96 0)
 			(effects
 				(font
@@ -1443,7 +1415,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "3p3V_sel"
+		(property "Value" "+3V3_sel"
 			(at 38.1 52.07 0)
 			(effects
 				(font
@@ -1483,10 +1455,6 @@
 		)
 		(instances
 			(project "offramps"
-				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f/20b9d5f0-f1f3-4dff-9e31-c0e7967226ea"
-					(reference "#PWR032")
-					(unit 1)
-				)
 				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f/9ea056cf-6c8f-4797-81ba-dbc6d64757ab"
 					(reference "#PWR07")
 					(unit 1)
@@ -1512,7 +1480,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d640dd82-5681-43b9-90bc-2970c4625b3a")
-		(property "Reference" "#PWR033"
+		(property "Reference" "#PWR08"
 			(at 55.88 29.21 0)
 			(effects
 				(font
@@ -1521,7 +1489,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "5V_sel"
+		(property "Value" "+++5V_sel"
 			(at 55.88 20.32 0)
 			(effects
 				(font
@@ -1561,10 +1529,6 @@
 		)
 		(instances
 			(project "offramps"
-				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f/20b9d5f0-f1f3-4dff-9e31-c0e7967226ea"
-					(reference "#PWR033")
-					(unit 1)
-				)
 				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f/9ea056cf-6c8f-4797-81ba-dbc6d64757ab"
 					(reference "#PWR08")
 					(unit 1)
@@ -1590,7 +1554,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e0178102-0b57-44dd-809b-64309f2aeeef")
-		(property "Reference" "#PWR031"
+		(property "Reference" "#PWR05"
 			(at 38.1 29.21 0)
 			(effects
 				(font
@@ -1599,7 +1563,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "3p3V_sel"
+		(property "Value" "+3V3_sel"
 			(at 38.1 20.32 0)
 			(effects
 				(font
@@ -1639,10 +1603,6 @@
 		)
 		(instances
 			(project "offramps"
-				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f/20b9d5f0-f1f3-4dff-9e31-c0e7967226ea"
-					(reference "#PWR031")
-					(unit 1)
-				)
 				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f/9ea056cf-6c8f-4797-81ba-dbc6d64757ab"
 					(reference "#PWR05")
 					(unit 1)

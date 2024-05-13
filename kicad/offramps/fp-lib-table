@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "offramps_lib")(type "KiCad")(uri "/home/jason/documents/research/additive_manufacturing_security/NYU_OffRAMPS/revB/kicad/parts/offramps_lib.pretty")(options "")(descr ""))
+)
