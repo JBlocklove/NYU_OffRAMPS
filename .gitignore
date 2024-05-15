@@ -31,3 +31,7 @@ fp-info-cache
 # Vivado garbage
 *.jou
 *.str
+
+# Symbol and Footprint Tables
+sym-lib-table
+fp-lib-table
