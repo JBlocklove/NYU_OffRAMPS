@@ -3047,7 +3047,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(property "Reference" "U"
-			(at 20.32 12.7 0)
+			(at 9.144 -33.274 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -3055,7 +3055,7 @@
 			)
 		)
 		(property "Value" "POPA2994IDGKR"
-			(at 20.32 10.16 0)
+			(at 10.414 -28.956 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -3063,7 +3063,7 @@
 			)
 		)
 		(property "Footprint" "VSSOP8_DGK_TEX"
-			(at 0 0 0)
+			(at -1.524 15.748 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3073,7 +3073,7 @@
 			)
 		)
 		(property "Datasheet" "POPA2994IDGKR"
-			(at 0 0 0)
+			(at -2.032 15.748 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3083,7 +3083,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 0 0 0)
+			(at -48.26 5.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3120,7 +3120,7 @@
 		(symbol "POPA2994IDGKR_0_1"
 			(polyline
 				(pts
-					(xy 7.62 -27.94) (xy 33.02 -27.94)
+					(xy -8.89 -26.67) (xy 8.89 -26.67)
 				)
 				(stroke
 					(width 0.127)
@@ -3132,7 +3132,7 @@
 			)
 			(polyline
 				(pts
-					(xy 7.62 7.62) (xy 7.62 -27.94)
+					(xy -8.89 3.81) (xy -8.89 -26.67)
 				)
 				(stroke
 					(width 0.127)
@@ -3144,7 +3144,7 @@
 			)
 			(polyline
 				(pts
-					(xy 33.02 -27.94) (xy 33.02 7.62)
+					(xy 8.89 -26.67) (xy 8.89 3.81)
 				)
 				(stroke
 					(width 0.127)
@@ -3156,10 +3156,34 @@
 			)
 			(polyline
 				(pts
-					(xy 33.02 7.62) (xy 7.62 7.62)
+					(xy 8.89 3.81) (xy -8.89 3.81)
 				)
 				(stroke
 					(width 0.127)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -3.81 -12.7) (xy -3.81 -22.86) (xy 3.81 -17.78) (xy -3.81 -12.7)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -3.81 1.27) (xy -3.81 -8.89) (xy 3.81 -3.81) (xy -3.81 1.27)
+				)
+				(stroke
+					(width 0)
 					(type default)
 				)
 				(fill
@@ -3167,7 +3191,7 @@
 				)
 			)
 			(pin output line
-				(at 40.64 2.54 180)
+				(at 16.51 -3.81 180)
 				(length 7.62)
 				(name "OUT1"
 					(effects
@@ -3185,7 +3209,7 @@
 				)
 			)
 			(pin input line
-				(at 0 0 0)
+				(at -16.51 -6.35 0)
 				(length 7.62)
 				(name "IN1-"
 					(effects
@@ -3203,7 +3227,7 @@
 				)
 			)
 			(pin input line
-				(at 0 -2.54 0)
+				(at -16.51 -1.27 0)
 				(length 7.62)
 				(name "IN1+"
 					(effects
@@ -3221,7 +3245,7 @@
 				)
 			)
 			(pin power_in line
-				(at 0 -20.32 0)
+				(at 0 -34.29 90)
 				(length 7.62)
 				(name "V-"
 					(effects
@@ -3239,7 +3263,7 @@
 				)
 			)
 			(pin input line
-				(at 0 -7.62 0)
+				(at -16.51 -15.24 0)
 				(length 7.62)
 				(name "IN2+"
 					(effects
@@ -3257,7 +3281,7 @@
 				)
 			)
 			(pin input line
-				(at 0 -5.08 0)
+				(at -16.51 -20.32 0)
 				(length 7.62)
 				(name "IN2-"
 					(effects
@@ -3275,7 +3299,7 @@
 				)
 			)
 			(pin output line
-				(at 40.64 0 180)
+				(at 16.51 -17.78 180)
 				(length 7.62)
 				(name "OUT2"
 					(effects
@@ -3293,7 +3317,7 @@
 				)
 			)
 			(pin power_in line
-				(at 0 -22.86 0)
+				(at 0 11.43 270)
 				(length 7.62)
 				(name "V+"
 					(effects
@@ -3307,6 +3331,40 @@
 						(font
 							(size 1.27 1.27)
 						)
+					)
+				)
+			)
+		)
+		(symbol "POPA2994IDGKR_1_1"
+			(text "+"
+				(at -2.794 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(text "+"
+				(at -2.794 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(text "-"
+				(at -2.794 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(text "-"
+				(at -2.794 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
 					)
 				)
 			)
