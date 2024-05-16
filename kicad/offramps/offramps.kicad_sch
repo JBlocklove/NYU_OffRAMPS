@@ -20282,8 +20282,8 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "U"
-				(at 7.62 -11.43 0)
+			(property "Reference" "U16"
+				(at 5.08 12.7 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -20291,14 +20291,14 @@
 				)
 			)
 			(property "Value" "LIS2MDLTR"
-				(at 8.89 12.7 0)
+				(at 7.62 -11.43 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Package_LGA:LGA-12_2x2mm_P0.5mm"
 				(at 0 0 0)
 				(effects
 					(font
@@ -20323,6 +20323,14 @@
 						(size 1.27 1.27)
 					)
 					(hide yes)
+				)
+			)
+			(property "Vendor" "C919695"
+				(at 6.35 -16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
 				)
 			)
 			(symbol "LIS2MDLTR_0_1"
@@ -20512,7 +20520,7 @@
 							)
 						)
 					)
-					(number "6"
+					(number "7"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -28254,6 +28262,16 @@
 		)
 		(uuid "59b322f5-40d1-4ad9-afe9-2133bd5512d7")
 	)
+	(polyline
+		(pts
+			(xy 311.15 -27.94) (xy 328.93 -27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "59d6f773-f141-463c-90fd-d9d9322d3238")
+	)
 	(wire
 		(pts
 			(xy 74.93 336.55) (xy 78.74 336.55)
@@ -32594,6 +32612,16 @@
 		)
 		(uuid "d28f495a-f26c-41a0-b76c-721a00977e7d")
 	)
+	(polyline
+		(pts
+			(xy 311.15 54.61) (xy 311.15 -27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d295bd53-b382-433f-a2d1-f32cd73d5606")
+	)
 	(wire
 		(pts
 			(xy 200.66 194.31) (xy 208.28 194.31)
@@ -34981,6 +35009,16 @@
 			(justify left bottom)
 		)
 		(uuid "cd885ff1-4235-4c8e-b6be-d829fbca1d1e")
+	)
+	(text "HPC is missing pin B40"
+		(exclude_from_sim no)
+		(at 319.024 -30.988 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "ce28b87f-7798-4a3c-9a3f-d0b3891a2210")
 	)
 	(text "Power analysis clock selection"
 		(exclude_from_sim no)
@@ -46650,7 +46688,7 @@
 		(pin "6"
 			(uuid "152ee5c8-0977-4ce4-ba28-fb43abb074a1")
 		)
-		(pin "6"
+		(pin "7"
 			(uuid "655f5997-176b-4247-aa06-0a4b5f5454fa")
 		)
 		(pin "8"
@@ -76266,7 +76304,7 @@
 				)
 			)
 		)
-		(property "Footprint" "offramps_lib:WR-TBL-TermBlock-2Pos-90Deg-5.08mm"
+		(property "Footprint" "offramps_lib:SO16_219-8_CTS"
 			(at 613.41 346.71 0)
 			(effects
 				(font
