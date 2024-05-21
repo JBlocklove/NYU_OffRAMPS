@@ -23899,12 +23899,6 @@
 		(uuid "2670a549-e534-4168-83a0-8878950b3979")
 	)
 	(junction
-		(at 543.56 55.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "26f5d887-171c-4851-872f-fab4d12751bf")
-	)
-	(junction
 		(at 641.35 359.41)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -23945,12 +23939,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "30c1f02f-b8fc-4bc4-b07e-ecf8ee401101")
-	)
-	(junction
-		(at 568.96 63.5)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "34886f7b-b466-4e14-a4f1-aea078f3b4b3")
 	)
 	(junction
 		(at 572.77 349.25)
@@ -28984,16 +28972,6 @@
 	)
 	(wire
 		(pts
-			(xy 543.56 63.5) (xy 568.96 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6e512082-8092-47d3-8725-82e8bd31b35f")
-	)
-	(wire
-		(pts
 			(xy 347.98 397.51) (xy 358.14 397.51)
 		)
 		(stroke
@@ -33301,16 +33279,6 @@
 			(type default)
 		)
 		(uuid "e529eea2-9016-4b82-97d3-2a39aa0eedb1")
-	)
-	(wire
-		(pts
-			(xy 543.56 55.88) (xy 543.56 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e5907e1d-9c8d-4bbb-9a45-57a3141278b8")
 	)
 	(wire
 		(pts
@@ -58360,7 +58328,7 @@
 				)
 			)
 		)
-		(property "Footprint" "VSSOP8_DGK_TEX"
+		(property "Footprint" "offramps_lib:VSSOP8_DGK_TEX"
 			(at 541.02 205.74 0)
 			(effects
 				(font
