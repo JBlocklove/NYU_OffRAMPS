@@ -34721,7 +34721,7 @@
 		)
 		(uuid "841a409e-8de3-4b21-8107-32f1432830cc")
 	)
-	(text "FMC low pin count and high pin count are\ncompatible on a subset of pins. All RAMPS\ncontrol signals are on the LPC GPIO.\n\nHPC_N jumper J3 to tell FPGA if HPC or LPC"
+	(text "FMC low pin count and high pin count are\ncompatible on a subset of pins. All RAMPS\ncontrol signals are on the LPC GPIO.\n\nHPC_N jumper J4 to tell FPGA if HPC or LPC"
 		(exclude_from_sim no)
 		(at 184.404 44.196 0)
 		(effects
