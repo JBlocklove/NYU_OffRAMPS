@@ -35347,13 +35347,13 @@
 		(uuid "125c8a64-1e30-436c-a1c6-c749e7dd52cd")
 	)
 	(label "f_sd_dat3"
-		(at 285.75 104.14 180)
+		(at 240.03 80.01 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "1285e3c1-9827-4451-adac-f4b762ca536d")
 	)
@@ -36239,7 +36239,7 @@
 		(uuid "3700d544-85d9-4332-8cf7-b92211f06ea7")
 	)
 	(label "ls_f_E1-STEP"
-		(at 240.03 138.43 0)
+		(at 240.03 85.09 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -36272,13 +36272,13 @@
 		(uuid "39414d21-60ec-4c5f-bbd6-980f7adf2712")
 	)
 	(label "f_sd_dat1"
-		(at 285.75 99.06 180)
+		(at 240.03 74.93 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "39ec5ae3-ed40-4c0a-9131-010fb03de343")
 	)
@@ -36891,13 +36891,13 @@
 		(uuid "506b20ec-4835-4fbd-b3e0-d9c00ef4a018")
 	)
 	(label "f_sd_dat0"
-		(at 285.75 101.6 180)
+		(at 240.03 77.47 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "508c786e-1696-4637-b83b-38d493a2f2b6")
 	)
@@ -37387,7 +37387,7 @@
 		(uuid "65fce58e-90f3-415a-93ae-4a04e314b489")
 	)
 	(label "ls_f_E1-DIR"
-		(at 240.03 135.89 0)
+		(at 240.03 87.63 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -37640,13 +37640,13 @@
 		(uuid "6dff1975-6c66-4aeb-a0d7-7d0a7fa8ae71")
 	)
 	(label "f_sd_dat2"
-		(at 285.75 106.68 180)
+		(at 240.03 82.55 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "6e15e094-42b5-4634-bfae-fef7965ca91d")
 	)
@@ -39645,13 +39645,13 @@
 		(uuid "c3ba3c6f-2e55-4be1-b063-3861f24f51d4")
 	)
 	(label "f_sd_cmd"
-		(at 285.75 96.52 180)
+		(at 240.03 72.39 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "c4bb0de5-f9af-45c3-b417-6055777fc4cf")
 	)
