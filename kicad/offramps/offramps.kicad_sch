@@ -3331,121 +3331,6 @@
 				)
 			)
 		)
-		(symbol "Connector:TestPoint_Probe"
-			(pin_numbers hide)
-			(pin_names
-				(offset 0.762) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "TP"
-				(at 1.651 5.842 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "TestPoint_Probe"
-				(at 1.651 4.064 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "test point (alternative probe-style design)"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "test point tp"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Pin* Test*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "TestPoint_Probe_0_1"
-				(polyline
-					(pts
-						(xy 1.27 0.762) (xy 0 0) (xy 0.762 1.27) (xy 1.27 0.762)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.397 0.635) (xy 0.635 1.397) (xy 2.413 3.175) (xy 3.175 2.413) (xy 1.397 0.635)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "TestPoint_Probe_1_1"
-				(pin passive line
-					(at 0 0 90)
-					(length 0)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Device:C"
 			(pin_numbers hide)
 			(pin_names
@@ -5426,102 +5311,6 @@
 				)
 			)
 			(symbol "GND_13_1_1"
-				(pin power_in line
-					(at 0 0 270)
-					(length 0)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "GND_14"
-			(power)
-			(pin_numbers hide)
-			(pin_names
-				(offset 0) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR"
-				(at 0 -6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Value" "GND"
-				(at 0 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "GND_14_0_1"
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "GND_14_1_1"
 				(pin power_in line
 					(at 0 0 270)
 					(length 0)
@@ -24781,12 +24570,6 @@
 		(uuid "1de6261f-a202-48c3-80ca-bbb6ba45be75")
 	)
 	(junction
-		(at 668.02 265.43)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1e7fa73e-f573-4d76-9756-92987ccef07b")
-	)
-	(junction
 		(at 636.27 73.66)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -24953,12 +24736,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4f5a9949-78f5-44d2-8e84-7669e4d5b183")
-	)
-	(junction
-		(at 668.02 270.51)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "50256d6b-df55-4f92-9a65-858dce25b1a8")
 	)
 	(junction
 		(at 346.71 410.21)
@@ -25291,12 +25068,6 @@
 		(uuid "9b65f8cd-546d-4e47-8e99-d041ae7a0162")
 	)
 	(junction
-		(at 668.02 255.27)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9da2fd75-ad37-42c0-a933-4b7404820586")
-	)
-	(junction
 		(at 474.98 477.52)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -25331,12 +25102,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a7b1f0ab-68f4-49cf-9e35-612e8b013de3")
-	)
-	(junction
-		(at 668.02 260.35)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "aa0fd541-57c3-44cd-a33b-e672d254c0bb")
 	)
 	(junction
 		(at 600.71 88.9)
@@ -25877,10 +25642,6 @@
 		(uuid "6e71b205-99c1-4c50-8197-7949d1ea662d")
 	)
 	(no_connect
-		(at 386.08 53.34)
-		(uuid "6f746e76-54b3-41b7-b518-60459955fe38")
-	)
-	(no_connect
 		(at 386.08 60.96)
 		(uuid "74dee1ad-b434-4502-ad4d-d8e4c936f740")
 	)
@@ -26155,6 +25916,10 @@
 	(no_connect
 		(at 240.03 74.93)
 		(uuid "ebbb1149-f057-41ec-b034-b5e0dae74d69")
+	)
+	(no_connect
+		(at 345.44 101.6)
+		(uuid "f2e4ca56-4c9d-4275-aa47-ab1d0653d40d")
 	)
 	(no_connect
 		(at 314.96 77.47)
@@ -26737,16 +26502,6 @@
 			(type default)
 		)
 		(uuid "0c7177be-2420-487d-bb2d-d55d0a2adde3")
-	)
-	(wire
-		(pts
-			(xy 668.02 265.43) (xy 668.02 270.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0c83bb10-4309-4f2f-ba25-5376c87535ad")
 	)
 	(wire
 		(pts
@@ -29150,6 +28905,16 @@
 	)
 	(wire
 		(pts
+			(xy 386.08 53.34) (xy 388.62 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4d63b062-0ab9-4cc4-8af0-d1e9e903952b")
+	)
+	(wire
+		(pts
 			(xy 121.92 118.11) (xy 121.92 128.27)
 		)
 		(stroke
@@ -30520,16 +30285,6 @@
 	)
 	(wire
 		(pts
-			(xy 668.02 260.35) (xy 668.02 265.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7435fe9e-42b8-4e8f-ba1a-1c3b920f0413")
-	)
-	(wire
-		(pts
 			(xy 251.46 224.79) (xy 247.65 224.79)
 		)
 		(stroke
@@ -30847,16 +30602,6 @@
 			(type solid)
 		)
 		(uuid "7ad9f558-7d2e-417f-9f1d-b7f3dfed2498")
-	)
-	(wire
-		(pts
-			(xy 668.02 255.27) (xy 668.02 260.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7b64ab72-3f0c-470c-93a7-dd3ef35d640b")
 	)
 	(wire
 		(pts
@@ -31777,16 +31522,6 @@
 			(type solid)
 		)
 		(uuid "94c06b6a-0762-4b34-9aed-12afd2f08040")
-	)
-	(wire
-		(pts
-			(xy 668.02 250.19) (xy 668.02 255.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "94d5103c-04fd-410e-974a-31408c22378c")
 	)
 	(wire
 		(pts
@@ -32777,16 +32512,6 @@
 			(type default)
 		)
 		(uuid "aef1e823-62d8-4c34-aaa9-87204dda112b")
-	)
-	(wire
-		(pts
-			(xy 668.02 270.51) (xy 668.02 273.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "af26ec9d-8216-4e80-b199-1e60eba8e209")
 	)
 	(wire
 		(pts
@@ -36330,21 +36055,6 @@
 		)
 		(uuid "75c92add-238e-4c32-81d9-f7415b23bb86")
 	)
-	(text "To be added where\nneeded during routing"
-		(exclude_from_sim no)
-		(at 615.442 242.062 0)
-		(effects
-			(font
-				(size 3 3)
-				(thickness 0.6)
-				(bold yes)
-				(italic yes)
-				(color 255 0 35 1)
-			)
-			(justify left)
-		)
-		(uuid "800d294a-7ab7-42d4-9c23-109ca3cf0cc2")
-	)
 	(text "FMC Mezzanine Connector (HPC)"
 		(exclude_from_sim no)
 		(at 182.88 23.622 0)
@@ -36503,6 +36213,16 @@
 			)
 		)
 		(uuid "ce28b87f-7798-4a3c-9a3f-d0b3891a2210")
+	)
+	(text "to be added as needed"
+		(exclude_from_sim no)
+		(at 653.034 263.906 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "ce361c76-87a8-465d-ae04-2e30f63941f5")
 	)
 	(text "Power analysis clock selection"
 		(exclude_from_sim no)
@@ -39978,13 +39698,13 @@
 		(uuid "852f72ef-fcb7-4bcd-89dd-425ae98ab8c7")
 	)
 	(label "7seg_L"
-		(at 345.44 101.6 180)
+		(at 388.62 53.34 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "871ad3dc-8695-4bb7-8f56-1adb0885bc32")
 	)
@@ -53896,73 +53616,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint_Probe")
-		(at 668.02 270.51 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "49dcab24-4c51-4367-bdce-864d550266cc")
-		(property "Reference" "TP6"
-			(at 671.83 267.6524 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint_Probe"
-			(at 671.83 270.1924 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm"
-			(at 673.1 270.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 673.1 270.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point (alternative probe-style design)"
-			(at 668.02 270.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "2d3ad36a-44e4-419b-a571-ad33582cb79b")
-		)
-		(instances
-			(project "offramps"
-				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
-					(reference "TP6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3.3V")
 		(at 492.76 398.78 0)
 		(unit 1)
@@ -58733,73 +58386,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint_Probe")
-		(at 623.57 262.89 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6cc4284e-904f-4c62-bd01-d18a354ad5a5")
-		(property "Reference" "TP1"
-			(at 627.38 260.0324 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint_Probe"
-			(at 627.38 262.5724 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm"
-			(at 628.65 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 628.65 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point (alternative probe-style design)"
-			(at 623.57 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "45ea7d15-a60a-4a40-914e-0777408dba1c")
-		)
-		(instances
-			(project "offramps"
-				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
-					(reference "TP1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 346.71 416.56 0)
 		(unit 1)
@@ -60655,73 +60241,6 @@
 			(project "offramps"
 				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
 					(reference "#PWR040")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Probe")
-		(at 668.02 250.19 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7ceeb927-d886-4c41-91da-3b61ebdf64fc")
-		(property "Reference" "TP2"
-			(at 671.83 247.3324 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint_Probe"
-			(at 671.83 249.8724 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm"
-			(at 673.1 250.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 673.1 250.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point (alternative probe-style design)"
-			(at 668.02 250.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a08fa617-81f7-4afa-b738-c11691d93266")
-		)
-		(instances
-			(project "offramps"
-				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
-					(reference "TP2")
 					(unit 1)
 				)
 			)
@@ -70727,73 +70246,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint_Probe")
-		(at 668.02 255.27 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "afeef115-04ec-402b-9dea-a45afa5ad2c4")
-		(property "Reference" "TP3"
-			(at 671.83 252.4124 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint_Probe"
-			(at 671.83 254.9524 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm"
-			(at 673.1 255.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 673.1 255.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point (alternative probe-style design)"
-			(at 668.02 255.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3610a36e-e778-40cf-98d5-c7a97fbb9832")
-		)
-		(instances
-			(project "offramps"
-				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
-					(reference "TP3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 575.31 90.17 90)
 		(unit 1)
@@ -71900,73 +71352,6 @@
 			(project "offramps"
 				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
 					(reference "U19")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "GND_14")
-		(lib_id "power:GND")
-		(at 668.02 273.05 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b805597f-4384-4451-bbfd-507ae345a40c")
-		(property "Reference" "#PWR0157"
-			(at 668.02 279.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 668.02 278.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 668.02 273.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 668.02 273.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 668.02 273.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "890a4d7e-6f32-486e-82dd-94c9c573ae57")
-		)
-		(instances
-			(project "offramps"
-				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
-					(reference "#PWR0157")
 					(unit 1)
 				)
 			)
@@ -76899,73 +76284,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint_Probe")
-		(at 668.02 260.35 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d1857ca6-3b64-4d24-810a-a6f1db44a702")
-		(property "Reference" "TP4"
-			(at 671.83 257.4924 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint_Probe"
-			(at 671.83 260.0324 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm"
-			(at 673.1 260.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 673.1 260.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point (alternative probe-style design)"
-			(at 668.02 260.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "80d80a43-8cd7-4e94-80c3-6bc2afabc7cf")
-		)
-		(instances
-			(project "offramps"
-				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
-					(reference "TP4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Transistor_FET:BSS138")
 		(at 209.55 415.29 270)
 		(unit 1)
@@ -78665,73 +77983,6 @@
 			(project "offramps"
 				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
 					(reference "C25")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Probe")
-		(at 668.02 265.43 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "dfcf9d92-0d99-4b54-81ca-6ed5c63935c0")
-		(property "Reference" "TP5"
-			(at 671.83 262.5724 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint_Probe"
-			(at 671.83 265.1124 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm"
-			(at 673.1 265.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 673.1 265.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point (alternative probe-style design)"
-			(at 668.02 265.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "842fd1c7-c4c7-416b-ba37-e8c330770b30")
-		)
-		(instances
-			(project "offramps"
-				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
-					(reference "TP5")
 					(unit 1)
 				)
 			)
