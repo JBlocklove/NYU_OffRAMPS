@@ -6910,6 +6910,108 @@
 				)
 			)
 		)
+		(symbol "Mechanical:MountingHole_Pad"
+			(pin_numbers hide)
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim yes)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole_Pad"
+				(at 0 4.445 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Mounting Hole with connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*Pad*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MountingHole_Pad_0_1"
+				(circle
+					(center 0 1.27)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "MountingHole_Pad_1_1"
+				(pin input line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Regulator_Linear:AMS1117-3.3"
 			(pin_names
 				(offset 0.254)
@@ -24949,10 +25051,22 @@
 		(uuid "6739590a-cee1-4f2d-b0cd-34e567a1b7f9")
 	)
 	(junction
+		(at 492.76 477.52)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "67f4029d-9c63-42c7-98ab-463bc61ce6b3")
+	)
+	(junction
 		(at 604.52 361.95)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "680fc919-b4ff-4cb3-85f6-d70314f992a2")
+	)
+	(junction
+		(at 483.87 477.52)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "68843382-2af8-4293-97e3-ced42a4fdc2f")
 	)
 	(junction
 		(at 316.23 353.06)
@@ -25181,6 +25295,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9da2fd75-ad37-42c0-a933-4b7404820586")
+	)
+	(junction
+		(at 474.98 477.52)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9eab2872-477d-448b-8a95-2ed1bd4ff55b")
 	)
 	(junction
 		(at 180.34 284.48)
@@ -26640,6 +26760,16 @@
 	)
 	(wire
 		(pts
+			(xy 483.87 477.52) (xy 492.76 477.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0d60fc8f-3c38-4460-ae36-a5019fe8ef86")
+	)
+	(wire
+		(pts
 			(xy 598.17 335.28) (xy 591.82 335.28)
 		)
 		(stroke
@@ -27107,6 +27237,16 @@
 			(type default)
 		)
 		(uuid "18271490-f23e-4fd6-b070-80386d4f733a")
+	)
+	(wire
+		(pts
+			(xy 492.76 477.52) (xy 495.3 477.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1862fba2-4990-4223-8b08-62568c4b91da")
 	)
 	(wire
 		(pts
@@ -30060,6 +30200,16 @@
 	)
 	(wire
 		(pts
+			(xy 466.09 472.44) (xy 466.09 477.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6bd51e67-7d69-4685-9fdc-cc6a314c0ab4")
+	)
+	(wire
+		(pts
 			(xy 284.48 283.21) (xy 292.1 283.21)
 		)
 		(stroke
@@ -30210,6 +30360,16 @@
 	)
 	(wire
 		(pts
+			(xy 474.98 472.44) (xy 474.98 477.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6f62a9ec-4454-42d6-b12b-36d93aa52798")
+	)
+	(wire
+		(pts
 			(xy -35.56 396.24) (xy -29.21 396.24)
 		)
 		(stroke
@@ -30267,6 +30427,16 @@
 			(type default)
 		)
 		(uuid "72066ace-a715-49cb-844f-e9caf47f0e14")
+	)
+	(wire
+		(pts
+			(xy 474.98 477.52) (xy 483.87 477.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7211d010-bac1-4d35-8c63-744e78057d5c")
 	)
 	(wire
 		(pts
@@ -30777,6 +30947,16 @@
 			(type default)
 		)
 		(uuid "7d7be573-768e-4530-80e5-241627f49884")
+	)
+	(wire
+		(pts
+			(xy 466.09 477.52) (xy 474.98 477.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7daf6e04-9071-4438-b827-2bcfdaaf7e23")
 	)
 	(wire
 		(pts
@@ -31660,6 +31840,16 @@
 	)
 	(wire
 		(pts
+			(xy 492.76 477.52) (xy 492.76 472.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97276f35-f991-486f-ac91-5262181854e1")
+	)
+	(wire
+		(pts
 			(xy 598.17 335.28) (xy 598.17 336.55)
 		)
 		(stroke
@@ -32077,6 +32267,16 @@
 			(type default)
 		)
 		(uuid "a257cd57-29f5-47cd-9eb5-33033d989dee")
+	)
+	(wire
+		(pts
+			(xy 483.87 472.44) (xy 483.87 477.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a360421a-3931-469b-9381-11f9ecadb1b3")
 	)
 	(wire
 		(pts
@@ -44015,7 +44215,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 459.74 356.108 90)
 			(effects
 				(font
@@ -44049,7 +44249,7 @@
 			(uuid "c4a4a577-6716-48cb-b6fb-c17c13117e0d")
 		)
 		(instances
-			(project ""
+			(project "offramps"
 				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
 					(reference "R67")
 					(unit 1)
@@ -49276,6 +49476,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 481.33 472.44 90)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3072d46c-50aa-413a-8cff-41578d20bbf1")
+		(property "Reference" "H3"
+			(at 478.7899 469.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 481.3299 469.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
+			(at 481.33 472.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 481.33 472.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 481.33 472.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "254ccbbd-bf1f-42ca-8027-20a308113316")
+		)
+		(instances
+			(project "offramps"
+				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
+					(reference "H3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Jumper:Jumper_3_Open")
 		(at 516.89 137.16 90)
 		(unit 1)
@@ -50248,7 +50515,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 312.42 353.568 90)
 			(effects
 				(font
@@ -51538,7 +51805,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 450.85 350.8248 0)
 			(effects
 				(font
@@ -51572,7 +51839,7 @@
 			(uuid "cf29e043-c87d-4974-91f6-1db0c8d57e2d")
 		)
 		(instances
-			(project ""
+			(project "offramps"
 				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
 					(reference "C44")
 					(unit 1)
@@ -53985,7 +54252,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 449.58 370.5352 0)
 			(effects
 				(font
@@ -54013,13 +54280,13 @@
 			)
 		)
 		(pin "2"
-			(uuid "bfd4cfb8-1681-4c41-981d-7686131d446c")
+			(uuid "bfd4cfb8-1681-4c41-981d-7686131d446d")
 		)
 		(pin "1"
-			(uuid "cf29e043-c87d-4974-91f6-1db0c8d57e2d")
+			(uuid "cf29e043-c87d-4974-91f6-1db0c8d57e2e")
 		)
 		(instances
-			(project ""
+			(project "offramps"
 				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
 					(reference "C43")
 					(unit 1)
@@ -55999,7 +56266,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 316.23 357.1748 0)
 			(effects
 				(font
@@ -57254,7 +57521,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 326.39 370.078 90)
 			(effects
 				(font
@@ -57796,7 +58063,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 312.42 376.8852 0)
 			(effects
 				(font
@@ -58742,6 +59009,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 472.44 472.44 90)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6f4df817-6855-452e-9f0c-98696cc4fab2")
+		(property "Reference" "H2"
+			(at 469.8999 469.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 472.4399 469.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
+			(at 472.44 472.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 472.44 472.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 472.44 472.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7e59d272-b4cd-4108-bb4c-0749bf6bf860")
+		)
+		(instances
+			(project "offramps"
+				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
+					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "GND_2")
 		(lib_id "power:GND")
 		(at 621.03 88.9 0)
@@ -59178,7 +59512,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 316.23 372.618 90)
 			(effects
 				(font
@@ -60418,7 +60752,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 453.39 366.268 90)
 			(effects
 				(font
@@ -62360,7 +62694,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 447.04 347.218 90)
 			(effects
 				(font
@@ -62388,13 +62722,13 @@
 			)
 		)
 		(pin "1"
-			(uuid "d305e822-f759-41b9-b46b-d5d968b7c436")
+			(uuid "d305e822-f759-41b9-b46b-d5d968b7c437")
 		)
 		(pin "2"
-			(uuid "c4a4a577-6716-48cb-b6fb-c17c13117e0d")
+			(uuid "c4a4a577-6716-48cb-b6fb-c17c13117e0e")
 		)
 		(instances
-			(project ""
+			(project "offramps"
 				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
 					(reference "R56")
 					(unit 1)
@@ -67631,6 +67965,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 490.22 472.44 90)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9ad3198a-58ef-4a86-840f-0d4bbc50be30")
+		(property "Reference" "H4"
+			(at 487.6799 469.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 490.2199 469.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
+			(at 490.22 472.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 490.22 472.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 490.22 472.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8dbe696c-6f1a-45b6-b4d9-c0421fdd0710")
+		)
+		(instances
+			(project "offramps"
+				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
+					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:Conn_Coaxial")
 		(at 135.89 336.55 0)
 		(unit 1)
@@ -71217,6 +71618,73 @@
 			(project "offramps"
 				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
 					(reference "Q14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_16")
+		(lib_id "power:GND")
+		(at 495.3 477.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b6ce8819-fe5c-4d77-9b14-fd6470011fea")
+		(property "Reference" "#PWR0174"
+			(at 495.3 483.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 495.3 482.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 495.3 477.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 495.3 477.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 495.3 477.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0341ddc7-70a5-4818-a3ff-a1b46c8100f5")
+		)
+		(instances
+			(project "offramps"
+				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
+					(reference "#PWR0174")
 					(unit 1)
 				)
 			)
@@ -80591,7 +81059,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 463.55 363.728 90)
 			(effects
 				(font
@@ -82728,6 +83196,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 463.55 472.44 90)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fb302a32-afc1-4dc8-b8f1-bec401be8506")
+		(property "Reference" "H1"
+			(at 461.0099 469.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 463.5499 469.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
+			(at 463.55 472.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 463.55 472.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 463.55 472.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2e244aaa-06c4-4b79-8599-bb5f66f1d3ab")
+		)
+		(instances
+			(project "offramps"
+				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
+					(reference "H1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Jumper:Jumper_3_Open")
 		(at 455.93 118.11 90)
 		(unit 1)
@@ -83237,7 +83772,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 327.66 358.648 90)
 			(effects
 				(font
