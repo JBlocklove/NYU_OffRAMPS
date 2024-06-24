@@ -25434,6 +25434,10 @@
 		(uuid "1c0ea0a6-75b1-4f40-b037-153b963b93d4")
 	)
 	(no_connect
+		(at 368.3 132.08)
+		(uuid "1c40cde9-f757-4f38-bb01-0d5421e2a5a0")
+	)
+	(no_connect
 		(at 199.39 74.93)
 		(uuid "1deecad2-9da0-4b49-b067-959eb53663e5")
 	)
@@ -25522,6 +25526,10 @@
 		(uuid "402cd8e9-7549-45e2-a4e7-d48e38e11813")
 	)
 	(no_connect
+		(at 368.3 137.16)
+		(uuid "40dde0bb-1d23-4b73-9924-662dcb423f1e")
+	)
+	(no_connect
 		(at 368.3 180.34)
 		(uuid "4251a0b7-3219-4424-aeaa-2e0568655969")
 	)
@@ -25536,6 +25544,14 @@
 	(no_connect
 		(at 309.88 175.26)
 		(uuid "45458f54-6057-43ff-b33f-33c394fb1c34")
+	)
+	(no_connect
+		(at 368.3 134.62)
+		(uuid "45b06faa-25d5-4f8d-8ab5-3a11d9ce44a0")
+	)
+	(no_connect
+		(at 368.3 139.7)
+		(uuid "45d33e8d-81d2-4b94-a2cf-19e4da41cdf2")
 	)
 	(no_connect
 		(at 368.3 193.04)
@@ -25572,10 +25588,6 @@
 	(no_connect
 		(at 368.3 165.1)
 		(uuid "59d571eb-30d7-4716-90b3-9f60c176d5ae")
-	)
-	(no_connect
-		(at 199.39 151.13)
-		(uuid "5a57efcc-d5dd-40a1-9d72-1352a7792857")
 	)
 	(no_connect
 		(at 368.3 149.86)
@@ -25806,16 +25818,8 @@
 		(uuid "bb90536e-d22a-490c-ab8a-a811d2003b3e")
 	)
 	(no_connect
-		(at 199.39 146.05)
-		(uuid "be12f83f-741d-4949-9b1c-7b0b3eedb2de")
-	)
-	(no_connect
 		(at 309.88 144.78)
 		(uuid "be2e352c-93b1-45d0-8225-7564db679acd")
-	)
-	(no_connect
-		(at 199.39 148.59)
-		(uuid "be3cc72b-999e-40af-be91-f98f873745b1")
 	)
 	(no_connect
 		(at 269.24 152.4)
@@ -25864,10 +25868,6 @@
 	(no_connect
 		(at 368.3 160.02)
 		(uuid "d892e98d-a5d1-4711-85d6-e6cfd2714738")
-	)
-	(no_connect
-		(at 199.39 143.51)
-		(uuid "da34d2b9-0065-4878-8220-0c1b8937d93b")
 	)
 	(no_connect
 		(at 436.88 148.59)
@@ -36836,13 +36836,13 @@
 		(uuid "17048d7f-042e-40e5-aad2-9cc6e55376a2")
 	)
 	(label "ls_f_UART_TX"
-		(at 368.3 132.08 0)
+		(at 199.39 143.51 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "1913c06d-2771-4b30-9ba6-4d878c3e6db2")
 	)
@@ -40028,13 +40028,13 @@
 		(uuid "9053633a-f2ca-4a80-bb28-5316acfc8e88")
 	)
 	(label "f_ls_UART_TX"
-		(at 368.3 139.7 0)
+		(at 199.39 151.13 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "91099974-c38c-4d9c-aaa0-f222a8677695")
 	)
@@ -41823,13 +41823,13 @@
 		(uuid "dcd4ef96-534b-4830-8fe6-6baeb7eafad6")
 	)
 	(label "ls_f_UART_RX"
-		(at 368.3 137.16 0)
+		(at 199.39 148.59 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "dcdca092-d135-480f-9f9f-1740a39b7bde")
 	)
@@ -41955,13 +41955,13 @@
 		(uuid "e0ce98d3-b0c3-4e8d-b355-8bad3c68f2aa")
 	)
 	(label "f_ls_UART_RX"
-		(at 368.3 134.62 0)
+		(at 199.39 146.05 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "e10d6105-15a1-4bef-8234-f7c05fe78f31")
 	)
