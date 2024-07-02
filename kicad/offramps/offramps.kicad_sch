@@ -1471,6 +1471,307 @@
 				)
 			)
 		)
+		(symbol "BSS138_1"
+			(pin_names hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q9"
+				(at 6.35 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "BSS138"
+				(at 8.89 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+				(at 5.08 -1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF"
+				(at 5.08 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Vendor" "C2938375"
+				(at 11.176 -0.508 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "N-Channel MOSFET"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOT?23*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "BSS138_1_0_1"
+				(polyline
+					(pts
+						(xy 0.254 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 1.905) (xy 0.254 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 0.508) (xy 2.921 0.381) (xy 3.683 0.381) (xy 3.81 0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "BSS138_1_1_1"
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Connector:Conn_01x02_Pin"
 			(pin_names
 				(offset 1.016) hide)
@@ -2795,23 +3096,20 @@
 				)
 			)
 		)
-		(symbol "Connector:Micro_SD_Card"
-			(pin_names
-				(offset 1.016)
-			)
+		(symbol "Connector:Micro_SD_Card_Det1"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "J"
-				(at -16.51 15.24 0)
+				(at -16.51 17.78 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "Micro_SD_Card"
-				(at 16.51 15.24 0)
+			(property "Value" "Micro_SD_Card_Det1"
+				(at 16.51 17.78 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -2820,7 +3118,7 @@
 				)
 			)
 			(property "Footprint" ""
-				(at 29.21 7.62 0)
+				(at 52.07 17.78 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -2828,8 +3126,8 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "http://katalog.we-online.de/em/datasheet/693072010801.pdf"
-				(at 0 0 0)
+			(property "Datasheet" "https://datasheet.lcsc.com/lcsc/2110151630_XKB-Connectivity-XKTF-015-N_C381082.pdf"
+				(at 0 2.54 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -2837,7 +3135,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Micro SD Card Socket"
+			(property "Description" "Micro SD Card Socket with one card detection pin"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2864,23 +3162,12 @@
 					(hide yes)
 				)
 			)
-			(symbol "Micro_SD_Card_0_1"
-				(rectangle
-					(start -7.62 -9.525)
-					(end -5.08 -10.795)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
+			(symbol "Micro_SD_Card_Det1_0_1"
 				(rectangle
 					(start -7.62 -6.985)
 					(end -5.08 -8.255)
 					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -2891,7 +3178,7 @@
 					(start -7.62 -4.445)
 					(end -5.08 -5.715)
 					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -2902,7 +3189,7 @@
 					(start -7.62 -1.905)
 					(end -5.08 -3.175)
 					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -2913,7 +3200,7 @@
 					(start -7.62 0.635)
 					(end -5.08 -0.635)
 					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -2924,7 +3211,7 @@
 					(start -7.62 3.175)
 					(end -5.08 1.905)
 					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -2935,7 +3222,7 @@
 					(start -7.62 5.715)
 					(end -5.08 4.445)
 					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -2946,7 +3233,18 @@
 					(start -7.62 8.255)
 					(end -5.08 6.985)
 					(stroke
-						(width 0)
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -7.62 10.795)
+					(end -5.08 9.525)
+					(stroke
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -2955,7 +3253,7 @@
 				)
 				(polyline
 					(pts
-						(xy 16.51 12.7) (xy 16.51 13.97) (xy -19.05 13.97) (xy -19.05 -16.51) (xy 16.51 -16.51) (xy 16.51 -11.43)
+						(xy 16.51 15.24) (xy 16.51 16.51) (xy -19.05 16.51) (xy -19.05 -16.51) (xy 16.51 -16.51) (xy 16.51 -8.89)
 					)
 					(stroke
 						(width 0.254)
@@ -2967,8 +3265,8 @@
 				)
 				(polyline
 					(pts
-						(xy -8.89 -11.43) (xy -8.89 8.89) (xy -1.27 8.89) (xy 2.54 12.7) (xy 3.81 12.7) (xy 3.81 11.43)
-						(xy 6.35 11.43) (xy 7.62 12.7) (xy 20.32 12.7) (xy 20.32 -11.43) (xy -8.89 -11.43)
+						(xy -8.89 -8.89) (xy -8.89 11.43) (xy -1.27 11.43) (xy 2.54 15.24) (xy 3.81 15.24) (xy 3.81 13.97)
+						(xy 6.35 13.97) (xy 7.62 15.24) (xy 20.32 15.24) (xy 20.32 -8.89) (xy -8.89 -8.89)
 					)
 					(stroke
 						(width 0.254)
@@ -2979,9 +3277,9 @@
 					)
 				)
 			)
-			(symbol "Micro_SD_Card_1_1"
+			(symbol "Micro_SD_Card_Det1_1_1"
 				(pin bidirectional line
-					(at -22.86 7.62 0)
+					(at -22.86 10.16 0)
 					(length 3.81)
 					(name "DAT2"
 						(effects
@@ -2998,8 +3296,26 @@
 						)
 					)
 				)
+				(pin passive line
+					(at 20.32 -12.7 180)
+					(length 3.81)
+					(name "SHIELD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 				(pin bidirectional line
-					(at -22.86 5.08 0)
+					(at -22.86 7.62 0)
 					(length 3.81)
 					(name "DAT3/CD"
 						(effects
@@ -3017,7 +3333,7 @@
 					)
 				)
 				(pin input line
-					(at -22.86 2.54 0)
+					(at -22.86 5.08 0)
 					(length 3.81)
 					(name "CMD"
 						(effects
@@ -3035,7 +3351,7 @@
 					)
 				)
 				(pin power_in line
-					(at -22.86 0 0)
+					(at -22.86 2.54 0)
 					(length 3.81)
 					(name "VDD"
 						(effects
@@ -3053,7 +3369,7 @@
 					)
 				)
 				(pin input line
-					(at -22.86 -2.54 0)
+					(at -22.86 0 0)
 					(length 3.81)
 					(name "CLK"
 						(effects
@@ -3071,7 +3387,7 @@
 					)
 				)
 				(pin power_in line
-					(at -22.86 -5.08 0)
+					(at -22.86 -2.54 0)
 					(length 3.81)
 					(name "VSS"
 						(effects
@@ -3089,7 +3405,7 @@
 					)
 				)
 				(pin bidirectional line
-					(at -22.86 -7.62 0)
+					(at -22.86 -5.08 0)
 					(length 3.81)
 					(name "DAT0"
 						(effects
@@ -3107,7 +3423,7 @@
 					)
 				)
 				(pin bidirectional line
-					(at -22.86 -10.16 0)
+					(at -22.86 -7.62 0)
 					(length 3.81)
 					(name "DAT1"
 						(effects
@@ -3125,9 +3441,9 @@
 					)
 				)
 				(pin passive line
-					(at 20.32 -15.24 180)
+					(at -22.86 -12.7 0)
 					(length 3.81)
-					(name "SHIELD"
+					(name "DET"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -25598,10 +25914,6 @@
 		(uuid "60439f8c-df7f-4ddb-9650-65424b65c48c")
 	)
 	(no_connect
-		(at 327.66 157.48)
-		(uuid "60994ca9-f8a4-47d6-9a5d-0e191220375a")
-	)
-	(no_connect
 		(at 327.66 165.1)
 		(uuid "61782999-5b31-469d-9215-396cf14b4d77")
 	)
@@ -25612,10 +25924,6 @@
 	(no_connect
 		(at 365.76 38.1)
 		(uuid "6748e836-c291-47aa-bcb5-1d77e6be68e7")
-	)
-	(no_connect
-		(at 327.66 147.32)
-		(uuid "68f044c5-ab55-49bf-9ead-c2036761f8ce")
 	)
 	(no_connect
 		(at 240.03 82.55)
@@ -25676,6 +25984,10 @@
 	(no_connect
 		(at 274.32 49.53)
 		(uuid "7ca1f0fb-ee5a-4590-9a97-c9f34d562f93")
+	)
+	(no_connect
+		(at 327.66 147.32)
+		(uuid "7d23c3be-4941-4f2a-a875-e97fee24a627")
 	)
 	(no_connect
 		(at 289.56 137.16)
@@ -29312,6 +29624,16 @@
 			(type solid)
 		)
 		(uuid "57f49231-b5ad-4ccd-8763-aa14a3d03bed")
+	)
+	(wire
+		(pts
+			(xy 687.07 153.67) (xy 687.07 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "580e651b-d819-4ad2-9c3b-e7f191d86c42")
 	)
 	(wire
 		(pts
@@ -33255,6 +33577,16 @@
 	)
 	(wire
 		(pts
+			(xy 687.07 143.51) (xy 687.07 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c19720ad-9a9d-45f5-815a-bbd547b44efd")
+	)
+	(wire
+		(pts
 			(xy 307.34 358.14) (xy 307.34 365.76)
 		)
 		(stroke
@@ -33402,6 +33734,16 @@
 			(type default)
 		)
 		(uuid "c4974172-4852-41bd-bde6-e5f2e40b25ec")
+	)
+	(wire
+		(pts
+			(xy 629.92 201.93) (xy 637.54 201.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5259be5-98ff-4d82-9773-cbc4c66019b4")
 	)
 	(wire
 		(pts
@@ -35711,7 +36053,7 @@
 		)
 		(uuid e9e63ac6-4a2e-4179-bfeb-a3997c51134a)
 	)
-	(text_box "- Thermistor\n	- Review level shifting\n- Power analysis\n	- Level shift (?) clk\n	- Check against chipwhisperer schematic\n- User input\n	- Switch to 10 resistor chip\n	- Switch to alphanumeric (?)\n- Level shifting\n	- Double check endstop level shift setup"
+	(text_box ""
 		(exclude_from_sim no)
 		(at 554.99 405.13 0)
 		(size 127 48.26)
@@ -38355,6 +38697,17 @@
 		)
 		(uuid "52ad6027-4445-4471-ba72-a7c41a3084c7")
 	)
+	(label "f_sd_det"
+		(at 687.07 153.67 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5301cbe0-0774-41bc-b221-5744423d6c58")
+	)
 	(label "5V_psc_oe_n"
 		(at 398.78 458.47 0)
 		(fields_autoplaced yes)
@@ -38530,6 +38883,17 @@
 			(justify right bottom)
 		)
 		(uuid "5bc513c8-bc26-40af-977f-3e95d079130b")
+	)
+	(label "f_sd_det"
+		(at 327.66 157.48 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5bff8659-7e93-471c-8c97-4d8934b1d317")
 	)
 	(label "op_THERM0"
 		(at 549.91 226.06 0)
@@ -41327,6 +41691,17 @@
 		)
 		(uuid "c996c3de-32c5-4bad-84b5-52e1249b21a0")
 	)
+	(label "f_sd_det"
+		(at 629.92 201.93 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ca2eb3b2-89cc-405d-9d6e-b2672cf535b8")
+	)
 	(label "u_E1-DIR"
 		(at 340.36 287.02 180)
 		(fields_autoplaced yes)
@@ -42958,6 +43333,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at 220.98 420.3699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "807317dc-5f24-49b7-acb6-6ab2669eafcb")
 		)
@@ -43173,6 +43558,15 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C2938375"
+			(at 90.17 401.32 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "3548bb41-2fc2-4c5b-8379-7d6641ba0842")
 		)
@@ -43246,6 +43640,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at 220.98 454.6599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "32cd03c8-5328-4775-9a24-6382a2f6b6c8")
 		)
@@ -43280,7 +43684,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "0.1u"
 			(at 497.84 387.3499 0)
 			(effects
 				(font
@@ -43313,6 +43717,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C49678"
+			(at 497.84 397.5099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -43519,7 +43933,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10K"
+		(property "Value" "10k"
 			(at 591.058 95.25 0)
 			(effects
 				(font
@@ -43955,6 +44369,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 459.74 354.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17477"
+			(at 459.74 369.316 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -44575,6 +44998,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at -33.02 414.0199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "1a36af45-322b-428f-beb4-8defe79cef09")
 		)
@@ -44671,6 +45104,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C141788"
+			(at 656.59 374.6501 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "35f0796e-4687-41d5-82a9-b8560b82847a")
 		)
@@ -44741,6 +45184,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17408"
+			(at 659.13 95.2499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -45091,6 +45544,15 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17408"
+			(at 586.74 395.478 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "f1dde846-b13d-4ca9-b308-6a5baa8194c2")
 		)
@@ -45124,7 +45586,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10K"
+		(property "Value" "10k"
 			(at 602.488 95.25 0)
 			(effects
 				(font
@@ -45296,6 +45758,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 448.31 384.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17590"
+			(at 448.31 391.16 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -46565,6 +47036,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at 220.98 353.0599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "73db93be-f44b-4173-8c03-fae7c3774c97")
 		)
@@ -46736,7 +47217,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+3V3_filt"
+		(property "Value" "+3V3_sel"
 			(at 402.59 377.952 0)
 			(effects
 				(font
@@ -46910,6 +47391,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17414"
+			(at 605.536 351.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -47358,6 +47849,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C141788"
+			(at 683.26 415.2899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -48835,6 +49336,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at -33.02 448.3099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "7caef106-1f07-45a6-afcc-248508ee5d21")
 		)
@@ -48902,6 +49413,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C2828783"
+			(at 551.18 232.4099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -49147,7 +49668,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V_filt"
+		(property "Value" "+3V3_filt"
 			(at 445.77 388.112 0)
 			(effects
 				(font
@@ -49808,7 +50329,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10uF"
+		(property "Value" "10u"
 			(at 575.564 82.296 90)
 			(effects
 				(font
@@ -49844,7 +50365,7 @@
 				(hide yes)
 			)
 		)
-		(property "Vendor" "?"
+		(property "Vendor" "C440198"
 			(at 575.564 79.9846 90)
 			(effects
 				(font
@@ -49960,7 +50481,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "0.1u"
 			(at 481.33 414.0199 0)
 			(effects
 				(font
@@ -49993,6 +50514,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C49678"
+			(at 481.33 424.1799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -50255,6 +50786,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 312.42 351.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17513"
+			(at 312.42 358.14 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -50774,6 +51314,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at 203.2 353.0599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "9b76975b-d8c4-41ec-b31f-22211b82213c")
 		)
@@ -50910,6 +51460,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at -78.74 448.3099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "11b74dcf-85c5-4e41-a533-5d72393a66e2")
 		)
@@ -50974,6 +51534,15 @@
 		)
 		(property "Description" "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23"
 			(at -90.17 427.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C2938375"
+			(at -90.17 447.04 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51054,6 +51623,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C2938375"
+			(at 281.94 469.8999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -51201,6 +51780,15 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C2938375"
+			(at -44.45 447.04 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "0763d6c2-97de-400a-83b5-5803be7522cd")
 		)
@@ -51268,6 +51856,15 @@
 		)
 		(property "Description" "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23"
 			(at 189.23 298.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C2938375"
+			(at 189.23 317.5 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51411,6 +52008,15 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17408"
+			(at 588.01 379.984 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "f1dde846-b13d-4ca9-b308-6a5baa8194c3")
 		)
@@ -51475,6 +52081,15 @@
 		)
 		(property "Description" "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23"
 			(at -90.17 393.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C2938375"
+			(at -90.17 412.75 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51552,6 +52167,15 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C440198"
+			(at 450.342 366.014 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bfd4cfb8-1681-4c41-981d-7686131d446c")
 		)
@@ -51585,7 +52209,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "0.1u"
 			(at 579.501 26.67 0)
 			(effects
 				(font
@@ -51762,6 +52386,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17414"
+			(at 580.136 351.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -52036,6 +52670,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C2938375"
+			(at 384.81 463.5499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "6ae5f09e-11b4-4af1-aa69-50685653755c")
 		)
@@ -52072,7 +52716,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1uF"
+		(property "Value" "1u"
 			(at 598.551 252.73 0)
 			(effects
 				(font
@@ -52127,94 +52771,6 @@
 			(project "offramps"
 				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
 					(reference "C39")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Micro_SD_Card")
-		(at 660.4 186.69 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "3e9817a2-8df2-42a5-8e2a-79851502fb33")
-		(property "Reference" "J13"
-			(at 661.035 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Micro_SD_Card"
-			(at 661.035 170.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_Card:microSD_HC_Wuerth_693072010801"
-			(at 689.61 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://katalog.we-online.de/em/datasheet/693072010801.pdf"
-			(at 660.4 186.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Micro SD Card Socket"
-			(at 660.4 186.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "8"
-			(uuid "d2f0a9e8-6259-43e4-90d1-24c8f1f3d5ad")
-		)
-		(pin "1"
-			(uuid "0210e83c-ce88-496a-91f9-a95934a29255")
-		)
-		(pin "2"
-			(uuid "2621036c-a681-4524-be29-ff9df6d1462b")
-		)
-		(pin "5"
-			(uuid "989189b5-254d-4baa-ba04-e981f7da606a")
-		)
-		(pin "4"
-			(uuid "b2e4da58-c238-4a17-949f-7d85b0cab26e")
-		)
-		(pin "3"
-			(uuid "f6b2d59d-0b2e-4b89-ab10-3b6f7a61443c")
-		)
-		(pin "7"
-			(uuid "d8a46e6e-6dee-4725-bc9d-5013c7b3e25d")
-		)
-		(pin "9"
-			(uuid "37440434-bef1-4712-9f5c-2145ab704076")
-		)
-		(pin "6"
-			(uuid "5869713b-b8f7-4f6b-a8dc-94dd5f7f87cb")
-		)
-		(instances
-			(project "offramps"
-				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
-					(reference "J13")
 					(unit 1)
 				)
 			)
@@ -52517,6 +53073,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at 592.836 351.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "db09faa6-37f7-4fcc-aa75-fe1df73e12a4")
 		)
@@ -52656,6 +53222,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17414"
+			(at 573.786 351.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -52867,6 +53443,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at 220.98 386.0799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "28160426-bf09-4e10-bd18-975a391a3c15")
 		)
@@ -52931,6 +53517,15 @@
 		)
 		(property "Description" "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23"
 			(at 209.55 381 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C2938375"
+			(at 209.55 400.05 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53189,6 +53784,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C141788"
+			(at 656.59 410.2099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "35f0796e-4687-41d5-82a9-b8560b82847b")
 		)
@@ -53325,6 +53930,15 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17408"
+			(at 586.74 387.604 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "f1dde846-b13d-4ca9-b308-6a5baa8194c4")
 		)
@@ -53389,6 +54003,15 @@
 		)
 		(property "Description" "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23"
 			(at 121.92 438.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C2938375"
+			(at 128.27 450.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53865,6 +54488,15 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17408"
+			(at 579.12 406.908 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "e9bcec3f-d9d5-4a9d-a094-cc63c8a050d2")
 		)
@@ -53925,6 +54557,15 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 453.39 369.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C440198"
+			(at 453.39 386.588 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -55740,6 +56381,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C141788"
+			(at 656.59 397.5099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "35f0796e-4687-41d5-82a9-b8560b82847c")
 		)
@@ -55810,6 +56461,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C2828783"
+			(at 565.15 220.9799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -55939,6 +56600,15 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 312.42 358.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C440198"
+			(at 315.722 372.364 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56393,6 +57063,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at 567.436 351.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "5e8fd376-b9de-4f49-a35a-d2d737fcad98")
 		)
@@ -56409,6 +57089,7 @@
 		)
 	)
 	(symbol
+		(lib_name "BSS138_1")
 		(lib_id "Transistor_FET:BSS138")
 		(at 209.55 347.98 270)
 		(unit 1)
@@ -56462,6 +57143,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Vendor" "C2938375"
+			(at 209.042 359.156 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "3"
@@ -56998,6 +57687,15 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17408"
+			(at 579.12 384.048 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "f1dde846-b13d-4ca9-b308-6a5baa8194c5")
 		)
@@ -57068,6 +57766,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at 88.9 461.0099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "7c907d6d-77bc-418e-9956-3d5c41edea1a")
 		)
@@ -57101,7 +57809,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V_filt"
+		(property "Value" "+3V3_filt"
 			(at 434.34 389.382 0)
 			(effects
 				(font
@@ -57194,6 +57902,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 326.39 368.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17477"
+			(at 326.644 383.794 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -57408,6 +58125,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at 247.65 193.0399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "f6e692f6-9882-459d-adb6-4f0df378b8b4")
 		)
@@ -57541,6 +58268,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17414"
+			(at 182.88 269.2399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -57743,6 +58480,15 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C440198"
+			(at 316.23 392.938 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "583269a7-7657-486f-acac-74e22c492453")
 		)
@@ -57880,6 +58626,15 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C2938375"
+			(at -130.81 447.04 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "5c7ab908-2ab0-47af-8ce3-85ebb9f820a5")
 		)
@@ -57916,7 +58671,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "0.1u"
 			(at 576.58 73.66 90)
 			(effects
 				(font
@@ -57995,7 +58750,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "0.1u"
 			(at 508 387.3499 0)
 			(effects
 				(font
@@ -58028,6 +58783,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C49678"
+			(at 508 397.5099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -58098,6 +58863,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17710"
+			(at 678.18 95.2499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -58234,6 +59009,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17414"
+			(at 127 461.0099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -58437,6 +59222,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C377773"
+			(at 350.52 427.9899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -59058,6 +59853,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C377773"
+			(at 341.63 405.1299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "f9330326-0da7-43b8-a21e-bd265aaa0bf2")
 		)
@@ -59118,6 +59923,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 316.23 370.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17513"
+			(at 316.23 378.714 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -60087,6 +60901,14 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C132099"
+			(at 444.5 400.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "5"
 			(uuid "224ed66b-5abb-42e7-ac96-4a6c63fe4e77")
 		)
@@ -60298,6 +61120,15 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17513"
+			(at 453.39 372.364 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d9f33e55-36c0-498f-82c5-121812584e6b")
 		)
@@ -60365,6 +61196,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C377773"
+			(at 496.57 420.3699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -60722,7 +61563,7 @@
 				)
 			)
 		)
-		(property "Value" "POPA2994IDGKR"
+		(property "Value" "OPA2994IDGKR"
 			(at 542.036 191.516 0)
 			(effects
 				(font
@@ -60755,6 +61596,15 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C22399234"
+			(at 542.036 201.676 0)
+			(effects
+				(font
+					(size 1.524 1.524)
 				)
 				(hide yes)
 			)
@@ -62105,6 +62955,15 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17408"
+			(at 579.12 399.034 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "f1dde846-b13d-4ca9-b308-6a5baa8194c6")
 		)
@@ -62233,6 +63092,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 447.04 345.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17513"
+			(at 447.04 351.79 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -62546,7 +63414,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10K"
+		(property "Value" "10k"
 			(at 579.628 246.38 0)
 			(effects
 				(font
@@ -64052,6 +64920,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at 203.2 386.0799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "d6f46266-435d-4b8c-bc44-360012d6b320")
 		)
@@ -64268,6 +65146,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at 200.66 303.5299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "c2a83e31-d7a7-4d59-972e-7e7995172106")
 		)
@@ -64379,7 +65267,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "0.1u"
 			(at 351.79 394.9699 0)
 			(effects
 				(font
@@ -64412,6 +65300,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C49678"
+			(at 351.79 405.1299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -64563,6 +65461,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C377773"
+			(at 487.68 397.5099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "9344272a-52b9-4dcc-bb4e-0fd6c7196134")
 		)
@@ -64663,7 +65571,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "0.1u"
 			(at 361.95 394.9699 0)
 			(effects
 				(font
@@ -64696,6 +65604,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C49678"
+			(at 361.95 405.1299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -64829,6 +65747,15 @@
 		)
 		(property "Description" "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23"
 			(at 83.82 438.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C2938375"
+			(at 90.17 450.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -65696,6 +66623,15 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C2938375"
+			(at 128.27 401.32 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "867df3c9-8972-4a64-a265-c71f0ba7c249")
 		)
@@ -65833,6 +66769,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17414"
+			(at -119.38 448.3099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -66502,6 +67448,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at 127 411.4799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "08dbfd48-04b8-4c2b-b2da-278c2036b1e6")
 		)
@@ -67123,6 +68079,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at -78.74 414.0199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "6f4ecf7b-694b-48d8-a129-e45505b1d1ce")
 		)
@@ -67289,7 +68255,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "0.1u"
 			(at 361.95 417.8299 0)
 			(effects
 				(font
@@ -67322,6 +68288,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C49678"
+			(at 361.95 427.9899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -67465,6 +68441,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17414"
+			(at 200.66 269.2399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -68085,15 +69071,15 @@
 		(dnp no)
 		(uuid "9da2ae1a-581d-4e3b-b956-8ca7b2a2c6d5")
 		(property "Reference" "R11"
-			(at 272.034 342.9 90)
+			(at 271.78 341.122 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "10R"
-			(at 271.526 345.44 90)
+		(property "Value" "10"
+			(at 271.78 342.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -68120,6 +69106,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 271.78 345.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17415"
+			(at 271.78 353.822 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -68463,7 +69458,7 @@
 				)
 			)
 		)
-		(property "Value" "10R"
+		(property "Value" "10"
 			(at 271.78 331.47 90)
 			(effects
 				(font
@@ -68491,6 +69486,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 271.78 334.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17415"
+			(at 271.78 341.63 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -68668,7 +69672,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "0.1u"
 			(at 326.39 415.2899 0)
 			(effects
 				(font
@@ -68701,6 +69705,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C49678"
+			(at 326.39 425.4499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -68976,6 +69990,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Vendor" "C132099"
+			(at 289.56 401.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "5"
@@ -69412,6 +70434,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at -119.38 414.0199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "87fbd718-4a26-401f-8d8a-4634a686184d")
 		)
@@ -69480,6 +70512,15 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17594"
+			(at 267.97 392.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b69b2fcb-e310-440b-956a-bcce112311c6")
 		)
@@ -69513,7 +70554,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "0.1u"
 			(at 582.93 260.0706 0)
 			(effects
 				(font
@@ -69625,6 +70666,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17414"
+			(at 383.54 474.9799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -69754,7 +70805,7 @@
 				)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "0.1u"
 			(at 414.02 379.73 90)
 			(effects
 				(font
@@ -69782,6 +70833,15 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 414.02 384.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C49678"
+			(at 414.02 389.89 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69989,6 +71049,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17414"
+			(at 182.88 303.5299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -70263,7 +71333,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "0.1u"
 			(at 580.644 97.0026 90)
 			(effects
 				(font
@@ -70461,6 +71531,72 @@
 			(project "offramps"
 				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
 					(reference "C40")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 687.07 143.51 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b1a2cd5c-7bc5-4d90-97e0-4086673970ff")
+		(property "Reference" "#PWR0157"
+			(at 687.07 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3_sel"
+			(at 687.07 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 687.07 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 687.07 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 687.07 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "899a47de-dfee-410c-85bd-6d19744acbfb")
+		)
+		(instances
+			(project "offramps"
+				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
+					(reference "#PWR0157")
 					(unit 1)
 				)
 			)
@@ -71057,6 +72193,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C141788"
+			(at 656.59 384.8099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "35f0796e-4687-41d5-82a9-b8560b82847d")
 		)
@@ -71160,7 +72306,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "ADC1173CIMTC/NOPB"
+		(property "Value" "ADC1173CIMTCX/NOPB"
 			(at 525.018 419.608 0)
 			(effects
 				(font
@@ -71179,7 +72325,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "ADC1173CIMTC/NOPB"
+		(property "Datasheet" "ADC1173CIMTCX/NOPB"
 			(at 516.89 381 0)
 			(effects
 				(font
@@ -71190,6 +72336,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 516.89 381 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C701593"
 			(at 516.89 381 0)
 			(effects
 				(font
@@ -71487,6 +72642,15 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C1046"
+			(at 261.62 341.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "4aa1a8a3-f92d-4254-8dc6-422816c9ee65")
 		)
@@ -71624,6 +72788,15 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C2938375"
+			(at 50.8 450.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "701775b7-5d23-4bd5-acb4-11ce15bcd88e")
 		)
@@ -71688,6 +72861,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 293.37 386.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17590"
+			(at 293.37 392.43 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -71836,15 +73018,6 @@
 				)
 			)
 		)
-		(property "Note" ""
-			(at 565.15 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "94a9b648-5daf-4f57-81aa-296e050ad494")
 		)
@@ -71948,6 +73121,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17414"
+			(at 203.2 454.6599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -72083,6 +73266,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17414"
+			(at 88.9 411.4799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -72490,6 +73683,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at 551.18 241.2999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "64c0c593-c100-4c75-96b3-e144c975ee14")
 		)
@@ -72591,7 +73794,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "0.1u"
 			(at 508 410.2099 0)
 			(effects
 				(font
@@ -72627,6 +73830,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C49678"
+			(at 508 420.3699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bcd65e36-3f4d-4946-a418-67df900514df")
 		)
@@ -72659,7 +73872,7 @@
 				)
 			)
 		)
-		(property "Value" "ADC1175CIMTC/NOPB"
+		(property "Value" "ADC1175-50CIMTCX/NOPB"
 			(at 391.16 381 0)
 			(effects
 				(font
@@ -72677,7 +73890,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "ADC1175CIMTC/NOPB"
+		(property "Datasheet" "ADC1175-50CIMTCX/NOPB"
 			(at 370.84 388.62 0)
 			(effects
 				(font
@@ -72688,6 +73901,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 370.84 388.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C91171"
 			(at 370.84 388.62 0)
 			(effects
 				(font
@@ -72833,6 +74055,15 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C2938375"
+			(at 50.8 401.32 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "614c8ada-7703-438f-95c8-73fdab6d7a40")
 		)
@@ -72970,6 +74201,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17414"
+			(at 49.53 411.4799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -73912,7 +75153,7 @@
 				)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "0.1u"
 			(at 82.55 331.47 90)
 			(effects
 				(font
@@ -73940,6 +75181,15 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 82.55 336.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C49678"
+			(at 82.55 341.63 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -74215,6 +75465,15 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C2938375"
+			(at 189.23 283.21 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "810eae68-b53b-4249-9a3e-b379f7cb2d4a")
 		)
@@ -74357,6 +75616,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at 599.186 351.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "36c6505b-85de-4450-b34f-a73abb8f0e71")
 		)
@@ -74367,6 +75636,76 @@
 			(project "offramps"
 				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
 					(reference "R54")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 687.07 148.59 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "cb580aa3-f386-4d81-8e5a-ad400ae1a016")
+		(property "Reference" "R80"
+			(at 689.61 147.3199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "NP"
+			(at 689.61 149.8599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 685.292 148.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 687.07 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 687.07 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "de78160f-e338-4dc3-b4fb-db8cc2981a75")
+		)
+		(pin "1"
+			(uuid "03ca774c-abaf-4a9f-9031-855dd44ce8d5")
+		)
+		(instances
+			(project "offramps"
+				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
+					(reference "R80")
 					(unit 1)
 				)
 			)
@@ -75736,7 +77075,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "0.1u"
 			(at 592.201 26.67 0)
 			(effects
 				(font
@@ -76061,6 +77400,15 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17594"
+			(at 422.91 391.16 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "003f02da-2444-4c41-8feb-d04b892da029")
 		)
@@ -76332,6 +77680,15 @@
 		)
 		(property "Description" "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23"
 			(at 209.55 415.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C2938375"
+			(at 209.55 434.34 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76746,6 +78103,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at 203.2 420.3699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "de5e594f-4531-46b2-a3ac-b620ec2f254a")
 		)
@@ -76951,6 +78318,15 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C2938375"
+			(at 209.55 468.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "d94607f3-bcba-4cdb-bb26-42a85c5cd521")
 		)
@@ -76987,7 +78363,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10K"
+		(property "Value" "10k"
 			(at 568.198 246.38 0)
 			(effects
 				(font
@@ -77231,6 +78607,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17414"
+			(at 586.486 351.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -77655,7 +79041,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "220n"
 			(at 578.231 110.49 0)
 			(effects
 				(font
@@ -77764,6 +79150,15 @@
 		)
 		(property "Description" "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23"
 			(at -44.45 393.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C2938375"
+			(at -44.45 412.75 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -77938,7 +79333,7 @@
 				)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "0.1u"
 			(at 459.74 388.62 90)
 			(effects
 				(font
@@ -77966,6 +79361,15 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 459.74 393.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C49678"
+			(at 459.74 398.78 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -78083,7 +79487,7 @@
 				)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "0.1u"
 			(at 304.8 389.89 90)
 			(effects
 				(font
@@ -78111,6 +79515,15 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 304.8 394.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C49678"
+			(at 304.8 400.05 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -78642,6 +80055,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at 280.67 481.3299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "676917c5-b05a-458f-bf48-3b1591959caf")
 		)
@@ -78798,18 +80221,17 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "e463a8db-2364-4903-af26-f5ced4f48875")
 		(property "Reference" "U12"
-			(at 488.95 328.93 0)
+			(at 488.95 325.374 0)
 			(effects
 				(font
 					(size 1.524 1.524)
 				)
 			)
 		)
-		(property "Value" "ADC1173CIMTC/NOPB"
-			(at 488.95 331.47 0)
+		(property "Value" "ADC1173CIMTCX/NOPB"
+			(at 488.95 327.914 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -78826,7 +80248,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "ADC1173CIMTC/NOPB"
+		(property "Datasheet" "ADC1173CIMTCX/NOPB"
 			(at 468.63 339.09 0)
 			(effects
 				(font
@@ -78843,6 +80265,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Vendor" "C701593"
+			(at 488.95 331.216 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "8"
@@ -79154,18 +80584,17 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "e73d50d1-5105-4c8e-a682-88be1dcd3d2e")
 		(property "Reference" "SW1"
-			(at 626.11 339.09 0)
+			(at 625.856 336.296 0)
 			(effects
 				(font
 					(size 1.524 1.524)
 				)
 			)
 		)
-		(property "Value" "219-8MST"
-			(at 626.11 341.63 0)
+		(property "Value" "219-8MSTR"
+			(at 625.856 338.836 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -79199,6 +80628,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Vendor" "C2842674"
+			(at 625.094 341.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "9"
@@ -79448,6 +80885,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at 611.886 351.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "a7672233-9588-4156-b5a3-a354c8bd4b41")
 		)
@@ -79508,6 +80955,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 586.74 392.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17408"
+			(at 586.74 402.844 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -79582,6 +81038,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17414"
+			(at 49.53 461.0099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -79931,18 +81397,17 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "ea959be3-0ed4-4d2f-be08-be3d69f59af8")
 		(property "Reference" "U7"
-			(at 353.06 332.74 0)
+			(at 353.06 330.2 0)
 			(effects
 				(font
 					(size 1.524 1.524)
 				)
 			)
 		)
-		(property "Value" "ADC1175CIMTC/NOPB"
-			(at 353.06 335.28 0)
+		(property "Value" "ADC1175-50CIMTCX/NOPB"
+			(at 353.06 332.74 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -79959,7 +81424,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "ADC1175CIMTC/NOPB"
+		(property "Datasheet" "ADC1175-50CIMTCX/NOPB"
 			(at 332.74 342.9 0)
 			(effects
 				(font
@@ -79976,6 +81441,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Vendor" "C91171"
+			(at 353.314 335.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "15"
@@ -80060,6 +81533,105 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:Micro_SD_Card_Det1")
+		(at 660.4 189.23 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "eaf32345-c000-42bc-aa06-6856e65fb76b")
+		(property "Reference" "J13"
+			(at 660.908 164.592 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Micro_SD_Card_Det1"
+			(at 660.908 167.132 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "offramps_lib:SIM-SMD_GT-TF003-H0185-02"
+			(at 712.47 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/2110151630_XKB-Connectivity-XKTF-015-N_C381082.pdf"
+			(at 660.4 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Micro SD Card Socket with one card detection pin"
+			(at 660.4 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C5155564"
+			(at 660.146 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "2acf04fa-dfd1-4735-8e72-1e75b64f16a7")
+		)
+		(pin "2"
+			(uuid "90de5d8c-7da5-46de-aaa1-694b0846ae11")
+		)
+		(pin "7"
+			(uuid "ee709210-37b9-46dd-af99-3156538fa198")
+		)
+		(pin "6"
+			(uuid "e8fc2838-4e5e-4cb6-9a83-660966ebe22f")
+		)
+		(pin "8"
+			(uuid "e456dde6-6f34-4e1a-b1ce-8420ad60b53a")
+		)
+		(pin "10"
+			(uuid "b46680cb-4f42-4c21-9233-7cbf8ce7a883")
+		)
+		(pin "3"
+			(uuid "60a3edef-5932-4994-a043-8c9edad05a72")
+		)
+		(pin "1"
+			(uuid "93a4aba3-83d4-489b-a659-1f36f3cd7932")
+		)
+		(pin "9"
+			(uuid "6ab98476-cb05-4cd8-a56c-859a922af257")
+		)
+		(pin "5"
+			(uuid "f88bc809-417d-4ec2-a96f-8459c274cdae")
+		)
+		(instances
+			(project ""
+				(path "/e859ad58-cc0a-46d6-9578-387f2d0c634f"
+					(reference "J13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 579.12 381 90)
 		(unit 1)
@@ -80104,6 +81676,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 579.12 381 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17408"
+			(at 579.12 391.414 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80210,7 +81791,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "ADS1114IDGS"
+		(property "Value" "ADS1114IDGSR"
 			(at 536.448 262.382 0)
 			(effects
 				(font
@@ -80243,6 +81824,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C174291"
+			(at 540.766 278.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -80330,6 +81921,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 463.55 361.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17477"
+			(at 463.804 377.444 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80748,6 +82348,15 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C1046"
+			(at 261.62 353.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "899eebbd-f8b9-4ffb-98ea-437afba9d502")
 		)
@@ -80812,6 +82421,15 @@
 		)
 		(property "Description" "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23"
 			(at -130.81 393.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C2938375"
+			(at -130.81 412.75 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -82604,7 +84222,7 @@
 				)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "0.1u"
 			(at 259.08 381 90)
 			(effects
 				(font
@@ -82632,6 +84250,15 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 259.08 386.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C49678"
+			(at 259.08 391.16 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -82812,7 +84439,7 @@
 				)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "0.1u"
 			(at 123.19 331.47 90)
 			(effects
 				(font
@@ -82840,6 +84467,15 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 123.19 336.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C49678"
+			(at 123.19 341.63 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -82983,6 +84619,16 @@
 				(hide yes)
 			)
 		)
+		(property "Vendor" "C17414"
+			(at 565.15 231.1399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "64c0c593-c100-4c75-96b3-e144c975ee15")
 		)
@@ -83043,6 +84689,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 327.66 356.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Vendor" "C17477"
+			(at 327.66 371.856 90)
 			(effects
 				(font
 					(size 1.27 1.27)
